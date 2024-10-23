@@ -8,6 +8,8 @@
 namespace GameSystem
 {
     GameManager::GameManager()
+        :window(nullptr),
+        gamesetting(nullptr)
     {
         //Log.txt‚ğ¶¬‚µ‚È‚¢‚æ‚¤‚Éİ’è
         SetOutApplicationLogValidFlag(false);
@@ -25,7 +27,9 @@ namespace GameSystem
 
     GameManager::~GameManager()
     {
-        //ˆ—‚È‚µ
+        //ƒƒ‚ƒŠ‚Ì‰ğ•ú
+        delete window;
+        delete gamesetting;
     }
 
     void GameManager::Finalize()
