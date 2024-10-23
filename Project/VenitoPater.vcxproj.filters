@@ -28,6 +28,21 @@
     <Filter Include="ソース ファイル\Fps">
       <UniqueIdentifier>{6308ae84-1ad1-4d6d-adc9-b11cd1b9bee6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene">
+      <UniqueIdentifier>{ebfaeb77-9cce-4c98-b5db-fc1d6f097d64}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneBase">
+      <UniqueIdentifier>{8e176081-9062-4ab3-a3a3-da44bc803e40}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\SceneManager">
+      <UniqueIdentifier>{489956dc-19f3-4ef8-ac87-8fc9963b0f0d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\Title">
+      <UniqueIdentifier>{6559662c-7a92-4581-8752-02a768a96a0e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene\ThreeDays">
+      <UniqueIdentifier>{90fffd92-3f9e-4cfd-90e7-6e3ef71e22e8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\SourceCode\Main.cpp">
@@ -45,6 +60,18 @@
     <ClCompile Include="..\SourceCode\Fps\Fps.cpp">
       <Filter>ソース ファイル\Fps</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Scene\SceneManager\SceneManager.cpp">
+      <Filter>ソース ファイル\Scene\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Scene\SceneBase\SceneBase.cpp">
+      <Filter>ソース ファイル\Scene\SceneBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Scene\Title\Title.cpp">
+      <Filter>ソース ファイル\Scene\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Scene\ThreeDays\ThreeDays.cpp">
+      <Filter>ソース ファイル\Scene\ThreeDays</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\GameSystem\GameManager\GameManager.h">
@@ -58,6 +85,18 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
       <Filter>ソース ファイル\Fps</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Scene\SceneManager\SceneManager.h">
+      <Filter>ソース ファイル\Scene\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Scene\SceneBase\SceneBase.h">
+      <Filter>ソース ファイル\Scene\SceneBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Scene\Title\Title.h">
+      <Filter>ソース ファイル\Scene\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Scene\ThreeDays\ThreeDays.h">
+      <Filter>ソース ファイル\Scene\ThreeDays</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

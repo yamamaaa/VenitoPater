@@ -1,6 +1,6 @@
 #include "Fps.h"
 
-namespace Fps
+namespace fps
 {
 	Fps::Fps()
 		:m_nowTime(static_cast<float>(GetNowCount()))

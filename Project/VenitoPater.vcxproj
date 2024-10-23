@@ -24,12 +24,20 @@
     <ClCompile Include="..\SourceCode\GameSystem\GameSetting\GameSetting.cpp" />
     <ClCompile Include="..\SourceCode\GameSystem\Window\Window.cpp" />
     <ClCompile Include="..\SourceCode\Main.cpp" />
+    <ClCompile Include="..\SourceCode\Scene\SceneBase\SceneBase.cpp" />
+    <ClCompile Include="..\SourceCode\Scene\SceneManager\SceneManager.cpp" />
+    <ClCompile Include="..\SourceCode\Scene\ThreeDays\ThreeDays.cpp" />
+    <ClCompile Include="..\SourceCode\Scene\Title\Title.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h" />
     <ClInclude Include="..\SourceCode\GameSystem\GameManager\GameManager.h" />
     <ClInclude Include="..\SourceCode\GameSystem\GameSetting\GameSetting.h" />
     <ClInclude Include="..\SourceCode\GameSystem\Window\Window.h" />
+    <ClInclude Include="..\SourceCode\Scene\SceneBase\SceneBase.h" />
+    <ClInclude Include="..\SourceCode\Scene\SceneManager\SceneManager.h" />
+    <ClInclude Include="..\SourceCode\Scene\ThreeDays\ThreeDays.h" />
+    <ClInclude Include="..\SourceCode\Scene\Title\Title.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
