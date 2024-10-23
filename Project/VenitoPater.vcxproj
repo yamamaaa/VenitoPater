@@ -19,12 +19,14 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\SourceCode\Fps\Fps.cpp" />
     <ClCompile Include="..\SourceCode\GameSystem\GameManager\GameManager.cpp" />
     <ClCompile Include="..\SourceCode\GameSystem\GameSetting\GameSetting.cpp" />
     <ClCompile Include="..\SourceCode\GameSystem\Window\Window.cpp" />
     <ClCompile Include="..\SourceCode\Main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\SourceCode\Fps\Fps.h" />
     <ClInclude Include="..\SourceCode\GameSystem\GameManager\GameManager.h" />
     <ClInclude Include="..\SourceCode\GameSystem\GameSetting\GameSetting.h" />
     <ClInclude Include="..\SourceCode\GameSystem\Window\Window.h" />

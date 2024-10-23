@@ -25,6 +25,9 @@
     <Filter Include="ソース ファイル\GameSystem\Window">
       <UniqueIdentifier>{b352f600-82c6-4611-9514-945bc7363840}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Fps">
+      <UniqueIdentifier>{6308ae84-1ad1-4d6d-adc9-b11cd1b9bee6}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\SourceCode\Main.cpp">
@@ -39,6 +42,9 @@
     <ClCompile Include="..\SourceCode\GameSystem\Window\Window.cpp">
       <Filter>ソース ファイル\GameSystem\Window</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Fps\Fps.cpp">
+      <Filter>ソース ファイル\Fps</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\GameSystem\GameManager\GameManager.h">
@@ -49,6 +55,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\GameSystem\Window\Window.h">
       <Filter>ソース ファイル\GameSystem\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Fps\Fps.h">
+      <Filter>ソース ファイル\Fps</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
