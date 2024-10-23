@@ -19,7 +19,15 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\SourceCode\GameSystem\GameManager\GameManager.cpp" />
+    <ClCompile Include="..\SourceCode\GameSystem\GameSetting\GameSetting.cpp" />
+    <ClCompile Include="..\SourceCode\GameSystem\Window\Window.cpp" />
     <ClCompile Include="..\SourceCode\Main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\SourceCode\GameSystem\GameManager\GameManager.h" />
+    <ClInclude Include="..\SourceCode\GameSystem\GameSetting\GameSetting.h" />
+    <ClInclude Include="..\SourceCode\GameSystem\Window\Window.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

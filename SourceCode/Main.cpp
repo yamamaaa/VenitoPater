@@ -1,7 +1,7 @@
 #include <DxLib.h>
 #include <memory>
 
-#include ""
+#include "../SourceCode/GameSystem/GameManager/GameManager.h"
 
 using namespace GameSystem;
 
