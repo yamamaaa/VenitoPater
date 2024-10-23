@@ -1,7 +1,7 @@
 #pragma once
 #include <DxLib.h>
 
-namespace Fps
+namespace fps
 {
 	class Fps
 	{

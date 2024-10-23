@@ -1,6 +1,14 @@
 #include<DxLib.h>
 #include<memory>
 
+/// <summary>
+/// シーン管理クラス
+/// </summary>
+namespace scene
+{
+    class SceneManager;
+}
+
 namespace GameSystem
 {
     class Window;
@@ -34,6 +42,6 @@ namespace GameSystem
         GameSetting* gamesetting;
 
         //シーンマネージャー
-        std::unique_ptr<class SceneManager> sceneManager;
+        std::unique_ptr<class scene::SceneManager> sceneManager;
     };
 }
