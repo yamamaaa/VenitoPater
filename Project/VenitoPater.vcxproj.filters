@@ -13,10 +13,42 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ソース ファイル\GameSystem">
+      <UniqueIdentifier>{399cfa9c-c08c-48c8-95a6-7cafd83c6b11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameSystem\GameSetting">
+      <UniqueIdentifier>{3ee30540-98ca-4998-a282-ddc65b88336f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameSystem\GameManager">
+      <UniqueIdentifier>{0c2213b8-9026-4077-9957-d3fac7f9816f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\GameSystem\Window">
+      <UniqueIdentifier>{b352f600-82c6-4611-9514-945bc7363840}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\SourceCode\Main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\GameSystem\GameManager\GameManager.cpp">
+      <Filter>ソース ファイル\GameSystem\GameManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\GameSystem\GameSetting\GameSetting.cpp">
+      <Filter>ソース ファイル\GameSystem\GameSetting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\GameSystem\Window\Window.cpp">
+      <Filter>ソース ファイル\GameSystem\Window</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\SourceCode\GameSystem\GameManager\GameManager.h">
+      <Filter>ソース ファイル\GameSystem\GameManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\GameSystem\GameSetting\GameSetting.h">
+      <Filter>ソース ファイル\GameSystem\GameSetting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\GameSystem\Window\Window.h">
+      <Filter>ソース ファイル\GameSystem\Window</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
