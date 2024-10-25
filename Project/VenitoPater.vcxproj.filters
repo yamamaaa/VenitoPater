@@ -43,6 +43,12 @@
     <Filter Include="ソース ファイル\Scene\ThreeDays">
       <UniqueIdentifier>{90fffd92-3f9e-4cfd-90e7-6e3ef71e22e8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\JsonMaster">
+      <UniqueIdentifier>{bcc1b068-9efc-4bfe-bddb-297207a7cdf9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\JsonMaster\IOUtility">
+      <UniqueIdentifier>{5f533ff6-83e2-4381-aebf-fb2a78668413}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\SourceCode\Main.cpp">
@@ -72,6 +78,9 @@
     <ClCompile Include="..\SourceCode\Scene\ThreeDays\ThreeDays.cpp">
       <Filter>ソース ファイル\Scene\ThreeDays</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\IOUtility\IOUtility.cpp">
+      <Filter>ソース ファイル\JsonMaster\IOUtility</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\GameSystem\GameManager\GameManager.h">
@@ -97,6 +106,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Scene\ThreeDays\ThreeDays.h">
       <Filter>ソース ファイル\Scene\ThreeDays</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\IOUtility\IOUtility.h">
+      <Filter>ソース ファイル\JsonMaster\IOUtility</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
