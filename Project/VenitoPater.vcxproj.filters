@@ -52,6 +52,12 @@
     <Filter Include="ソース ファイル\JsonMaster\JsonManager">
       <UniqueIdentifier>{8647bdfb-91e8-418a-826e-914a3d55a8b8}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Object">
+      <UniqueIdentifier>{5e6a4c99-d506-489c-a09b-467218edd2fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Object\ObjectBase">
+      <UniqueIdentifier>{955a438c-5aaa-42bb-abc5-450bff64e4c5}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\SourceCode\Main.cpp">
@@ -87,6 +93,9 @@
     <ClCompile Include="..\SourceCode\JsonMaster\JsonManager\JsonManager.cpp">
       <Filter>ソース ファイル\JsonMaster\JsonManager</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\ObjectBase\ObjectBase.cpp">
+      <Filter>ソース ファイル\Object</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\GameSystem\GameManager\GameManager.h">
@@ -118,6 +127,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\JsonMaster\JsonManager\JsonManager.h">
       <Filter>ソース ファイル\JsonMaster\JsonManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectBase\ObjectBase.h">
+      <Filter>ソース ファイル\Object</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

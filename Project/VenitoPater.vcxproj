@@ -26,6 +26,7 @@
     <ClCompile Include="..\SourceCode\JsonMaster\IOUtility\IOUtility.cpp" />
     <ClCompile Include="..\SourceCode\JsonMaster\JsonManager\JsonManager.cpp" />
     <ClCompile Include="..\SourceCode\Main.cpp" />
+    <ClCompile Include="..\SourceCode\Object\ObjectBase\ObjectBase.cpp" />
     <ClCompile Include="..\SourceCode\Scene\SceneBase\SceneBase.cpp" />
     <ClCompile Include="..\SourceCode\Scene\SceneManager\SceneManager.cpp" />
     <ClCompile Include="..\SourceCode\Scene\ThreeDays\ThreeDays.cpp" />
@@ -38,6 +39,7 @@
     <ClInclude Include="..\SourceCode\GameSystem\Window\Window.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\IOUtility\IOUtility.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\JsonManager\JsonManager.h" />
+    <ClInclude Include="..\SourceCode\Object\ObjectBase\ObjectBase.h" />
     <ClInclude Include="..\SourceCode\Scene\SceneBase\SceneBase.h" />
     <ClInclude Include="..\SourceCode\Scene\SceneManager\SceneManager.h" />
     <ClInclude Include="..\SourceCode\Scene\ThreeDays\ThreeDays.h" />
