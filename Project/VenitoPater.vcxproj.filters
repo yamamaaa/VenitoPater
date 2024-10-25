@@ -49,6 +49,9 @@
     <Filter Include="ソース ファイル\JsonMaster\IOUtility">
       <UniqueIdentifier>{5f533ff6-83e2-4381-aebf-fb2a78668413}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\JsonMaster\JsonManager">
+      <UniqueIdentifier>{8647bdfb-91e8-418a-826e-914a3d55a8b8}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\SourceCode\Main.cpp">
@@ -81,6 +84,9 @@
     <ClCompile Include="..\SourceCode\JsonMaster\IOUtility\IOUtility.cpp">
       <Filter>ソース ファイル\JsonMaster\IOUtility</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\JsonManager\JsonManager.cpp">
+      <Filter>ソース ファイル\JsonMaster\JsonManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\GameSystem\GameManager\GameManager.h">
@@ -109,6 +115,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\JsonMaster\IOUtility\IOUtility.h">
       <Filter>ソース ファイル\JsonMaster\IOUtility</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\JsonManager\JsonManager.h">
+      <Filter>ソース ファイル\JsonMaster\JsonManager</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
