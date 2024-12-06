@@ -43,6 +43,9 @@
     <ClInclude Include="..\SourceCode\Object\ObjectBase\ObjectBase.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectManager\GameStatus.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectManager\ObjectManager.h" />
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\Global_ObjectTag.h" />
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\Result_ObjectTag.h" />
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\ThreeDays_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Scene\SceneBase\SceneBase.h" />
     <ClInclude Include="..\SourceCode\Scene\SceneManager\SceneManager.h" />
     <ClInclude Include="..\SourceCode\Scene\ThreeDays\ThreeDays.h" />
