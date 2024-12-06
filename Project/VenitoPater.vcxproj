@@ -27,6 +27,7 @@
     <ClCompile Include="..\SourceCode\JsonMaster\JsonManager\JsonManager.cpp" />
     <ClCompile Include="..\SourceCode\LevelController\LevelController.cpp" />
     <ClCompile Include="..\SourceCode\Main.cpp" />
+    <ClCompile Include="..\SourceCode\Object\CharaObj\Player\Player.cpp" />
     <ClCompile Include="..\SourceCode\Object\MouseBase\MouseBase.cpp" />
     <ClCompile Include="..\SourceCode\Object\ObjectBase\ObjectBase.cpp" />
     <ClCompile Include="..\SourceCode\Object\ObjectManager\ObjectManager.cpp" />
@@ -42,12 +43,10 @@
     <ClInclude Include="..\SourceCode\GameSystem\Window\Window.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\IOUtility\IOUtility.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\JsonManager\JsonManager.h" />
-
     <ClInclude Include="..\SourceCode\LevelController\LevelController.h" />
     <ClInclude Include="..\SourceCode\LevelController\LevelStatus.h" />
-
+    <ClInclude Include="..\SourceCode\Object\CharaObj\Player\Player.h" />
     <ClInclude Include="..\SourceCode\Object\MouseBase\MouseBase.h" />
-
     <ClInclude Include="..\SourceCode\Object\ObjectBase\ObjectBase.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectManager\GameStatus.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectManager\ObjectManager.h" />
