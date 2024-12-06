@@ -1,8 +1,13 @@
 #pragma once
 #include<Dxlib.h>
 #include<string>
-
 #include"../../JsonMaster/JsonManager/JsonManager.h"
+#include"../../Object/ObjectTag/ThreeDays_ObjectTag.h"
+#include"../../Collision/Collision.h"
+
+#define DEBUG
+using namespace collision;
+using namespace objecttag;
 
 namespace object
 {
@@ -16,7 +21,7 @@ namespace object
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        /// <param name="tagname"></param>
+        /// <param name="tagname">タグ名</param>
         ObjectBase(std::string tagname);
 
         /// <summary>
@@ -25,7 +30,7 @@ namespace object
         virtual ~ObjectBase();
 
         /// <summary>
-        /// オブジェクトの初期化
+        /// オブジェクトの読み込み関連
         /// </summary>
         virtual void LoadObject() = 0;
 
@@ -33,7 +38,7 @@ namespace object
         /// オブジェクトの更新
         /// </summary>
         /// <param name="deltatime">デルタタイム</param>
-        virtual void UpdateObj(float deltatime) = 0;
+        virtual void UpdateObj(const float deltatime) = 0;
 
         /// <summary>
         /// オブジェクトの描画
@@ -43,43 +48,44 @@ namespace object
         /// <summary>
         /// 移動処理
         /// </summary>
-        virtual void MoveObj() {};
+        virtual void MoveObj(const float deltatime) {};
 
         /// <summary>
         /// オブジェクトのタグ名取得
         /// </summary>
         /// <returns>タグ名</returns>
-        std::string GetTagName()const { return m_ObjTag; }
+        const std::string GetTagName()const { return m_ObjTag; }
 
         /// <summary>
         /// 位置情報取得
         /// </summary>
-        /// <returns></returns>
-        const VECTOR& GetObjPos()const { return m_ObjPos; }
+        /// <returns>位置情報</returns>
+        const auto GetObjPos()const { return m_ObjPos; }
 
         /// <summary>
         /// オブジェクトの生死状態の取得
         /// </summary>
-        /// <returns></returns>
-        bool GetAlive() const { return m_Alive; }
+        /// <returns>true:生存|false:死亡</returns>
+        const bool GetAlive() const { return m_Alive; }
 
         /// <summary>
         /// オブジェクトの生死状態セット
         /// </summary>
-        /// <param name="alive"></param>
-        void SetAlive(bool alive) { m_Alive = alive; }
+        /// <param name="alive">true:生存|false:死亡</param>
+        const void SetAlive(const bool alive) { m_Alive = alive; }
 
     protected:
 
         std::string m_ObjTag;   //オブジェクトタグ
 
-        VECTOR m_ObjPos;        //位置情報
+        POINTFLOAT m_ObjPos;    //オブジェクト座標
+        POINTS m_ObjSize;       //オブジェクトサイズ
+        POINTS m_DrawOffset;    // 当たり判定からの横方向ずらし量
+
         bool m_Alive;           //生死状態
         int m_ObjHandle;        //オブジェクトハンドル
 
-        int m_ImgSize_Y;        //画像縦サイズ
-        int m_ImgSize_X;        //画像横サイズ
-
         float m_MoveSpeed;      //動くスピード
+        float m_MaxMoveSpeed;   //最大移動速度
     };
 }
