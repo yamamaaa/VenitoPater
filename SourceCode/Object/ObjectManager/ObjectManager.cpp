@@ -1,21 +1,21 @@
 #include "ObjectManager.h"
 
-#include"../../Object/ObjectBase/ObjectBase.h"
-
 namespace object
 {
     //実体の中身を空に
     std::unique_ptr<ObjectManager>ObjectManager::objectmanager = nullptr;
 
     ObjectManager::ObjectManager()
-        :m_Objects(0)
+        :m_Objects(0),
+        m_NowScene_Name(""),
+        m_GameStatus()
     {
         objectmanager = nullptr;
     }
+
     ObjectManager::~ObjectManager()
     {
-        //  メモリの開放
-        delete objectbase;
+        //処理なし
     }
 
     void ObjectManager::Initialize()
@@ -27,11 +27,6 @@ namespace object
         }
     }
 
-    void ObjectManager::NowSceneSet(std::vector<std::string> scene_objtag)
-    {
-        objectmanager->m_SceneTag = scene_objtag;
-    }
-
     void ObjectManager::Entry(ObjectBase* newObj)
     {
         //タグの検索をしてオブジェクト登録
@@ -41,19 +36,17 @@ namespace object
 
     void ObjectManager::ReleaseAllObj()
     {
+        //空じゃなかったらオブジェクト削除
         for (std::string& tag : objectmanager->m_SceneTag)
         {
-            //末尾からアクティブオブジェクトの削除
-            while (!objectmanager->m_Objects[tag].empty())
+            if (!objectmanager->m_Objects[tag].empty())
             {
-                //要素を参照して削除
-                delete objectmanager->m_Objects[tag].back().get();
-                objectmanager->m_Objects[tag].pop_back();
+                objectmanager->m_Objects[tag].clear();
             }
         }
     }
 
-    void ObjectManager::UpdateAllObj(float deltatime)
+    void ObjectManager::UpdateAllObj(const float deltatime)
     {
         for (std::string& tag : objectmanager->m_SceneTag)
         {
@@ -68,17 +61,6 @@ namespace object
     }
 
     void ObjectManager::DrawAllObj()
-    {
-        for (std::string& tag : objectmanager->m_SceneTag)
-        {
-            for (auto& obj : objectmanager->m_Objects[tag])
-            {
-                obj->DrawObj();
-            }
-        }
-    }
-
-    void ObjectManager::MoveAllObj()
     {
         for (std::string& tag : objectmanager->m_SceneTag)
         {
