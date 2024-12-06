@@ -32,6 +32,7 @@
     <ClCompile Include="..\SourceCode\Object\CharaObj\Avoid\Avoid.cpp" />
     <ClCompile Include="..\SourceCode\Object\CharaObj\Enemy\EnemyBase\EnemyBase.cpp" />
     <ClCompile Include="..\SourceCode\Object\CharaObj\Enemy\EnemyManager\EnemyManager.cpp" />
+    <ClCompile Include="..\SourceCode\Object\CharaObj\Enemy\Familia\Familia.cpp" />
     <ClCompile Include="..\SourceCode\Object\CharaObj\HatUi\HatUi.cpp" />
     <ClCompile Include="..\SourceCode\Object\CharaObj\LightController\LightController.cpp" />
     <ClCompile Include="..\SourceCode\Object\CharaObj\Player\Player.cpp" />
@@ -67,6 +68,7 @@
     <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\EnemyBase\EnemyLine_Tag.h" />
     <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\EnemyManager\EnemyID.h" />
     <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\EnemyManager\EnemyManager.h" />
+    <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\Familia\Familia.h" />
     <ClInclude Include="..\SourceCode\Object\CharaObj\HatUi\HatUi.h" />
     <ClInclude Include="..\SourceCode\Object\CharaObj\LightController\LightController.h" />
     <ClInclude Include="..\SourceCode\Object\CharaObj\Player\Player.h" />
