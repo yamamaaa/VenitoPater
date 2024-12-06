@@ -1,7 +1,7 @@
 #pragma once
 #include <unordered_map>
 #include"../../MouseBase/MouseBase.h"
-#include"../../StageObj/Stage/StageMove_PosTag.h"
+#include"../../StageObj/Area/AreaMove_PosTag.h"
 
 namespace object
 {
@@ -62,44 +62,44 @@ namespace object
 
         //上左右下のHitPos
         std::unordered_map<std::string, POINTS> m_HitSize{
-            {stagemove_postag.UP,{900,150}},
-            {stagemove_postag.RIGHT,{150,800}},
-            {stagemove_postag.LEFT,{150,800}},
-            {stagemove_postag.DOWN,{900,150}},
+            {areaMove_PosTag.UP,{900,150}},
+            {areaMove_PosTag.RIGHT,{150,800}},
+            {areaMove_PosTag.LEFT,{150,800}},
+            {areaMove_PosTag.DOWN,{900,150}},
         };
 
         //上左右下のMovePos
         std::unordered_map<std::string, POINTFLOAT> m_MovePos{
-            {stagemove_postag.UP,{500.0f,0.0f}},
-            {stagemove_postag.RIGHT,{0.0f,200.0f}},
-            {stagemove_postag.LEFT,{1770.0f,200.0f}},
-            {stagemove_postag.DOWN,{500.0f,930.0f}},
+            {areaMove_PosTag.UP,{500.0f,0.0f}},
+            {areaMove_PosTag.RIGHT,{0.0f,200.0f}},
+            {areaMove_PosTag.LEFT,{1770.0f,200.0f}},
+            {areaMove_PosTag.DOWN,{500.0f,930.0f}},
         };
 
         //カーソルのヒット状態
         std::unordered_map<std::string, bool> m_AreaNumber{
-            {stagemove_postag.UP,{true}},
-            {stagemove_postag.RIGHT,{true}},
-            {stagemove_postag.LEFT,{true}},
-            {stagemove_postag.DOWN,{false}},
+            {areaMove_PosTag.UP,{true}},
+            {areaMove_PosTag.RIGHT,{true}},
+            {areaMove_PosTag.LEFT,{true}},
+            {areaMove_PosTag.DOWN,{false}},
         };
 
 #ifdef DEBUG
 
         //上左右下のHitlineのカラーコード
         std::unordered_map<std::string, VECTOR> d_CollarCode{
-            {stagemove_postag.UP,{255,40,0}},
-            {stagemove_postag.RIGHT,{250,245,0}},
-            {stagemove_postag.LEFT,{53,161,107}},
-            {stagemove_postag.DOWN,{0,65,255}},
+            {areaMove_PosTag.UP,{255,40,0}},
+            {areaMove_PosTag.RIGHT,{250,245,0}},
+            {areaMove_PosTag.LEFT,{53,161,107}},
+            {areaMove_PosTag.DOWN,{0,65,255}},
         };
 
         //カーソルが当たったか
         std::unordered_map<std::string, std::string> d_CursorHit{
-            {stagemove_postag.UP,""},
-            {stagemove_postag.RIGHT,""},
-            {stagemove_postag.LEFT,""},
-            {stagemove_postag.DOWN,""},
+            {areaMove_PosTag.UP,""},
+            {areaMove_PosTag.RIGHT,""},
+            {areaMove_PosTag.LEFT,""},
+            {areaMove_PosTag.DOWN,""},
         };
 #endif
     };

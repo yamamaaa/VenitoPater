@@ -43,7 +43,7 @@ namespace object
         if (AvoidStatus::GetIsAvoid())
             return;
 
-        for (std::string& tag : StageMove_PosTagAll)
+        for (std::string& tag : AreaMove_PosTagAll)
         {
             //エリア移動できる状態か
             if (m_AreaNumber[tag] == true && m_CanMove)
@@ -85,7 +85,7 @@ namespace object
     void MoveArea::CursorHitControl()
     {
         //初期化
-        for (std::string& tag : StageMove_PosTagAll)
+        for (std::string& tag : AreaMove_PosTagAll)
         {
             m_AreaNumber[tag] = false;
         }
@@ -94,18 +94,18 @@ namespace object
         switch (AreaNumController::GetAreaNum())
         {
         case 0:
-            m_AreaNumber[stagemove_postag.LEFT] = true;
+            m_AreaNumber[areaMove_PosTag.LEFT] = true;
             break;
         case 1:
-            m_AreaNumber[stagemove_postag.UP] = true;
-            m_AreaNumber[stagemove_postag.RIGHT] = true;
-            m_AreaNumber[stagemove_postag.LEFT] = true;
+            m_AreaNumber[areaMove_PosTag.UP] = true;
+            m_AreaNumber[areaMove_PosTag.RIGHT] = true;
+            m_AreaNumber[areaMove_PosTag.LEFT] = true;
             break;
         case 2:
-            m_AreaNumber[stagemove_postag.RIGHT] = true;
+            m_AreaNumber[areaMove_PosTag.RIGHT] = true;
             break;
         case 3:
-            m_AreaNumber[stagemove_postag.DOWN] = true;
+            m_AreaNumber[areaMove_PosTag.DOWN] = true;
             break;
         }
     }
@@ -114,7 +114,7 @@ namespace object
     {
 #ifdef DEBUG
         //HitBoxの表示
-        for (std::string& tag : StageMove_PosTagAll)
+        for (std::string& tag : AreaMove_PosTagAll)
         {
             if (m_AreaNumber[tag] == true)
             {
@@ -146,19 +146,19 @@ namespace object
         int tmp = AreaNumController::GetAreaNum();
 
         //エリア番号の切り替え
-        if (tagname == stagemove_postag.UP)
+        if (tagname == areaMove_PosTag.UP)
         {
             tmp = m_CEILINGAREA_NUM;
         }
-        if (tagname == stagemove_postag.DOWN)
+        if (tagname == areaMove_PosTag.DOWN)
         {
             tmp = m_FRONTAREA_NUM;
         }
-        if (tagname == stagemove_postag.LEFT)
+        if (tagname == areaMove_PosTag.LEFT)
         {
             tmp++;
         }
-        if (tagname == stagemove_postag.RIGHT)
+        if (tagname == areaMove_PosTag.RIGHT)
         {
             tmp--;
         }
