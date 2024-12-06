@@ -64,6 +64,9 @@
     <Filter Include="ソース ファイル\Object\ObjectTag">
       <UniqueIdentifier>{4722ac50-1d2d-4d54-87b4-9dd85339f59b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\LevelController">
+      <UniqueIdentifier>{e02ab4ff-6046-44bf-a594-7f3d8412b210}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\SourceCode\Main.cpp">
@@ -104,6 +107,9 @@
     </ClCompile>
     <ClCompile Include="..\SourceCode\Object\ObjectBase\ObjectBase.cpp">
       <Filter>ソース ファイル\Object\ObjectBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\LevelController\LevelController.cpp">
+      <Filter>ソース ファイル\LevelController</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -154,6 +160,12 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\ObjectTag\ThreeDays_ObjectTag.h">
       <Filter>ソース ファイル\Object\ObjectTag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\LevelController\LevelController.h">
+      <Filter>ソース ファイル\LevelController</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\LevelController\LevelStatus.h">
+      <Filter>ソース ファイル\LevelController</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
