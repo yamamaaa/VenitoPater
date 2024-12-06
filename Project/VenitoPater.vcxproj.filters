@@ -106,6 +106,9 @@
     <ClCompile Include="..\SourceCode\Object\CharaObj\Enemy\Spero\Spero.cpp">
       <Filter>ソースコード\Object\CharaObj\Enemy\Spero</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\CharaObj\Enemy\Ira\Ira.cpp">
+      <Filter>ソースコード\Object\CharaObj\Enemy\Ira</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -233,6 +236,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\Spero\Spero.h">
       <Filter>ソースコード\Object\CharaObj\Enemy\Spero</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\Ira\Ira.h">
+      <Filter>ソースコード\Object\CharaObj\Enemy\Ira</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -367,6 +373,9 @@
     </Filter>
     <Filter Include="ソースコード\Object\CharaObj\Enemy\Spero">
       <UniqueIdentifier>{f69c8398-295a-4066-a4a8-7d68c5b9c5fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\CharaObj\Enemy\Ira">
+      <UniqueIdentifier>{a2b7f8ff-f34d-4ac1-9bb3-5e7c3cd4f57d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
