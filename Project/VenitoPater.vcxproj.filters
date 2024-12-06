@@ -112,6 +112,9 @@
     <ClCompile Include="..\SourceCode\Object\Result\GameOverUi\GameOverUi.cpp">
       <Filter>ソースコード\Object\Result\GameOverUi</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Scene\Result\GameOver\GameOver.cpp">
+      <Filter>ソースコード\Scene\Result\GameOver</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -245,6 +248,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\Result\GameOverUi\GameOverUi.h">
       <Filter>ソースコード\Object\Result\GameOverUi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Scene\Result\GameOver\GameOver.h">
+      <Filter>ソースコード\Scene\Result\GameOver</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -388,6 +394,12 @@
     </Filter>
     <Filter Include="ソースコード\Object\Result\GameOverUi">
       <UniqueIdentifier>{38e5d6ed-eb1e-4536-b56a-1ac73379cf54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Scene\Result">
+      <UniqueIdentifier>{54a982df-78df-4706-8a26-6f6c3a653b39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Scene\Result\GameOver">
+      <UniqueIdentifier>{4f23ca65-289b-4ff1-b6d3-cc6cef08ecfc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

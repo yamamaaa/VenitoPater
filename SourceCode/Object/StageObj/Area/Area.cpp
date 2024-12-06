@@ -5,7 +5,7 @@
 namespace object
 {
 	Area::Area()
-		:ObjectBase(global_objecttag.STAGE)
+		:ObjectBase(global_objecttag.AREA)
 	{
 		//ì«Ç›çûÇ›ä÷òA
 		LoadObject();
