@@ -57,6 +57,7 @@
     <ClCompile Include="..\SourceCode\Scene\SceneManager\SceneManager.cpp" />
     <ClCompile Include="..\SourceCode\Scene\ThreeDays\ThreeDays.cpp" />
     <ClCompile Include="..\SourceCode\Scene\Title\Title.cpp" />
+    <ClCompile Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Collision\Collision.h" />
@@ -104,6 +105,7 @@
     <ClInclude Include="..\SourceCode\Scene\SceneManager\SceneManager.h" />
     <ClInclude Include="..\SourceCode\Scene\ThreeDays\ThreeDays.h" />
     <ClInclude Include="..\SourceCode\Scene\Title\Title.h" />
+    <ClInclude Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

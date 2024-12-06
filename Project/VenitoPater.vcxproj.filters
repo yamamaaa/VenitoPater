@@ -115,6 +115,9 @@
     <ClCompile Include="..\SourceCode\Scene\Result\GameOver\GameOver.cpp">
       <Filter>ソースコード\Scene\Result\GameOver</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.cpp">
+      <Filter>ソースコード\Transitor\FadeTransitor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -251,6 +254,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Scene\Result\GameOver\GameOver.h">
       <Filter>ソースコード\Scene\Result\GameOver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.h">
+      <Filter>ソースコード\Transitor\FadeTransitor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -400,6 +406,12 @@
     </Filter>
     <Filter Include="ソースコード\Scene\Result\GameOver">
       <UniqueIdentifier>{4f23ca65-289b-4ff1-b6d3-cc6cef08ecfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Transitor">
+      <UniqueIdentifier>{e06e67dd-572b-4884-93e7-0d54f6ea05ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Transitor\FadeTransitor">
+      <UniqueIdentifier>{a93f5aa2-f13e-4f14-bc4e-64c206d2a6de}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
