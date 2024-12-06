@@ -1,0 +1,29 @@
+#include "BackGround.h"
+#include "../../ObjectTag/Result_ObjectTag.h"
+
+namespace object
+{
+    BackGround::BackGround()
+        :ObjectBase(result_objecttag.BACKGROUND)
+    {
+        //ì«Ç›çûÇ›ä÷òA
+        LoadObject();
+    }
+
+    BackGround::~BackGround()
+    {
+        //èàóùÇ»Çµ
+    }
+
+    void BackGround::LoadObject()
+    {
+        m_ObjPos = { 0,0 };
+        m_ObjHandle= LoadGraph("../Asset/image/result/gameover/background.png");
+    }
+
+    void BackGround::DrawObj()
+    {
+        //âÊëúÇÃï\é¶
+        DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
+    }
+}
