@@ -96,11 +96,11 @@
     <ClCompile Include="..\SourceCode\JsonMaster\JsonManager\JsonManager.cpp">
       <Filter>ソース ファイル\JsonMaster\JsonManager</Filter>
     </ClCompile>
-    <ClCompile Include="..\SourceCode\Object\ObjectBase\ObjectBase.cpp">
-      <Filter>ソース ファイル\Object</Filter>
-    </ClCompile>
     <ClCompile Include="..\SourceCode\Object\ObjectManager\ObjectManager.cpp">
       <Filter>ソース ファイル\Object\ObjectManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\ObjectBase\ObjectBase.cpp">
+      <Filter>ソース ファイル\Object\ObjectBase</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -135,9 +135,12 @@
       <Filter>ソース ファイル\JsonMaster\JsonManager</Filter>
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\ObjectBase\ObjectBase.h">
-      <Filter>ソース ファイル\Object</Filter>
+      <Filter>ソース ファイル\Object\ObjectBase</Filter>
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\ObjectManager\ObjectManager.h">
+      <Filter>ソース ファイル\Object\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectManager\GameStatus.h">
       <Filter>ソース ファイル\Object\ObjectManager</Filter>
     </ClInclude>
   </ItemGroup>
