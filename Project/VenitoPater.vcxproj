@@ -42,6 +42,7 @@
     <ClCompile Include="..\SourceCode\Object\StageObj\ClockWork\RPMController\RPMController.cpp" />
     <ClCompile Include="..\SourceCode\Object\StageObj\Item\Item.cpp" />
     <ClCompile Include="..\SourceCode\Object\StageObj\MoveArea\MoveArea.cpp" />
+    <ClCompile Include="..\SourceCode\Object\StageObj\Norm\Norm.cpp" />
     <ClCompile Include="..\SourceCode\Object\StageObj\WarningUi\WarningUi.cpp" />
     <ClCompile Include="..\SourceCode\Scene\SceneBase\SceneBase.cpp" />
     <ClCompile Include="..\SourceCode\Scene\SceneManager\SceneManager.cpp" />
@@ -77,6 +78,7 @@
     <ClInclude Include="..\SourceCode\Object\StageObj\ClockWork\RPMController\RPMController.h" />
     <ClInclude Include="..\SourceCode\Object\StageObj\Item\Item.h" />
     <ClInclude Include="..\SourceCode\Object\StageObj\MoveArea\MoveArea.h" />
+    <ClInclude Include="..\SourceCode\Object\StageObj\Norm\Norm.h" />
     <ClInclude Include="..\SourceCode\Object\StageObj\WarningUi\WarningUi.h" />
     <ClInclude Include="..\SourceCode\Scene\SceneBase\SceneBase.h" />
     <ClInclude Include="..\SourceCode\Scene\SceneManager\SceneManager.h" />

@@ -1,9 +1,9 @@
 ﻿#include <ctime>
 
 #include "Item.h"
-
 #include "../../ObjectTag/Global_ObjectTag.h"
 #include "../AreaNumController/AreaNumController.h"
+#include "../Norm/Norm.h"
 
 namespace object
 {
