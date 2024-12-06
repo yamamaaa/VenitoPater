@@ -89,6 +89,9 @@
     <ClCompile Include="..\SourceCode\Object\CharaObj\Enemy\EnemyBase\EnemyBase.cpp">
       <Filter>ソースコード\Object\CharaObj\Enemy\EnemyBase</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\CharaObj\Enemy\EnemyManager\EnemyManager.cpp">
+      <Filter>ソースコード\Object\CharaObj\Enemy\EnemyManager</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -198,6 +201,12 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\EnemyBase\EnemyLine_Tag.h">
       <Filter>ソースコード\Object\CharaObj\Enemy\EnemyBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\EnemyManager\EnemyID.h">
+      <Filter>ソースコード\Object\CharaObj\Enemy\EnemyManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\EnemyManager\EnemyManager.h">
+      <Filter>ソースコード\Object\CharaObj\Enemy\EnemyManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -317,6 +326,9 @@
     </Filter>
     <Filter Include="ソースコード\Object\CharaObj\Enemy\EnemyBase">
       <UniqueIdentifier>{d34cb788-f569-43fa-985b-13fbf78f4b96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\CharaObj\Enemy\EnemyManager">
+      <UniqueIdentifier>{4e4b25fc-ef92-4d2e-90a0-ec287ae15265}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
