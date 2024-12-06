@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="..\SourceCode\Main.cpp" />
     <ClCompile Include="..\SourceCode\Fps\Fps.cpp">
       <Filter>ソースコード\FPS</Filter>
     </ClCompile>
@@ -91,6 +90,12 @@
     </ClCompile>
     <ClCompile Include="..\SourceCode\Object\CharaObj\Enemy\EnemyManager\EnemyManager.cpp">
       <Filter>ソースコード\Object\CharaObj\Enemy\EnemyManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Main.cpp">
+      <Filter>ソースコード</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\CharaObj\Enemy\Familia\Familia.cpp">
+      <Filter>ソースコード\Object\CharaObj\Enemy\Familia</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -207,6 +212,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\EnemyManager\EnemyManager.h">
       <Filter>ソースコード\Object\CharaObj\Enemy\EnemyManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\Familia\Familia.h">
+      <Filter>ソースコード\Object\CharaObj\Enemy\Familia</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -329,6 +337,9 @@
     </Filter>
     <Filter Include="ソースコード\Object\CharaObj\Enemy\EnemyManager">
       <UniqueIdentifier>{4e4b25fc-ef92-4d2e-90a0-ec287ae15265}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\CharaObj\Enemy\Familia">
+      <UniqueIdentifier>{0b5add6a-d3c5-4cf2-b9af-1acf1130d17b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
