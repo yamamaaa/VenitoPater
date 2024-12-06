@@ -32,6 +32,7 @@
     <ClCompile Include="..\SourceCode\Object\MouseBase\MouseBase.cpp" />
     <ClCompile Include="..\SourceCode\Object\ObjectBase\ObjectBase.cpp" />
     <ClCompile Include="..\SourceCode\Object\ObjectManager\ObjectManager.cpp" />
+    <ClCompile Include="..\SourceCode\Object\StageObj\AreaNumController\AreaNumController.cpp" />
     <ClCompile Include="..\SourceCode\Scene\SceneBase\SceneBase.cpp" />
     <ClCompile Include="..\SourceCode\Scene\SceneManager\SceneManager.cpp" />
     <ClCompile Include="..\SourceCode\Scene\ThreeDays\ThreeDays.cpp" />
@@ -55,6 +56,7 @@
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Global_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Result_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\ThreeDays_ObjectTag.h" />
+    <ClInclude Include="..\SourceCode\Object\StageObj\AreaNumController\AreaNumController.h" />
     <ClInclude Include="..\SourceCode\Scene\SceneBase\SceneBase.h" />
     <ClInclude Include="..\SourceCode\Scene\SceneManager\SceneManager.h" />
     <ClInclude Include="..\SourceCode\Scene\ThreeDays\ThreeDays.h" />
