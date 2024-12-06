@@ -100,6 +100,9 @@
     <ClCompile Include="..\SourceCode\Object\CharaObj\Enemy\Memini\Memini.cpp">
       <Filter>ソースコード\Object\CharaObj\Enemy\Memini</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\CharaObj\Enemy\Nil\Nil.cpp">
+      <Filter>ソースコード\Object\CharaObj\Enemy\Nil</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -221,6 +224,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\Memini\Memini.h">
       <Filter>ソースコード\Object\CharaObj\Enemy\Memini</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\Nil\Nil.h">
+      <Filter>ソースコード\Object\CharaObj\Enemy\Nil</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -349,6 +355,9 @@
     </Filter>
     <Filter Include="ソースコード\Object\CharaObj\Enemy\Memini">
       <UniqueIdentifier>{81498d45-9ad6-4ded-83b0-9d9aa9628bd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\CharaObj\Enemy\Nil">
+      <UniqueIdentifier>{e1a67b71-9fdd-41d9-b029-8976782bffa0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
