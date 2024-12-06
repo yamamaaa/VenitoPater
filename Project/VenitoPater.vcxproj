@@ -43,6 +43,7 @@
     <ClCompile Include="..\SourceCode\Object\MouseBase\MouseBase.cpp" />
     <ClCompile Include="..\SourceCode\Object\ObjectBase\ObjectBase.cpp" />
     <ClCompile Include="..\SourceCode\Object\ObjectManager\ObjectManager.cpp" />
+    <ClCompile Include="..\SourceCode\Object\Result\GameOverUi\GameOverUi.cpp" />
     <ClCompile Include="..\SourceCode\Object\StageObj\AreaNumController\AreaNumController.cpp" />
     <ClCompile Include="..\SourceCode\Object\StageObj\Area\Area.cpp" />
     <ClCompile Include="..\SourceCode\Object\StageObj\ClockWork\ClockWork\ClockWork.cpp" />
@@ -87,6 +88,7 @@
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Global_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Result_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\ThreeDays_ObjectTag.h" />
+    <ClInclude Include="..\SourceCode\Object\Result\GameOverUi\GameOverUi.h" />
     <ClInclude Include="..\SourceCode\Object\StageObj\AreaNumController\AreaNumController.h" />
     <ClInclude Include="..\SourceCode\Object\StageObj\Area\Area.h" />
     <ClInclude Include="..\SourceCode\Object\StageObj\Area\AreaMove_PosTag.h" />
