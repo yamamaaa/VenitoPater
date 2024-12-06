@@ -9,7 +9,7 @@ namespace objecttag
     /// </summary>
     static struct Global_ObjectTag
     {
-        std::string STAGE = "stage";
+        std::string AREA = "area";
         std::string MOVEAREA = "movearea";
         std::string ClOCKWORK = "clockwork";
         std::string ITEM = "item";
@@ -28,7 +28,7 @@ namespace objecttag
     /// </summary>
     static std::vector<std::string>Global_ObjectTagAll
     {
-        global_objecttag.STAGE,
+        global_objecttag.AREA,
         global_objecttag.MOVEAREA,
         global_objecttag.ClOCKWORK,
         global_objecttag.ITEM,

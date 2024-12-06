@@ -9,7 +9,7 @@ namespace objecttag
     /// </summary>
     static struct ThreeDays_ObjTag
     {
-        std::string STAGE = "stage";
+        std::string AREA = "area";
         std::string MOVEAREA = "movearea";
         std::string ClOCKWORK = "clockwork";
         std::string ITEM = "item";
@@ -28,7 +28,7 @@ namespace objecttag
     /// </summary>
     static std::vector<std::string>ThreeDays_ObjTagAll
     {
-        threedays_objtag.STAGE,
+        threedays_objtag.AREA,
         threedays_objtag.MOVEAREA,
         threedays_objtag.ClOCKWORK,
         threedays_objtag.ITEM,
