@@ -83,6 +83,9 @@
     <ClCompile Include="..\SourceCode\Object\CharaObj\LightController\LightController.cpp">
       <Filter>ソースコード\Object\CharaObj\LightController</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\StageObj\Norm\Norm.cpp">
+      <Filter>ソースコード\Object\StageObj\Norm</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -183,6 +186,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\CharaObj\LightController\LightController.h">
       <Filter>ソースコード\Object\CharaObj\LightController</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\StageObj\Norm\Norm.h">
+      <Filter>ソースコード\Object\StageObj\Norm</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -293,6 +299,9 @@
     </Filter>
     <Filter Include="ソースコード\Object\CharaObj\LightController">
       <UniqueIdentifier>{f25751d8-5106-4a83-bba8-ddd806247b25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StageObj\Norm">
+      <UniqueIdentifier>{ac1f4139-6f97-4df5-84f5-5fe481075eff}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
