@@ -59,6 +59,9 @@
     <ClCompile Include="..\SourceCode\Object\StageObj\Item\Item.cpp">
       <Filter>ソースコード\Object\StageObj\Item</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\StageObj\Area\Area.cpp">
+      <Filter>ソースコード\Object\StageObj\Area</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -132,6 +135,12 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\StageObj\Item\Item.h">
       <Filter>ソースコード\Object\StageObj\Item</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\StageObj\Area\Area.h">
+      <Filter>ソースコード\Object\StageObj\Area</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\StageObj\Area\AreaMove_PosTag.h">
+      <Filter>ソースコード\Object\StageObj\Area</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -215,6 +224,9 @@
     </Filter>
     <Filter Include="ソースコード\Object\StageObj\Item">
       <UniqueIdentifier>{2da624be-ebbd-4b25-ab05-ca2636616973}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StageObj\Area">
+      <UniqueIdentifier>{a504b461-f384-4d4d-801d-3c055fe6037c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
