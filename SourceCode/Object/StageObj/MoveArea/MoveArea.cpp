@@ -132,10 +132,10 @@ namespace object
         DrawFormatString(0, 140, GetColor(255, 255, 255), "緑:右");
         DrawFormatString(0, 160, GetColor(255, 255, 255), "青:下");
 
-        DrawFormatString(0, 180, GetColor(255, 255, 255), "上:%s", d_CursorHit[stagemove_postag.UP].c_str());
-        DrawFormatString(0, 200, GetColor(255, 255, 255), "左:%s", d_CursorHit[stagemove_postag.RIGHT].c_str());
-        DrawFormatString(0, 220, GetColor(255, 255, 255), "右:%s", d_CursorHit[stagemove_postag.LEFT].c_str());
-        DrawFormatString(0, 240, GetColor(255, 255, 255), "下:%s", d_CursorHit[stagemove_postag.DOWN].c_str());
+        DrawFormatString(0, 180, GetColor(255, 255, 255), "上:%s", d_CursorHit[areaMove_PosTag.UP].c_str());
+        DrawFormatString(0, 200, GetColor(255, 255, 255), "左:%s", d_CursorHit[areaMove_PosTag.RIGHT].c_str());
+        DrawFormatString(0, 220, GetColor(255, 255, 255), "右:%s", d_CursorHit[areaMove_PosTag.LEFT].c_str());
+        DrawFormatString(0, 240, GetColor(255, 255, 255), "下:%s", d_CursorHit[areaMove_PosTag.DOWN].c_str());
         DrawFormatString(0, 320, GetColor(255, 255, 255), "表示中エリア:%d", AreaNumController::GetAreaNum());
         DrawFormatString(300, 320, GetColor(255, 255, 255), "表示カウント:%f", m_MoveCount);
 #endif

@@ -7,7 +7,7 @@
 #include"../../ThreeDays/ThreeDays.h"
 #include"../../Title/Title.h"
 
-#include"../../../Object/ResultUi/ResultUi.h"
+#include"../../../Object/Result/GameOverUi/GameOverUi.h"
 
 namespace scene
 {
@@ -17,7 +17,7 @@ namespace scene
         SetDrawBright(255, 255, 255);
         object::ObjectManager::SetNowSceneName("gameover");
         object::ObjectManager::NowSceneSet(objecttag::Result_ObjectTagAll);
-        object::ObjectManager::Entry(new object::ResultUi);
+        object::ObjectManager::Entry(new object::GameOverUi);
     }
 
     GameOver::~GameOver()
