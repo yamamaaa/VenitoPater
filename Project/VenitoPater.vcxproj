@@ -37,6 +37,8 @@
     <ClCompile Include="..\SourceCode\Object\ObjectManager\ObjectManager.cpp" />
     <ClCompile Include="..\SourceCode\Object\StageObj\AreaNumController\AreaNumController.cpp" />
     <ClCompile Include="..\SourceCode\Object\StageObj\Area\Area.cpp" />
+    <ClCompile Include="..\SourceCode\Object\StageObj\ClockWork\ClockWork\ClockWork.cpp" />
+    <ClCompile Include="..\SourceCode\Object\StageObj\ClockWork\RPMController\RPMController.cpp" />
     <ClCompile Include="..\SourceCode\Object\StageObj\Item\Item.cpp" />
     <ClCompile Include="..\SourceCode\Object\StageObj\MoveArea\MoveArea.cpp" />
     <ClCompile Include="..\SourceCode\Scene\SceneBase\SceneBase.cpp" />
@@ -68,6 +70,8 @@
     <ClInclude Include="..\SourceCode\Object\StageObj\AreaNumController\AreaNumController.h" />
     <ClInclude Include="..\SourceCode\Object\StageObj\Area\Area.h" />
     <ClInclude Include="..\SourceCode\Object\StageObj\Area\AreaMove_PosTag.h" />
+    <ClInclude Include="..\SourceCode\Object\StageObj\ClockWork\ClockWork\ClockWork.h" />
+    <ClInclude Include="..\SourceCode\Object\StageObj\ClockWork\RPMController\RPMController.h" />
     <ClInclude Include="..\SourceCode\Object\StageObj\Item\Item.h" />
     <ClInclude Include="..\SourceCode\Object\StageObj\MoveArea\MoveArea.h" />
     <ClInclude Include="..\SourceCode\Scene\SceneBase\SceneBase.h" />
