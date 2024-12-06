@@ -65,6 +65,9 @@
     <ClCompile Include="..\SourceCode\Object\CharaObj\AvoidStatus\AvoidStatus.cpp">
       <Filter>ソースコード\Object\CharaObj\AvoidStatus</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\CharaObj\Avoid\Avoid.cpp">
+      <Filter>ソースコード\Object\CharaObj\Avoid</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -147,6 +150,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\CharaObj\AvoidStatus\AvoidStatus.h">
       <Filter>ソースコード\Object\CharaObj\AvoidStatus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\CharaObj\Avoid\Avoid.h">
+      <Filter>ソースコード\Object\CharaObj\Avoid</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -236,6 +242,9 @@
     </Filter>
     <Filter Include="ソースコード\Object\CharaObj\AvoidStatus">
       <UniqueIdentifier>{0b405da2-df31-4d8d-a6ed-e6ff14210a58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\CharaObj\Avoid">
+      <UniqueIdentifier>{4352ef9b-3cfd-4b40-ae86-2380df9b35cb}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
