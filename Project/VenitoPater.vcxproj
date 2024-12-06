@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\SourceCode\Collision\Collision.cpp" />
     <ClCompile Include="..\SourceCode\Fps\Fps.cpp" />
     <ClCompile Include="..\SourceCode\GameSystem\GameManager\GameManager.cpp" />
     <ClCompile Include="..\SourceCode\GameSystem\GameSetting\GameSetting.cpp" />
@@ -37,6 +38,7 @@
     <ClCompile Include="..\SourceCode\Scene\Title\Title.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\SourceCode\Collision\Collision.h" />
     <ClInclude Include="..\SourceCode\Fps\Fps.h" />
     <ClInclude Include="..\SourceCode\GameSystem\GameManager\GameManager.h" />
     <ClInclude Include="..\SourceCode\GameSystem\GameSetting\GameSetting.h" />

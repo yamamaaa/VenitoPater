@@ -47,6 +47,9 @@
     <ClCompile Include="..\SourceCode\Object\CharaObj\Player\Player.cpp">
       <Filter>ソースコード\Object\CharaObj\Player</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Collision\Collision.cpp">
+      <Filter>ソースコード\Collision</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -108,6 +111,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\CharaObj\Player\Player.h">
       <Filter>ソースコード\Object\CharaObj\Player</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Collision\Collision.h">
+      <Filter>ソースコード\Collision</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -176,6 +182,9 @@
     </Filter>
     <Filter Include="ソースコード\Object\CharaObj\Player">
       <UniqueIdentifier>{17415fd4-ada9-4894-8b41-9d431ffa4141}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Collision">
+      <UniqueIdentifier>{2bf63635-50d1-4b47-8df7-ca907a2b357d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
