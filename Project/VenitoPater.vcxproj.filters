@@ -53,6 +53,9 @@
     <ClCompile Include="..\SourceCode\Object\StageObj\AreaNumController\AreaNumController.cpp">
       <Filter>ソースコード\Object\StageObj\AreaNumController</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\StageObj\MoveArea\MoveArea.cpp">
+      <Filter>ソースコード\Object\StageObj\MoveArea</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -120,6 +123,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\StageObj\AreaNumController\AreaNumController.h">
       <Filter>ソースコード\Object\StageObj\AreaNumController</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\StageObj\MoveArea\MoveArea.h">
+      <Filter>ソースコード\Object\StageObj\MoveArea</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -197,6 +203,9 @@
     </Filter>
     <Filter Include="ソースコード\Object\StageObj\AreaNumController">
       <UniqueIdentifier>{2bb104ab-0540-4a99-9a8e-663de4ea44b8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StageObj\MoveArea">
+      <UniqueIdentifier>{87ca7c64-27ea-4b59-a868-ee0ce5664a83}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
