@@ -68,6 +68,9 @@
     <ClCompile Include="..\SourceCode\Object\CharaObj\Avoid\Avoid.cpp">
       <Filter>ソースコード\Object\CharaObj\Avoid</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\CharaObj\HatUi\HatUi.cpp">
+      <Filter>ソースコード\Object\CharaObj\HatUi</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -153,6 +156,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\CharaObj\Avoid\Avoid.h">
       <Filter>ソースコード\Object\CharaObj\Avoid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\CharaObj\HatUi\HatUi.h">
+      <Filter>ソースコード\Object\CharaObj\HatUi</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -245,6 +251,9 @@
     </Filter>
     <Filter Include="ソースコード\Object\CharaObj\Avoid">
       <UniqueIdentifier>{4352ef9b-3cfd-4b40-ae86-2380df9b35cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\CharaObj\HatUi">
+      <UniqueIdentifier>{db3e61c9-f456-4caf-bc68-757f869204a0}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
