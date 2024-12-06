@@ -61,6 +61,9 @@
     <Filter Include="ソース ファイル\Object\ObjectManager">
       <UniqueIdentifier>{57df2535-c5da-455e-b389-c792136f883b}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Object\ObjectTag">
+      <UniqueIdentifier>{4722ac50-1d2d-4d54-87b4-9dd85339f59b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\SourceCode\Main.cpp">
@@ -142,6 +145,15 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\ObjectManager\GameStatus.h">
       <Filter>ソース ファイル\Object\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\Global_ObjectTag.h">
+      <Filter>ソース ファイル\Object\ObjectTag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\Result_ObjectTag.h">
+      <Filter>ソース ファイル\Object\ObjectTag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\ThreeDays_ObjectTag.h">
+      <Filter>ソース ファイル\Object\ObjectTag</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
