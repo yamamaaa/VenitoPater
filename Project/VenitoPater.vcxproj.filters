@@ -86,6 +86,9 @@
     <ClCompile Include="..\SourceCode\Object\StageObj\Norm\Norm.cpp">
       <Filter>ソースコード\Object\StageObj\Norm</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\CharaObj\Enemy\EnemyBase\EnemyBase.cpp">
+      <Filter>ソースコード\Object\CharaObj\Enemy\EnemyBase</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -189,6 +192,12 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\StageObj\Norm\Norm.h">
       <Filter>ソースコード\Object\StageObj\Norm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\EnemyBase\EnemyBase.h">
+      <Filter>ソースコード\Object\CharaObj\Enemy\EnemyBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\EnemyBase\EnemyLine_Tag.h">
+      <Filter>ソースコード\Object\CharaObj\Enemy\EnemyBase</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -302,6 +311,12 @@
     </Filter>
     <Filter Include="ソースコード\Object\StageObj\Norm">
       <UniqueIdentifier>{ac1f4139-6f97-4df5-84f5-5fe481075eff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\CharaObj\Enemy">
+      <UniqueIdentifier>{b64c46f9-ce72-43c9-b9ff-40c33656a2da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\CharaObj\Enemy\EnemyBase">
+      <UniqueIdentifier>{d34cb788-f569-43fa-985b-13fbf78f4b96}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
