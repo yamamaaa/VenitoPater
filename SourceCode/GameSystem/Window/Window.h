@@ -25,7 +25,7 @@ namespace GameSystem
         /// ウィンドウサイズ取得処理
         /// </summary>
         /// <returns>ウィンドウサイズ</returns>
-        static const VECTOR GetWindowSize() { return window->WINDOW_SIZE; }
+        static const POINTS GetWindowSize() { return window->WINDOW_SIZE; }
 
     private:
 
@@ -34,7 +34,7 @@ namespace GameSystem
         /// </summary>
         Window();
 
-        const VECTOR WINDOW_SIZE = VGet(1920, 1080, 0);     //ウィンドウサイズ
+        const POINTS WINDOW_SIZE = { 1920, 1080 };     //ウィンドウサイズ
         static std::unique_ptr<Window> window;              //自身の実体
         const int COLOR_BIT = 16;                           //カラービット
     };

@@ -13,7 +13,7 @@ namespace scene
     Title::Title()
         :SceneBase()
     {
-        //ˆ—‚È‚µ
+        LevelController::Initialize();
     }
 
     Title::~Title()

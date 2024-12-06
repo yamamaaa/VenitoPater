@@ -3,7 +3,7 @@
 #include "../../../ObjectManager/ObjectManager.h"
 #include "../../../StageObj/WarningUi/WarningUi.h"
 #include "../../AreaNumController/AreaNumController.h"
-#include "../ClockWork/RPMController/RPMController.h"
+#include "../../ClockWork/RPMController/RPMController.h"
 
 namespace object
 {
