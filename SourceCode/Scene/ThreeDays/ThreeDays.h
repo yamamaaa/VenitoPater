@@ -1,4 +1,5 @@
 #pragma once
+#include<string>
 #include"../SceneBase/SceneBase.h"
 
 namespace scene

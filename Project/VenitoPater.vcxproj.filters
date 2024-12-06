@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="..\SourceCode\Main.cpp" />
     <ClCompile Include="..\SourceCode\Fps\Fps.cpp">
       <Filter>ソースコード\FPS</Filter>
     </ClCompile>
@@ -67,6 +66,57 @@
     </ClCompile>
     <ClCompile Include="..\SourceCode\Object\CharaObj\Avoid\Avoid.cpp">
       <Filter>ソースコード\Object\CharaObj\Avoid</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\CharaObj\HatUi\HatUi.cpp">
+      <Filter>ソースコード\Object\CharaObj\HatUi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\StageObj\ClockWork\ClockWork\ClockWork.cpp">
+      <Filter>ソースコード\Object\StageObj\ClockWork\ClockWork</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\StageObj\ClockWork\RPMController\RPMController.cpp">
+      <Filter>ソースコード\Object\StageObj\ClockWork\RPMController</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\StageObj\WarningUi\WarningUi.cpp">
+      <Filter>ソースコード\Object\StageObj\WarningUi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\CharaObj\LightController\LightController.cpp">
+      <Filter>ソースコード\Object\CharaObj\LightController</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\StageObj\Norm\Norm.cpp">
+      <Filter>ソースコード\Object\StageObj\Norm</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\CharaObj\Enemy\EnemyBase\EnemyBase.cpp">
+      <Filter>ソースコード\Object\CharaObj\Enemy\EnemyBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\CharaObj\Enemy\EnemyManager\EnemyManager.cpp">
+      <Filter>ソースコード\Object\CharaObj\Enemy\EnemyManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Main.cpp">
+      <Filter>ソースコード</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\CharaObj\Enemy\Familia\Familia.cpp">
+      <Filter>ソースコード\Object\CharaObj\Enemy\Familia</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\CharaObj\Enemy\Memini\Memini.cpp">
+      <Filter>ソースコード\Object\CharaObj\Enemy\Memini</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\CharaObj\Enemy\Nil\Nil.cpp">
+      <Filter>ソースコード\Object\CharaObj\Enemy\Nil</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\CharaObj\Enemy\Spero\Spero.cpp">
+      <Filter>ソースコード\Object\CharaObj\Enemy\Spero</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\CharaObj\Enemy\Ira\Ira.cpp">
+      <Filter>ソースコード\Object\CharaObj\Enemy\Ira</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\Result\GameOverUi\GameOverUi.cpp">
+      <Filter>ソースコード\Object\Result\GameOverUi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Scene\Result\GameOver\GameOver.cpp">
+      <Filter>ソースコード\Scene\Result\GameOver</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.cpp">
+      <Filter>ソースコード\Transitor\FadeTransitor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -153,6 +203,60 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\CharaObj\Avoid\Avoid.h">
       <Filter>ソースコード\Object\CharaObj\Avoid</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\CharaObj\HatUi\HatUi.h">
+      <Filter>ソースコード\Object\CharaObj\HatUi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\StageObj\ClockWork\ClockWork\ClockWork.h">
+      <Filter>ソースコード\Object\StageObj\ClockWork\ClockWork</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\StageObj\ClockWork\RPMController\RPMController.h">
+      <Filter>ソースコード\Object\StageObj\ClockWork\RPMController</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\StageObj\WarningUi\WarningUi.h">
+      <Filter>ソースコード\Object\StageObj\WarningUi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\CharaObj\LightController\LightController.h">
+      <Filter>ソースコード\Object\CharaObj\LightController</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\StageObj\Norm\Norm.h">
+      <Filter>ソースコード\Object\StageObj\Norm</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\EnemyBase\EnemyBase.h">
+      <Filter>ソースコード\Object\CharaObj\Enemy\EnemyBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\EnemyBase\EnemyLine_Tag.h">
+      <Filter>ソースコード\Object\CharaObj\Enemy\EnemyBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\EnemyManager\EnemyID.h">
+      <Filter>ソースコード\Object\CharaObj\Enemy\EnemyManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\EnemyManager\EnemyManager.h">
+      <Filter>ソースコード\Object\CharaObj\Enemy\EnemyManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\Familia\Familia.h">
+      <Filter>ソースコード\Object\CharaObj\Enemy\Familia</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\Memini\Memini.h">
+      <Filter>ソースコード\Object\CharaObj\Enemy\Memini</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\Nil\Nil.h">
+      <Filter>ソースコード\Object\CharaObj\Enemy\Nil</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\Spero\Spero.h">
+      <Filter>ソースコード\Object\CharaObj\Enemy\Spero</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\Ira\Ira.h">
+      <Filter>ソースコード\Object\CharaObj\Enemy\Ira</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\Result\GameOverUi\GameOverUi.h">
+      <Filter>ソースコード\Object\Result\GameOverUi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Scene\Result\GameOver\GameOver.h">
+      <Filter>ソースコード\Scene\Result\GameOver</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.h">
+      <Filter>ソースコード\Transitor\FadeTransitor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -245,6 +349,69 @@
     </Filter>
     <Filter Include="ソースコード\Object\CharaObj\Avoid">
       <UniqueIdentifier>{4352ef9b-3cfd-4b40-ae86-2380df9b35cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\CharaObj\HatUi">
+      <UniqueIdentifier>{db3e61c9-f456-4caf-bc68-757f869204a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StageObj\ClockWork">
+      <UniqueIdentifier>{84af56d7-23b1-426e-b531-779f78a1feec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StageObj\ClockWork\ClockWork">
+      <UniqueIdentifier>{85db2f17-b60d-4625-b713-e56f1448bf6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StageObj\ClockWork\RPMController">
+      <UniqueIdentifier>{5650a5ef-843d-4de9-8bc2-1f54085b9839}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StageObj\WarningUi">
+      <UniqueIdentifier>{4714c943-0675-488d-9722-3adecca36505}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\CharaObj\LightController">
+      <UniqueIdentifier>{f25751d8-5106-4a83-bba8-ddd806247b25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StageObj\Norm">
+      <UniqueIdentifier>{ac1f4139-6f97-4df5-84f5-5fe481075eff}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\CharaObj\Enemy">
+      <UniqueIdentifier>{b64c46f9-ce72-43c9-b9ff-40c33656a2da}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\CharaObj\Enemy\EnemyBase">
+      <UniqueIdentifier>{d34cb788-f569-43fa-985b-13fbf78f4b96}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\CharaObj\Enemy\EnemyManager">
+      <UniqueIdentifier>{4e4b25fc-ef92-4d2e-90a0-ec287ae15265}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\CharaObj\Enemy\Familia">
+      <UniqueIdentifier>{0b5add6a-d3c5-4cf2-b9af-1acf1130d17b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\CharaObj\Enemy\Memini">
+      <UniqueIdentifier>{81498d45-9ad6-4ded-83b0-9d9aa9628bd5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\CharaObj\Enemy\Nil">
+      <UniqueIdentifier>{e1a67b71-9fdd-41d9-b029-8976782bffa0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\CharaObj\Enemy\Spero">
+      <UniqueIdentifier>{f69c8398-295a-4066-a4a8-7d68c5b9c5fa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\CharaObj\Enemy\Ira">
+      <UniqueIdentifier>{a2b7f8ff-f34d-4ac1-9bb3-5e7c3cd4f57d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\Result">
+      <UniqueIdentifier>{63b8c6d3-74ab-42d0-9e4e-be1a8da159cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\Result\GameOverUi">
+      <UniqueIdentifier>{38e5d6ed-eb1e-4536-b56a-1ac73379cf54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Scene\Result">
+      <UniqueIdentifier>{54a982df-78df-4706-8a26-6f6c3a653b39}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Scene\Result\GameOver">
+      <UniqueIdentifier>{4f23ca65-289b-4ff1-b6d3-cc6cef08ecfc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Transitor">
+      <UniqueIdentifier>{e06e67dd-572b-4884-93e7-0d54f6ea05ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Transitor\FadeTransitor">
+      <UniqueIdentifier>{a93f5aa2-f13e-4f14-bc4e-64c206d2a6de}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

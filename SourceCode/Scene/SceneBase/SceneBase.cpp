@@ -3,11 +3,13 @@
 namespace scene
 {
     SceneBase::SceneBase()
+        :fade_transitor (new transitor::FadeTransitor)
     {
         //ˆ—‚È‚µ
     }
     SceneBase::~SceneBase()
     {
-        //ˆ—‚È‚µ
+        //ƒƒ‚ƒŠ‚Ì‰ğ•ú
+        delete fade_transitor;
     }
 }
