@@ -71,6 +71,12 @@
     <ClCompile Include="..\SourceCode\Object\CharaObj\HatUi\HatUi.cpp">
       <Filter>ソースコード\Object\CharaObj\HatUi</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\StageObj\ClockWork\ClockWork\ClockWork.cpp">
+      <Filter>ソースコード\Object\StageObj\ClockWork\ClockWork</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\StageObj\ClockWork\RPMController\RPMController.cpp">
+      <Filter>ソースコード\Object\StageObj\ClockWork\RPMController</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -159,6 +165,12 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\CharaObj\HatUi\HatUi.h">
       <Filter>ソースコード\Object\CharaObj\HatUi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\StageObj\ClockWork\ClockWork\ClockWork.h">
+      <Filter>ソースコード\Object\StageObj\ClockWork\ClockWork</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\StageObj\ClockWork\RPMController\RPMController.h">
+      <Filter>ソースコード\Object\StageObj\ClockWork\RPMController</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -254,6 +266,15 @@
     </Filter>
     <Filter Include="ソースコード\Object\CharaObj\HatUi">
       <UniqueIdentifier>{db3e61c9-f456-4caf-bc68-757f869204a0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StageObj\ClockWork">
+      <UniqueIdentifier>{84af56d7-23b1-426e-b531-779f78a1feec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StageObj\ClockWork\ClockWork">
+      <UniqueIdentifier>{85db2f17-b60d-4625-b713-e56f1448bf6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StageObj\ClockWork\RPMController">
+      <UniqueIdentifier>{5650a5ef-843d-4de9-8bc2-1f54085b9839}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
