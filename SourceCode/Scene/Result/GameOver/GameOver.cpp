@@ -7,6 +7,7 @@
 #include"../../ThreeDays/ThreeDays.h"
 #include"../../Title/Title.h"
 
+#include"../../../Object/Result/BackGround/BackGround.h"
 #include"../../../Object/Result/GameOverUi/GameOverUi.h"
 
 namespace scene
@@ -15,13 +16,17 @@ namespace scene
         :SceneBase()
     {
         SetDrawBright(255, 255, 255);
+
         object::ObjectManager::SetNowSceneName("gameover");
         object::ObjectManager::NowSceneSet(objecttag::Result_ObjectTagAll);
+
+        object::ObjectManager::Entry(new object::BackGround);
         object::ObjectManager::Entry(new object::GameOverUi);
     }
 
     GameOver::~GameOver()
     {
+        //èàóùÇ»Çµ
     }
 
     SceneBase* GameOver::UpdateScene(const float deltaTime)

@@ -118,6 +118,9 @@
     <ClCompile Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.cpp">
       <Filter>ソースコード\Transitor\FadeTransitor</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\Result\BackGround\BackGround.cpp">
+      <Filter>ソースコード\Object\Result\BackGround</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -257,6 +260,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.h">
       <Filter>ソースコード\Transitor\FadeTransitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\Result\BackGround\BackGround.h">
+      <Filter>ソースコード\Object\Result\BackGround</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -412,6 +418,9 @@
     </Filter>
     <Filter Include="ソースコード\Transitor\FadeTransitor">
       <UniqueIdentifier>{a93f5aa2-f13e-4f14-bc4e-64c206d2a6de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\Result\BackGround">
+      <UniqueIdentifier>{75c808eb-45ce-4912-973e-0a29c745cf08}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
