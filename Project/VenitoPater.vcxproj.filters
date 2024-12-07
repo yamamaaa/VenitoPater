@@ -121,6 +121,9 @@
     <ClCompile Include="..\SourceCode\Object\Result\BackGround\BackGround.cpp">
       <Filter>ソースコード\Object\Result\BackGround</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\NumDeys\NumDeys.cpp">
+      <Filter>ソースコード\Object\NumDeys</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -263,6 +266,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\Result\BackGround\BackGround.h">
       <Filter>ソースコード\Object\Result\BackGround</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\NumDeys\NumDeys.h">
+      <Filter>ソースコード\Object\NumDeys</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -421,6 +427,9 @@
     </Filter>
     <Filter Include="ソースコード\Object\Result\BackGround">
       <UniqueIdentifier>{75c808eb-45ce-4912-973e-0a29c745cf08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\NumDeys">
+      <UniqueIdentifier>{f7418988-b22b-48cd-a368-ae45319bfc91}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
