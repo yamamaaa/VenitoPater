@@ -23,6 +23,12 @@ namespace transitor
 		void FadeOutStart(bool wait);
 
 		/// <summary>
+		/// フェードインさせる
+		/// </summary>
+		/// <param name="wait">true:startをずらす|false:startをずらさない</param>
+		void FadeInStart(bool wait);
+
+		/// <summary>
 		/// フェード処理が完了したか
 		/// </summary>
 		/// <returns>true:完了|false:未完成</returns>
@@ -31,9 +37,9 @@ namespace transitor
 	private:
 
 		/// <summary>
-		/// WaitTimerで一定時間待つ
+		/// 一定時間待つ
 		/// </summary>
-		void WaitTimerStart();
+		void WaitTime();
 
 		/// <summary>
 		/// 読み込み関連
@@ -42,6 +48,9 @@ namespace transitor
 
 		const int m_DROPSPEED = 15;		//減分速度
 		const int m_COLLARCODE = 255;	//カラーコード
+
+		const float m_WAITMAX = 50.0f;			//待ち時間
+		const float m_COUNT_DECREMENT = 1.0f;	//カウント減分値
 
 		int m_DropCollar;				//減分カラーコード
 
