@@ -23,10 +23,10 @@ namespace object
 			areanum_controller.reset(new AreaNumController);
 		}
 
-		LoadObjec();
+		LoadObject();
 	}
 
-	void AreaNumController::LoadObjec()
+	void AreaNumController::LoadObject()
 	{
 		//エリア番号初期値セット
 		areanum_controller->m_NowAreaNum = 1;
