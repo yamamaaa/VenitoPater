@@ -42,7 +42,7 @@ namespace object
 		/// <summary>
 		/// “Ç‚İ‚İŠÖ˜A
 		/// </summary>
-		static void LoadObjec();
+		static void LoadObject();
 
 		int m_NowAreaNum;	//Œ»İ‚ÌƒGƒŠƒA”Ô†
 
