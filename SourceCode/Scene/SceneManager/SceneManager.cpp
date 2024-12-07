@@ -2,6 +2,9 @@
 #include"../../Scene/SceneBase/SceneBase.h"
 #include"../Title/Title.h"
 #include"../../Fps/Fps.h"
+#include"../../Object/ObjectManager/ObjectManager.h"
+
+using namespace object;
 
 namespace scene
 {
@@ -10,11 +13,14 @@ namespace scene
         , fps(new fps::Fps)
     {
         //初期化処理
-        //GameObjectManager::Initialize();
+        ObjectManager::Initialize();
         //AssetManager::InitAssetManager(); インスタンス生成
 
         //現在のシーンをタイトルに設定
         m_NowScene.emplace(new Title);
+
+        //マウスの表示設定
+        SetMouseDispFlag(TRUE);
     }
 
     SceneManager::~SceneManager()

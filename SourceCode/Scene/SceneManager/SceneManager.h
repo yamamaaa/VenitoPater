@@ -2,8 +2,6 @@
 #include<memory>
 #include<stack>
 
-//using namespace Fps;
-
 /// <summary>
 /// ƒ^ƒCƒ€ŠÖ˜A
 /// </summary>

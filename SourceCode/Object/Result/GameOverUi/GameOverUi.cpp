@@ -28,8 +28,6 @@ namespace object
 		m_UiOffset[0] = { 50,30 };
 		m_UiOffset[1] = { 70,30 };
 
-		//m_ObjHandle= LoadGraph("../Asset/image/result/gameover/background.png");
-
 		m_ObjHandle = LoadGraph("../Asset/image/result/gameover/select.png");
 
 		m_Uipos.x = m_SelectUi_Pos[0].x;
@@ -58,7 +56,7 @@ namespace object
 				{
 					m_hitstatus = "0Hit";
 					m_Uipos.x = m_SelectUi_Pos[0].x;
-					m_Uipos.x = m_SelectUi_Pos[0].y;
+					m_Uipos.y = m_SelectUi_Pos[0].y;
 				}
 				else if (i == 1)//ƒ^ƒCƒgƒ‹‚É–ß‚é‚È‚ç
 				{

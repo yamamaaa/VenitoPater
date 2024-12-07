@@ -8,6 +8,7 @@
 
 #include"../../Object/CharaObj/AvoidStatus/AvoidStatus.h"
 
+#include"../../Object/StageObj/Norm/Norm.h"
 #include"../../Object/StageObj/Area/Area.h"
 #include"../../Object/StageObj/MoveArea/MoveArea.h"
 #include"../../Object/StageObj/ClockWork/ClockWork/ClockWork.h"
@@ -38,6 +39,7 @@ namespace scene
 		object::ObjectManager::Entry(new object::Area);
 		object::ObjectManager::Entry(new object::MoveArea);
 		object::ObjectManager::Entry(new object::ClockWork);
+		object::Norm::Initialize();
 		object::ObjectManager::Entry(new object::Item);
 
 		//“G‚Ì¶¬
@@ -55,8 +57,7 @@ namespace scene
 
 	ThreeDays::~ThreeDays()
 	{
-		//ƒƒ‚ƒŠ‰ğ•ú
-		delete object_generation;
+		//ˆ—‚È‚µ
 	}
 
 	SceneBase* ThreeDays::UpdateScene(const float deltaTime)
