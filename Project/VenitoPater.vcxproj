@@ -64,6 +64,7 @@
     <ClCompile Include="..\SourceCode\Object\StoryObj\LineStatus\LineStatus.cpp" />
     <ClCompile Include="..\SourceCode\Object\StoryObj\Line\Line.cpp" />
     <ClCompile Include="..\SourceCode\Object\StoryObj\StillDraw\StillDraw.cpp" />
+    <ClCompile Include="..\SourceCode\Object\Time\Time.cpp" />
     <ClCompile Include="..\SourceCode\Scene\Result\GameOver\GameOver.cpp" />
     <ClCompile Include="..\SourceCode\Scene\SceneBase\SceneBase.cpp" />
     <ClCompile Include="..\SourceCode\Scene\SceneManager\SceneManager.cpp" />
@@ -129,6 +130,7 @@
     <ClInclude Include="..\SourceCode\Object\StoryObj\LineStatus\LineStatus.h" />
     <ClInclude Include="..\SourceCode\Object\StoryObj\Line\Line.h" />
     <ClInclude Include="..\SourceCode\Object\StoryObj\StillDraw\StillDraw.h" />
+    <ClInclude Include="..\SourceCode\Object\Time\Time.h" />
     <ClInclude Include="..\SourceCode\Scene\Result\GameOver\GameOver.h" />
     <ClInclude Include="..\SourceCode\Scene\SceneBase\SceneBase.h" />
     <ClInclude Include="..\SourceCode\Scene\SceneManager\SceneManager.h" />
