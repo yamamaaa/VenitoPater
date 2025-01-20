@@ -3,11 +3,11 @@
 
 namespace object
 {
-    /// <summary>
-    /// Enemy_NilŠÖ˜A
-    /// </summary>
-    class Nil:public EnemyBase
-    {
+	/// <summary>
+	/// Enemy_NilŠÖ˜A
+	/// </summary>
+	class Nil :public EnemyBase
+	{
 	public:
 
 		/// <summary>
@@ -42,5 +42,5 @@ namespace object
 		/// ˆÚ“®ˆ—
 		/// </summary>
 		void MoveObj(const float deltatime)override;
-    };
+	};
 }

@@ -6,7 +6,7 @@ namespace object
 	/// <summary>
 	/// Enemy_IraŠÖ˜A
 	/// </summary>
-	class Ira:public EnemyBase
+	class Ira :public EnemyBase
 	{
 	public:
 

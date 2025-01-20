@@ -18,8 +18,10 @@ namespace object
 
 	void Familia::LoadObject()
 	{
-		m_MoveSpeed = 0.5f;
+		m_MoveSpeed = 0.3f;
 		m_ObjDrawArea = 3;
+
+		m_IDnumber = familia;
 
 		m_DrawObjPos[appear] = { 400.0f,0.0f };
 		m_DrawObjPos[replace] = m_DrawObjPos[appear];
@@ -29,7 +31,7 @@ namespace object
 		m_ObjImg[0] = -1;
 		m_ObjImg[1] = LoadGraph("../Asset/image/enemy/familia/place_0.png");
 		m_ObjImg[2] = LoadGraph("../Asset/image/enemy/familia/place_1.png");
-		m_ObjImg[3] = LoadGraph("../Asset/image/enemy/familia/place_2.png");
+		m_ObjImg[3] = -1;
 	}
 
 	void Familia::UpdateObj(const float deltatime)
@@ -38,8 +40,8 @@ namespace object
 		if (!RPMController::GetIsRPMLost())
 			return;
 
-		//動ける状態なら
-		if (EnemyManager::GetCanMove())
+		//他の敵がアクションを起こしてなかったら
+		if (!EnemyManager::GetEmyIsAction())
 		{
 			MoveObj(deltatime);	//移動処理
 			IsHitEnemyLine();	//enemyline当たり判定
@@ -49,10 +51,10 @@ namespace object
 		//アクションラインに到達したら
 		if (m_IsActionLine)
 		{
-			EnemyManager::SetCanMove(false);	//全敵の更新を止める
+			EnemyManager::SetEmyIsAction(true);
+			EnemyManager::SetEmyIDAction(m_IDnumber);
 			EnemyInAction();
 		}
-
 	}
 
 	void Familia::DrawObj()
@@ -61,10 +63,10 @@ namespace object
 		if (!RPMController::GetIsRPMLost())
 			return;
 
-		//表示できる時orアクションライン到達時
-		if (IsObjDraw()|| m_IsActionLine)
+		//表示できる時
+		if (IsObjDraw())
 		{
-			DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y),m_ObjHandle, TRUE);
+			DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
 		}
 
 
