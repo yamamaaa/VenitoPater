@@ -4,9 +4,11 @@
 #include"../../JsonMaster/JsonManager/JsonManager.h"
 #include"../../Object/ObjectTag/ThreeDays_ObjectTag.h"
 #include"../../Collision/Collision.h"
+#include"../../Math2D/Math2D.h"
 
 #define DEBUG
 using namespace collision;
+using namespace math2d;
 using namespace objecttag;
 
 namespace object
@@ -87,5 +89,9 @@ namespace object
 
         float m_MoveSpeed;      //動くスピード
         float m_MaxMoveSpeed;   //最大移動速度
+
+#ifdef DEBUG
+        const int m_DEBUG_FONTSIZE = 16;           //フォントサイズ
+#endif // DEBUG
     };
 }
