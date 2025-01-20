@@ -51,6 +51,7 @@
     <ClCompile Include="..\SourceCode\Object\ObjectBase\ObjectBase.cpp" />
     <ClCompile Include="..\SourceCode\Object\ObjectManager\ObjectManager.cpp" />
     <ClCompile Include="..\SourceCode\Object\Result\BackGround\BackGround.cpp" />
+    <ClCompile Include="..\SourceCode\Object\Result\GameClearUi\GameClearUi.cpp" />
     <ClCompile Include="..\SourceCode\Object\Result\GameOverUi\GameOverUi.cpp" />
     <ClCompile Include="..\SourceCode\Object\StageObj\AreaNumController\AreaNumController.cpp" />
     <ClCompile Include="..\SourceCode\Object\StageObj\Area\Area.cpp" />
@@ -110,6 +111,7 @@
     <ClInclude Include="..\SourceCode\Object\ObjectTag\ThreeDays_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\TitleObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\Result\BackGround\BackGround.h" />
+    <ClInclude Include="..\SourceCode\Object\Result\GameClearUi\GameClearUi.h" />
     <ClInclude Include="..\SourceCode\Object\Result\GameOverUi\GameOverUi.h" />
     <ClInclude Include="..\SourceCode\Object\StageObj\AreaNumController\AreaNumController.h" />
     <ClInclude Include="..\SourceCode\Object\StageObj\Area\Area.h" />

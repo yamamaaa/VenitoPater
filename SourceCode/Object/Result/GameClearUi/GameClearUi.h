@@ -1,31 +1,28 @@
 #pragma once
-#include "../../MouseBase/MouseBase.h"
+#include "../../ObjectBase/ObjectBase.h"
 
 namespace object
 {
-    /// <summary>
-    /// ゲームオーバー画面関連
-    /// </summary>
-    class GameOverUi :public MouseBase
-    {
+	class GameClearUi:public ObjectBase
+	{
     public:
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        GameOverUi();
+        GameClearUi();
 
         /// <summary>
         /// デストラクタ
         /// </summary>
-        ~GameOverUi();
+        ~GameClearUi();
 
     private:
 
         /// <summary>
         /// 読み込み関連
         /// </summary>
-        void LoadObject() override ;
+        void LoadObject() override;
 
         /// <summary>
         /// オブジェクトの更新
@@ -38,15 +35,9 @@ namespace object
         /// </summary>
         void DrawObj() override;
 
-        POINTS m_ResultLogo_Pos;    //リザルトロゴ表示座標
+        const float m_DRAWCOUNT_MAX = 50.0f;   //表示時間
+        const float m_COUNT_DECREMENT = 0.1f;	//カウント減分値
 
-        POINTS m_SelectUi_Pos[2];       //セレクトUi座標
-        POINTS m_UiOffset[2];           //座標ずらし量
-        POINTS m_Uipos;
-
-#ifdef DEBUG
-        std::string m_selectstatus = "";
-#endif // DEBUG
-    };
+        float m_DrawCount;  //表示時間カウント
+	};
 }
-

@@ -54,13 +54,17 @@ namespace object
 			{
 				if (i == 0)	//コンテニューなら
 				{
-					m_hitstatus = "0Hit";
+#ifdef DEBUG
+					m_selectstatus = "コンテニュー";
+#endif // DEBUG
 					m_Uipos.x = m_SelectUi_Pos[0].x;
 					m_Uipos.y = m_SelectUi_Pos[0].y;
 				}
 				else if (i == 1)//タイトルに戻るなら
 				{
-					m_hitstatus = "1Hit";
+#ifdef DEBUG
+					m_selectstatus = "タイトル";
+#endif // DEBUG
 					m_Uipos.x = m_SelectUi_Pos[1].x;
 					m_Uipos.y = m_SelectUi_Pos[1].y;
 				}
@@ -96,7 +100,9 @@ namespace object
 
 		DrawBox(m_SelectUi_Pos[1].x, m_SelectUi_Pos[1].y, m_SelectUi_Pos[1].x + m_ObjSize.x, m_SelectUi_Pos[1].y + m_ObjSize.y, GetColor(0, 255, 0),FALSE);
 
+#ifdef DEBUG
 		SetFontSize(16);
-		DrawFormatString(0, 20, GetColor(255, 255, 255), "Hit:%s", m_hitstatus.c_str());
+		DrawFormatString(0, 20, GetColor(255, 255, 255), "セレクト状態:%s", m_selectstatus.c_str());
+#endif // DEBUG
 	}
 }
