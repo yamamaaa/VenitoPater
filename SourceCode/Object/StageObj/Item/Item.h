@@ -4,12 +4,12 @@
 
 namespace object
 {
-	/// <summary>
-	/// ゲーム内アイテム関連
-	/// </summary>
-	class Item:public MouseBase
-	{
-	public:
+    /// <summary>
+    /// ゲーム内アイテム関連
+    /// </summary>
+    class Item :public MouseBase
+    {
+    public:
 
         /// <summary>
         /// コンストラクタ
@@ -21,7 +21,7 @@ namespace object
         /// </summary>
         ~Item();
 
-	private:
+    private:
 
         /// <summary>
         /// 読み込み関連
@@ -66,12 +66,12 @@ namespace object
         int m_ItemImg_area2[6]; //右の部屋
 
         bool m_IsOccur;     //アイテムが出現したか
-        bool m_IsRareItem ;  //レアアイテムか
-        bool m_IsSet ;        //セットアップが完了したか
-        bool m_IsGet ;       //アイテムをゲットしたか
-        bool m_CanDraw ;    //アイテムを表示できるか
+        bool m_IsRareItem;  //レアアイテムか
+        bool m_IsSet;        //セットアップが完了したか
+        bool m_IsGet;       //アイテムをゲットしたか
+        bool m_CanDraw;    //アイテムを表示できるか
 
-        const float m_OCCURCOUNT_MAX = 500.0f;  //アイテム出現間隔
+        const float m_OCCURCOUNT_MAX = 300.0f;  //アイテム出現間隔
         const float m_COUNT_DECREMENT = 0.1f;   //カウント減分量
         float m_OccurCount;                     //出現までのカウント
 
@@ -80,7 +80,7 @@ namespace object
 
         //各エリアのアイテムHitサイズ
         //VECTOR.x:横サイズ|VECTOR.y:縦サイズ
-        std::unordered_map<int,POINTS> m_HitSize_area0{
+        std::unordered_map<int, POINTS> m_HitSize_area0{
             {0,{80,75}},
             {1,{30,40}},
             {2,{70,75}},
@@ -134,5 +134,5 @@ namespace object
            {4,{1511,883}},
            {5,{1095,765}},
         };
-	};
+    };
 }
