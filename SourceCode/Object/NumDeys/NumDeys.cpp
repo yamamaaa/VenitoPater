@@ -27,5 +27,13 @@ namespace object
 
     void NumDeys::LoadObject()
     {
+        //“ú”‚Ì‰Šú‰»
+        numdeys->m_NumDeys = 1;
+    }
+
+    void NumDeys::UpdateNumDeys()
+    {
+        //ˆê“úŒo‰ß
+        numdeys->m_NumDeys ++;
     }
 }
