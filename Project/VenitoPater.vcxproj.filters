@@ -136,9 +136,14 @@
     <ClCompile Include="..\SourceCode\Object\GameUi\RPMHPUi\RPMHPUi.cpp">
       <Filter>ソースコード\Object\GameUi\RPMHPUi</Filter>
     </ClCompile>
-    <ClCompile Include="..\SourceCode\Object\Result\GameClearUi\GameClearUi.cpp" />
     <ClCompile Include="..\SourceCode\Object\StageObj\ItemGetNum\ItemGetNum.cpp">
       <Filter>ソースコード\Object\StageObj\ItemGetNum</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\StoryObj\Character\Character.cpp">
+      <Filter>ソースコード\Object\StoryObj\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\Result\GameClearUi\GameClearUi.cpp">
+      <Filter>ソースコード\Object\Result\GameClearUi</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -310,9 +315,17 @@
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Still_ObjectTag.h">
       <Filter>ソースコード\Object\ObjectTag</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\Object\Result\GameClearUi\GameClearUi.h" />
     <ClInclude Include="..\SourceCode\Object\StageObj\ItemGetNum\ItemGetNum.h">
       <Filter>ソースコード\Object\StageObj\ItemGetNum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\StoryObj\Character\Character.h">
+      <Filter>ソースコード\Object\StoryObj\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\StoryObj\Character\CharaStatus.h">
+      <Filter>ソースコード\Object\StoryObj\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\Result\GameClearUi\GameClearUi.h">
+      <Filter>ソースコード\Object\Result\GameClearUi</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -492,6 +505,15 @@
     </Filter>
     <Filter Include="ソースコード\Object\StageObj\ItemGetNum">
       <UniqueIdentifier>{301620ee-6e75-404d-9681-3fcb8e6c7486}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StoryObj">
+      <UniqueIdentifier>{37487382-6996-4611-afcc-989ae804492c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StoryObj\Character">
+      <UniqueIdentifier>{7e754bd2-4086-49ee-b7ee-dd78036239ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\Result\GameClearUi">
+      <UniqueIdentifier>{dad16d75-e43e-48a5-8aaa-bf384e0050b6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
