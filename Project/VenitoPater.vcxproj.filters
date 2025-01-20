@@ -151,6 +151,9 @@
     <ClCompile Include="..\SourceCode\Object\StoryObj\LineStatus\LineStatus.cpp">
       <Filter>ソースコード\Object\StoryObj\LineStatus</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\StoryObj\StillDraw\StillDraw.cpp">
+      <Filter>ソースコード\Object\StoryObj\StillDraw</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -338,6 +341,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\StoryObj\LineStatus\LineStatus.h">
       <Filter>ソースコード\Object\StoryObj\LineStatus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\StoryObj\StillDraw\StillDraw.h">
+      <Filter>ソースコード\Object\StoryObj\StillDraw</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -532,6 +538,9 @@
     </Filter>
     <Filter Include="ソースコード\Object\StoryObj\LineStatus">
       <UniqueIdentifier>{992e8957-4849-414f-91b8-d979869e46e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StoryObj\StillDraw">
+      <UniqueIdentifier>{a1bd0f0c-b937-4b84-aef8-863b150e3f6e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
