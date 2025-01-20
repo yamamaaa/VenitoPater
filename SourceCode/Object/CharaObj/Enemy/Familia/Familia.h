@@ -6,7 +6,7 @@ namespace object
 	/// <summary>
 	/// Enemy_FamiliaŠÖ˜A
 	/// </summary>
-	class Familia:public EnemyBase
+	class Familia :public EnemyBase
 	{
 	public:
 
