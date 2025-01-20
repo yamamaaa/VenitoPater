@@ -124,6 +124,9 @@
     <ClCompile Include="..\SourceCode\Object\NumDeys\NumDeys.cpp">
       <Filter>ソースコード\Object\NumDeys</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Math2D\Math2D.cpp">
+      <Filter>ソースコード\Math2D</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -269,6 +272,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\NumDeys\NumDeys.h">
       <Filter>ソースコード\Object\NumDeys</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Math2D\Math2D.h">
+      <Filter>ソースコード\Math2D</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -430,6 +436,9 @@
     </Filter>
     <Filter Include="ソースコード\Object\NumDeys">
       <UniqueIdentifier>{f7418988-b22b-48cd-a368-ae45319bfc91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Math2D">
+      <UniqueIdentifier>{aac7204e-5f0b-4d6b-9d84-261ea65a6ed8}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -2,8 +2,6 @@
 #include"../Window/Window.h"
 #include"../GameSetting/GameSetting.h"
 #include"../../Scene/SceneManager/SceneManager.h"
-//#include""
-//#include""
 
 namespace GameSystem
 {

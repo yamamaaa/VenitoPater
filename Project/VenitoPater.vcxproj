@@ -28,6 +28,7 @@
     <ClCompile Include="..\SourceCode\JsonMaster\JsonManager\JsonManager.cpp" />
     <ClCompile Include="..\SourceCode\LevelController\LevelController.cpp" />
     <ClCompile Include="..\SourceCode\Main.cpp" />
+    <ClCompile Include="..\SourceCode\Math2D\Math2D.cpp" />
     <ClCompile Include="..\SourceCode\Object\CharaObj\AvoidStatus\AvoidStatus.cpp" />
     <ClCompile Include="..\SourceCode\Object\CharaObj\Avoid\Avoid.cpp" />
     <ClCompile Include="..\SourceCode\Object\CharaObj\Enemy\EnemyBase\EnemyBase.cpp" />
@@ -71,6 +72,7 @@
     <ClInclude Include="..\SourceCode\JsonMaster\JsonManager\JsonManager.h" />
     <ClInclude Include="..\SourceCode\LevelController\LevelController.h" />
     <ClInclude Include="..\SourceCode\LevelController\LevelStatus.h" />
+    <ClInclude Include="..\SourceCode\Math2D\Math2D.h" />
     <ClInclude Include="..\SourceCode\Object\CharaObj\AvoidStatus\AvoidStatus.h" />
     <ClInclude Include="..\SourceCode\Object\CharaObj\Avoid\Avoid.h" />
     <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\EnemyBase\EnemyBase.h" />
