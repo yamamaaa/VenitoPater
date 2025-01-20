@@ -76,14 +76,8 @@
     <ClCompile Include="..\SourceCode\Object\StageObj\ClockWork\RPMController\RPMController.cpp">
       <Filter>ソースコード\Object\StageObj\ClockWork\RPMController</Filter>
     </ClCompile>
-    <ClCompile Include="..\SourceCode\Object\StageObj\WarningUi\WarningUi.cpp">
-      <Filter>ソースコード\Object\StageObj\WarningUi</Filter>
-    </ClCompile>
     <ClCompile Include="..\SourceCode\Object\CharaObj\LightController\LightController.cpp">
       <Filter>ソースコード\Object\CharaObj\LightController</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SourceCode\Object\StageObj\Norm\Norm.cpp">
-      <Filter>ソースコード\Object\StageObj\Norm</Filter>
     </ClCompile>
     <ClCompile Include="..\SourceCode\Object\CharaObj\Enemy\EnemyBase\EnemyBase.cpp">
       <Filter>ソースコード\Object\CharaObj\Enemy\EnemyBase</Filter>
@@ -232,14 +226,8 @@
     <ClInclude Include="..\SourceCode\Object\StageObj\ClockWork\RPMController\RPMController.h">
       <Filter>ソースコード\Object\StageObj\ClockWork\RPMController</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\Object\StageObj\WarningUi\WarningUi.h">
-      <Filter>ソースコード\Object\StageObj\WarningUi</Filter>
-    </ClInclude>
     <ClInclude Include="..\SourceCode\Object\CharaObj\LightController\LightController.h">
       <Filter>ソースコード\Object\CharaObj\LightController</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SourceCode\Object\StageObj\Norm\Norm.h">
-      <Filter>ソースコード\Object\StageObj\Norm</Filter>
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\EnemyBase\EnemyBase.h">
       <Filter>ソースコード\Object\CharaObj\Enemy\EnemyBase</Filter>
@@ -430,14 +418,8 @@
     <Filter Include="ソースコード\Object\StageObj\ClockWork\RPMController">
       <UniqueIdentifier>{5650a5ef-843d-4de9-8bc2-1f54085b9839}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースコード\Object\StageObj\WarningUi">
-      <UniqueIdentifier>{4714c943-0675-488d-9722-3adecca36505}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソースコード\Object\CharaObj\LightController">
       <UniqueIdentifier>{f25751d8-5106-4a83-bba8-ddd806247b25}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースコード\Object\StageObj\Norm">
-      <UniqueIdentifier>{ac1f4139-6f97-4df5-84f5-5fe481075eff}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースコード\Object\CharaObj\Enemy">
       <UniqueIdentifier>{b64c46f9-ce72-43c9-b9ff-40c33656a2da}</UniqueIdentifier>
