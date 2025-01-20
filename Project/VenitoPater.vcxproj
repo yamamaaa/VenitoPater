@@ -60,6 +60,7 @@
     <ClCompile Include="..\SourceCode\Object\StageObj\ItemGetNum\ItemGetNum.cpp" />
     <ClCompile Include="..\SourceCode\Object\StageObj\Item\Item.cpp" />
     <ClCompile Include="..\SourceCode\Object\StageObj\MoveArea\MoveArea.cpp" />
+    <ClCompile Include="..\SourceCode\Object\StoryObj\Character\Character.cpp" />
     <ClCompile Include="..\SourceCode\Scene\Result\GameOver\GameOver.cpp" />
     <ClCompile Include="..\SourceCode\Scene\SceneBase\SceneBase.cpp" />
     <ClCompile Include="..\SourceCode\Scene\SceneManager\SceneManager.cpp" />
@@ -120,6 +121,8 @@
     <ClInclude Include="..\SourceCode\Object\StageObj\ItemGetNum\ItemGetNum.h" />
     <ClInclude Include="..\SourceCode\Object\StageObj\Item\Item.h" />
     <ClInclude Include="..\SourceCode\Object\StageObj\MoveArea\MoveArea.h" />
+    <ClInclude Include="..\SourceCode\Object\StoryObj\Character\Character.h" />
+    <ClInclude Include="..\SourceCode\Object\StoryObj\Character\CharaStatus.h" />
     <ClInclude Include="..\SourceCode\Scene\Result\GameOver\GameOver.h" />
     <ClInclude Include="..\SourceCode\Scene\SceneBase\SceneBase.h" />
     <ClInclude Include="..\SourceCode\Scene\SceneManager\SceneManager.h" />
