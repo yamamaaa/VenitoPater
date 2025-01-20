@@ -3,7 +3,7 @@
 #include "Item.h"
 #include "../../ObjectTag/Global_ObjectTag.h"
 #include "../AreaNumController/AreaNumController.h"
-#include "../Norm/Norm.h"
+#include "../ItemGetNum/ItemGetNum.h"
 
 namespace object
 {
@@ -56,15 +56,24 @@ namespace object
 		m_ItemImg_area2[3] = LoadGraph("../Asset/image/item/area2/duck_3.png");
 		m_ItemImg_area2[4] = LoadGraph("../Asset/image/item/area2/duck_4.png");
 
-		m_ItemImg_area0[5]= LoadGraph("../Asset/image/item/area0/nekoinu.png");
+		m_ItemImg_area0[5] = LoadGraph("../Asset/image/item/area0/nekoinu.png");
 		m_ItemImg_area1[5] = LoadGraph("../Asset/image/item/area1/nekoinu.png");
 		m_ItemImg_area2[5] = LoadGraph("../Asset/image/item/area2/nekoinu.png");
 	}
 
 	void Item::UpdateObj(const float deltatime)
 	{
+#ifdef DEBUG
+		//スペースキーでノルマ達成
+		if (CheckHitKey(KEY_INPUT_SPACE))
+		{
+			//アイテム数の更新
+			ItemGetNum::UpdateItemNum(false);
+		}
+#endif // DEBUG
+
 		//アイテムが出現し表示されているとき
-		if (m_IsOccur&& m_CanDraw)
+		if (m_IsOccur && m_CanDraw)
 		{
 			//マウスとの当たり判定
 			CursorHit();
@@ -76,29 +85,32 @@ namespace object
 				m_IsGet = true;
 				m_IsOccur = false;
 
-				//ノルマの更新
-				Norm::UpdateNorm();
+				//アイテム数の更新
+				ItemGetNum::UpdateItemNum(m_IsRareItem);
 			}
 		}
-		
+
 		//アイテムのセットアップ
-		if (m_IsSet==false)
+		if (m_IsSet == false)
 		{
 			ItemNumSet();
 			m_IsSet = true;
 			m_IsOccur = true;
 			ScreenFlip();
 		}
-		
+
 		//アイテムをゲットしたら
 		if (m_IsGet)
 		{
-			m_OccurCount-=m_COUNT_DECREMENT;
+			m_OccurCount -= m_COUNT_DECREMENT;
 			if (m_OccurCount <= 0.0f)
 			{
 				m_IsSet = false;
 				m_IsGet = false;
 				m_OccurCount = m_OCCURCOUNT_MAX;
+
+				if (m_IsRareItem)	//レアアイテムだったら初期化
+					m_IsRareItem = false;
 			}
 		}
 
@@ -122,7 +134,7 @@ namespace object
 	void Item::DrawObj()
 	{
 		//アイテムが出現し表示されているとき
-		if (m_IsOccur&&m_CanDraw)
+		if (m_IsOccur && m_CanDraw)
 		{
 			DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
 #ifdef DEBUG
@@ -132,7 +144,8 @@ namespace object
 #ifdef DEBUG
 		DrawFormatString(0, 260, GetColor(255, 255, 255), "アイテム表示エリア:%d", m_DrawItemArea);
 		DrawFormatString(0, 280, GetColor(255, 255, 255), "アイテム番号:%d", m_NowItemNumber);
-		DrawFormatString(0, 300, GetColor(255, 255, 255), "アイテム表示まで:%f", m_OccurCount);
+		DrawFormatString(0, 300, GetColor(255, 255, 255), "アイテム再表示まで:%f", m_OccurCount);
+		DrawFormatString(0, 340, GetColor(255, 0, 0), "スペース長押しでノルマ達成");
 #endif
 	}
 
