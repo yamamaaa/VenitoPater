@@ -31,7 +31,9 @@ namespace object
 		light_controller->m_LightPos.x = 0;
 		light_controller->m_LightPos.y = 0;
 
-		light_controller->m_ShadowHandol=LoadGraph("../Asset/image/light/shadow.png");
+		light_controller->m_IsBlinking = false;
+
+		light_controller->m_ShadowHandol = LoadGraph("../Asset/image/light/shadow.png");
 		light_controller->m_LightHandol = LoadGraph("../Asset/image/light/light.png");
 		light_controller->m_BlackImgHandol = LoadGraph("../Asset/image/light/black.png");
 	}
@@ -42,15 +44,15 @@ namespace object
 		SetDrawBlendMode(DX_BLENDMODE_ADD, 225);
 		DrawGraph(light_controller->m_LightPos.x, light_controller->m_LightPos.y, light_controller->m_LightHandol, TRUE);
 		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);*/
-	}
 
-	void LightController::ScreenBlinking()
-	{
-		//20カウントのうち15回表示
-		light_controller->m_DrawCount = (light_controller->m_DrawCount + 1) % m_PWRIOD;
-		if (light_controller->m_DrawCount < m_NUMTIMES)
+		if (light_controller->m_IsBlinking)
 		{
-			DrawGraph(0, 0, light_controller->m_BlackImgHandol, TRUE);
+			//20カウントのうち15回表示
+			light_controller->m_DrawCount = (light_controller->m_DrawCount + 1) % m_PWRIOD;
+			if (light_controller->m_DrawCount < m_NUMTIMES)
+			{
+				DrawGraph(0, 0, light_controller->m_BlackImgHandol, TRUE);
+			}
 		}
 	}
 }
