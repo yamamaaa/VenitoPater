@@ -20,6 +20,12 @@ namespace objecttag
         std::string IRA = "ira";
         std::string AVOID = "avoid";
         std::string PLAYER = "player";
+        std::string ITEMUI = "itemui";
+        std::string RPMHPUi = "rpmhpui";
+        std::string AVOIDUI = "avoidui";
+        std::string WARNINGUI = "warningUi";
+        std::string TIME = "time";
+        std::string ENEMYACTION = "enemyaction";
     } global_objecttag;
 
 
@@ -39,5 +45,11 @@ namespace objecttag
         global_objecttag.IRA,
         global_objecttag.AVOID,
         global_objecttag.PLAYER,
+        global_objecttag.ITEMUI,
+        global_objecttag.RPMHPUi,
+        global_objecttag.AVOIDUI,
+        global_objecttag.WARNINGUI,
+        global_objecttag.TIME,
+        global_objecttag.ENEMYACTION,
     };
 }

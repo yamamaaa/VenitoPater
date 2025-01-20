@@ -102,9 +102,13 @@
     <ClInclude Include="..\SourceCode\Object\ObjectBase\ObjectBase.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectManager\GameStatus.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectManager\ObjectManager.h" />
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\GameClear_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Global_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Result_ObjectTag.h" />
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\Still_ObjectTag.h" />
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\Story_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\ThreeDays_ObjectTag.h" />
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\TitleObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\Result\BackGround\BackGround.h" />
     <ClInclude Include="..\SourceCode\Object\Result\GameOverUi\GameOverUi.h" />
     <ClInclude Include="..\SourceCode\Object\StageObj\AreaNumController\AreaNumController.h" />

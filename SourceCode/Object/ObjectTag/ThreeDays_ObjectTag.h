@@ -20,6 +20,12 @@ namespace objecttag
         std::string IRA = "ira";
         std::string AVOID = "avoid";
         std::string PLAYER = "player";
+        std::string ITEMUI = "itemui";
+        std::string RPMHPUi = "rpmhpui";
+        std::string AVOIDUI = "avoidui";
+        std::string WARNINGUI = "warningUi";
+        std::string TIME = "time";
+        std::string ENEMYACTION = "enemyaction";
     } threedays_objtag;
 
 
@@ -39,5 +45,11 @@ namespace objecttag
         threedays_objtag.IRA,
         threedays_objtag.AVOID,
         threedays_objtag.PLAYER,
+        threedays_objtag.ITEMUI,
+        threedays_objtag.RPMHPUi,
+        threedays_objtag.AVOIDUI,
+        threedays_objtag.WARNINGUI,
+        threedays_objtag.TIME,
+        threedays_objtag.ENEMYACTION,
     };
 }

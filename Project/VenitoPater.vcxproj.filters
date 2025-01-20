@@ -165,9 +165,6 @@
     <ClInclude Include="..\SourceCode\Object\ObjectManager\GameStatus.h">
       <Filter>ソースコード\Object\ObjectManager</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\Object\ObjectTag\Global_ObjectTag.h">
-      <Filter>ソースコード\Object\ObjectTag</Filter>
-    </ClInclude>
     <ClInclude Include="..\SourceCode\LevelController\LevelController.h">
       <Filter>ソースコード\LevelController</Filter>
     </ClInclude>
@@ -182,12 +179,6 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\ObjectBase\ObjectBase.h">
       <Filter>ソースコード\Object\ObjectBase</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SourceCode\Object\ObjectTag\ThreeDays_ObjectTag.h">
-      <Filter>ソースコード\Object\ObjectTag</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SourceCode\Object\ObjectTag\Result_ObjectTag.h">
-      <Filter>ソースコード\Object\ObjectTag</Filter>
     </ClInclude>
     <ClInclude Include="..\SourceCode\Scene\SceneBase\SceneBase.h">
       <Filter>ソースコード\Scene\SceneBase</Filter>
@@ -305,6 +296,27 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\GameUi\RPMHPUi\RPMHPUi.h">
       <Filter>ソースコード\Object\GameUi\RPMHPUi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\Global_ObjectTag.h">
+      <Filter>ソースコード\Object\ObjectTag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\Result_ObjectTag.h">
+      <Filter>ソースコード\Object\ObjectTag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\ThreeDays_ObjectTag.h">
+      <Filter>ソースコード\Object\ObjectTag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\Story_ObjectTag.h">
+      <Filter>ソースコード\Object\ObjectTag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\TitleObjectTag.h">
+      <Filter>ソースコード\Object\ObjectTag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\GameClear_ObjectTag.h">
+      <Filter>ソースコード\Object\ObjectTag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\Still_ObjectTag.h">
+      <Filter>ソースコード\Object\ObjectTag</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
