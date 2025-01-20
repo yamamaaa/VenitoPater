@@ -2,6 +2,7 @@
 #include "../../../../GameSystem/Window/Window.h"
 #include "../../../StageObj/AreaNumController/AreaNumController.h"
 #include"../../../ObjectManager/ObjectManager.h"
+#include "../../LightController/LightController.h"
 
 namespace object
 {
@@ -11,6 +12,7 @@ namespace object
 		m_HitLineIndex(-1),
 		m_ObjDrawArea(-1),
 		m_IsActionLine(false),
+		m_CanAvoid(false),
 		m_IsAppear(false),
 		m_BlinkingCount(0.0f),
 		m_ResetCount(0.0f),
@@ -43,7 +45,7 @@ namespace object
 		//enemylineとの当たり判定を調べる
 		for (std::string& tag : EnemyLine_TagAll)
 		{
-			hitstatus =CheckHitSquare(m_EmyLine_Pos[tag].x, m_EmyLine_Pos[tag].y, m_ObjSize.x, m_ObjSize.y, m_EnemyBoxPos.x, m_EnemyBoxPos.y, m_EMYBOX_SIZE.x, m_EMYBOX_SIZE.y);
+			hitstatus = CheckHitSquare(m_EmyLine_Pos[tag].x, m_EmyLine_Pos[tag].y, m_ObjSize.x, m_ObjSize.y, m_EnemyBoxPos.x, m_EnemyBoxPos.y, m_EMYBOX_SIZE.x, m_EMYBOX_SIZE.y);
 
 			//当たっていたら
 			if (hitstatus)
@@ -62,7 +64,7 @@ namespace object
 		//enemyの表示ができるか
 		if (infodata == m_ObjDrawArea)
 		{
-			 return true;
+			return true;
 		}
 		else
 		{
@@ -72,6 +74,10 @@ namespace object
 
 	void EnemyBase::AvoidAction()
 	{
+		//回避できないなら処理なし
+		if (!m_CanAvoid)
+			return;
+
 		//敵が出現中で表示できるとき
 		if (m_IsAppear && IsObjDraw())
 		{
@@ -97,6 +103,7 @@ namespace object
 		case replace:
 			m_ObjHandle = m_ObjImg[1];
 			m_ObjPos = m_DrawObjPos[replace];
+			m_CanAvoid = true;					//回避できる状態に
 			break;
 		case replace_2:
 			m_ObjHandle = m_ObjImg[2];
@@ -113,11 +120,13 @@ namespace object
 	void EnemyBase::ExitObj()
 	{
 		//敵の退出時画面を点滅させる
+		LightController::SetIsBlinking(true);
 		m_BlinkingCount++;
 		if (m_BlinkingCount >= 20.0f)
 		{
 			ResetObj();
 			m_IsEmyReset = false;
+			LightController::SetIsBlinking(false);
 		}
 	}
 
@@ -129,18 +138,12 @@ namespace object
 		m_ObjHandle = -0;
 		m_ObjPos = { 0.0f,0.0f };
 		m_BlinkingCount = 0;
-		EnemyManager::SetIsAppear(m_Idnumber, false);
+		EnemyManager::SetIsAppear(m_IDnumber, false);
 
 		//敵の出現総数を減らす
 		int num = EnemyManager::GetAppearNumNow();
 		num--;
 		EnemyManager::SetAppearNumNow(num);
-	}
-
-	void EnemyBase::BeefUpEmyAction()
-	{
-		//敵の移動速度上昇
-		m_MoveSpeed += m_BeefUp_Speed;
 	}
 
 	void EnemyBase::EnemyInAction()

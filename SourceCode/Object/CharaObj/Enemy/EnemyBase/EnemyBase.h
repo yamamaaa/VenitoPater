@@ -17,7 +17,7 @@ namespace object
 	/// <summary>
 	/// 敵関連の基底クラス
 	/// </summary>
-	class EnemyBase:public ObjectBase
+	class EnemyBase :public ObjectBase
 	{
 	public:
 
@@ -66,11 +66,6 @@ namespace object
 		void ResetObj();
 
 		/// <summary>
-		/// 強化モンスターアクション後の処理
-		/// </summary>
-		void BeefUpEmyAction();
-
-		/// <summary>
 		/// 敵のアクション後処理
 		/// </summary>
 		void EnemyInAction();
@@ -79,7 +74,7 @@ namespace object
 		/// 当たったemylineのインデックス取得
 		/// </summary>
 		/// <returns>当たったemylineのインデックス</returns>
-		const int GetHitLineIndex() const{ return m_HitLineIndex; }
+		const int GetHitLineIndex() const { return m_HitLineIndex; }
 #ifdef DEBUG
 		/// <summary>
 		/// EnemyLineの画面内表示
@@ -89,20 +84,21 @@ namespace object
 
 		const POINTS m_EMYBOX_SIZE = { 100,50 };		//EmyBoxのサイズ
 #ifdef DEBUG
-		const VECTOR m_emybox_collar = VGet(0,0,255);	//EmyBoxのカラーコード
+		const VECTOR m_emybox_collar = VGet(0, 0, 255);	//EmyBoxのカラーコード
 #endif
 		const POINTFLOAT m_EMYBOX_RESETPOS = { 900.0f,0.0f };	//EmyBoxの初期位置
-		POINTFLOAT m_EnemyBoxPos= m_EMYBOX_RESETPOS;			//EmyBoxの座標
+		POINTFLOAT m_EnemyBoxPos = m_EMYBOX_RESETPOS;			//EmyBoxの座標
 
 		int m_ObjImg[4];	//obj画像
 
-		EnemyID m_Idnumber;	//敵識別番号
+		EnemyID m_IDnumber;	//敵識別番号
 
 		int m_ObjDrawArea;			//オブジェクトが表示できるエリア
 		bool m_IsActionLine;		//アクションライン通過したか
+		bool m_CanAvoid;			//回避行動できるか
 		bool m_IsAppear;			//オブジェクトが出現中か？
 
-		bool m_IsEmyReset ;		//オブジェクトをリセットするか
+		bool m_IsEmyReset;		//オブジェクトをリセットするか
 
 		//enemyline通過ごとの画像表示位置
 		std::unordered_map<int, POINTFLOAT> m_DrawObjPos{
@@ -112,7 +108,7 @@ namespace object
 			//{action,{0.0f,0.0f}},
 		};
 
-private:
+	private:
 
 		/// <summary>
 		/// 読み込み関連
@@ -135,8 +131,6 @@ private:
 		/// </summary>
 		void MoveObj(const float deltatime)override {};
 
-
-		const float m_BeefUp_Speed = 0.5;	//強化分移動速度
 		int m_HitLineIndex;			//当たったenemylineのindex
 
 		float m_BlinkingCount;	//画面を点滅させる時間
