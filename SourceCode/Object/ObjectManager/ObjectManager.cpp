@@ -71,29 +71,6 @@ namespace object
         }
     }
 
-    void ObjectManager::OnDeadObj(std::shared_ptr<ObjectBase> unnecobj)
-    {
-        //削除オブジェクトのタグ取得
-        std::string tag = unnecobj->GetTagName();
-
-        ////プレイヤーが死亡したら
-        //if (tag == "player")
-        //{
-
-        //}
-
-        //オブジェクトを検索
-        //auto endObj = objectmanager->m_Objects[tag].end();
-        //auto findObj = std::find(objectmanager->m_Objects[tag].begin(), endObj, unnecobj);
-
-        ////見つかったら末尾に移動させて削除
-        //if (findObj != endObj)
-        //{
-        //    std::swap(findObj, endObj);
-        //    objectmanager->m_Objects[tag].pop_back();
-        //}
-    }
-
     ObjectBase* ObjectManager::GetFirstGameObj(std::string tagname)
     {
         //アクティブリストに何も入ってなかったら
