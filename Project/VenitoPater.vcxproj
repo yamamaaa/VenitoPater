@@ -57,6 +57,7 @@
     <ClCompile Include="..\SourceCode\Object\StageObj\Area\Area.cpp" />
     <ClCompile Include="..\SourceCode\Object\StageObj\ClockWork\ClockWork\ClockWork.cpp" />
     <ClCompile Include="..\SourceCode\Object\StageObj\ClockWork\RPMController\RPMController.cpp" />
+    <ClCompile Include="..\SourceCode\Object\StageObj\ItemGetNum\ItemGetNum.cpp" />
     <ClCompile Include="..\SourceCode\Object\StageObj\Item\Item.cpp" />
     <ClCompile Include="..\SourceCode\Object\StageObj\MoveArea\MoveArea.cpp" />
     <ClCompile Include="..\SourceCode\Object\StageObj\Norm\Norm.cpp" />
@@ -118,6 +119,7 @@
     <ClInclude Include="..\SourceCode\Object\StageObj\Area\AreaMove_PosTag.h" />
     <ClInclude Include="..\SourceCode\Object\StageObj\ClockWork\ClockWork\ClockWork.h" />
     <ClInclude Include="..\SourceCode\Object\StageObj\ClockWork\RPMController\RPMController.h" />
+    <ClInclude Include="..\SourceCode\Object\StageObj\ItemGetNum\ItemGetNum.h" />
     <ClInclude Include="..\SourceCode\Object\StageObj\Item\Item.h" />
     <ClInclude Include="..\SourceCode\Object\StageObj\MoveArea\MoveArea.h" />
     <ClInclude Include="..\SourceCode\Object\StageObj\Norm\Norm.h" />

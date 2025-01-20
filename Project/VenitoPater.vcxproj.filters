@@ -142,6 +142,10 @@
     <ClCompile Include="..\SourceCode\Object\GameUi\RPMHPUi\RPMHPUi.cpp">
       <Filter>ソースコード\Object\GameUi\RPMHPUi</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\Result\GameClearUi\GameClearUi.cpp" />
+    <ClCompile Include="..\SourceCode\Object\StageObj\ItemGetNum\ItemGetNum.cpp">
+      <Filter>ソースコード\Object\StageObj\ItemGetNum</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -317,6 +321,10 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Still_ObjectTag.h">
       <Filter>ソースコード\Object\ObjectTag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\Result\GameClearUi\GameClearUi.h" />
+    <ClInclude Include="..\SourceCode\Object\StageObj\ItemGetNum\ItemGetNum.h">
+      <Filter>ソースコード\Object\StageObj\ItemGetNum</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -499,6 +507,9 @@
     </Filter>
     <Filter Include="ソースコード\Object\GameUi\WarningUi">
       <UniqueIdentifier>{d98a5617-0b22-4685-bed6-4d71da6b5423}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StageObj\ItemGetNum">
+      <UniqueIdentifier>{301620ee-6e75-404d-9681-3fcb8e6c7486}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
