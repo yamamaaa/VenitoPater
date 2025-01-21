@@ -94,9 +94,6 @@
     <ClCompile Include="..\SourceCode\Object\Result\GameOverUi\GameOverUi.cpp">
       <Filter>ソースコード\Object\Result\GameOverUi</Filter>
     </ClCompile>
-    <ClCompile Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.cpp">
-      <Filter>ソースコード\Transitor\FadeTransitor</Filter>
-    </ClCompile>
     <ClCompile Include="..\SourceCode\Object\Result\BackGround\BackGround.cpp">
       <Filter>ソースコード\Object\Result\BackGround</Filter>
     </ClCompile>
@@ -165,6 +162,9 @@
     </ClCompile>
     <ClCompile Include="..\SourceCode\Scene\Result\Result.cpp">
       <Filter>ソースコード\Scene\Result</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.cpp">
+      <Filter>ソースコード\Transitor\FadeTransitor</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -273,9 +273,6 @@
     <ClInclude Include="..\SourceCode\Object\Result\GameOverUi\GameOverUi.h">
       <Filter>ソースコード\Object\Result\GameOverUi</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.h">
-      <Filter>ソースコード\Transitor\FadeTransitor</Filter>
-    </ClInclude>
     <ClInclude Include="..\SourceCode\Object\Result\BackGround\BackGround.h">
       <Filter>ソースコード\Object\Result\BackGround</Filter>
     </ClInclude>
@@ -371,6 +368,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Scene\Result\Result.h">
       <Filter>ソースコード\Scene\Result</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.h">
+      <Filter>ソースコード\Transitor\FadeTransitor</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
