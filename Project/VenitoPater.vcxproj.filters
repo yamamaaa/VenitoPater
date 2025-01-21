@@ -181,6 +181,15 @@
     <ClCompile Include="..\SourceCode\JsonMaster\ImageData\PlayData\PlayData.cpp">
       <Filter>ソースコード\JsonMaster\ImageData\PlayData</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\TextData\CharacterData\CharacterData.cpp">
+      <Filter>ソースコード\JsonMaster\TextData\CharacterData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\TextData\MasterTextData\MasterTextData.cpp">
+      <Filter>ソースコード\JsonMaster\TextData\MasterTextData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\TextData\StillData\StillData.cpp">
+      <Filter>ソースコード\JsonMaster\TextData\StillData</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -401,6 +410,15 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\JsonMaster\ImageData\PlayData\PlayData.h">
       <Filter>ソースコード\JsonMaster\ImageData\PlayData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\TextData\CharacterData\CharacterData.h">
+      <Filter>ソースコード\JsonMaster\TextData\CharacterData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\TextData\MasterTextData\MasterTextData.h">
+      <Filter>ソースコード\JsonMaster\TextData\MasterTextData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\TextData\StillData\StillData.h">
+      <Filter>ソースコード\JsonMaster\TextData\StillData</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -635,6 +653,21 @@
     <Filter Include="ソースコード\JsonMaster\ImageData\TitleData">
       <UniqueIdentifier>{2daaefe0-3721-4d06-a788-2dc74f22fdf6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソースコード\JsonMaster\JsonFile\Text">
+      <UniqueIdentifier>{4db04759-8486-4344-a282-3f0f4a7f764d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\TextData">
+      <UniqueIdentifier>{abbbb85a-b106-4f89-ac8b-0dfed57d3eba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\TextData\CharacterData">
+      <UniqueIdentifier>{d4936a65-6bf9-4150-b1dd-35ba2b957848}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\TextData\MasterTextData">
+      <UniqueIdentifier>{12b2924d-d280-4dd4-b3d6-9d3d390e9e13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\TextData\StillData">
+      <UniqueIdentifier>{148ed47c-9ea1-4c61-b954-e6e0b4375f20}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\SourceCode\JsonMaster\JsonFile\Image\play.json">
@@ -648,6 +681,12 @@
     </None>
     <None Include="..\SourceCode\JsonMaster\JsonFile\Image\title.json">
       <Filter>ソースコード\JsonMaster\JsonFile\Image</Filter>
+    </None>
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Text\character.json">
+      <Filter>ソースコード\JsonMaster\JsonFile\Text</Filter>
+    </None>
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Text\still.json">
+      <Filter>ソースコード\JsonMaster\JsonFile\Text</Filter>
     </None>
   </ItemGroup>
 </Project>

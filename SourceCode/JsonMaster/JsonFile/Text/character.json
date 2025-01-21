@@ -1,0 +1,19 @@
+{
+  "character": {
+    "expression": {
+      "day_0": "../Asset/text/character/expression/day_0.txt",
+      "day_1": "../Asset/text/character/expression/day_1.txt",
+      "day_4": "../Asset/text/character/expression/day_4.txt"
+    },
+    "item": {
+      "day_0": "../Asset/text/character/item/day_0.txt",
+      "day_4": "../Asset/text/character/item/day_4.txt"
+    },
+    "line": {
+      "day_0": "../Asset/text/character/line/day_0.txt",
+      "day_1": "../Asset/text/character/line/day_1.txt",
+      "day_4": "../Asset/text/character/line/day_4.txt",
+      "gameover": "../Asset/text/character/line/gameover.txt"
+    }
+  }
+}

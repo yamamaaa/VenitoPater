@@ -1,0 +1,19 @@
+{
+  "still": {
+    "line": {
+      "day_0": "../Asset/text/still/line/day_0.txt",
+      "day_1": "../Asset/text/still/line/day_1.txt",
+      "day_2": "../Asset/text/still/line/day_2.txt",
+      "day_3": "../Asset/text/still/line/day_3.txt",
+      "day_4": "../Asset/text/still/line/day_4.txt",
+      "day_5": "../Asset/text/still/line/day_5.txt"
+    },
+    "drawimg": {
+      "day_0": "../Asset/text/still/drawimg/day_0.txt",
+      "day_1": "../Asset/text/still/drawimg/day_1.txt",
+      "day_2": "../Asset/text/still/drawimg/day_2.txt",
+      "day_3": "../Asset/text/still/drawimg/day_3.txt",
+      "day_4": "../Asset/text/still/drawimg/day_4.txt"
+    }
+  }
+}
