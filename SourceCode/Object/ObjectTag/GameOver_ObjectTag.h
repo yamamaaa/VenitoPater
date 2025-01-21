@@ -7,19 +7,19 @@ namespace objecttag
     /// <summary>
     /// オブジェクトの種類別タグ
     /// </summary>
-    static struct Result_ObjectTag
+    static struct GameOver_ObjectTag
     {
         std::string BACKGROUND = "background";
         std::string GAMEOVERUI = "gameoverui";
-    } result_objecttag;
+    } gameOver_ObjectTag;
 
 
     /// <summary>
     /// ループ制御用
     /// </summary>
-    static std::vector<std::string>Result_ObjectTagAll
+    static std::vector<std::string>GameOver_ObjectTagAll
     {
-        result_objecttag.BACKGROUND,
-        result_objecttag.GAMEOVERUI,
+        gameOver_ObjectTag.BACKGROUND,
+        gameOver_ObjectTag.GAMEOVERUI,
     };
 }

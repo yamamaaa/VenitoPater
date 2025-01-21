@@ -20,6 +20,13 @@ namespace scene
         /// </summary>
         ~Title();
 
+    private:
+
+        /// <summary>
+        /// オブジェクト読み込み関連
+        /// </summary>
+        void LoadObject()override;
+
         /// <summary>
         /// シーン更新処理
         /// </summary>

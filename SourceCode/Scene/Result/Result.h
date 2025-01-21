@@ -1,21 +1,30 @@
 #pragma once
-#include"../../../Scene/SceneBase/SceneBase.h"
+#include"../../Scene/SceneBase/SceneBase.h"
 
 namespace scene
 {
-    class GameOver:public SceneBase
+    /// <summary>
+    /// result画面関連
+    /// </summary>
+    class Result:public SceneBase
     {
     public:
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        GameOver();
+        Result();
 
         /// <summary>
         /// デストラクタ
         /// </summary>
-        ~GameOver();
+        ~Result();
+    private:
+
+        /// <summary>
+        /// オブジェクト読み込み関連
+        /// </summary>
+        void LoadObject()override;
 
         /// <summary>
         /// シーン更新処理

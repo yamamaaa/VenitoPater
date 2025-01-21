@@ -31,18 +31,6 @@
     <ClCompile Include="..\SourceCode\Object\ObjectBase\ObjectBase.cpp">
       <Filter>ソースコード\Object\ObjectBase</Filter>
     </ClCompile>
-    <ClCompile Include="..\SourceCode\Scene\SceneBase\SceneBase.cpp">
-      <Filter>ソースコード\Scene\SceneBase</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SourceCode\Scene\SceneManager\SceneManager.cpp">
-      <Filter>ソースコード\Scene\SceneManager</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SourceCode\Scene\Title\Title.cpp">
-      <Filter>ソースコード\Scene\Title</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SourceCode\Scene\ThreeDays\ThreeDays.cpp">
-      <Filter>ソースコード\Scene\ThreeDays</Filter>
-    </ClCompile>
     <ClCompile Include="..\SourceCode\Object\CharaObj\Player\Player.cpp">
       <Filter>ソースコード\Object\CharaObj\Player</Filter>
     </ClCompile>
@@ -106,9 +94,6 @@
     <ClCompile Include="..\SourceCode\Object\Result\GameOverUi\GameOverUi.cpp">
       <Filter>ソースコード\Object\Result\GameOverUi</Filter>
     </ClCompile>
-    <ClCompile Include="..\SourceCode\Scene\Result\GameOver\GameOver.cpp">
-      <Filter>ソースコード\Scene\Result\GameOver</Filter>
-    </ClCompile>
     <ClCompile Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.cpp">
       <Filter>ソースコード\Transitor\FadeTransitor</Filter>
     </ClCompile>
@@ -163,6 +148,24 @@
     <ClCompile Include="..\SourceCode\Object\TitleObj\TitleUi\TitleUi.cpp">
       <Filter>ソースコード\Object\TitleObj\TitleUi</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Scene\SceneBase\SceneBase.cpp">
+      <Filter>ソースコード\Scene\SceneBase</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Scene\SceneManager\SceneManager.cpp">
+      <Filter>ソースコード\Scene\SceneManager</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Scene\Story\Story.cpp">
+      <Filter>ソースコード\Scene\Story</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Scene\ThreeDays\ThreeDays.cpp">
+      <Filter>ソースコード\Scene\ThreeDays</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Scene\Title\Title.cpp">
+      <Filter>ソースコード\Scene\Title</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Scene\Result\Result.cpp">
+      <Filter>ソースコード\Scene\Result</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -200,18 +203,6 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\ObjectBase\ObjectBase.h">
       <Filter>ソースコード\Object\ObjectBase</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SourceCode\Scene\SceneBase\SceneBase.h">
-      <Filter>ソースコード\Scene\SceneBase</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SourceCode\Scene\SceneManager\SceneManager.h">
-      <Filter>ソースコード\Scene\SceneManager</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SourceCode\Scene\Title\Title.h">
-      <Filter>ソースコード\Scene\Title</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SourceCode\Scene\ThreeDays\ThreeDays.h">
-      <Filter>ソースコード\Scene\ThreeDays</Filter>
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\CharaObj\Player\Player.h">
       <Filter>ソースコード\Object\CharaObj\Player</Filter>
@@ -282,9 +273,6 @@
     <ClInclude Include="..\SourceCode\Object\Result\GameOverUi\GameOverUi.h">
       <Filter>ソースコード\Object\Result\GameOverUi</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\Scene\Result\GameOver\GameOver.h">
-      <Filter>ソースコード\Scene\Result\GameOver</Filter>
-    </ClInclude>
     <ClInclude Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.h">
       <Filter>ソースコード\Transitor\FadeTransitor</Filter>
     </ClInclude>
@@ -315,7 +303,7 @@
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Global_ObjectTag.h">
       <Filter>ソースコード\Object\ObjectTag</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\Object\ObjectTag\Result_ObjectTag.h">
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\GameOver_ObjectTag.h">
       <Filter>ソースコード\Object\ObjectTag</Filter>
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\ObjectTag\ThreeDays_ObjectTag.h">
@@ -365,6 +353,24 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\TitleObj\TitleUi\TitleUi.h">
       <Filter>ソースコード\Object\TitleObj\TitleUi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Scene\SceneBase\SceneBase.h">
+      <Filter>ソースコード\Scene\SceneBase</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Scene\SceneManager\SceneManager.h">
+      <Filter>ソースコード\Scene\SceneManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Scene\Story\Story.h">
+      <Filter>ソースコード\Scene\Story</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Scene\ThreeDays\ThreeDays.h">
+      <Filter>ソースコード\Scene\ThreeDays</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Scene\Title\Title.h">
+      <Filter>ソースコード\Scene\Title</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Scene\Result\Result.h">
+      <Filter>ソースコード\Scene\Result</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -506,9 +512,6 @@
     <Filter Include="ソースコード\Scene\Result">
       <UniqueIdentifier>{54a982df-78df-4706-8a26-6f6c3a653b39}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースコード\Scene\Result\GameOver">
-      <UniqueIdentifier>{4f23ca65-289b-4ff1-b6d3-cc6cef08ecfc}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソースコード\Transitor">
       <UniqueIdentifier>{e06e67dd-572b-4884-93e7-0d54f6ea05ec}</UniqueIdentifier>
     </Filter>
@@ -574,6 +577,9 @@
     </Filter>
     <Filter Include="ソースコード\Object\TitleObj\TitleUi">
       <UniqueIdentifier>{da2b9bbe-2521-40c0-8de2-ead61ba3fb52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Scene\Story">
+      <UniqueIdentifier>{962b8690-339f-437d-9046-592028dab4cd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

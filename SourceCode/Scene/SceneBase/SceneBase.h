@@ -1,6 +1,6 @@
 #pragma once
 #include<Dxlib.h>
-
+#include"../../Object/ObjectManager/ObjectManager.h"
 #include"../../Transitor/FadeTransitor/FadeTransitor.h"
 
 namespace transitor
@@ -31,6 +31,11 @@ namespace scene
         virtual ~SceneBase();
 
         /// <summary>
+        /// オブジェクト読み込み関連
+        /// </summary>
+        virtual void LoadObject() = 0;
+
+        /// <summary>
         /// シーン更新処理
         /// </summary>
         /// <param name="deltaTime">デルタタイム</param>
@@ -44,6 +49,19 @@ namespace scene
 
     protected:
 
+        /// <summary>
+        /// シーン初期処理
+        /// </summary>
+        void LoadScene();
+
+        /// <summary>
+        /// シーン切り替え時処理
+        /// </summary>
+        void TransitorScene();
+
+        object::GameStatus m_NowGameStatus;         //現在のゲームステータス
         transitor::FadeTransitor* fade_transitor;   //フェード関連
+
+        bool m_FadeInSet;
     };
 }

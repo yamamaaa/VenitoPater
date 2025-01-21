@@ -1,11 +1,11 @@
 #include "BackGround.h"
-#include "../../ObjectTag/Result_ObjectTag.h"
+#include "../../ObjectTag/GameOver_ObjectTag.h"
 #include "../../ObjectManager/ObjectManager.h"
 
 namespace object
 {
     BackGround::BackGround()
-        :ObjectBase(result_objecttag.BACKGROUND)
+        :ObjectBase(gameOver_ObjectTag.BACKGROUND)
     {
         //ì«Ç›çûÇ›ä÷òA
         LoadObject();

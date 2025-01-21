@@ -49,7 +49,6 @@ namespace scene
 		void ChangeScene();
 
 	private:
-
 		std::shared_ptr<class fps::Fps> fps;						//タイムマネージャー
 
 		std::stack<std::shared_ptr<class SceneBase>> m_NowScene;	//現在のシーン
