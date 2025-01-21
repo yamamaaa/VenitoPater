@@ -24,6 +24,11 @@
     <ClCompile Include="..\SourceCode\GameSystem\GameManager\GameManager.cpp" />
     <ClCompile Include="..\SourceCode\GameSystem\GameSetting\GameSetting.cpp" />
     <ClCompile Include="..\SourceCode\GameSystem\Window\Window.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\ImageData\MasterImgData\MasterImgData.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\ImageData\PlayData\PlayData.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\ImageData\ResultData\ResultData.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\ImageData\StoryData\StoryData.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\ImageData\TitleData\TitleData.cpp" />
     <ClCompile Include="..\SourceCode\JsonMaster\IOUtility\IOUtility.cpp" />
     <ClCompile Include="..\SourceCode\JsonMaster\JsonManager\JsonManager.cpp" />
     <ClCompile Include="..\SourceCode\LevelController\LevelController.cpp" />
@@ -81,6 +86,11 @@
     <ClInclude Include="..\SourceCode\GameSystem\GameManager\GameManager.h" />
     <ClInclude Include="..\SourceCode\GameSystem\GameSetting\GameSetting.h" />
     <ClInclude Include="..\SourceCode\GameSystem\Window\Window.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\ImageData\MasterImgData\MasterImgData.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\ImageData\PlayData\PlayData.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\ImageData\ResultData\ResultData.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\ImageData\StoryData\StoryData.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\ImageData\TitleData\TitleData.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\IOUtility\IOUtility.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\JsonManager\JsonManager.h" />
     <ClInclude Include="..\SourceCode\LevelController\LevelController.h" />
@@ -144,6 +154,12 @@
     <ClInclude Include="..\SourceCode\Scene\ThreeDays\ThreeDays.h" />
     <ClInclude Include="..\SourceCode\Scene\Title\Title.h" />
     <ClInclude Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Image\play.json" />
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Image\result.json" />
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Image\story.json" />
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Image\title.json" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

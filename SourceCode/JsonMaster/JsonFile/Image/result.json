@@ -1,0 +1,11 @@
+{
+    "result": {
+        "gameclear": {
+            "background": "../Asset/image/result/gameclear/background.png"
+        },
+        "gameover": {
+            "background": "../Asset/image/result/gameover/background.png",
+            "select": "../Asset/image/result/gameclear/select.png"
+        }
+    }
+}
