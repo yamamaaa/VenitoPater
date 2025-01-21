@@ -17,7 +17,7 @@ namespace GameSystem
         //GameSetting初期化
         gamesetting->Init();
 
-        JsonManager::InitJsonManager();
+        jsonmaster::JsonManager::InitJsonManager();
 
         //SceneManagerのインスタンス化
         sceneManager.reset(new scene::SceneManager);

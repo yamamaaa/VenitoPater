@@ -32,8 +32,8 @@ namespace object
         m_RItemNum_Pos += m_RItem_ObjPos;
 
         //‰æ‘œ“Ç‚Ýž‚Ý
-        m_ObjHandle= LoadGraph("../Asset/image/ui/item/duck.png");
-        m_RItem_Handole = LoadGraph("../Asset/image/ui/item/nekoinu.png");
+        m_ObjHandle= LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetUiData_Duck().c_str());
+        m_RItem_Handole = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetUiData_Nekoinu().c_str());
     }
 
     void ItemUi::DrawObj()

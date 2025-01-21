@@ -9,7 +9,7 @@ namespace json_imgdata
 	/// <summary>
 	/// Story中のJsonImgデータ管理クラス
 	/// </summary>
-	class StoryData
+	class StoryImgData
 	{
 	public:
 
@@ -17,12 +17,12 @@ namespace json_imgdata
 		/// コンストラクタ
 		/// </summary>
 		/// <param name="json">Jsonファイル</param>
-		StoryData(Json json);
+		StoryImgData(Json json);
 
 		/// <summary>
 		/// デストラクタ
 		/// </summary>
-		~StoryData();
+		~StoryImgData();
 
 		const std::string GetBackgroundData_Lounge()const { return backgroundData.lounge; }
 		const std::string GetBackgroundData_Stage()const { return backgroundData.stage; }

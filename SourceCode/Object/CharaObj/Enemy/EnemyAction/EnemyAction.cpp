@@ -18,12 +18,12 @@ namespace object
 
 	void EnemyAction::LoadObject()
 	{
+		m_ObjHandle = 0;
 		m_ObjPos = { 0.0 };
-
-		m_EmyActionImg[0] = LoadGraph("../Asset/image/enemy/memini/place_3.png");
-		m_EmyActionImg[1] = LoadGraph("../Asset/image/enemy/nil/place_3.png");
-		m_EmyActionImg[2] = LoadGraph("../Asset/image/enemy/spero/place_3.png");
-		m_EmyActionImg[3] = LoadGraph("../Asset/image/enemy/familia/place_2.png");
+		m_EmyActionImg[0] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetMeminiData(3).c_str());
+		m_EmyActionImg[1] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetNilData(3).c_str());
+		m_EmyActionImg[2] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetSperoData(3).c_str());
+		m_EmyActionImg[3] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetFamiliaData(2).c_str());
 	}
 
 	void EnemyAction::UpdateObj(const float deltatime)

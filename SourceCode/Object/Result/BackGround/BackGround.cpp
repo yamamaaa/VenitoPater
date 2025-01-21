@@ -22,11 +22,11 @@ namespace object
 
         if (GameOver == ObjectManager::GetGameState())
         {
-            m_ObjHandle = LoadGraph("../Asset/image/result/gameover/background.png");
+            m_ObjHandle = LoadGraph(JsonManager::ImgData_Instance()->Get_ResultData_Instance()->GetOverData_BackGround().c_str());
         }
         if (GameClear == ObjectManager::GetGameState())
         {
-            m_ObjHandle = LoadGraph("../Asset/image/result/gameover/background.png");
+            m_ObjHandle = LoadGraph(JsonManager::ImgData_Instance()->Get_ResultData_Instance()->GetClearData_BackGround().c_str());
         }
     }
 

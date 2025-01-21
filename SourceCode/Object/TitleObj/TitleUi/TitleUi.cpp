@@ -20,8 +20,8 @@ namespace object
 		m_ObjPos = { 370.0f,90.0f };
 		m_TVScreenPos = { 470.0f,183.0f };
 
-		m_ObjHandle = LoadGraph("../Asset/image/title/tv.png");
-		m_TVScreen_Handle= LoadGraph("../Asset/image/title/screen.png");
+		m_ObjHandle = LoadGraph(JsonManager::ImgData_Instance()->Get_TitleData_Instance()->GetTVData().c_str());
+		m_TVScreen_Handle= LoadGraph(JsonManager::ImgData_Instance()->Get_TitleData_Instance()->GetScreenData().c_str());
 	}
 
 	void TitleUi::UpdateObj(const float deltatime)

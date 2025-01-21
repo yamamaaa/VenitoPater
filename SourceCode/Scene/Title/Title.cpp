@@ -64,10 +64,9 @@ namespace scene
         //    return new ThreeDays();
         //}
 
-        //LevelController::SetLevel(levelStatus.NOMAL);
-        //object::ObjectManager::ReleaseAllObj();
-        //m_NowGameStatus = object::Still;
-        //return new Story();
+        LevelController::SetLevel(levelStatus.NOMAL);
+        object::ObjectManager::ReleaseAllObj();
+        return new ThreeDays();
 
         //ÉQÅ[ÉÄÉvÉåÉC
         if (object::GamePlay == m_NowGameStatus)

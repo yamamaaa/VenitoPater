@@ -29,8 +29,8 @@ namespace object
 		m_DrawObjPos[action] = { 0.0f,0.0f };
 
 		m_ObjImg[0] = -1;
-		m_ObjImg[1] = LoadGraph("../Asset/image/enemy/familia/place_0.png");
-		m_ObjImg[2] = LoadGraph("../Asset/image/enemy/familia/place_1.png");
+		m_ObjImg[1] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetFamiliaData(0).c_str());
+		m_ObjImg[2] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetFamiliaData(1).c_str());
 		m_ObjImg[3] = -1;
 	}
 

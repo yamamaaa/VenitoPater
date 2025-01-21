@@ -1,4 +1,5 @@
 #include "LightController.h"
+#include "../../../JsonMaster/JsonManager/JsonManager.h"
 
 namespace object
 {
@@ -33,9 +34,9 @@ namespace object
 
 		light_controller->m_IsBlinking = false;
 
-		light_controller->m_ShadowHandol = LoadGraph("../Asset/image/light/shadow.png");
-		light_controller->m_LightHandol = LoadGraph("../Asset/image/light/light.png");
-		light_controller->m_BlackImgHandol = LoadGraph("../Asset/image/light/black.png");
+		light_controller->m_ShadowHandol = LoadGraph(jsonmaster::JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetLightData_Shadow().c_str());
+		light_controller->m_LightHandol = LoadGraph(jsonmaster::JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetLightData_Light().c_str());
+		light_controller->m_BlackImgHandol = LoadGraph(jsonmaster::JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetLightData_Black().c_str());
 	}
 
 	void LightController::DrawLight()

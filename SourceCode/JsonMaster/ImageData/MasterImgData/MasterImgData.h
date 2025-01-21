@@ -3,7 +3,7 @@
 
 #include "../TitleData/TitleData.h"
 #include "../PlayData/PlayData.h"
-#include "../StoryData/StoryData.h"
+#include "../StoryImgData/StoryImgData.h"
 #include "../ResultData/ResultData.h"
 
 namespace jsonmaster
@@ -49,7 +49,7 @@ namespace json_imgdata
 		/// StoryDataインスタンス
 		/// </summary>
 		/// <returns>Storyデータ</returns>
-		class StoryData* Get_StoryData_Instance() { return storydata.get(); }
+		class StoryImgData* Get_StoryImgData_Instance() { return storyimgdata.get(); }
 
 		/// <summary>
 		/// ResultDataインスタンス
@@ -63,7 +63,7 @@ namespace json_imgdata
 
 		std::unique_ptr<class TitleData> titledata;
 		std::unique_ptr<class PlayData> playdata;
-		std::unique_ptr<class StoryData> storydata;
+		std::unique_ptr<class StoryImgData> storyimgdata;
 		std::unique_ptr<class ResultData> resultdata;
 	};
 }

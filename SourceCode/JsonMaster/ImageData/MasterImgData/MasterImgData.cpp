@@ -14,8 +14,8 @@ namespace json_imgdata
 		Json playjson = ioutility->Analysis("../SourceCode/JsonMaster/JsonFile/Image/play.json");
 		playdata.reset(new PlayData(playjson["play"]));
 
-		Json storyjson = ioutility->Analysis("../SourceCode/JsonMaster/JsonFile/Image/story.json");
-		storydata.reset(new StoryData(storyjson["story"]));
+		Json storyimgjson = ioutility->Analysis("../SourceCode/JsonMaster/JsonFile/Image/story.json");
+		storyimgdata.reset(new StoryImgData(storyimgjson["story"]));
 
 		Json resultjson = ioutility->Analysis("../SourceCode/JsonMaster/JsonFile/Image/result.json");
 		resultdata.reset(new ResultData(resultjson["result"]));
