@@ -190,6 +190,12 @@
     <ClCompile Include="..\SourceCode\JsonMaster\TextData\StillData\StillData.cpp">
       <Filter>ソースコード\JsonMaster\TextData\StillData</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\FontData\MasterFontData\MasterFontData.cpp">
+      <Filter>ソースコード\JsonMaster\FontData\MasterFontData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\FontData\StoryData\StoryData.cpp">
+      <Filter>ソースコード\JsonMaster\FontData\StoryData</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -419,6 +425,12 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\JsonMaster\TextData\StillData\StillData.h">
       <Filter>ソースコード\JsonMaster\TextData\StillData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\FontData\MasterFontData\MasterFontData.h">
+      <Filter>ソースコード\JsonMaster\FontData\MasterFontData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\FontData\StoryData\StoryData.h">
+      <Filter>ソースコード\JsonMaster\FontData\StoryData</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -668,6 +680,18 @@
     <Filter Include="ソースコード\JsonMaster\TextData\StillData">
       <UniqueIdentifier>{148ed47c-9ea1-4c61-b954-e6e0b4375f20}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソースコード\JsonMaster\JsonFile\Font">
+      <UniqueIdentifier>{03ec39ac-7162-4aab-b642-7c52d66460fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\FontData">
+      <UniqueIdentifier>{b0b55153-66d4-43c9-9d08-2371da67f35c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\FontData\MasterFontData">
+      <UniqueIdentifier>{b87a5932-b94a-4da6-a9cb-5bcc3daf2479}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\FontData\StoryData">
+      <UniqueIdentifier>{8cbd31ca-aa91-4eb1-bda1-2249a1d0209f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\SourceCode\JsonMaster\JsonFile\Image\play.json">
@@ -687,6 +711,9 @@
     </None>
     <None Include="..\SourceCode\JsonMaster\JsonFile\Text\still.json">
       <Filter>ソースコード\JsonMaster\JsonFile\Text</Filter>
+    </None>
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Font\story.json">
+      <Filter>ソースコード\JsonMaster\JsonFile\Font</Filter>
     </None>
   </ItemGroup>
 </Project>
