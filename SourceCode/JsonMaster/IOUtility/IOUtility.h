@@ -9,6 +9,9 @@ using Json = nlohmann::json;
 
 namespace jsonmaster
 {
+	/// <summary>
+	/// Json“Ç‚İ‚İŠÖ˜A
+	/// </summary>
 	class IOUtility final
 	{
 	public:

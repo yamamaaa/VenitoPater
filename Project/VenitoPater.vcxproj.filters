@@ -166,6 +166,21 @@
     <ClCompile Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.cpp">
       <Filter>ソースコード\Transitor\FadeTransitor</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\ImageData\MasterImgData\MasterImgData.cpp">
+      <Filter>ソースコード\JsonMaster\ImageData\MasterImgData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\ImageData\TitleData\TitleData.cpp">
+      <Filter>ソースコード\JsonMaster\ImageData\TitleData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\ImageData\StoryData\StoryData.cpp">
+      <Filter>ソースコード\JsonMaster\ImageData\StoryData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\ImageData\ResultData\ResultData.cpp">
+      <Filter>ソースコード\JsonMaster\ImageData\ResultData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\ImageData\PlayData\PlayData.cpp">
+      <Filter>ソースコード\JsonMaster\ImageData\PlayData</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -371,6 +386,21 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.h">
       <Filter>ソースコード\Transitor\FadeTransitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\ImageData\MasterImgData\MasterImgData.h">
+      <Filter>ソースコード\JsonMaster\ImageData\MasterImgData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\ImageData\TitleData\TitleData.h">
+      <Filter>ソースコード\JsonMaster\ImageData\TitleData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\ImageData\StoryData\StoryData.h">
+      <Filter>ソースコード\JsonMaster\ImageData\StoryData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\ImageData\ResultData\ResultData.h">
+      <Filter>ソースコード\JsonMaster\ImageData\ResultData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\ImageData\PlayData\PlayData.h">
+      <Filter>ソースコード\JsonMaster\ImageData\PlayData</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -581,5 +611,43 @@
     <Filter Include="ソースコード\Scene\Story">
       <UniqueIdentifier>{962b8690-339f-437d-9046-592028dab4cd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソースコード\JsonMaster\JsonFile">
+      <UniqueIdentifier>{b04abbf7-6fd0-4555-827a-c0ec5ae576c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\JsonFile\Image">
+      <UniqueIdentifier>{8dc2485d-0633-429b-bfc5-898cf0c11f37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\ImageData">
+      <UniqueIdentifier>{cc33ed31-8ab2-42a2-9423-79be27275162}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\ImageData\MasterImgData">
+      <UniqueIdentifier>{1d9a98b1-980a-47ea-8ea5-f740798edaa4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\ImageData\PlayData">
+      <UniqueIdentifier>{bcf58683-bfa6-47ad-a125-5d2c95dc407a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\ImageData\ResultData">
+      <UniqueIdentifier>{ad6c2a97-6538-4c24-9b93-a31d8873c177}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\ImageData\StoryData">
+      <UniqueIdentifier>{c29cbcd5-9b01-4d9f-ab05-84b943535f52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\ImageData\TitleData">
+      <UniqueIdentifier>{2daaefe0-3721-4d06-a788-2dc74f22fdf6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Image\play.json">
+      <Filter>ソースコード\JsonMaster\JsonFile\Image</Filter>
+    </None>
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Image\result.json">
+      <Filter>ソースコード\JsonMaster\JsonFile\Image</Filter>
+    </None>
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Image\story.json">
+      <Filter>ソースコード\JsonMaster\JsonFile\Image</Filter>
+    </None>
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Image\title.json">
+      <Filter>ソースコード\JsonMaster\JsonFile\Image</Filter>
+    </None>
   </ItemGroup>
 </Project>
