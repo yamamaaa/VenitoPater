@@ -66,6 +66,7 @@
     <ClCompile Include="..\SourceCode\Object\StoryObj\StillDraw\StillDraw.cpp" />
     <ClCompile Include="..\SourceCode\Object\Time\Time.cpp" />
     <ClCompile Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.cpp" />
+    <ClCompile Include="..\SourceCode\Object\TitleObj\TitleUi\TitleUi.cpp" />
     <ClCompile Include="..\SourceCode\Scene\Result\GameOver\GameOver.cpp" />
     <ClCompile Include="..\SourceCode\Scene\SceneBase\SceneBase.cpp" />
     <ClCompile Include="..\SourceCode\Scene\SceneManager\SceneManager.cpp" />
@@ -134,6 +135,7 @@
     <ClInclude Include="..\SourceCode\Object\Time\Time.h" />
     <ClInclude Include="..\SourceCode\Object\TitleObj\SelectMode\PlayMenu.h" />
     <ClInclude Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.h" />
+    <ClInclude Include="..\SourceCode\Object\TitleObj\TitleUi\TitleUi.h" />
     <ClInclude Include="..\SourceCode\Scene\Result\GameOver\GameOver.h" />
     <ClInclude Include="..\SourceCode\Scene\SceneBase\SceneBase.h" />
     <ClInclude Include="..\SourceCode\Scene\SceneManager\SceneManager.h" />

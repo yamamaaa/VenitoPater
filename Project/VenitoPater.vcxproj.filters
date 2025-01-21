@@ -160,6 +160,9 @@
     <ClCompile Include="..\SourceCode\Object\Time\Time.cpp">
       <Filter>ソースコード\Object\Time</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\TitleObj\TitleUi\TitleUi.cpp">
+      <Filter>ソースコード\Object\TitleObj\TitleUi</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -359,6 +362,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\Time\Time.h">
       <Filter>ソースコード\Object\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\TitleObj\TitleUi\TitleUi.h">
+      <Filter>ソースコード\Object\TitleObj\TitleUi</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -565,6 +571,9 @@
     </Filter>
     <Filter Include="ソースコード\Object\Time">
       <UniqueIdentifier>{59ed1aea-a9ce-4030-b5f8-1b9c34100fe9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\TitleObj\TitleUi">
+      <UniqueIdentifier>{da2b9bbe-2521-40c0-8de2-ead61ba3fb52}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
