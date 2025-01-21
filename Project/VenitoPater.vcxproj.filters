@@ -154,6 +154,12 @@
     <ClCompile Include="..\SourceCode\Object\StoryObj\StillDraw\StillDraw.cpp">
       <Filter>ソースコード\Object\StoryObj\StillDraw</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.cpp">
+      <Filter>ソースコード\Object\TitleObj\SelectMode</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\Time\Time.cpp">
+      <Filter>ソースコード\Object\Time</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -344,6 +350,15 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\StoryObj\StillDraw\StillDraw.h">
       <Filter>ソースコード\Object\StoryObj\StillDraw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\TitleObj\SelectMode\PlayMenu.h">
+      <Filter>ソースコード\Object\TitleObj\SelectMode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.h">
+      <Filter>ソースコード\Object\TitleObj\SelectMode</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\Time\Time.h">
+      <Filter>ソースコード\Object\Time</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -541,6 +556,15 @@
     </Filter>
     <Filter Include="ソースコード\Object\StoryObj\StillDraw">
       <UniqueIdentifier>{a1bd0f0c-b937-4b84-aef8-863b150e3f6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\TitleObj">
+      <UniqueIdentifier>{8a6436c8-8b55-477e-bec6-a716639be713}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\TitleObj\SelectMode">
+      <UniqueIdentifier>{b3e091cf-e3b5-4cf9-968f-92bab11612a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\Time">
+      <UniqueIdentifier>{59ed1aea-a9ce-4030-b5f8-1b9c34100fe9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
