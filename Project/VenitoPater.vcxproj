@@ -29,7 +29,7 @@
     <ClCompile Include="..\SourceCode\JsonMaster\ImageData\MasterImgData\MasterImgData.cpp" />
     <ClCompile Include="..\SourceCode\JsonMaster\ImageData\PlayData\PlayData.cpp" />
     <ClCompile Include="..\SourceCode\JsonMaster\ImageData\ResultData\ResultData.cpp" />
-    <ClCompile Include="..\SourceCode\JsonMaster\ImageData\StoryData\StoryData.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\ImageData\StoryImgData\StoryImgData.cpp" />
     <ClCompile Include="..\SourceCode\JsonMaster\ImageData\TitleData\TitleData.cpp" />
     <ClCompile Include="..\SourceCode\JsonMaster\IOUtility\IOUtility.cpp" />
     <ClCompile Include="..\SourceCode\JsonMaster\JsonManager\JsonManager.cpp" />
@@ -96,7 +96,7 @@
     <ClInclude Include="..\SourceCode\JsonMaster\ImageData\MasterImgData\MasterImgData.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\ImageData\PlayData\PlayData.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\ImageData\ResultData\ResultData.h" />
-    <ClInclude Include="..\SourceCode\JsonMaster\ImageData\StoryData\StoryData.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\ImageData\StoryImgData\StoryImgData.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\ImageData\TitleData\TitleData.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\IOUtility\IOUtility.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\JsonManager\JsonManager.h" />

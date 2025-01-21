@@ -37,28 +37,12 @@ namespace object
 		srand(static_cast<unsigned int>(time(0)));
 
 		//各アイテムの読み込み
-		//jsonファイル完成次第書き換え予定
-		m_ItemImg_area0[0] = LoadGraph("../Asset/image/item/area0/duck_0.png");
-		m_ItemImg_area0[1] = LoadGraph("../Asset/image/item/area0/duck_1.png");
-		m_ItemImg_area0[2] = LoadGraph("../Asset/image/item/area0/duck_2.png");
-		m_ItemImg_area0[3] = LoadGraph("../Asset/image/item/area0/duck_3.png");
-		m_ItemImg_area0[4] = LoadGraph("../Asset/image/item/area0/duck_4.png");
-
-		m_ItemImg_area1[0] = LoadGraph("../Asset/image/item/area1/duck_0.png");
-		m_ItemImg_area1[1] = LoadGraph("../Asset/image/item/area1/duck_1.png");
-		m_ItemImg_area1[2] = LoadGraph("../Asset/image/item/area1/duck_2.png");
-		m_ItemImg_area1[3] = LoadGraph("../Asset/image/item/area1/duck_3.png");
-		m_ItemImg_area1[4] = LoadGraph("../Asset/image/item/area1/duck_4.png");
-
-		m_ItemImg_area2[0] = LoadGraph("../Asset/image/item/area2/duck_0.png");
-		m_ItemImg_area2[1] = LoadGraph("../Asset/image/item/area2/duck_1.png");
-		m_ItemImg_area2[2] = LoadGraph("../Asset/image/item/area2/duck_2.png");
-		m_ItemImg_area2[3] = LoadGraph("../Asset/image/item/area2/duck_3.png");
-		m_ItemImg_area2[4] = LoadGraph("../Asset/image/item/area2/duck_4.png");
-
-		m_ItemImg_area0[5] = LoadGraph("../Asset/image/item/area0/nekoinu.png");
-		m_ItemImg_area1[5] = LoadGraph("../Asset/image/item/area1/nekoinu.png");
-		m_ItemImg_area2[5] = LoadGraph("../Asset/image/item/area2/nekoinu.png");
+		for (int i = 0; i < 6; i++)
+		{
+			m_ItemImg_area0[i]= LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->Get_ItemData_Area_0(i).c_str());
+			m_ItemImg_area1[i] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->Get_ItemData_Area_1(i).c_str());
+			m_ItemImg_area2[i] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->Get_ItemData_Area_2(i).c_str());
+		}
 	}
 
 	void Item::UpdateObj(const float deltatime)

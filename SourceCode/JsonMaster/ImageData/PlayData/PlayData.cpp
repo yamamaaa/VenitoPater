@@ -30,13 +30,13 @@ namespace json_imgdata
 
 	void PlayData::SetJsonData_Enemy(Json json)
 	{
-		for (int i = 0; i < 2; i++)
+		for (int i = 0; i < 3; i++)
 		{
 			enemyData.familia[i]= json["familia"][i];
 			enemyData.ira[i] = json["ira"][i];
 		}
 
-		for (int i = 0; i < 3; i++)
+		for (int i = 0; i < 4; i++)
 		{
 			enemyData.memini[i] = json["memini"][i];
 			enemyData.nil[i] = json["nil"][i];

@@ -25,12 +25,12 @@ namespace object
 		m_DrawObjPos[replace] = { 900.0f,450.0f };
 		m_DrawObjPos[replace_2] = { 770.0f,270.0f };
 
-		m_MoveSpeed = 0.1f;
+		m_MoveSpeed = 0.4f;
 		m_ObjDrawArea = 1;
 
-		m_ObjImg[0] = LoadGraph("../Asset/image/enemy/nil/place_0.png");
-		m_ObjImg[1] = LoadGraph("../Asset/image/enemy/nil/place_1.png");
-		m_ObjImg[2] = LoadGraph("../Asset/image/enemy/nil/place_2.png");
+		m_ObjImg[0] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetNilData(0).c_str());
+		m_ObjImg[1] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetNilData(1).c_str());
+		m_ObjImg[2] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetNilData(2).c_str());
 		m_ObjImg[3] = -1;
 	}
 
@@ -70,7 +70,6 @@ namespace object
 		{
 			ExitObj();
 		}
-
 	}
 
 	void Nil::DrawObj()

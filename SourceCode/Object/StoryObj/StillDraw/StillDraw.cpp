@@ -30,13 +30,13 @@ namespace object
         switch (dey)
         {
         case 0:
-            m_ObjImg.push_back(LoadGraph("../Asset/image/story/still/steel_1.png"));
+            //m_ObjImg.push_back(LoadGraph("../Asset/image/story/still/steel_1.png"));
             break;
         case 1:
-            m_ObjImg.push_back(LoadGraph("../Asset/image/story/still/steel_2.png"));
+            //m_ObjImg.push_back(LoadGraph("../Asset/image/story/still/steel_2.png"));
             break;
         case 2:
-            m_ObjImg.push_back(LoadGraph("../Asset/image/story/still/steel_3.png"));
+            //m_ObjImg.push_back(LoadGraph("../Asset/image/story/still/steel_3.png"));
             break;
         }
 

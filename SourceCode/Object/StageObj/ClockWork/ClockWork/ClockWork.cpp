@@ -39,7 +39,7 @@ namespace object
 		m_AnimationFPS = m_DEFAULT_FPS;       // アニメーションFPS初期値
 
 		//画像の読み込み
-		LoadDivGraph("../Asset/image/clockwork/clockwork.png", m_AnimPattern * m_AnimType, m_AnimPattern, m_AnimType, m_colwidth, m_colheight, m_Handle);
+		LoadDivGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetClockWork().c_str(), m_AnimPattern * m_AnimType, m_AnimPattern, m_AnimType, m_colwidth, m_colheight, m_Handle);
 	}
 
 	void ClockWork::UpdateObj(const float deltatime)

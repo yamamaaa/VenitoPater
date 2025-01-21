@@ -28,7 +28,7 @@ namespace object
 		m_UiOffset[0] = { 50,30 };
 		m_UiOffset[1] = { 70,30 };
 
-		m_ObjHandle = LoadGraph("../Asset/image/result/gameover/select.png");
+		m_ObjHandle = LoadGraph(JsonManager::ImgData_Instance()->Get_ResultData_Instance()->GetOverData_Select().c_str());
 
 		m_Uipos.x = m_SelectUi_Pos[0].x;
 		m_Uipos.y = m_SelectUi_Pos[0].y;

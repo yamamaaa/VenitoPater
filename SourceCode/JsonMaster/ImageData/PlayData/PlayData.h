@@ -52,11 +52,11 @@ namespace json_imgdata
 
 		struct EnemyData
 		{
-			std::string familia[2];
-			std::string ira[2];
-			std::string memini[3];
-			std::string nil[3];
-			std::string spero[3];
+			std::string familia[3];
+			std::string ira[3];
+			std::string memini[4];
+			std::string nil[4];
+			std::string spero[4];
 		}enemyData;
 
 		void SetJsonData_Enemy(Json json);

@@ -21,9 +21,9 @@ namespace object
 
 	void Character::LoadObject()
 	{
-		m_Objimg[charaStatus.HAPPY] = LoadGraph("../Asset/image/story/character/happy.png");
-		m_Objimg[charaStatus.NORMAL] = LoadGraph("../Asset/image/story/character/normal.png");
-		m_Objimg[charaStatus.SORROW] = LoadGraph("../Asset/image/story/character/sorrow.png");
+		//m_Objimg[charaStatus.HAPPY] = LoadGraph("../Asset/image/story/character/happy.png");
+		//m_Objimg[charaStatus.NORMAL] = LoadGraph("../Asset/image/story/character/normal.png");
+		//m_Objimg[charaStatus.SORROW] = LoadGraph("../Asset/image/story/character/sorrow.png");
 
 		m_ObjPos = { 800,100 };
 

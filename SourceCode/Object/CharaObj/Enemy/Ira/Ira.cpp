@@ -29,9 +29,9 @@ namespace object
 		m_ObjDrawArea = 0;
 
 		m_ObjImg[0] = -1;
-		m_ObjImg[1] = LoadGraph("../Asset/image/enemy/ira/place_0.png");
-		m_ObjImg[2] = LoadGraph("../Asset/image/enemy/ira/place_1.png");
-		m_ObjImg[3] = LoadGraph("../Asset/image/enemy/ira/place_2.png");
+		m_ObjImg[1] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetIraData(0).c_str());
+		m_ObjImg[2] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetIraData(1).c_str());
+		m_ObjImg[3] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetIraData(2).c_str());
 	}
 
 	void Ira::UpdateObj(const float deltatime)
@@ -63,7 +63,7 @@ namespace object
 		//当たったラインを調べる
 		int linenum = GetHitLineIndex();
 
-		//actionlineに当たっていたら敵全体の強化
+		//actionlineに当たっていたらゼンマイ回転を早める
 		if (action == linenum)
 		{
 			EnemyManager::SetBeefUpEmyIsAction(true);

@@ -28,9 +28,9 @@ namespace object
 		m_MoveSpeed = 0.5f;
 		m_ObjDrawArea = 2;
 
-		m_ObjImg[0] = LoadGraph("../Asset/image/enemy/memini/place_0.png");
-		m_ObjImg[1] = LoadGraph("../Asset/image/enemy/memini/place_1.png");
-		m_ObjImg[2] = LoadGraph("../Asset/image/enemy/memini/place_2.png");
+		m_ObjImg[0] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetMeminiData(0).c_str());
+		m_ObjImg[1] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetMeminiData(1).c_str());
+		m_ObjImg[2] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetMeminiData(2).c_str());
 		m_ObjImg[3] = -1;
 	}
 
