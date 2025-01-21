@@ -29,7 +29,7 @@ namespace object
 		/// </summary>
 		/// <param name="id">敵識別番号</param>
 		/// <param name="status">true:出現|false:出現していない</param>
-		static void SetIsAppear(const EnemyID id,const bool status) { enemymanager->m_IsAppear[id] = status; }
+		static void SetIsAppear(const EnemyID id, const bool status) { enemymanager->m_IsAppear[id] = status; }
 
 		/// <summary>
 		/// 出現状態の取得
@@ -63,16 +63,28 @@ namespace object
 		static bool GetBeefUpEmyIsAction() { return enemymanager->m_BeefUpEmy_IsAction; }
 
 		/// <summary>
-		/// 敵が動ける状態かセット
+		/// 敵がアクションラインに到達したかセット
 		/// </summary>
-		/// <param name="status">true:可能|false:不可能</param>
-		static void SetCanMove(const bool status) { enemymanager->m_CanMove = status; }
+		/// <param name="status">true:到達|false:未到達</param>
+		static void SetEmyIsAction(const bool status) { enemymanager->m_EmyIsAction = status; }
 
 		/// <summary>
-		/// 敵が動ける状態か取得
+		/// 敵がアクションラインに到達したか取得
 		/// </summary>
-		/// <returns>true:可能|false:不可能</returns>
-		static bool GetCanMove() { return enemymanager->m_CanMove; }
+		/// <returns>true:到達|false:未到達</returns>
+		static bool GetEmyIsAction() { return enemymanager->m_EmyIsAction; }
+
+		/// <summary>
+		/// アクションを起こした敵のIDをセット
+		/// </summary>
+		/// <param name="data">敵ID</param>
+		static void SetEmyIDAction(EnemyID id) { enemymanager->m_EmyId_Action = id; }
+
+		/// <summary>
+		/// アクションを起こした敵のIDを取得
+		/// </summary>
+		/// <returns>敵ID</returns>
+		static EnemyID GetEmyIDAction() { return enemymanager->m_EmyId_Action; }
 
 		//削除予定
 		static void D_DrawStatus();
@@ -109,28 +121,31 @@ namespace object
 		/// </summary>
 		static void EnemyAppear();
 
-
 		EnemyID m_EmyId_Data;	//EnemyID一時保管用
+		EnemyID m_EmyId_Action;	//アクションを起こしたEnemyID
 
 		static const int m_EMYSCREEN_MAX = 3;	//画面内敵の出現総数
 		static const int m_APPEAR_RANGE = 4;	//出現時のランダム範囲
 
-		const float m_APPEARCOUNT_MAX = 600.0f;	//再び出現できるまでのカウント
-		const float m_COUNT_DECREMENT = 5.0f;	//カウント減分値
+		const float m_STARTWAIT_MAX = 100.0f;	//スタート時の排出待ち時間
+		const float m_APPEARCOUNT_MAX = 300.0f;	//再び出現できるまでのカウント
+		const float m_COUNT_DECREMENT = 0.1f;	//カウント減分値
 
+		float m_StartCount;						//スタート時の排出カウント
 		float m_AppearCount;					//敵の排出カウント
-		int m_AppearNumNow ;					//現在の画面内敵の総数
+		int m_AppearNumNow;					//現在の画面内敵の総数
 
-		bool m_CanAppear = true;				//出現できるか
-		bool m_BeefUpEmy_IsAction = false;		//特定の敵のアクションフラグ
-		bool m_CanMove = true;					//動ける状態か
+		bool m_CanAppear;				//出現できるか
+		bool m_BeefUpEmy_IsAction;		//特定の敵のアクションフラグ
+		bool m_EmyIsAction;				//動ける状態か
 
 		//敵の出現フラグ
-		std::unordered_map<EnemyID,bool> m_IsAppear{
+		std::unordered_map<EnemyID, bool> m_IsAppear{
 			{memini,false},
 			{nil,false},
 			{spero,false},
 			{ira,false},
+			{familia,false},
 		};
 
 		static std::unique_ptr<EnemyManager> enemymanager;	//自身の実態

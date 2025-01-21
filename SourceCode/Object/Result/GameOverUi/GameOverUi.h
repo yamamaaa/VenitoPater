@@ -42,10 +42,11 @@ namespace object
 
         POINTS m_SelectUi_Pos[2];       //セレクトUi座標
         POINTS m_UiOffset[2];           //座標ずらし量
-
-        std::string m_hitstatus = "";
-
         POINTS m_Uipos;
+
+#ifdef DEBUG
+        std::string m_selectstatus = "";
+#endif // DEBUG
     };
 }
 

@@ -6,7 +6,7 @@ namespace object
 	/// <summary>
 	/// Enemy_SperoŠÖ˜A
 	/// </summary>
-	class Spero:public EnemyBase
+	class Spero :public EnemyBase
 	{
 	public:
 

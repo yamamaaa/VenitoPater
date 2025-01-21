@@ -24,6 +24,11 @@ namespace object
         static void UpdateNumDeys();
 
         /// <summary>
+        /// 日数の表示
+        /// </summary>
+        static void DrawNumDeys();
+
+        /// <summary>
         /// デストラクタ
         /// </summary>
         ~NumDeys();
@@ -40,9 +45,15 @@ namespace object
         /// </summary>
         static void LoadObject();
 
-        int m_NumDeys;  //ゲーム内日数
+        static const int m_DROPSPEED = 15;		    	    //減分速度
+        static const int m_COLLARCODE = 255;	            //カラーコード
+
+        int m_NumDeys;                  //ゲーム内日数
+        int m_Collar = 255;
+        float m_DrawCount = 0.0f;
+
+        bool m_IsFadeDone;				//処理が終わったか
 
         static std::unique_ptr<NumDeys> numdeys;	//自身の実態
-
     };
 }

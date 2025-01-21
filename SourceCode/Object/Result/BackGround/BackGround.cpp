@@ -1,5 +1,6 @@
 #include "BackGround.h"
 #include "../../ObjectTag/Result_ObjectTag.h"
+#include "../../ObjectManager/ObjectManager.h"
 
 namespace object
 {
@@ -18,7 +19,15 @@ namespace object
     void BackGround::LoadObject()
     {
         m_ObjPos = { 0,0 };
-        m_ObjHandle= LoadGraph("../Asset/image/result/gameover/background.png");
+
+        if (GameOver == ObjectManager::GetGameState())
+        {
+            m_ObjHandle = LoadGraph("../Asset/image/result/gameover/background.png");
+        }
+        if (GameClear == ObjectManager::GetGameState())
+        {
+            m_ObjHandle = LoadGraph("../Asset/image/result/gameover/background.png");
+        }
     }
 
     void BackGround::DrawObj()

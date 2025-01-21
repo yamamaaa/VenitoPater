@@ -19,26 +19,25 @@ namespace object
 
 	void Ira::LoadObject()
 	{
-		m_Idnumber = ira;
+		m_IDnumber = ira;
 
-		m_DrawObjPos[appear] = { 1000.0f,630.0f };
-		m_DrawObjPos[replace] = { 632.0f,525.0f };
-		m_DrawObjPos[replace_2] = m_DrawObjPos[replace];
+		m_DrawObjPos[replace] = { 1000.0f,630.0f };
+		m_DrawObjPos[replace_2] = { 632.0f,525.0f };
 		m_DrawObjPos[action] = { 0.0f,665.0f };
 
-		m_MoveSpeed = 10.0f;
+		m_MoveSpeed = 0.3f;
 		m_ObjDrawArea = 0;
 
-		m_ObjImg[0] = LoadGraph("../Asset/image/enemy/ira/place_0.png");
-		m_ObjImg[1] = LoadGraph("../Asset/image/enemy/ira/place_1.png");
-		m_ObjImg[2] = m_ObjImg[1];
+		m_ObjImg[0] = -1;
+		m_ObjImg[1] = LoadGraph("../Asset/image/enemy/ira/place_0.png");
+		m_ObjImg[2] = LoadGraph("../Asset/image/enemy/ira/place_1.png");
 		m_ObjImg[3] = LoadGraph("../Asset/image/enemy/ira/place_2.png");
 	}
 
 	void Ira::UpdateObj(const float deltatime)
 	{
 		//出現状態取得
-		bool is_appear = EnemyManager::GetIsAppear(m_Idnumber);
+		bool is_appear = EnemyManager::GetIsAppear(m_IDnumber);
 
 		//出現してないなら以下の処理なし
 		if (!is_appear)
@@ -53,8 +52,8 @@ namespace object
 			}
 		}
 
-		//動ける状態なら
-		if (EnemyManager::GetCanMove())
+		//他の敵がアクションを起こしてなかったら
+		if (!EnemyManager::GetEmyIsAction())
 		{
 			MoveObj(deltatime);	//移動処理
 			IsHitEnemyLine();	//enemyline当たり判定
@@ -62,7 +61,7 @@ namespace object
 		}
 
 		//当たったラインを調べる
-		int linenum=GetHitLineIndex();
+		int linenum = GetHitLineIndex();
 
 		//actionlineに当たっていたら敵全体の強化
 		if (action == linenum)
@@ -83,12 +82,6 @@ namespace object
 		if (IsObjDraw())
 		{
 			DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
-		}
-
-		//リセット時画面の明暗
-		if (m_IsEmyReset)
-		{
-			LightController::ScreenBlinking();
 		}
 
 #ifdef DEBUG

@@ -76,14 +76,8 @@
     <ClCompile Include="..\SourceCode\Object\StageObj\ClockWork\RPMController\RPMController.cpp">
       <Filter>ソースコード\Object\StageObj\ClockWork\RPMController</Filter>
     </ClCompile>
-    <ClCompile Include="..\SourceCode\Object\StageObj\WarningUi\WarningUi.cpp">
-      <Filter>ソースコード\Object\StageObj\WarningUi</Filter>
-    </ClCompile>
     <ClCompile Include="..\SourceCode\Object\CharaObj\LightController\LightController.cpp">
       <Filter>ソースコード\Object\CharaObj\LightController</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SourceCode\Object\StageObj\Norm\Norm.cpp">
-      <Filter>ソースコード\Object\StageObj\Norm</Filter>
     </ClCompile>
     <ClCompile Include="..\SourceCode\Object\CharaObj\Enemy\EnemyBase\EnemyBase.cpp">
       <Filter>ソースコード\Object\CharaObj\Enemy\EnemyBase</Filter>
@@ -127,6 +121,39 @@
     <ClCompile Include="..\SourceCode\Math2D\Math2D.cpp">
       <Filter>ソースコード\Math2D</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\CharaObj\Enemy\EnemyAction\EnemyAction.cpp">
+      <Filter>ソースコード\Object\CharaObj\Enemy\EnemyAction</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\GameUi\AvoidUi\AvoidUi.cpp">
+      <Filter>ソースコード\Object\GameUi\AvoidUi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\GameUi\ItemUi\ItemUi.cpp">
+      <Filter>ソースコード\Object\GameUi\ItemUi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\GameUi\WarningUi\WarningUi.cpp">
+      <Filter>ソースコード\Object\GameUi\WarningUi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\GameUi\RPMHPUi\RPMHPUi.cpp">
+      <Filter>ソースコード\Object\GameUi\RPMHPUi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\StageObj\ItemGetNum\ItemGetNum.cpp">
+      <Filter>ソースコード\Object\StageObj\ItemGetNum</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\StoryObj\Character\Character.cpp">
+      <Filter>ソースコード\Object\StoryObj\Character</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\Result\GameClearUi\GameClearUi.cpp">
+      <Filter>ソースコード\Object\Result\GameClearUi</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\StoryObj\Line\Line.cpp">
+      <Filter>ソースコード\Object\StoryObj\Line</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\StoryObj\LineStatus\LineStatus.cpp">
+      <Filter>ソースコード\Object\StoryObj\LineStatus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\StoryObj\StillDraw\StillDraw.cpp">
+      <Filter>ソースコード\Object\StoryObj\StillDraw</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -150,9 +177,6 @@
     <ClInclude Include="..\SourceCode\Object\ObjectManager\GameStatus.h">
       <Filter>ソースコード\Object\ObjectManager</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\Object\ObjectTag\Global_ObjectTag.h">
-      <Filter>ソースコード\Object\ObjectTag</Filter>
-    </ClInclude>
     <ClInclude Include="..\SourceCode\LevelController\LevelController.h">
       <Filter>ソースコード\LevelController</Filter>
     </ClInclude>
@@ -167,12 +191,6 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\ObjectBase\ObjectBase.h">
       <Filter>ソースコード\Object\ObjectBase</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SourceCode\Object\ObjectTag\ThreeDays_ObjectTag.h">
-      <Filter>ソースコード\Object\ObjectTag</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SourceCode\Object\ObjectTag\Result_ObjectTag.h">
-      <Filter>ソースコード\Object\ObjectTag</Filter>
     </ClInclude>
     <ClInclude Include="..\SourceCode\Scene\SceneBase\SceneBase.h">
       <Filter>ソースコード\Scene\SceneBase</Filter>
@@ -222,14 +240,8 @@
     <ClInclude Include="..\SourceCode\Object\StageObj\ClockWork\RPMController\RPMController.h">
       <Filter>ソースコード\Object\StageObj\ClockWork\RPMController</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\Object\StageObj\WarningUi\WarningUi.h">
-      <Filter>ソースコード\Object\StageObj\WarningUi</Filter>
-    </ClInclude>
     <ClInclude Include="..\SourceCode\Object\CharaObj\LightController\LightController.h">
       <Filter>ソースコード\Object\CharaObj\LightController</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SourceCode\Object\StageObj\Norm\Norm.h">
-      <Filter>ソースコード\Object\StageObj\Norm</Filter>
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\EnemyBase\EnemyBase.h">
       <Filter>ソースコード\Object\CharaObj\Enemy\EnemyBase</Filter>
@@ -275,6 +287,63 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Math2D\Math2D.h">
       <Filter>ソースコード\Math2D</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\EnemyAction\EnemyAction.h">
+      <Filter>ソースコード\Object\CharaObj\Enemy\EnemyAction</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\GameUi\AvoidUi\AvoidUi.h">
+      <Filter>ソースコード\Object\GameUi\AvoidUi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\GameUi\ItemUi\ItemUi.h">
+      <Filter>ソースコード\Object\GameUi\ItemUi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\GameUi\WarningUi\WarningUi.h">
+      <Filter>ソースコード\Object\GameUi\WarningUi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\GameUi\RPMHPUi\RPMHPUi.h">
+      <Filter>ソースコード\Object\GameUi\RPMHPUi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\Global_ObjectTag.h">
+      <Filter>ソースコード\Object\ObjectTag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\Result_ObjectTag.h">
+      <Filter>ソースコード\Object\ObjectTag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\ThreeDays_ObjectTag.h">
+      <Filter>ソースコード\Object\ObjectTag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\Story_ObjectTag.h">
+      <Filter>ソースコード\Object\ObjectTag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\TitleObjectTag.h">
+      <Filter>ソースコード\Object\ObjectTag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\GameClear_ObjectTag.h">
+      <Filter>ソースコード\Object\ObjectTag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\Still_ObjectTag.h">
+      <Filter>ソースコード\Object\ObjectTag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\StageObj\ItemGetNum\ItemGetNum.h">
+      <Filter>ソースコード\Object\StageObj\ItemGetNum</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\StoryObj\Character\Character.h">
+      <Filter>ソースコード\Object\StoryObj\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\StoryObj\Character\CharaStatus.h">
+      <Filter>ソースコード\Object\StoryObj\Character</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\Result\GameClearUi\GameClearUi.h">
+      <Filter>ソースコード\Object\Result\GameClearUi</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\StoryObj\Line\Line.h">
+      <Filter>ソースコード\Object\StoryObj\Line</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\StoryObj\LineStatus\LineStatus.h">
+      <Filter>ソースコード\Object\StoryObj\LineStatus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\StoryObj\StillDraw\StillDraw.h">
+      <Filter>ソースコード\Object\StoryObj\StillDraw</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -380,14 +449,8 @@
     <Filter Include="ソースコード\Object\StageObj\ClockWork\RPMController">
       <UniqueIdentifier>{5650a5ef-843d-4de9-8bc2-1f54085b9839}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースコード\Object\StageObj\WarningUi">
-      <UniqueIdentifier>{4714c943-0675-488d-9722-3adecca36505}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソースコード\Object\CharaObj\LightController">
       <UniqueIdentifier>{f25751d8-5106-4a83-bba8-ddd806247b25}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースコード\Object\StageObj\Norm">
-      <UniqueIdentifier>{ac1f4139-6f97-4df5-84f5-5fe481075eff}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースコード\Object\CharaObj\Enemy">
       <UniqueIdentifier>{b64c46f9-ce72-43c9-b9ff-40c33656a2da}</UniqueIdentifier>
@@ -439,6 +502,45 @@
     </Filter>
     <Filter Include="ソースコード\Math2D">
       <UniqueIdentifier>{aac7204e-5f0b-4d6b-9d84-261ea65a6ed8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\CharaObj\Enemy\EnemyAction">
+      <UniqueIdentifier>{f1e5a4bf-3732-4975-92ee-7df889d158c7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\GameUi">
+      <UniqueIdentifier>{4d29b4b3-3e1f-418e-9234-42601b4a878a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\GameUi\AvoidUi">
+      <UniqueIdentifier>{16f18ab0-3755-440e-8117-54dae9fc7d6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\GameUi\ItemUi">
+      <UniqueIdentifier>{88c1ffea-81b6-47a5-9535-9c58b753ee7d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\GameUi\RPMHPUi">
+      <UniqueIdentifier>{b38ac12e-fc47-4422-989c-9c5694562a98}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\GameUi\WarningUi">
+      <UniqueIdentifier>{d98a5617-0b22-4685-bed6-4d71da6b5423}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StageObj\ItemGetNum">
+      <UniqueIdentifier>{301620ee-6e75-404d-9681-3fcb8e6c7486}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StoryObj">
+      <UniqueIdentifier>{37487382-6996-4611-afcc-989ae804492c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StoryObj\Character">
+      <UniqueIdentifier>{7e754bd2-4086-49ee-b7ee-dd78036239ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\Result\GameClearUi">
+      <UniqueIdentifier>{dad16d75-e43e-48a5-8aaa-bf384e0050b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StoryObj\Line">
+      <UniqueIdentifier>{cf6024d4-282f-4000-b14c-6108c4cf8f94}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StoryObj\LineStatus">
+      <UniqueIdentifier>{992e8957-4849-414f-91b8-d979869e46e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StoryObj\StillDraw">
+      <UniqueIdentifier>{a1bd0f0c-b937-4b84-aef8-863b150e3f6e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

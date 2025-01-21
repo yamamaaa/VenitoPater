@@ -8,13 +8,13 @@ namespace object
 	std::unique_ptr<EnemyManager>EnemyManager::enemymanager = nullptr;
 
 	EnemyManager::EnemyManager()
-		:m_AppearNumNow(0)
 	{
 		//処理なし
 	}
 
 	EnemyManager::~EnemyManager()
 	{
+		//処理なし
 	}
 
 	void EnemyManager::Initialize()
@@ -34,6 +34,7 @@ namespace object
 		srand(static_cast<unsigned int>(time(0)));
 
 		//カウント値の初期化
+		enemymanager->m_StartCount = enemymanager->m_STARTWAIT_MAX;
 		enemymanager->m_AppearCount = enemymanager->m_APPEARCOUNT_MAX;
 
 		enemymanager->m_IsAppear[memini] = false;
@@ -45,12 +46,18 @@ namespace object
 
 		enemymanager->m_CanAppear = true;				//出現できるか
 		enemymanager->m_BeefUpEmy_IsAction = false;		//特定の敵のアクションフラグ
-		enemymanager->m_CanMove = true;					//動ける状態か
-
+		enemymanager->m_EmyIsAction = false;			//敵がアクションを起こすか
 	}
 
 	void EnemyManager::EmyAppearSetting()
 	{
+		//ゲームをスタートしたから最初の出現までずらす
+		if (enemymanager->m_StartCount >= 0.0f)
+		{
+			enemymanager->m_StartCount -= enemymanager->m_COUNT_DECREMENT;
+			return;
+		}
+
 		//敵が出現可能な時
 		if (enemymanager->m_CanAppear)
 		{
@@ -125,7 +132,8 @@ namespace object
 	void EnemyManager::D_DrawStatus()
 	{
 		//削除予定
-		DrawFormatString(0, 500, GetColor(255, 255, 255), "出現カウント:%f", enemymanager->m_AppearCount);
-		DrawFormatString(0, 520, GetColor(255, 255, 255), "敵出現数:%d", enemymanager->m_AppearNumNow);
+		DrawFormatString(0, 500, GetColor(255, 255, 255), "スタートから出現まで:%f", enemymanager->m_StartCount);
+		DrawFormatString(0, 520, GetColor(255, 255, 255), "出現カウント:%f", enemymanager->m_AppearCount);
+		DrawFormatString(0, 540, GetColor(255, 255, 255), "敵出現数:%d", enemymanager->m_AppearNumNow);
 	}
 }

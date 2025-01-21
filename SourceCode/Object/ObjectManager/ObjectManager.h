@@ -9,8 +9,8 @@
 
 namespace object
 {
-    class ObjectManager final
-    {
+	class ObjectManager final
+	{
 	public:
 
 		/// <summary>
@@ -27,7 +27,8 @@ namespace object
 		/// 現在のシーンタグをセット
 		/// </summary>
 		static void NowSceneSet(std::vector<std::string> scene_objtag) {
-		objectmanager->m_SceneTag = scene_objtag;}
+			objectmanager->m_SceneTag = scene_objtag;
+		}
 
 		/// <summary>
 		/// オブジェクト登録
@@ -47,12 +48,6 @@ namespace object
 		static void DrawAllObj();
 
 		/// <summary>
-		/// オブジェクトの死亡処理
-		/// </summary>
-		/// <param name="unnecobj">不要なオブジェクト</param>
-		static void OnDeadObj(std::shared_ptr<ObjectBase> unnecobj);
-
-		/// <summary>
 		/// 全オブジェクトの削除
 		/// </summary>
 		static void ReleaseAllObj();
@@ -60,13 +55,13 @@ namespace object
 		/// <summary>
 		/// ゲーム状態を取得
 		/// </summary>
-		/// <returns>true:クリア|false:未クリア</returns>
+		/// <returns>現在のゲーム状態</returns>
 		static GameStatus GetGameState() { return objectmanager->m_GameStatus; }
 
 		/// <summary>
 		/// ゲーム状態をセット
 		/// </summary>
-		/// <param name="stats"></param>
+		/// <param name="stats">セットするゲーム状態</param>
 		static void SetGameState(GameStatus stats) { objectmanager->m_GameStatus = stats; }
 
 		/// <summary>
@@ -102,5 +97,5 @@ namespace object
 		static std::unique_ptr<ObjectManager> objectmanager;									// ObjectManagerの実体
 		std::vector<std::string> m_SceneTag;													// 現在のシーンのオブジェクトタグ
 		std::unordered_map<std::string, std::vector<std::shared_ptr<ObjectBase>>> m_Objects;	// オブジェクトリスト
-    };
+	};
 }

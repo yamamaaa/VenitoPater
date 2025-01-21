@@ -19,26 +19,25 @@ namespace object
 
 	void Spero::LoadObject()
 	{
-		m_Idnumber = spero;
+		m_IDnumber = spero;
 
 		m_DrawObjPos[appear] = { 860.0f,530.0f };
 		m_DrawObjPos[replace] = { 600.0f,505.0f };
 		m_DrawObjPos[replace_2] = { 1028.0f,450.0 };
-		m_DrawObjPos[action] = { 0.0f,0.0f };
 
-		m_MoveSpeed = 20.0f;
+		m_MoveSpeed = 0.3f;
 		m_ObjDrawArea = 0;
 
 		m_ObjImg[0] = LoadGraph("../Asset/image/enemy/spero/place_0.png");
 		m_ObjImg[1] = LoadGraph("../Asset/image/enemy/spero/place_1.png");
 		m_ObjImg[2] = LoadGraph("../Asset/image/enemy/spero/place_2.png");
-		m_ObjImg[3] = LoadGraph("../Asset/image/enemy/spero/place_3.png");
+		m_ObjImg[3] = -1;
 	}
 
 	void Spero::UpdateObj(const float deltatime)
 	{
 		//出現状態取得
-		bool is_appear = EnemyManager::GetIsAppear(m_Idnumber);
+		bool is_appear = EnemyManager::GetIsAppear(m_IDnumber);
 
 		//出現してないなら以下の処理なし
 		if (!is_appear)
@@ -50,14 +49,8 @@ namespace object
 			AvoidAction();	//回避行動時処理
 		}
 
-		//強化モンスターがアクションを起こしたら
-		if (EnemyManager::GetBeefUpEmyIsAction())
-		{
-			BeefUpEmyAction();	//自身の強化
-		}
-
-		//動ける状態なら
-		if (EnemyManager::GetCanMove())
+		//他の敵がアクションを起こしてなかったら
+		if (!EnemyManager::GetEmyIsAction())
 		{
 			MoveObj(deltatime);	//移動処理
 			IsHitEnemyLine();	//enemyline当たり判定
@@ -67,7 +60,8 @@ namespace object
 		//アクションラインに到達したら
 		if (m_IsActionLine)
 		{
-			EnemyManager::SetCanMove(false);	//全敵の更新を止める
+			EnemyManager::SetEmyIsAction(true);
+			EnemyManager::SetEmyIDAction(m_IDnumber);
 			EnemyInAction();
 		}
 
@@ -84,12 +78,6 @@ namespace object
 		if (IsObjDraw() || m_IsActionLine)
 		{
 			DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
-		}
-
-		//リセット時画面の明暗
-		if (m_IsEmyReset)
-		{
-			LightController::ScreenBlinking();
 		}
 
 #ifdef DEBUG

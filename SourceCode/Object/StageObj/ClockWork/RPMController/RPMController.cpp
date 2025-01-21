@@ -30,5 +30,6 @@ namespace object
 	{
 		//‰ñ“]—Êó‘Ô‰Šú‰»
 		rpm_controller->m_IsRPMLost = false;
+		rpm_controller->m_RPMHp = rpm_controller->m_RPMHPMAX;
 	}
 }
