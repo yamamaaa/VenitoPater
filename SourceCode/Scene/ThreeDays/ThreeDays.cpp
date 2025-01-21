@@ -3,12 +3,11 @@
 #include"../../Object/ObjectManager/ObjectManager.h"
 #include"../../Object/ObjectTag/ThreeDays_ObjectTag.h"
 
-#include"../../Scene/Title/Title.h"
-#include"../../Scene/Result/GameOver/GameOver.h"
+#include"../Result/Result.h"
 
 #include"../../Object/CharaObj/AvoidStatus/AvoidStatus.h"
 
-#include"../../Object/StageObj/Norm/Norm.h"
+#include"../../Object/StageObj/ItemGetNum/ItemGetNum.h"
 #include"../../Object/StageObj/Area/Area.h"
 #include"../../Object/StageObj/MoveArea/MoveArea.h"
 #include"../../Object/StageObj/ClockWork/ClockWork/ClockWork.h"
@@ -24,22 +23,44 @@
 #include"../../Object/CharaObj/Avoid/Avoid.h"
 #include"../../Object/CharaObj/Player/Player.h"
 
+#include"../../Object/GameUi/ItemUi/ItemUi.h"
+#include"../../Object/GameUi/RPMHPUi/RPMHPUi.h"
+#include"../../Object/GameUi/AvoidUi/AvoidUi.h"
+#include"../../Object/GameUi/WarningUi/WarningUi.h"
+
+#include"../../Object/NumDeys/NumDeys.h"
+#include"../../Object/Time/Time.h"
+
+#include"../../Object/CharaObj/Enemy/EnemyAction/EnemyAction.h"
+
 namespace scene
 {
 	ThreeDays::ThreeDays()
 		:SceneBase()
 	{
+		//読み込み関連
+		LoadObject();
+	}
+
+	ThreeDays::~ThreeDays()
+	{
+		//処理なし
+	}
+
+	void ThreeDays::LoadObject()
+	{
 		//オブジェクトタグをセット
 		object::ObjectManager::NowSceneSet(objecttag::ThreeDays_ObjTagAll);
 		//Game状態をセット
-		object::ObjectManager::SetGameState(object::GamePlay);
+		m_NowGameStatus = object::GamePlay;
+		object::ObjectManager::SetGameState(m_NowGameStatus);
 
 		//ステージ内オブジェの生成
 		object::AvoidStatus::Initialize();
 		object::ObjectManager::Entry(new object::Area);
 		object::ObjectManager::Entry(new object::MoveArea);
 		object::ObjectManager::Entry(new object::ClockWork);
-		object::Norm::Initialize();
+		object::ItemGetNum::Initialize();
 		object::ObjectManager::Entry(new object::Item);
 
 		//敵の生成
@@ -53,11 +74,22 @@ namespace scene
 		//プレイヤー関連生成
 		object::ObjectManager::Entry(new object::Avoid);
 		object::ObjectManager::Entry(new object::Player);
-	}
 
-	ThreeDays::~ThreeDays()
-	{
-		//処理なし
+		//ゲームUi生成
+		object::ObjectManager::Entry(new object::ItemUi);
+		object::ObjectManager::Entry(new object::RPMHPUi);
+		object::ObjectManager::Entry(new object::AvoidUi);
+		object::ObjectManager::Entry(new object::WarningUi);
+		object::ObjectManager::Entry(new object::Time);
+
+		//敵のアクション生成
+		object::ObjectManager::Entry(new object::EnemyAction);
+
+		////削除予定
+		SetDrawBright(0, 0, 0);
+
+		//フェードフラグ初期化
+		m_FadeInSet = false;
 	}
 
 	SceneBase* ThreeDays::UpdateScene(const float deltaTime)
@@ -65,20 +97,10 @@ namespace scene
 		object::ObjectManager::UpdateAllObj(deltaTime);
 
 		//ゲームクリアしたら
-		if (object::GameClear==object::ObjectManager::GetGameState())
+		if (object::GameClear== m_NowGameStatus|| object::GameOver == m_NowGameStatus)
 		{
 			object::ObjectManager::ReleaseAllObj();
-			return new Title;
-		}
-
-		//ゲームオーバー
-		if (object::GameOver == object::ObjectManager::GetGameState())
-		{
-			if (fade_transitor->IsFadeDone())
-			{
-				object::ObjectManager::ReleaseAllObj();
-				return new GameOver;
-			}
+			return new Result;
 		}
 
 		return this;
@@ -87,12 +109,23 @@ namespace scene
 	void ThreeDays::DrawScene()
 	{
 		DrawFormatString(0, 0, GetColor(255, 255, 255), "3Days");
-		object::ObjectManager::DrawAllObj();
 
-		//ゲームオーバー
-		if (object::GameOver == object::ObjectManager::GetGameState())
+		//ゲームステータスが変わったら
+		if (m_NowGameStatus != object::ObjectManager::GetGameState())
 		{
+			//フェード処理をする
 			fade_transitor->FadeOutStart(true);
+			TransitorScene();
 		}
+
+		if (!m_FadeInSet)
+		{
+			//フェードイン
+			fade_transitor->FadeInStart(false);
+			LoadScene();
+		}
+
+		object::ObjectManager::DrawAllObj();
+		object::NumDeys::DrawNumDeys();
 	}
 }

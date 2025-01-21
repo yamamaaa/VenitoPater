@@ -1,11 +1,11 @@
 #include "GameOverUi.h"
-#include "../../ObjectTag/Result_ObjectTag.h"
+#include "../../ObjectTag/GameOver_ObjectTag.h"
 #include "../../ObjectManager/ObjectManager.h"
 
 namespace object
 {
 	GameOverUi::GameOverUi()
-		:MouseBase(result_objecttag.GAMEOVERUI)
+		:MouseBase(gameOver_ObjectTag.GAMEOVERUI)
 	{
 		//ì«Ç›çûÇ›ä÷òA
 		LoadObject();

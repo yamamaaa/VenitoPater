@@ -1,25 +1,21 @@
 #pragma once
-#include<string>
 #include"../SceneBase/SceneBase.h"
 
 namespace scene
 {
-	/// <summary>
-	/// 3Daysモードの進行管理クラス
-	/// </summary>
-	class ThreeDays:public SceneBase
+	class Story :public SceneBase
 	{
 	public:
 
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		ThreeDays();
+		Story();
 
 		/// <summary>
 		/// デストラクタ
 		/// </summary>
-		~ThreeDays();
+		~Story();
 
 	private:
 
