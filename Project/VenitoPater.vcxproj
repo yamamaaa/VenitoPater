@@ -31,6 +31,9 @@
     <ClCompile Include="..\SourceCode\JsonMaster\ImageData\TitleData\TitleData.cpp" />
     <ClCompile Include="..\SourceCode\JsonMaster\IOUtility\IOUtility.cpp" />
     <ClCompile Include="..\SourceCode\JsonMaster\JsonManager\JsonManager.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\TextData\CharacterData\CharacterData.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\TextData\MasterTextData\MasterTextData.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\TextData\StillData\StillData.cpp" />
     <ClCompile Include="..\SourceCode\LevelController\LevelController.cpp" />
     <ClCompile Include="..\SourceCode\Main.cpp" />
     <ClCompile Include="..\SourceCode\Math2D\Math2D.cpp" />
@@ -93,6 +96,9 @@
     <ClInclude Include="..\SourceCode\JsonMaster\ImageData\TitleData\TitleData.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\IOUtility\IOUtility.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\JsonManager\JsonManager.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\TextData\CharacterData\CharacterData.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\TextData\MasterTextData\MasterTextData.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\TextData\StillData\StillData.h" />
     <ClInclude Include="..\SourceCode\LevelController\LevelController.h" />
     <ClInclude Include="..\SourceCode\LevelController\LevelStatus.h" />
     <ClInclude Include="..\SourceCode\Math2D\Math2D.h" />
@@ -160,6 +166,8 @@
     <None Include="..\SourceCode\JsonMaster\JsonFile\Image\result.json" />
     <None Include="..\SourceCode\JsonMaster\JsonFile\Image\story.json" />
     <None Include="..\SourceCode\JsonMaster\JsonFile\Image\title.json" />
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Text\character.json" />
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Text\still.json" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
