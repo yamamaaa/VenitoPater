@@ -74,11 +74,11 @@ namespace scene
         //object::ObjectManager::ReleaseAllObj();
         //object::ObjectManager::SetNowGameState(object::Still);
         //return new Story();
-
             LevelController::SetLevel(levelStatus.NOMAL);
             object::ObjectManager::ReleaseAllObj();
-            object::ObjectManager::SetNowGameState(object::Still);
+            object::ObjectManager::SetNowGameState(object::Story);
             return new Story();
+
         //ÉQÅ[ÉÄÉvÉåÉC
         if (object::GamePlay == object::ObjectManager::GetNowGameState())
         {

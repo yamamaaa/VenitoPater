@@ -39,8 +39,8 @@ namespace scene
 
 			object::LineStatus::Initialize();
 			object::ObjectManager::Entry(new object::BackGround);
-			object::ObjectManager::Entry(new object::Character);
 			object::ObjectManager::Entry(new object::Line);
+			object::ObjectManager::Entry(new object::Character);
 		}
 		if (object::Still == object::ObjectManager::GetNowGameState())
 		{
@@ -69,9 +69,10 @@ namespace scene
 			return new ThreeDays;
 		}
 
-		if (IsNextStory && fade_transitor->IsFadeDone())
+		if (IsNextStory )
 		{
 			object::ObjectManager::ReleaseAllObj();
+			IsNextStory = false;
 			return new Story;
 		}
 		return this;
@@ -82,16 +83,21 @@ namespace scene
 		DrawFormatString(0, 0, GetColor(255, 255, 255), "Story");
 
 		//ゲームステータスが変わったら
+		//書き直し予定
 		if (object::ObjectManager::GetNowGameState() != object::ObjectManager::GetNextGameState())
 		{
 			//フェード処理をする
 			fade_transitor->FadeOutStart(true);
-			TransitorScene();
-			
-			//次のシーンが同じストーリーシーンか
-			if (object::Story == object::ObjectManager::GetNextGameState() || object::Still == object::ObjectManager::GetNextGameState())
+			if (fade_transitor->IsFadeDone())
 			{
-				IsNextStory = true;
+				//処理が終わったらステータスの変更
+				object::ObjectManager::SetNowGameState(object::ObjectManager::GetNextGameState());
+				fade_transitor->FadeProcessing();
+				//次のシーンが同じストーリーシーンか
+				if (object::Story == object::ObjectManager::GetNextGameState() || object::Still == object::ObjectManager::GetNextGameState())
+				{
+					IsNextStory = true;
+				}
 			}
 		}
 
