@@ -31,22 +31,25 @@ namespace scene
     {
         //Game状態をセット
 
-        if (m_NowGameStatus == object::GameOver) 
+        if (object::ObjectManager::GetNowGameState() == object::GameOver)
         {
             object::ObjectManager::NowSceneSet(objecttag::GameOver_ObjectTagAll);
-            object::ObjectManager::SetGameState(m_NowGameStatus);
+            object::ObjectManager::SetNextGameState(object::GameOver);
 
             object::ObjectManager::Entry(new object::BackGround);
             object::ObjectManager::Entry(new object::GameOverUi);
         }
-        else if (m_NowGameStatus == object::GameClear)
+        else if (object::ObjectManager::GetNowGameState() == object::GameClear)
         {
             object::ObjectManager::NowSceneSet(objecttag::GameClear_ObjectTagAll);
-            object::ObjectManager::SetGameState(m_NowGameStatus);
+            object::ObjectManager::SetNextGameState(object::GameClear);
 
             object::ObjectManager::Entry(new object::BackGround);
             object::ObjectManager::Entry(new object::GameClearUi);
         }
+
+        //フェードフラグ初期化
+        m_FadeInSet = false;
     }
 
     SceneBase* Result::UpdateScene(const float deltaTime)
@@ -54,24 +57,17 @@ namespace scene
         object::ObjectManager::UpdateAllObj(deltaTime);
 
         //コンテニュー
-        if (object::Continue == m_NowGameStatus)
+        if (object::Continue == object::ObjectManager::GetNowGameState()|| object::GamePlay == object::ObjectManager::GetNowGameState())
         {
             object::ObjectManager::ReleaseAllObj();
             return new ThreeDays;
         }
 
         //ゲームオーバー
-        if (object::Title == m_NowGameStatus)
+        if (object::Title == object::ObjectManager::GetNowGameState())
         {
             object::ObjectManager::ReleaseAllObj();
             return new Title;
-        }
-
-        //クリア後
-        if (object::GamePlay == m_NowGameStatus)
-        {
-            object::ObjectManager::ReleaseAllObj();
-            return new ThreeDays;	//仮置き
         }
 
         return this;
@@ -82,7 +78,7 @@ namespace scene
         DrawFormatString(0, 0, GetColor(255, 255, 255), "Result");
 
         //ゲームステータスが変わったら
-        if (m_NowGameStatus != object::ObjectManager::GetGameState())
+        if (object::ObjectManager::GetNowGameState() != object::ObjectManager::GetNextGameState())
         {
             //フェード処理をする
             fade_transitor->FadeOutStart(true);

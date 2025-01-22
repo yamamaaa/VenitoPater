@@ -9,7 +9,6 @@ namespace json_textdata
 		lineData.day_2 = json["line"]["day_2"];
 		lineData.day_3 = json["line"]["day_3"];
 		lineData.day_4 = json["line"]["day_4"];
-		lineData.day_5 = json["line"]["day_5"];
 
 		drawImgData.day_0 = json["drawimg"]["day_0"];
 		drawImgData.day_1 = json["drawimg"]["day_1"];

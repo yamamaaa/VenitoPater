@@ -74,11 +74,11 @@ namespace object
 				{
 					if (i == 0)	//コンテニューなら
 					{
-						ObjectManager::SetGameState(Continue);
+						ObjectManager::SetNextGameState(Continue);
 					}
 					else		//タイトルに戻るなら
 					{
-						ObjectManager::SetGameState(Title);
+						ObjectManager::SetNextGameState(Title);
 					}
 				}
 			}

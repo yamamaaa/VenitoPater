@@ -8,7 +8,7 @@ namespace object
     ObjectManager::ObjectManager()
         :m_Objects(0),
         m_NowScene_Name(""),
-        m_GameStatus()
+        m_NextGameStatus()
     {
         objectmanager = nullptr;
     }

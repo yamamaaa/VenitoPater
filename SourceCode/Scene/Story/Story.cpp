@@ -30,47 +30,50 @@ namespace scene
 
 	void Story::LoadObject()
 	{
-		if (object::Story == m_NowGameStatus)
+		if (object::Story == object::ObjectManager::GetNowGameState())
 		{
 			//オブジェクトタグをセット
 			object::ObjectManager::NowSceneSet(objecttag::Story_ObjectTagAll);
 			//Game状態をセット
-			object::ObjectManager::SetGameState(m_NowGameStatus);
+			object::ObjectManager::SetNextGameState(object::Story);
 
 			object::LineStatus::Initialize();
 			object::ObjectManager::Entry(new object::BackGround);
 			object::ObjectManager::Entry(new object::Character);
 			object::ObjectManager::Entry(new object::Line);
 		}
-		else if (object::Still == m_NowGameStatus)
+		if (object::Still == object::ObjectManager::GetNowGameState())
 		{
 			//オブジェクトタグをセット
 			object::ObjectManager::NowSceneSet(objecttag::still_ObjectTagAll);
 			//Game状態をセット
-			object::ObjectManager::SetGameState(m_NowGameStatus);
+			object::ObjectManager::SetNextGameState(object::Still);
 
 			object::LineStatus::Initialize();
 			object::ObjectManager::Entry(new object::StillDraw);
 			object::ObjectManager::Entry(new object::Line);
 		}
+
+		//フェードフラグ初期化
+		m_FadeInSet = false;
+		IsNextStory = false;
 	}
 
 	SceneBase* Story::UpdateScene(const float deltaTime)
 	{
 		object::ObjectManager::UpdateAllObj(deltaTime);
 
-		if (object::GamePlay == m_NowGameStatus)
+		if (object::GamePlay == object::ObjectManager::GetNowGameState())
 		{
 			object::ObjectManager::ReleaseAllObj();
 			return new ThreeDays;
 		}
 
-		if (object::Story == m_NowGameStatus|| object::Still == m_NowGameStatus)
+		if (IsNextStory && fade_transitor->IsFadeDone())
 		{
 			object::ObjectManager::ReleaseAllObj();
 			return new Story;
 		}
-
 		return this;
 	}
 
@@ -79,11 +82,17 @@ namespace scene
 		DrawFormatString(0, 0, GetColor(255, 255, 255), "Story");
 
 		//ゲームステータスが変わったら
-		if (m_NowGameStatus != object::ObjectManager::GetGameState())
+		if (object::ObjectManager::GetNowGameState() != object::ObjectManager::GetNextGameState())
 		{
 			//フェード処理をする
 			fade_transitor->FadeOutStart(true);
 			TransitorScene();
+			
+			//次のシーンが同じストーリーシーンか
+			if (object::Story == object::ObjectManager::GetNextGameState() || object::Still == object::ObjectManager::GetNextGameState())
+			{
+				IsNextStory = true;
+			}
 		}
 
 		if (!m_FadeInSet)

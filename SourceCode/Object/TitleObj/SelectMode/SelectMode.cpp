@@ -70,7 +70,7 @@ namespace object
 					break;
 				}
 
-				ObjectManager::SetGameState(status);
+				ObjectManager::SetNextGameState(status);
 
 				return;
 			}

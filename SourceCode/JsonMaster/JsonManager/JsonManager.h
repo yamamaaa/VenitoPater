@@ -28,13 +28,13 @@ namespace jsonmaster
 		///<summary>
 		///テキストインスタンス
 		///</summary>
-		///<returns>イメージデータ</returns>
+		///<returns>テキストデータ</returns>
 		static class json_textdata::MasterTextData* TextData_Instance() { return json_manager->master_text_data.get(); }
 
 		///<summary>
 		///フォントインスタンス
 		///</summary>
-		///<returns>イメージデータ</returns>
+		///<returns>フォントデータ</returns>
 		static class json_fontdata::MasterFontData* FontData_Instance() { return json_manager->master_font_data.get(); }
 
 		/// <summary>

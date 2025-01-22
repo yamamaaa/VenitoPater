@@ -29,6 +29,8 @@ namespace object
 	{
 		SetFontSize(30);		//フォントサイズ設定
 
+		m_ObjHandle = LoadGraph(JsonManager::ImgData_Instance()->Get_StoryImgData_Instance()->GetFlameData().c_str());
+
 		m_IsClick = true;
 		m_IsLineSet = true;
 		m_IslineAnim = true;
@@ -38,14 +40,16 @@ namespace object
 		m_TxtNum = 0;
 		m_AnimCount = 0.0f;
 		m_ClickCount = 0.0f;
-		m_ObjPos = { 0,800 };
+		m_ObjPos = { 0,850 };
+		m_NowCollar = m_COLLAR_DEFAULT;
+		m_AnimSpeed = m_SPEED_DEFAULT;
 
 		//現在のゲームステータスを取得
-		GameStatus status=ObjectManager::GetGameState();
+		GameStatus status=ObjectManager::GetNextGameState();
 
 		//日数別に読み込むファイルを変更
 		int dey = NumDeys::GetNumDeys();
-
+		std::string text;
 		if (status == Story)
 		{
 			switch (dey)
@@ -66,29 +70,30 @@ namespace object
 			switch (dey)
 			{
 			case 0:
-				m_TxtFile.open("../Asset/text/still/steel_dey0.txt");
+				text = JsonManager::TextData_Instance()->Get_StillData_Instance()->GetLineData_Day_0();
 				break;
 			case 1:
-				m_TxtFile.open("../Asset/text/still/steel_dey1.txt");
+				text = JsonManager::TextData_Instance()->Get_StillData_Instance()->GetLineData_Day_1();
 				break;
 			case 2:
-				m_TxtFile.open("../Asset/text/still/steel_dey2.txt");
+				text = JsonManager::TextData_Instance()->Get_StillData_Instance()->GetLineData_Day_2();
 				break;
 			case 3:
-				m_TxtFile.open("../Asset/text/still/steel_dey3.txt");
+				text = JsonManager::TextData_Instance()->Get_StillData_Instance()->GetLineData_Day_3();
+				break;
+			case 4:
+				text = JsonManager::TextData_Instance()->Get_StillData_Instance()->GetLineData_Day_4();
 				break;
 			}
 		}
 
 		//ファイルの読み込み
-		std::fstream file;
-		file.open("../Asset/text/EndTxt.txt");
-		std::getline(file, m_EndTxt);
-		file.close();
-		
+		m_TxtFile.open(text.c_str());
 		std::getline(m_TxtFile, m_Line);	//一行目読み込み
 
 		//フォントの読み込み
+		/*std::string font = JsonManager::FontData_Instance()->Get_StoryDat_Instance()->GetFontData();
+		m_FontPath = font.c_str();*/
 		m_FontPath = "../Asset/font/story/ShinRetroMaruGothic-Medium.ttf";
 
 		//フォントの読み込みができなかったら
@@ -98,10 +103,17 @@ namespace object
 		else 
 		{
 			// フォント読込エラー処理
-			MessageBox(NULL, "フォント読込失敗", "", MB_OK);
+			MessageBox(NULL, "FontErrer", "", MB_OK);
 		}
 
-		ChangeFont("新レトロ丸ゴシック", DX_CHARSET_DEFAULT);
+		//フォント名を取得
+		std::ifstream fontname_data;
+		std::string name;
+		fontname_data.open(JsonManager::FontData_Instance()->Get_StoryDat_Instance()->Get_FontTagData().c_str());
+		std::getline(fontname_data, name);
+		//フォントをセット
+		ChangeFont(name.c_str(), DX_CHARSET_DEFAULT);
+		fontname_data.close();
 	}
 
 	void Line::UpdateObj(const float deltatime)
@@ -144,19 +156,44 @@ namespace object
 			//前の文字をクリア
 			m_Line.clear();
 			m_TxtNum = 0;
+			m_NowCollar = m_COLLAR_DEFAULT;
+			m_AnimSpeed = m_SPEED_DEFAULT;
 
 			std::string line="";
 
 			//次の行を読み込み
 			std::getline(m_TxtFile, line);
 
-			//ファイルの終わりならステータス変更
-			if (line == m_EndTxt)
+			bool status_set = false;
+			if (line == "status")
+			{
+				status_set = true;
+			}
+
+			while (status_set)
 			{
 				//次の行を読み込み
 				std::getline(m_TxtFile, line);
+				if (line == "status")
+				{
+					status_set = false;
+					std::getline(m_TxtFile, line);
+				}
+				else if (line == m_RED)
+				{
+					m_NowCollar = m_COLLAR_RED;
+				}
+				else if (line == m_SLOW)
+				{
+					m_AnimSpeed = m_SPEED_SLOW;
+				}
+			}
 
-				if (line == m_DEY)
+			if (line == m_END)	//ファイルの終わりならステータス変更
+			{
+				//次の行を読み込み
+				std::getline(m_TxtFile, line);
+				if (line == m_DAY)
 				{
 					NumDeys::UpdateNumDeys();
 				}
@@ -165,15 +202,15 @@ namespace object
 				std::getline(m_TxtFile, line);
 				if (line == m_GAMEPLAY)
 				{
-					ObjectManager::SetGameState(GamePlay);
+					ObjectManager::SetNextGameState(GamePlay);
 				}
 				if (line == m_STORY)
 				{
-					ObjectManager::SetGameState(Story);
+					ObjectManager::SetNextGameState(Story);
 				}
 				if (line == m_STILL)
 				{
-					ObjectManager::SetGameState(Still);
+					ObjectManager::SetNextGameState(Still);
 				}
 			}
 			else
@@ -189,8 +226,8 @@ namespace object
 
 		if (m_IslineAnim)
 		{
-			m_AnimCount += 0.5f;
-			if (m_AnimCount >= 1.0f)
+			m_AnimCount += m_AnimSpeed;
+			if (m_AnimCount >= m_ANIMFPS)
 			{
 				if (m_TxtNum == m_Line.size())
 				{
@@ -207,8 +244,9 @@ namespace object
 
 	void Line::DrawObj()
 	{
+		DrawGraph(0, 0, m_ObjHandle, TRUE);
 		int x = GetDrawStringWidth(m_Line.c_str(), -1);
-		DrawString((1920 - x) / 2, m_ObjPos.y, (m_Line.substr(0, m_TxtNum) + " ").c_str(), GetColor(255, 255, 255));
+		DrawString((1920 - x) / 2, static_cast<int>(m_ObjPos.y), (m_Line.substr(0, m_TxtNum) + " ").c_str(), GetColor(static_cast<int>(m_NowCollar.x), static_cast<int>(m_NowCollar.y), static_cast<int>(m_NowCollar.z)));
 
 #ifdef DEBUG
 		DrawFormatString(0, 20, GetColor(255, 255, 255), "m_ClickCount:%f", m_ClickCount);

@@ -26,7 +26,7 @@ namespace object
 	{
 		if (m_DrawCount <= 0.0f)
 		{
-			ObjectManager::SetGameState(GamePlay);
+			ObjectManager::SetNextGameState(GamePlay);
 		}
 		else
 		{
