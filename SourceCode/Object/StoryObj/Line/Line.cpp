@@ -55,13 +55,13 @@ namespace object
 			switch (dey)
 			{
 			case 0:
-				m_TxtFile.open("../Asset/text/character/dey0.txt");
+				text = JsonManager::TextData_Instance()->Get_CharacterData_Instance()->GetLineData_Day_0();
 				break;
 			case 1:
-				m_TxtFile.open("../Asset/text/character/dey1.txt");
+				text = JsonManager::TextData_Instance()->Get_CharacterData_Instance()->GetLineData_Day_1();
 				break;
-			case 3:
-				m_TxtFile.open("../Asset/text/character/dey3.txt");
+			case 4:
+				text = JsonManager::TextData_Instance()->Get_CharacterData_Instance()->GetLineData_Day_4();
 				break;
 			}
 		}

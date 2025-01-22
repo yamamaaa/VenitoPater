@@ -1,5 +1,4 @@
 #include "Character.h"
-#include"CharaStatus.h"
 #include"../../ObjectTag/Story_ObjectTag.h"
 #include"../LineStatus/LineStatus.h"
 #include"../../ObjectManager/ObjectManager.h"
@@ -21,32 +20,35 @@ namespace object
 
 	void Character::LoadObject()
 	{
-		//m_Objimg[charaStatus.HAPPY] = LoadGraph("../Asset/image/story/character/happy.png");
-		//m_Objimg[charaStatus.NORMAL] = LoadGraph("../Asset/image/story/character/normal.png");
-		//m_Objimg[charaStatus.SORROW] = LoadGraph("../Asset/image/story/character/sorrow.png");
-
-		m_ObjPos = { 800,100 };
+		//画像データ取得
+		for (int i = 0; i < 10; i++)
+		{
+			m_Objimg[JsonManager::ImgData_Instance()->Get_StoryImgData_Instance()->GetFamiliaData_Name(i)] = LoadGraph(JsonManager::ImgData_Instance()->Get_StoryImgData_Instance()->GetFamiliaData_Image(i).c_str());
+		}
 
 		//日数別に読み込むファイルを変更
 		int dey = NumDeys::GetNumDeys();
+		std::string text;
 
+		//表情テキストファイルの取得
 		switch (dey)
 		{
 		case 0:
-			m_TxtFile.open(("../Asset/text/character/file2.txt"));
+			text = JsonManager::TextData_Instance()->Get_CharacterData_Instance()->GetExpressionData_Day_0();
 			break;
 		case 1:
-			m_TxtFile.open(("../Asset/text/character/file2.txt"));
+			text = JsonManager::TextData_Instance()->Get_CharacterData_Instance()->GetExpressionData_Day_1();
 			break;
-		case 3:
-			m_TxtFile.open(("../Asset/text/character/file2.txt"));
+		case 4:
+			text = JsonManager::TextData_Instance()->Get_CharacterData_Instance()->GetExpressionData_Day_4();
 			break;
 		}
 
-		//ファイルの読み込み
-		std::getline(m_TxtFile, m_Status);	//一行目読み込み
+		//テキストファイルの展開
+		m_TxtFile.open((text.c_str()));
 
-		m_ObjHandle = m_Objimg[m_Status.c_str()];
+		//表示画像データ更新
+		UpdateDrawStatus();
 	}
 
 	void Character::UpdateObj(const float deltatime)
@@ -54,11 +56,39 @@ namespace object
 		//文字セット前は以下処理なし
 		if (!LineStatus::GetIsDoneAnim())
 			return;
+		//表示画像データ更新
+		UpdateDrawStatus();
+		//文字セットを可能状態に
+		LineStatus::SetIsDoneAnim(false);
+	}
 
-		std::getline(m_TxtFile, m_Status);	//一行目読み込み
+	void Character::UpdateDrawStatus()
+	{
+		//表情データを読み込んで画像をセット
+		std::getline(m_TxtFile, m_Status);
 		m_ObjHandle = m_Objimg[m_Status.c_str()];
 
-		LineStatus::SetIsDoneAnim(false);
+		//データ別に座標をセット
+		if (m_Status.substr(0, charaStatus.NORMAL.size()) == charaStatus.NORMAL)
+		{
+			m_ObjPos = m_ImgPos[charaStatus.NORMAL];
+		}
+		if (m_Status.substr(0, charaStatus.WORRY.size()) == charaStatus.WORRY)
+		{
+			m_ObjPos = m_ImgPos[charaStatus.WORRY];
+		}
+		if (m_Status.substr(0, charaStatus.DISMAYER.size()) == charaStatus.DISMAYER)
+		{
+			m_ObjPos = m_ImgPos[charaStatus.DISMAYER];
+		}
+		if (m_Status.substr(0, charaStatus.HAPPY.size()) == charaStatus.HAPPY)
+		{
+			m_ObjPos = m_ImgPos[charaStatus.HAPPY];
+		}
+		if (m_Status.substr(0, charaStatus.SURPRISE.size()) == charaStatus.SURPRISE)
+		{
+			m_ObjPos = m_ImgPos[charaStatus.SURPRISE];
+		}
 	}
 
 	void Character::DrawObj()

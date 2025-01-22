@@ -9,7 +9,7 @@
         "stage": "../Asset/image/story/character/background/stage.png"
       },
       "familia": {
-        "name": [ "dismayed_normal", "dismayed_smile", "happy_smile", "normal_anger", "normal_smile", "normal_stonefaced_0", "normal_stonefaced_1", "surprise_normal", "worry_normal" ],
+        "name": [ "dismayed_normal", "dismayed_smile", "happy_smile", "normal_anger", "normal_smile", "normal_stonefaced_0", "normal_stonefaced_1", "surprise_cry", "surprise_normal", "worry_normal" ],
         "image": [
           "../Asset/image/story/character/familia/dismayed_normal.png",
           "../Asset/image/story/character/familia/dismayed_smile.png",
@@ -18,6 +18,7 @@
           "../Asset/image/story/character/familia/normal_smile.png",
           "../Asset/image/story/character/familia/normal_stonefaced_0.png",
           "../Asset/image/story/character/familia/normal_stonefaced_1.png",
+          "../Asset/image/story/character/familia/surprise_cry.png",
           "../Asset/image/story/character/familia/surprise_normal.png",
           "../Asset/image/story/character/familia/worry_normal.png"
         ]

@@ -1,6 +1,7 @@
 #include "BackGround.h"
 #include "../../ObjectTag/GameOver_ObjectTag.h"
 #include "../../ObjectManager/ObjectManager.h"
+#include "../../NumDeys/NumDeys.h"
 
 namespace object
 {
@@ -20,13 +21,29 @@ namespace object
     {
         m_ObjPos = { 0,0 };
 
-        if (GameOver == ObjectManager::GetNextGameState())
+        if (GameOver == ObjectManager::GetNowGameState())
         {
             m_ObjHandle = LoadGraph(JsonManager::ImgData_Instance()->Get_ResultData_Instance()->GetOverData_BackGround().c_str());
         }
-        if (GameClear == ObjectManager::GetNextGameState())
+        if (GameClear == ObjectManager::GetNowGameState())
         {
             m_ObjHandle = LoadGraph(JsonManager::ImgData_Instance()->Get_ResultData_Instance()->GetClearData_BackGround().c_str());
+        }
+        if (Story == ObjectManager::GetNowGameState())
+        {
+            int day=NumDeys::GetNumDeys();
+            std::string imgdata;
+            switch (day)
+            {
+            case 4:
+                imgdata = JsonManager::ImgData_Instance()->Get_StoryImgData_Instance()->GetBackgroundData_Stage();
+                break;
+            default:
+                imgdata = JsonManager::ImgData_Instance()->Get_StoryImgData_Instance()->GetBackgroundData_Lounge();
+                break;
+            }
+            m_ObjPos = { 0,184 };
+            m_ObjHandle = LoadGraph(imgdata.c_str());
         }
     }
 

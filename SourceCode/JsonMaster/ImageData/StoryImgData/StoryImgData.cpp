@@ -26,7 +26,7 @@ namespace json_imgdata
 
 	void StoryImgData::SetJsonData_Familia(Json json)
 	{
-		for (int i = 0; i < 9; i++)
+		for (int i = 0; i < 10; i++)
 		{
 			familiaData.name[i] = json["name"][i];
 			familiaData.image[i] = json["image"][i];

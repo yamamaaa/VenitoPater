@@ -92,10 +92,10 @@
       <Filter>ソースコード\Object\CharaObj\Enemy\Ira</Filter>
     </ClCompile>
     <ClCompile Include="..\SourceCode\Object\Result\GameOverUi\GameOverUi.cpp">
-      <Filter>ソースコード\Object\ObjectTag\Result\GameOverUi</Filter>
+      <Filter>ソースコード\Object\Result\GameOverUi</Filter>
     </ClCompile>
     <ClCompile Include="..\SourceCode\Object\Result\BackGround\BackGround.cpp">
-      <Filter>ソースコード\Object\ObjectTag\Result\BackGround</Filter>
+      <Filter>ソースコード\Object\Result\BackGround</Filter>
     </ClCompile>
     <ClCompile Include="..\SourceCode\Object\NumDeys\NumDeys.cpp">
       <Filter>ソースコード\Object\NumDeys</Filter>
@@ -125,7 +125,7 @@
       <Filter>ソースコード\Object\StoryObj\Character</Filter>
     </ClCompile>
     <ClCompile Include="..\SourceCode\Object\Result\GameClearUi\GameClearUi.cpp">
-      <Filter>ソースコード\Object\ObjectTag\Result\GameClearUi</Filter>
+      <Filter>ソースコード\Object\Result\GameClearUi</Filter>
     </ClCompile>
     <ClCompile Include="..\SourceCode\Object\StoryObj\Line\Line.cpp">
       <Filter>ソースコード\Object\StoryObj\Line</Filter>
@@ -301,10 +301,10 @@
       <Filter>ソースコード\Object\CharaObj\Enemy\Ira</Filter>
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\Result\GameOverUi\GameOverUi.h">
-      <Filter>ソースコード\Object\ObjectTag\Result\GameOverUi</Filter>
+      <Filter>ソースコード\Object\Result\GameOverUi</Filter>
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\Result\BackGround\BackGround.h">
-      <Filter>ソースコード\Object\ObjectTag\Result\BackGround</Filter>
+      <Filter>ソースコード\Object\Result\BackGround</Filter>
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\NumDeys\NumDeys.h">
       <Filter>ソースコード\Object\NumDeys</Filter>
@@ -358,7 +358,7 @@
       <Filter>ソースコード\Object\StoryObj\Character</Filter>
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\Result\GameClearUi\GameClearUi.h">
-      <Filter>ソースコード\Object\ObjectTag\Result\GameClearUi</Filter>
+      <Filter>ソースコード\Object\Result\GameClearUi</Filter>
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\StoryObj\Line\Line.h">
       <Filter>ソースコード\Object\StoryObj\Line</Filter>
@@ -680,16 +680,16 @@
     <Filter Include="ソースコード\JsonMaster\ImageData\StoryImgData">
       <UniqueIdentifier>{c29cbcd5-9b01-4d9f-ab05-84b943535f52}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースコード\Object\ObjectTag\Result">
+    <Filter Include="ソースコード\Object\Result">
       <UniqueIdentifier>{63b8c6d3-74ab-42d0-9e4e-be1a8da159cb}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースコード\Object\ObjectTag\Result\GameOverUi">
+    <Filter Include="ソースコード\Object\Result\GameOverUi">
       <UniqueIdentifier>{38e5d6ed-eb1e-4536-b56a-1ac73379cf54}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースコード\Object\ObjectTag\Result\BackGround">
+    <Filter Include="ソースコード\Object\Result\BackGround">
       <UniqueIdentifier>{75c808eb-45ce-4912-973e-0a29c745cf08}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースコード\Object\ObjectTag\Result\GameClearUi">
+    <Filter Include="ソースコード\Object\Result\GameClearUi">
       <UniqueIdentifier>{dad16d75-e43e-48a5-8aaa-bf384e0050b6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>

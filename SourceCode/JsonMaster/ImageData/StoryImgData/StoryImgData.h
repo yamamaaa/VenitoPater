@@ -55,8 +55,8 @@ namespace json_imgdata
 
 		struct FamiliaData
 		{
-			std::string name[9];
-			std::string image[9];
+			std::string name[10];
+			std::string image[10];
 		}familiaData;
 
 		void SetJsonData_Familia(Json json);
