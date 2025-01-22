@@ -59,7 +59,6 @@ namespace scene
         /// </summary>
         void TransitorScene();
 
-        object::GameStatus m_NowGameStatus;         //現在のゲームステータス
         transitor::FadeTransitor* fade_transitor;   //フェード関連
 
         bool m_FadeInSet;

@@ -41,19 +41,20 @@ namespace object
         void DrawObj()override;
 
         //ゲームステータス変更コード
-        const std::string m_GAMEPLAY = "GamePlay";
-        const std::string m_STORY = "Story";
-        const std::string m_STILL = "Still";
+        const std::string m_GAMEPLAY = "gameplay";
+        const std::string m_STORY = "story";
+        const std::string m_STILL = "still";
 
-        //日数変更コード
-        const std::string m_DEY = "Dey";
-
-        std::string m_EndTxt;   //ファイル末端コード
+        const std::string m_END = "null";   //ファイル末端コード
+        const std::string m_DAY = "day";    //日数変更コード
+        const std::string m_RED = "red";    //文字色変更コード
+        const std::string m_SLOW = "slow";  //文字アニメスピード変更コード
 
         std::ifstream m_TxtFile;//読み込まれたファイル
 
         LPCSTR m_FontPath;      //フォントタイプ
-        std::string m_Line;     //表示する文字
+        std::string m_Line;     //ファイルから取得した文字
+        std::string m_DrawText; //表示する文字
 
         int m_TxtNum;           //表示中の文字数
 
@@ -63,6 +64,15 @@ namespace object
 
         float m_ClickCount;     //再度クリックできるまで
         float m_AnimCount;      //文字のアニメカウント
+        float m_AnimSpeed;      //アニメスピード
+
+        const float m_ANIMFPS = 0.1f;   //アニメFPS
+        const float m_SPEED_DEFAULT = 0.1f;    //アニメスピード(default)
+        const float m_SPEED_SLOW = 0.02f;       //アニメスピード(slow)
+
+        VECTOR m_NowCollar;                             //現在の文字色
+        VECTOR m_COLLAR_DEFAULT = VGet(255, 255, 255);  //白色
+        VECTOR m_COLLAR_RED = VGet(255, 0, 0);          //赤色
 	};
 }
 

@@ -20,11 +20,11 @@ namespace object
     {
         m_ObjPos = { 0,0 };
 
-        if (GameOver == ObjectManager::GetGameState())
+        if (GameOver == ObjectManager::GetNextGameState())
         {
             m_ObjHandle = LoadGraph(JsonManager::ImgData_Instance()->Get_ResultData_Instance()->GetOverData_BackGround().c_str());
         }
-        if (GameClear == ObjectManager::GetGameState())
+        if (GameClear == ObjectManager::GetNextGameState())
         {
             m_ObjHandle = LoadGraph(JsonManager::ImgData_Instance()->Get_ResultData_Instance()->GetClearData_BackGround().c_str());
         }

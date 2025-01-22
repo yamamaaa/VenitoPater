@@ -62,16 +62,18 @@ namespace transitor
 
 		if (m_WaitDone)
 		{
-			//だんだん画面を暗くする
-			SetDrawBright(m_Collar, m_Collar, m_Collar);
-			m_Collar -= static_cast<int>(m_Calculation);
-			m_Calculation += m_DROPSPEED;
-
 			if (m_Collar <= 0)
 			{
 				m_IsFadeDone = true;	//処理の完了
 				m_Collar = 0;			//誤差の修正
 			}
+			else
+			{
+				//だんだん画面を暗くする
+				m_Collar -= static_cast<int>(m_Calculation);
+				m_Calculation += m_DROPSPEED;
+			}
+			SetDrawBright(m_Collar, m_Collar, m_Collar);
 		}
 
 		DrawFormatString(700, 300, GetColor(255, 255, 255), "カラーコード:%d", m_Collar);
@@ -97,16 +99,19 @@ namespace transitor
 
 		if (m_WaitDone)
 		{
-			//だんだん画面を明るく
-			SetDrawBright(m_Collar, m_Collar, m_Collar);
-			m_Collar += static_cast<int>(m_Calculation);
-			m_Calculation += m_RISESPEED;
-
 			if (m_Collar >= m_COLLARCODE)
 			{
 				m_IsFadeDone = true;			//処理の完了
 				m_Collar = m_COLLARCODE;		//誤差の修正
 			}
+			else 
+			{
+				m_Collar += static_cast<int>(m_Calculation);
+				m_Calculation += m_RISESPEED;
+			}
+
+			//だんだん画面を明るく
+			SetDrawBright(m_Collar, m_Collar, m_Collar);
 		}
 
 		DrawFormatString(700, 300, GetColor(255, 255, 255), "カラーコード:%d", m_Collar);

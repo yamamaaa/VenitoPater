@@ -24,6 +24,8 @@ namespace json_imgdata
 		/// </summary>
 		~StoryImgData();
 
+		const std::string GetFlameData()const { return flame; }
+
 		const std::string GetBackgroundData_Lounge()const { return backgroundData.lounge; }
 		const std::string GetBackgroundData_Stage()const { return backgroundData.stage; }
 

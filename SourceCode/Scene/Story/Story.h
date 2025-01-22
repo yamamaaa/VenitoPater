@@ -35,5 +35,7 @@ namespace scene
 		/// シーン更新処理
 		/// </summary>
 		void DrawScene()override;
+
+		bool IsNextStory = false; //次のシーンがストーリーシーンか
 	};
 }

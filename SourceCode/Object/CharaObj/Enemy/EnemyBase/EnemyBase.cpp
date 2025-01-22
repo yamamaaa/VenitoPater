@@ -149,7 +149,7 @@ namespace object
 	void EnemyBase::EnemyInAction()
 	{
 		//ゲーム状態をゲームオーバーに
-		ObjectManager::SetGameState(GameOver);
+		ObjectManager::SetNextGameState(GameOver);
 	}
 
 #ifdef DEBUG
