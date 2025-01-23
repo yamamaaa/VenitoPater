@@ -8,8 +8,10 @@ namespace object
     /// </summary>
     static struct CharaStatus
     {
-        std::string SORROW = "sorrow";
         std::string NORMAL = "normal";
+        std::string WORRY = "worry";
+        std::string DISMAYER = "dismayed";
         std::string HAPPY = "happy";
+        std::string SURPRISE = "surprise";
     } charaStatus;
 }

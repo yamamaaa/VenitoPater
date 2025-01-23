@@ -24,8 +24,18 @@
     <ClCompile Include="..\SourceCode\GameSystem\GameManager\GameManager.cpp" />
     <ClCompile Include="..\SourceCode\GameSystem\GameSetting\GameSetting.cpp" />
     <ClCompile Include="..\SourceCode\GameSystem\Window\Window.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\FontData\MasterFontData\MasterFontData.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\FontData\StoryData\StoryData.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\ImageData\MasterImgData\MasterImgData.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\ImageData\PlayData\PlayData.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\ImageData\ResultData\ResultData.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\ImageData\StoryImgData\StoryImgData.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\ImageData\TitleData\TitleData.cpp" />
     <ClCompile Include="..\SourceCode\JsonMaster\IOUtility\IOUtility.cpp" />
     <ClCompile Include="..\SourceCode\JsonMaster\JsonManager\JsonManager.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\TextData\CharacterData\CharacterData.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\TextData\MasterTextData\MasterTextData.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\TextData\StillData\StillData.cpp" />
     <ClCompile Include="..\SourceCode\LevelController\LevelController.cpp" />
     <ClCompile Include="..\SourceCode\Main.cpp" />
     <ClCompile Include="..\SourceCode\Math2D\Math2D.cpp" />
@@ -64,6 +74,7 @@
     <ClCompile Include="..\SourceCode\Object\StoryObj\LineStatus\LineStatus.cpp" />
     <ClCompile Include="..\SourceCode\Object\StoryObj\Line\Line.cpp" />
     <ClCompile Include="..\SourceCode\Object\StoryObj\StillDraw\StillDraw.cpp" />
+    <ClCompile Include="..\SourceCode\Object\StoryObj\StoryItem\StoryItem.cpp" />
     <ClCompile Include="..\SourceCode\Object\Time\Time.cpp" />
     <ClCompile Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.cpp" />
     <ClCompile Include="..\SourceCode\Object\TitleObj\TitleUi\TitleUi.cpp" />
@@ -81,8 +92,18 @@
     <ClInclude Include="..\SourceCode\GameSystem\GameManager\GameManager.h" />
     <ClInclude Include="..\SourceCode\GameSystem\GameSetting\GameSetting.h" />
     <ClInclude Include="..\SourceCode\GameSystem\Window\Window.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\FontData\MasterFontData\MasterFontData.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\FontData\StoryData\StoryData.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\ImageData\MasterImgData\MasterImgData.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\ImageData\PlayData\PlayData.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\ImageData\ResultData\ResultData.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\ImageData\StoryImgData\StoryImgData.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\ImageData\TitleData\TitleData.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\IOUtility\IOUtility.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\JsonManager\JsonManager.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\TextData\CharacterData\CharacterData.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\TextData\MasterTextData\MasterTextData.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\TextData\StillData\StillData.h" />
     <ClInclude Include="..\SourceCode\LevelController\LevelController.h" />
     <ClInclude Include="..\SourceCode\LevelController\LevelStatus.h" />
     <ClInclude Include="..\SourceCode\Math2D\Math2D.h" />
@@ -133,6 +154,8 @@
     <ClInclude Include="..\SourceCode\Object\StoryObj\LineStatus\LineStatus.h" />
     <ClInclude Include="..\SourceCode\Object\StoryObj\Line\Line.h" />
     <ClInclude Include="..\SourceCode\Object\StoryObj\StillDraw\StillDraw.h" />
+    <ClInclude Include="..\SourceCode\Object\StoryObj\StoryItem\CharaItem_Tag.h" />
+    <ClInclude Include="..\SourceCode\Object\StoryObj\StoryItem\StoryItem.h" />
     <ClInclude Include="..\SourceCode\Object\Time\Time.h" />
     <ClInclude Include="..\SourceCode\Object\TitleObj\SelectMode\PlayMenu.h" />
     <ClInclude Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.h" />
@@ -144,6 +167,15 @@
     <ClInclude Include="..\SourceCode\Scene\ThreeDays\ThreeDays.h" />
     <ClInclude Include="..\SourceCode\Scene\Title\Title.h" />
     <ClInclude Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Font\story.json" />
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Image\play.json" />
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Image\result.json" />
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Image\story.json" />
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Image\title.json" />
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Text\character.json" />
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Text\still.json" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>

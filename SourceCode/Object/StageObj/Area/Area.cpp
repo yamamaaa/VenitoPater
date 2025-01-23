@@ -26,10 +26,10 @@ namespace object
 		m_ObjPos.y = 0;
 
 		//画像の読み込み
-		m_AreaImg[0] = LoadGraph("../Asset/image/stage/area_0.png");
-		m_AreaImg[1] = LoadGraph("../Asset/image/stage/area_1.png");
-		m_AreaImg[2] = LoadGraph("../Asset/image/stage/area_2.png");
-		m_AreaImg[3] = LoadGraph("../Asset/image/stage/area_3.png");
+		for (int i = 0; i < 4; i++)
+		{
+			m_AreaImg[i] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetStageData(i).c_str());
+		}
 
 		//表示エリアの初期値セット
 		m_ObjHandle = m_AreaImg[AreaNumController::GetAreaNum()];

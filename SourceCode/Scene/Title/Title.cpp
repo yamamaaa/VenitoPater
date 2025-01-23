@@ -33,8 +33,8 @@ namespace scene
         //オブジェクトタグをセット
         object::ObjectManager::NowSceneSet(objecttag::TitleObjectTagAll);
         //Game状態をセット
-        m_NowGameStatus = object::Title;
-        object::ObjectManager::SetGameState(m_NowGameStatus);
+        object::ObjectManager::SetNowGameState(object::Title);
+        object::ObjectManager::SetNextGameState(object::Title);
 
         LevelController::Initialize();
         object::NumDeys::Initialize();
@@ -42,6 +42,8 @@ namespace scene
         //Title画面の全Ui生成
         object::ObjectManager::Entry(new object::TitleUi);
         object::ObjectManager::Entry(new object::SelectMode);
+
+        m_FadeInSet = false;
     }
 
     SceneBase* Title::UpdateScene(float deltaTime)
@@ -66,16 +68,20 @@ namespace scene
 
         //LevelController::SetLevel(levelStatus.NOMAL);
         //object::ObjectManager::ReleaseAllObj();
-        //m_NowGameStatus = object::Still;
-        //return new Story();
+        //return new ThreeDays();
 
-        //ゲームプレイ
-        if (object::GamePlay == m_NowGameStatus)
-        {
+        //LevelController::SetLevel(levelStatus.NOMAL);
+        //object::ObjectManager::ReleaseAllObj();
+        //object::ObjectManager::SetNowGameState(object::Still);
+        //return new Story();
             LevelController::SetLevel(levelStatus.NOMAL);
             object::ObjectManager::ReleaseAllObj();
-            m_NowGameStatus = object::Still;
+            object::ObjectManager::SetNowGameState(object::Story);
             return new Story();
+
+        //ゲームプレイ
+        if (object::GamePlay == object::ObjectManager::GetNowGameState())
+        {
         }
 
         return this;
@@ -86,7 +92,7 @@ namespace scene
         DrawFormatString(0, 0, GetColor(255, 255, 255), "title");
 
         //ゲームステータスが変わったら
-        if (m_NowGameStatus != object::ObjectManager::GetGameState())
+        if (object::ObjectManager::GetNowGameState() != object::ObjectManager::GetNextGameState())
         {
             //フェード処理をする
             fade_transitor->FadeOutStart(true);

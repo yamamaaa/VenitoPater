@@ -67,7 +67,7 @@ namespace object
 		if (itemans <= itemgetnum->m_MAXNOLM)
 		{
 			//ƒQ[ƒ€ƒNƒŠƒA
-			ObjectManager::SetGameState(GameClear);
+			ObjectManager::SetNextGameState(GameClear);
 		}
 	}
 }

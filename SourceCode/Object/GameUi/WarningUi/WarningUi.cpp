@@ -25,7 +25,7 @@ namespace object
 		m_IsBlinking = false;
 
 		//‰æ‘œ‚Ì“Ç‚Ýž‚Ý
-		m_ObjHandle = LoadGraph("../Asset/image/ui/warning_marc/warning_marc.png");
+		m_ObjHandle = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetUiData_Warning().c_str());
 	}
 
 	void WarningUi::UpdateObj(const float deltatime)

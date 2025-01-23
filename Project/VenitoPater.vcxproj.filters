@@ -94,9 +94,6 @@
     <ClCompile Include="..\SourceCode\Object\Result\GameOverUi\GameOverUi.cpp">
       <Filter>ソースコード\Object\Result\GameOverUi</Filter>
     </ClCompile>
-    <ClCompile Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.cpp">
-      <Filter>ソースコード\Transitor\FadeTransitor</Filter>
-    </ClCompile>
     <ClCompile Include="..\SourceCode\Object\Result\BackGround\BackGround.cpp">
       <Filter>ソースコード\Object\Result\BackGround</Filter>
     </ClCompile>
@@ -165,6 +162,42 @@
     </ClCompile>
     <ClCompile Include="..\SourceCode\Scene\Result\Result.cpp">
       <Filter>ソースコード\Scene\Result</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.cpp">
+      <Filter>ソースコード\Transitor\FadeTransitor</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\ImageData\MasterImgData\MasterImgData.cpp">
+      <Filter>ソースコード\JsonMaster\ImageData\MasterImgData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\ImageData\TitleData\TitleData.cpp">
+      <Filter>ソースコード\JsonMaster\ImageData\TitleData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\ImageData\ResultData\ResultData.cpp">
+      <Filter>ソースコード\JsonMaster\ImageData\ResultData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\ImageData\PlayData\PlayData.cpp">
+      <Filter>ソースコード\JsonMaster\ImageData\PlayData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\TextData\CharacterData\CharacterData.cpp">
+      <Filter>ソースコード\JsonMaster\TextData\CharacterData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\TextData\MasterTextData\MasterTextData.cpp">
+      <Filter>ソースコード\JsonMaster\TextData\MasterTextData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\TextData\StillData\StillData.cpp">
+      <Filter>ソースコード\JsonMaster\TextData\StillData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\FontData\MasterFontData\MasterFontData.cpp">
+      <Filter>ソースコード\JsonMaster\FontData\MasterFontData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\FontData\StoryData\StoryData.cpp">
+      <Filter>ソースコード\JsonMaster\FontData\StoryData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\ImageData\StoryImgData\StoryImgData.cpp">
+      <Filter>ソースコード\JsonMaster\ImageData\StoryImgData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\StoryObj\StoryItem\StoryItem.cpp">
+      <Filter>ソースコード\Object\StoryObj\StoryItem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -273,9 +306,6 @@
     <ClInclude Include="..\SourceCode\Object\Result\GameOverUi\GameOverUi.h">
       <Filter>ソースコード\Object\Result\GameOverUi</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.h">
-      <Filter>ソースコード\Transitor\FadeTransitor</Filter>
-    </ClInclude>
     <ClInclude Include="..\SourceCode\Object\Result\BackGround\BackGround.h">
       <Filter>ソースコード\Object\Result\BackGround</Filter>
     </ClInclude>
@@ -371,6 +401,45 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Scene\Result\Result.h">
       <Filter>ソースコード\Scene\Result</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.h">
+      <Filter>ソースコード\Transitor\FadeTransitor</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\ImageData\MasterImgData\MasterImgData.h">
+      <Filter>ソースコード\JsonMaster\ImageData\MasterImgData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\ImageData\TitleData\TitleData.h">
+      <Filter>ソースコード\JsonMaster\ImageData\TitleData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\ImageData\ResultData\ResultData.h">
+      <Filter>ソースコード\JsonMaster\ImageData\ResultData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\ImageData\PlayData\PlayData.h">
+      <Filter>ソースコード\JsonMaster\ImageData\PlayData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\TextData\CharacterData\CharacterData.h">
+      <Filter>ソースコード\JsonMaster\TextData\CharacterData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\TextData\MasterTextData\MasterTextData.h">
+      <Filter>ソースコード\JsonMaster\TextData\MasterTextData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\TextData\StillData\StillData.h">
+      <Filter>ソースコード\JsonMaster\TextData\StillData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\FontData\MasterFontData\MasterFontData.h">
+      <Filter>ソースコード\JsonMaster\FontData\MasterFontData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\FontData\StoryData\StoryData.h">
+      <Filter>ソースコード\JsonMaster\FontData\StoryData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\ImageData\StoryImgData\StoryImgData.h">
+      <Filter>ソースコード\JsonMaster\ImageData\StoryImgData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\StoryObj\StoryItem\StoryItem.h">
+      <Filter>ソースコード\Object\StoryObj\StoryItem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\StoryObj\StoryItem\CharaItem_Tag.h">
+      <Filter>ソースコード\Object\StoryObj\StoryItem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -503,12 +572,6 @@
     <Filter Include="ソースコード\Object\CharaObj\Enemy\Ira">
       <UniqueIdentifier>{a2b7f8ff-f34d-4ac1-9bb3-5e7c3cd4f57d}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースコード\Object\Result">
-      <UniqueIdentifier>{63b8c6d3-74ab-42d0-9e4e-be1a8da159cb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースコード\Object\Result\GameOverUi">
-      <UniqueIdentifier>{38e5d6ed-eb1e-4536-b56a-1ac73379cf54}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソースコード\Scene\Result">
       <UniqueIdentifier>{54a982df-78df-4706-8a26-6f6c3a653b39}</UniqueIdentifier>
     </Filter>
@@ -517,9 +580,6 @@
     </Filter>
     <Filter Include="ソースコード\Transitor\FadeTransitor">
       <UniqueIdentifier>{a93f5aa2-f13e-4f14-bc4e-64c206d2a6de}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースコード\Object\Result\BackGround">
-      <UniqueIdentifier>{75c808eb-45ce-4912-973e-0a29c745cf08}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースコード\Object\NumDeys">
       <UniqueIdentifier>{f7418988-b22b-48cd-a368-ae45319bfc91}</UniqueIdentifier>
@@ -554,9 +614,6 @@
     <Filter Include="ソースコード\Object\StoryObj\Character">
       <UniqueIdentifier>{7e754bd2-4086-49ee-b7ee-dd78036239ca}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースコード\Object\Result\GameClearUi">
-      <UniqueIdentifier>{dad16d75-e43e-48a5-8aaa-bf384e0050b6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソースコード\Object\StoryObj\Line">
       <UniqueIdentifier>{cf6024d4-282f-4000-b14c-6108c4cf8f94}</UniqueIdentifier>
     </Filter>
@@ -581,5 +638,94 @@
     <Filter Include="ソースコード\Scene\Story">
       <UniqueIdentifier>{962b8690-339f-437d-9046-592028dab4cd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソースコード\JsonMaster\JsonFile">
+      <UniqueIdentifier>{b04abbf7-6fd0-4555-827a-c0ec5ae576c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\JsonFile\Image">
+      <UniqueIdentifier>{8dc2485d-0633-429b-bfc5-898cf0c11f37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\ImageData">
+      <UniqueIdentifier>{cc33ed31-8ab2-42a2-9423-79be27275162}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\ImageData\MasterImgData">
+      <UniqueIdentifier>{1d9a98b1-980a-47ea-8ea5-f740798edaa4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\ImageData\PlayData">
+      <UniqueIdentifier>{bcf58683-bfa6-47ad-a125-5d2c95dc407a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\ImageData\ResultData">
+      <UniqueIdentifier>{ad6c2a97-6538-4c24-9b93-a31d8873c177}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\ImageData\TitleData">
+      <UniqueIdentifier>{2daaefe0-3721-4d06-a788-2dc74f22fdf6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\JsonFile\Text">
+      <UniqueIdentifier>{4db04759-8486-4344-a282-3f0f4a7f764d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\TextData">
+      <UniqueIdentifier>{abbbb85a-b106-4f89-ac8b-0dfed57d3eba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\TextData\CharacterData">
+      <UniqueIdentifier>{d4936a65-6bf9-4150-b1dd-35ba2b957848}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\TextData\MasterTextData">
+      <UniqueIdentifier>{12b2924d-d280-4dd4-b3d6-9d3d390e9e13}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\TextData\StillData">
+      <UniqueIdentifier>{148ed47c-9ea1-4c61-b954-e6e0b4375f20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\JsonFile\Font">
+      <UniqueIdentifier>{03ec39ac-7162-4aab-b642-7c52d66460fb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\FontData">
+      <UniqueIdentifier>{b0b55153-66d4-43c9-9d08-2371da67f35c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\FontData\MasterFontData">
+      <UniqueIdentifier>{b87a5932-b94a-4da6-a9cb-5bcc3daf2479}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\FontData\StoryData">
+      <UniqueIdentifier>{8cbd31ca-aa91-4eb1-bda1-2249a1d0209f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\ImageData\StoryImgData">
+      <UniqueIdentifier>{c29cbcd5-9b01-4d9f-ab05-84b943535f52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\Result">
+      <UniqueIdentifier>{63b8c6d3-74ab-42d0-9e4e-be1a8da159cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\Result\GameOverUi">
+      <UniqueIdentifier>{38e5d6ed-eb1e-4536-b56a-1ac73379cf54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\Result\BackGround">
+      <UniqueIdentifier>{75c808eb-45ce-4912-973e-0a29c745cf08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\Result\GameClearUi">
+      <UniqueIdentifier>{dad16d75-e43e-48a5-8aaa-bf384e0050b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StoryObj\StoryItem">
+      <UniqueIdentifier>{9d8ef316-c524-489b-9342-d3ec3c60b160}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Image\play.json">
+      <Filter>ソースコード\JsonMaster\JsonFile\Image</Filter>
+    </None>
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Image\result.json">
+      <Filter>ソースコード\JsonMaster\JsonFile\Image</Filter>
+    </None>
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Image\story.json">
+      <Filter>ソースコード\JsonMaster\JsonFile\Image</Filter>
+    </None>
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Image\title.json">
+      <Filter>ソースコード\JsonMaster\JsonFile\Image</Filter>
+    </None>
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Text\character.json">
+      <Filter>ソースコード\JsonMaster\JsonFile\Text</Filter>
+    </None>
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Text\still.json">
+      <Filter>ソースコード\JsonMaster\JsonFile\Text</Filter>
+    </None>
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Font\story.json">
+      <Filter>ソースコード\JsonMaster\JsonFile\Font</Filter>
+    </None>
   </ItemGroup>
 </Project>

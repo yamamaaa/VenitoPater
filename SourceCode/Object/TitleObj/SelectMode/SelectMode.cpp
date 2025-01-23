@@ -28,8 +28,8 @@ namespace object
 		//クリック可能状態
 		m_CanClick = true;
 
-		m_ObjHandle = LoadGraph("../Asset/image/title/select.png");
-		m_MenuHandol= LoadGraph("../Asset/image/title/menu.png");
+		m_ObjHandle = LoadGraph(JsonManager::ImgData_Instance()->Get_TitleData_Instance()->GetSelectData().c_str());
+		m_MenuHandol= LoadGraph(JsonManager::ImgData_Instance()->Get_TitleData_Instance()->GetMenuData().c_str());
 	}
 
 	void SelectMode::UpdateObj(const float deltatime)
@@ -70,7 +70,7 @@ namespace object
 					break;
 				}
 
-				ObjectManager::SetGameState(status);
+				ObjectManager::SetNextGameState(status);
 
 				return;
 			}

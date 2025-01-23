@@ -14,32 +14,36 @@ namespace transitor
 		//処理無し
 	}
 
+	const void FadeTransitor::FadeProcessing()
+	{
+		//読み込み関連
+		LoadObject();
+	}
+
 	void FadeTransitor::WaitTime()
 	{
 		if (!m_WaitDone)
 		{
 			m_WaitCount -= m_COUNT_DECREMENT;
 
-			if (m_WaitCount == 0)
+			if (m_WaitCount <= 0.0f)
 			{
 				m_WaitDone = true;
-				m_WaitCount = m_WAITMAX;
 			}
 		}
 	}
 
 	void FadeTransitor::LoadObject()
 	{
-		m_DropCollar = m_COLLARCODE;	//カラーコード減分初期値
 		m_IsFadeDone = false;			//終了ステータス初期値
 		m_WaitDone = false;				//待機状態初期化
+		m_CanFade = false;				//開始状態初期化
 		m_WaitCount = m_WAITMAX;		//待ち時間カウント初期化
+		m_Calculation = 0.0f;
 	}
 
 	void FadeTransitor::FadeOutStart(bool wait)
 	{
-		static int drop;
-
 		//スタートを遅らせるか
 		if (wait)
 		{
@@ -50,25 +54,33 @@ namespace transitor
 			m_WaitDone = true;
 		}
 
+		if (!m_CanFade)
+		{
+			m_Collar = m_COLLARCODE;	//カラーコード初期値
+			m_CanFade = true;
+		}
+
 		if (m_WaitDone)
 		{
-			//だんだん画面を暗くする
-			SetDrawBright(m_DropCollar, m_DropCollar, m_DropCollar);
-			m_DropCollar -= drop;
-			drop += m_DROPSPEED;
-
-			if (m_DropCollar <= 0)
+			if (m_Collar <= 0)
 			{
 				m_IsFadeDone = true;	//処理の完了
-				m_WaitDone = false;		//待機状態初期化
+				m_Collar = 0;			//誤差の修正
 			}
+			else
+			{
+				//だんだん画面を暗くする
+				m_Collar -= static_cast<int>(m_Calculation);
+				m_Calculation += m_DROPSPEED;
+			}
+			SetDrawBright(m_Collar, m_Collar, m_Collar);
 		}
+
+		DrawFormatString(700, 300, GetColor(255, 255, 255), "カラーコード:%d", m_Collar);
 	}
 
 	void FadeTransitor::FadeInStart(bool wait)
 	{
-		static int drop;
-
 		//スタートを遅らせるか
 		if (wait)
 		{
@@ -79,18 +91,29 @@ namespace transitor
 			m_WaitDone = true;
 		}
 
+		if (!m_CanFade)
+		{
+			m_Collar = 0;	//カラーコード初期値
+			m_CanFade = true;
+		}
+
 		if (m_WaitDone)
 		{
-			//だんだん画面を明るく
-			SetDrawBright(m_DropCollar, m_DropCollar, m_DropCollar);
-			m_DropCollar += drop;
-			drop -= m_DROPSPEED;
-
-			if (m_DropCollar == m_COLLARCODE)
+			if (m_Collar >= m_COLLARCODE)
 			{
-				m_IsFadeDone = true;	//処理の完了
-				m_WaitDone = false;		//待機状態初期化
+				m_IsFadeDone = true;			//処理の完了
+				m_Collar = m_COLLARCODE;		//誤差の修正
 			}
+			else 
+			{
+				m_Collar += static_cast<int>(m_Calculation);
+				m_Calculation += m_RISESPEED;
+			}
+
+			//だんだん画面を明るく
+			SetDrawBright(m_Collar, m_Collar, m_Collar);
 		}
+
+		DrawFormatString(700, 300, GetColor(255, 255, 255), "カラーコード:%d", m_Collar);
 	}
 }

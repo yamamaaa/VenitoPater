@@ -1,7 +1,7 @@
 #include"GameManager.h"
-#include"../Window/Window.h"
-#include"../GameSetting/GameSetting.h"
-#include"../../Scene/SceneManager/SceneManager.h"
+#include "../Window/Window.h"
+#include "../GameSetting/GameSetting.h"
+#include "../../JsonMaster/JsonManager/JsonManager.h"
 
 namespace GameSystem
 {
@@ -17,7 +17,7 @@ namespace GameSystem
         //GameSetting初期化
         gamesetting->Init();
 
-        //JsonManager::InitJsonManager();
+        jsonmaster::JsonManager::InitJsonManager();
 
         //SceneManagerのインスタンス化
         sceneManager.reset(new scene::SceneManager);

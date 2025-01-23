@@ -28,9 +28,9 @@ namespace object
 		m_MoveSpeed = 0.3f;
 		m_ObjDrawArea = 0;
 
-		m_ObjImg[0] = LoadGraph("../Asset/image/enemy/spero/place_0.png");
-		m_ObjImg[1] = LoadGraph("../Asset/image/enemy/spero/place_1.png");
-		m_ObjImg[2] = LoadGraph("../Asset/image/enemy/spero/place_2.png");
+		m_ObjImg[0] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetSperoData(0).c_str());
+		m_ObjImg[1] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetSperoData(1).c_str());
+		m_ObjImg[2] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetSperoData(2).c_str());
 		m_ObjImg[3] = -1;
 	}
 

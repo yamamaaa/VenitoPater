@@ -21,7 +21,7 @@ namespace object
 		//À•W‰Šú’l
 		m_ObjPos = { 180,920 };
 		//‰æ‘œ“Ç‚Ýž‚Ý
-		m_ObjHandle = LoadGraph("../Asset/image/ui/aboidoui/aboidoui.png");
+		m_ObjHandle = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetUiData_Aboido().c_str());
 	}
 
 	void AvoidUi::UpdateObj(const float deltatime)

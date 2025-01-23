@@ -52,8 +52,8 @@ namespace scene
 		//オブジェクトタグをセット
 		object::ObjectManager::NowSceneSet(objecttag::ThreeDays_ObjTagAll);
 		//Game状態をセット
-		m_NowGameStatus = object::GamePlay;
-		object::ObjectManager::SetGameState(m_NowGameStatus);
+		object::ObjectManager::SetNowGameState(object::GamePlay);
+		object::ObjectManager::SetNextGameState(object::GamePlay);
 
 		//ステージ内オブジェの生成
 		object::AvoidStatus::Initialize();
@@ -97,7 +97,7 @@ namespace scene
 		object::ObjectManager::UpdateAllObj(deltaTime);
 
 		//ゲームクリアしたら
-		if (object::GameClear== m_NowGameStatus|| object::GameOver == m_NowGameStatus)
+		if (object::GameClear== object::ObjectManager::GetNowGameState() || object::GameOver == object::ObjectManager::GetNowGameState())
 		{
 			object::ObjectManager::ReleaseAllObj();
 			return new Result;
@@ -111,7 +111,7 @@ namespace scene
 		DrawFormatString(0, 0, GetColor(255, 255, 255), "3Days");
 
 		//ゲームステータスが変わったら
-		if (m_NowGameStatus != object::ObjectManager::GetGameState())
+		if (object::ObjectManager::GetNowGameState() != object::ObjectManager::GetNextGameState())
 		{
 			//フェード処理をする
 			fade_transitor->FadeOutStart(true);

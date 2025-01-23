@@ -53,16 +53,28 @@ namespace object
 		static void ReleaseAllObj();
 
 		/// <summary>
-		/// ゲーム状態を取得
+		/// 現在のゲーム状態を取得
 		/// </summary>
 		/// <returns>現在のゲーム状態</returns>
-		static GameStatus GetGameState() { return objectmanager->m_GameStatus; }
+		static GameStatus GetNowGameState() { return objectmanager->m_NowGameStatus; }
 
 		/// <summary>
-		/// ゲーム状態をセット
+		/// 現在のゲーム状態をセット
 		/// </summary>
 		/// <param name="stats">セットするゲーム状態</param>
-		static void SetGameState(GameStatus stats) { objectmanager->m_GameStatus = stats; }
+		static void SetNowGameState(GameStatus stats) { objectmanager->m_NowGameStatus = stats; }
+
+		/// <summary>
+		/// 次のゲーム状態を取得
+		/// </summary>
+		/// <returns>現在のゲーム状態</returns>
+		static GameStatus GetNextGameState() { return objectmanager->m_NextGameStatus; }
+
+		/// <summary>
+		/// 次のゲーム状態をセット
+		/// </summary>
+		/// <param name="stats">セットするゲーム状態</param>
+		static void SetNextGameState(GameStatus stats) { objectmanager->m_NextGameStatus = stats; }
 
 		/// <summary>
 		/// 現在のシーン名取得
@@ -92,7 +104,8 @@ namespace object
 
 		std::string m_NowScene_Name;	//現在のシーン名
 
-		GameStatus m_GameStatus;	//ゲーム状態
+		GameStatus m_NowGameStatus;		//現在のゲーム状態
+		GameStatus m_NextGameStatus;	//次のゲーム状態
 
 		static std::unique_ptr<ObjectManager> objectmanager;									// ObjectManagerの実体
 		std::vector<std::string> m_SceneTag;													// 現在のシーンのオブジェクトタグ

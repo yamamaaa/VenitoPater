@@ -1,12 +1,13 @@
 #include "JsonManager.h"
-//#include "../Image/MasterImgData/MasterImgData.h"
 
 namespace jsonmaster
 {
 	std::unique_ptr<JsonManager>JsonManager::json_manager = nullptr;
 
 	JsonManager::JsonManager()
-		//:masterimgdata(new MasterImgData)
+		: master_img_data(new json_imgdata::MasterImgData),
+		master_text_data(new json_textdata::MasterTextData),
+		master_font_data(new json_fontdata::MasterFontData)
 	{
 		//ˆ—‚È‚µ
 	}
@@ -22,7 +23,6 @@ namespace jsonmaster
 
 	JsonManager::~JsonManager()
 	{
-		//‰ğ•ú
-		//masterimgdata.release();
+		//ˆ—‚È‚µ
 	}
 }

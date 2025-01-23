@@ -29,7 +29,7 @@ namespace scene
         if (fade_transitor->IsFadeDone())
         {
             //処理が終わったらステータスの変更
-            m_NowGameStatus = object::ObjectManager::GetGameState();
+            object::ObjectManager::SetNowGameState(object::ObjectManager::GetNextGameState());
             fade_transitor->FadeProcessing();
         }
     }

@@ -2,6 +2,7 @@
 #include <fstream>
 #include <unordered_map>
 #include"../../ObjectBase/ObjectBase.h"
+#include"CharaStatus.h"
 
 namespace object
 {
@@ -33,6 +34,11 @@ namespace object
         void UpdateObj(const float deltatime) override ;
 
         /// <summary>
+        /// 表示状態の更新
+        /// </summary>
+        void UpdateDrawStatus();
+
+        /// <summary>
         /// 描画
         /// </summary>
         void DrawObj()override ;
@@ -42,5 +48,14 @@ namespace object
 
         //キャラクター画像
         std::unordered_map<std::string, int> m_Objimg{};
+
+        //画像位置
+        std::unordered_map<std::string, POINTFLOAT> m_ImgPos{
+            {charaStatus.NORMAL,{790,57}},
+            {charaStatus.WORRY,{ 670,94}},
+            {charaStatus.DISMAYER,{ 710,71}},
+            {charaStatus.HAPPY,{585,33}},
+            {charaStatus.SURPRISE,{690,95}},
+        };
     };
 }

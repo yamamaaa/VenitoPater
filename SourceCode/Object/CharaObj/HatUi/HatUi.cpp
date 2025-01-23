@@ -1,6 +1,7 @@
 #include<Dxlib.h>
 #include "HatUi.h"
 #include"../AvoidStatus/AvoidStatus.h"
+#include"../../../JsonMaster/JsonManager/JsonManager.h"
 
 namespace object
 {
@@ -36,7 +37,7 @@ namespace object
 		hatui->m_IsMoveDown = false;
 
 		//‰æ‘œ‚Ì“Ç‚Ýž‚Ý
-		hatui->m_UiHandle = LoadGraph("../Asset/image/hat/hatui.png");
+		hatui->m_UiHandle = LoadGraph(jsonmaster::JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetUiData_Hat().c_str());
 	}
 
 	void HatUi::SetMove()

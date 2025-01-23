@@ -11,6 +11,7 @@ namespace objecttag
     {
         std::string BACKGROUND = "background";
         std::string CHARACTER = "character";
+        std::string STORYITEM = "storyitem";
         std::string LINE = "line";
     } story_ObjectTag;
 
@@ -21,6 +22,7 @@ namespace objecttag
     {
         story_ObjectTag.BACKGROUND,
         story_ObjectTag.CHARACTER,
+        story_ObjectTag.STORYITEM,
         story_ObjectTag.LINE,
     };
 }

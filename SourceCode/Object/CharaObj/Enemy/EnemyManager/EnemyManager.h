@@ -128,7 +128,7 @@ namespace object
 		static const int m_APPEAR_RANGE = 4;	//出現時のランダム範囲
 
 		const float m_STARTWAIT_MAX = 100.0f;	//スタート時の排出待ち時間
-		const float m_APPEARCOUNT_MAX = 300.0f;	//再び出現できるまでのカウント
+		const float m_APPEARCOUNT_MAX = 100.0f;	//再び出現できるまでのカウント
 		const float m_COUNT_DECREMENT = 0.1f;	//カウント減分値
 
 		float m_StartCount;						//スタート時の排出カウント
