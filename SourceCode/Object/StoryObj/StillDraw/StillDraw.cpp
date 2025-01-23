@@ -1,7 +1,6 @@
 #include "StillDraw.h"
 #include"../../ObjectTag/Still_ObjectTag.h"
 #include"../LineStatus/LineStatus.h"
-#include"../../ObjectManager/ObjectManager.h"
 #include"../../NumDeys/NumDeys.h"
 
 namespace object
@@ -89,7 +88,6 @@ namespace object
             return;
 
         UpdateDrawStatus();
-        LineStatus::SetIsDoneAnim(false);
     }
 
     void StillDraw::UpdateDrawStatus()

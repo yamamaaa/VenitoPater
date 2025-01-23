@@ -15,7 +15,7 @@ namespace object
 
 	Character::~Character()
 	{
-		//処理なし
+		m_TxtFile.close();
 	}
 
 	void Character::LoadObject()
@@ -58,8 +58,6 @@ namespace object
 			return;
 		//表示画像データ更新
 		UpdateDrawStatus();
-		//文字セットを可能状態に
-		LineStatus::SetIsDoneAnim(false);
 	}
 
 	void Character::UpdateDrawStatus()

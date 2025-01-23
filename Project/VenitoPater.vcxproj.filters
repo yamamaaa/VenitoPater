@@ -196,6 +196,9 @@
     <ClCompile Include="..\SourceCode\JsonMaster\ImageData\StoryImgData\StoryImgData.cpp">
       <Filter>ソースコード\JsonMaster\ImageData\StoryImgData</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\StoryObj\StoryItem\StoryItem.cpp">
+      <Filter>ソースコード\Object\StoryObj\StoryItem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -431,6 +434,12 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\JsonMaster\ImageData\StoryImgData\StoryImgData.h">
       <Filter>ソースコード\JsonMaster\ImageData\StoryImgData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\StoryObj\StoryItem\StoryItem.h">
+      <Filter>ソースコード\Object\StoryObj\StoryItem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\StoryObj\StoryItem\CharaItem_Tag.h">
+      <Filter>ソースコード\Object\StoryObj\StoryItem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -691,6 +700,9 @@
     </Filter>
     <Filter Include="ソースコード\Object\Result\GameClearUi">
       <UniqueIdentifier>{dad16d75-e43e-48a5-8aaa-bf384e0050b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StoryObj\StoryItem">
+      <UniqueIdentifier>{9d8ef316-c524-489b-9342-d3ec3c60b160}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

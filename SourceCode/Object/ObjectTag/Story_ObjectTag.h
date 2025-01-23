@@ -10,8 +10,9 @@ namespace objecttag
     static struct Story_ObjectTag
     {
         std::string BACKGROUND = "background";
-        std::string LINE = "line";
         std::string CHARACTER = "character";
+        std::string STORYITEM = "storyitem";
+        std::string LINE = "line";
     } story_ObjectTag;
 
     /// <summary>
@@ -20,7 +21,8 @@ namespace objecttag
     static std::vector<std::string>Story_ObjectTagAll
     {
         story_ObjectTag.BACKGROUND,
-        story_ObjectTag.LINE,
         story_ObjectTag.CHARACTER,
+        story_ObjectTag.STORYITEM,
+        story_ObjectTag.LINE,
     };
 }

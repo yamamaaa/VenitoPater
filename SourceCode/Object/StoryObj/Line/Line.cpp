@@ -29,8 +29,6 @@ namespace object
 	{
 		SetFontSize(30);		//フォントサイズ設定
 
-		m_ObjHandle = LoadGraph(JsonManager::ImgData_Instance()->Get_StoryImgData_Instance()->GetFlameData().c_str());
-
 		m_IsClick = true;
 		m_IsLineSet = true;
 		m_IslineAnim = true;
@@ -118,6 +116,8 @@ namespace object
 
 	void Line::UpdateObj(const float deltatime)
 	{
+		LineStatus::SetIsDoneAnim(false);
+
 		//文字のセットができていてクリック可能状態
 		if (m_IsLineSet && m_IsClick)
 		{
@@ -244,7 +244,6 @@ namespace object
 
 	void Line::DrawObj()
 	{
-		DrawGraph(0, 0, m_ObjHandle, TRUE);
 		int x = GetDrawStringWidth(m_Line.c_str(), -1);
 		DrawString((1920 - x) / 2, static_cast<int>(m_ObjPos.y), (m_Line.substr(0, m_TxtNum) + " ").c_str(), GetColor(static_cast<int>(m_NowCollar.x), static_cast<int>(m_NowCollar.y), static_cast<int>(m_NowCollar.z)));
 

@@ -6,8 +6,9 @@
 
 #include"../../Object/StoryObj/LineStatus/LineStatus.h"
 
-#include"../../Object/StoryObj/Character/Character.h"
 #include"../../Object/Result/BackGround/BackGround.h"
+#include"../../Object/StoryObj/Character/Character.h"
+#include"../../Object/StoryObj/StoryItem/StoryItem.h"
 #include"../../Object/StoryObj/Line/Line.h"
 
 #include"../../Object/ObjectTag/Still_ObjectTag.h"
@@ -39,8 +40,9 @@ namespace scene
 
 			object::LineStatus::Initialize();
 			object::ObjectManager::Entry(new object::BackGround);
-			object::ObjectManager::Entry(new object::Line);
 			object::ObjectManager::Entry(new object::Character);
+			object::ObjectManager::Entry(new object::StoryItem);
+			object::ObjectManager::Entry(new object::Line);
 		}
 		if (object::Still == object::ObjectManager::GetNowGameState())
 		{
