@@ -36,6 +36,10 @@ namespace object
 
 	void Memini::UpdateObj(const float deltatime)
 	{
+		//タイムオーバーしていたら処理なし
+		if (TimeStatus::GetIsTimeOver())
+			return;
+
 		EnemyManager::EmyAppearSetting();
 
 		//出現状態取得

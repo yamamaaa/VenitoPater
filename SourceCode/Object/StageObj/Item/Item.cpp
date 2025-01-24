@@ -4,6 +4,7 @@
 #include "../../ObjectTag/Global_ObjectTag.h"
 #include "../AreaNumController/AreaNumController.h"
 #include "../ItemGetNum/ItemGetNum.h"
+#include "../../Time/TimeStatus/TimeStatus.h"
 
 namespace object
 {
@@ -55,6 +56,17 @@ namespace object
 			ItemGetNum::UpdateItemNum(false);
 		}
 #endif // DEBUG
+
+		//タイムオーバーしていたら
+		if (TimeStatus::GetIsTimeOver())
+		{
+			//もしアイテム出現中ならリセット
+			if (m_IsOccur)
+			{
+				m_IsOccur = false;
+			}
+			return;
+		}
 
 		//アイテムが出現し表示されているとき
 		if (m_IsOccur && m_CanDraw)
