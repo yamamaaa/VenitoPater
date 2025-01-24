@@ -2,7 +2,7 @@
 #include"../../ObjectTag/Story_ObjectTag.h"
 #include"../LineStatus/LineStatus.h"
 #include"../../ObjectManager/ObjectManager.h"
-#include"../../NumDeys/NumDeys.h"
+#include"../../NumDays/NumDays.h"
 
 namespace object
 {
@@ -46,7 +46,7 @@ namespace object
 		GameStatus status=ObjectManager::GetNextGameState();
 
 		//日数別に読み込むファイルを変更
-		int dey = NumDeys::GetNumDeys();
+		int dey = NumDays::GetNumDays();
 		std::string text;
 		if (status == Story)
 		{
@@ -195,7 +195,7 @@ namespace object
 				std::getline(m_TxtFile, line);
 				if (line == m_DAY)
 				{
-					NumDeys::UpdateNumDeys();
+					NumDays::UpdateNumDays();
 				}
 
 				//次の行を読み込み

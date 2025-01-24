@@ -57,7 +57,7 @@
     <ClCompile Include="..\SourceCode\Object\GameUi\RPMHPUi\RPMHPUi.cpp" />
     <ClCompile Include="..\SourceCode\Object\GameUi\WarningUi\WarningUi.cpp" />
     <ClCompile Include="..\SourceCode\Object\MouseBase\MouseBase.cpp" />
-    <ClCompile Include="..\SourceCode\Object\NumDeys\NumDeys.cpp" />
+    <ClCompile Include="..\SourceCode\Object\NumDays\NumDays.cpp" />
     <ClCompile Include="..\SourceCode\Object\ObjectBase\ObjectBase.cpp" />
     <ClCompile Include="..\SourceCode\Object\ObjectManager\ObjectManager.cpp" />
     <ClCompile Include="..\SourceCode\Object\Result\BackGround\BackGround.cpp" />
@@ -127,7 +127,7 @@
     <ClInclude Include="..\SourceCode\Object\GameUi\RPMHPUi\RPMHPUi.h" />
     <ClInclude Include="..\SourceCode\Object\GameUi\WarningUi\WarningUi.h" />
     <ClInclude Include="..\SourceCode\Object\MouseBase\MouseBase.h" />
-    <ClInclude Include="..\SourceCode\Object\NumDeys\NumDeys.h" />
+    <ClInclude Include="..\SourceCode\Object\NumDays\NumDays.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectBase\ObjectBase.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectManager\GameStatus.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectManager\ObjectManager.h" />

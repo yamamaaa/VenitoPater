@@ -1,7 +1,7 @@
 #include "StillDraw.h"
 #include"../../ObjectTag/Still_ObjectTag.h"
 #include"../LineStatus/LineStatus.h"
-#include"../../NumDeys/NumDeys.h"
+#include"../../NumDays/NumDays.h"
 
 namespace object
 {
@@ -30,7 +30,7 @@ namespace object
         m_IsFade = false;
 
         //日数別に読み込むファイルを変更
-        int dey = NumDeys::GetNumDeys();
+        int dey = NumDays::GetNumDays();
         int max;
         std::string text;
         switch (dey)

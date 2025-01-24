@@ -4,7 +4,7 @@
 
 #include"../../LevelController/LevelController.h"
 #include"../../LevelController/LevelStatus.h"
-#include"../../Object/NumDeys/NumDeys.h"
+#include"../../Object/NumDays/NumDays.h"
 
 #include"../ThreeDays/ThreeDays.h"
 #include"../Story/Story.h"
@@ -37,7 +37,7 @@ namespace scene
         object::ObjectManager::SetNextGameState(object::Title);
 
         LevelController::Initialize();
-        object::NumDeys::Initialize();
+        object::NumDays::Initialize();
 
         //Title画面の全Ui生成
         object::ObjectManager::Entry(new object::TitleUi);
@@ -76,12 +76,16 @@ namespace scene
         //return new Story();
             LevelController::SetLevel(levelStatus.NOMAL);
             object::ObjectManager::ReleaseAllObj();
-            object::ObjectManager::SetNowGameState(object::Story);
-            return new Story();
+            object::ObjectManager::SetNowGameState(object::GamePlay);
+            return new ThreeDays();
 
         //ゲームプレイ
         if (object::GamePlay == object::ObjectManager::GetNowGameState())
         {
+            LevelController::SetLevel(levelStatus.NOMAL);
+            object::ObjectManager::ReleaseAllObj();
+            object::ObjectManager::SetNowGameState(object::Story);
+            return new Story();
         }
 
         return this;
