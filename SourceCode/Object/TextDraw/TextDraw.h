@@ -1,26 +1,23 @@
 #pragma once
 #include <fstream>
 
-#include"../../ObjectBase/ObjectBase.h"
+#include"../ObjectBase/ObjectBase.h"
 
 namespace object
 {
-	/// <summary>
-	/// ストーリー中のセリフ関連
-	/// </summary>
-	class Line:public ObjectBase
-	{
+    class TextDraw:public ObjectBase
+    {
     public:
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        Line();
+        TextDraw();
 
         /// <summary>
         /// デストラクタ
         /// </summary>
-        ~Line();
+        ~TextDraw();
 
     private:
 
@@ -41,19 +38,9 @@ namespace object
         void UpdateDrawStatus();
 
         /// <summary>
-        /// クリック状態
-        /// </summary>
-        void ClickStatus();
-
-        /// <summary>
         /// 描画テキストのセット
         /// </summary>
         void DrawTextSet();
-
-        /// <summary>
-        /// テキスト読み込み終了時処理_Story時
-        /// </summary>
-        void Text_Processing(std::string line);
 
         /// <summary>
         /// 描画テキストのアニメーション
@@ -65,15 +52,7 @@ namespace object
         /// </summary>
         void DrawObj()override;
 
-        //ゲームステータス変更コード
-        const std::string m_GAMEPLAY = "gameplay";
-        const std::string m_STORY = "story";
-        const std::string m_STILL = "still";
-
         const std::string m_END = "null";   //ファイル末端コード
-        const std::string m_DAY = "day";    //日数変更コード
-        const std::string m_RED = "red";    //文字色変更コード
-        const std::string m_SLOW = "slow";  //文字アニメスピード変更コード
 
         std::ifstream m_TxtFile;//読み込まれたファイル
 
@@ -81,24 +60,30 @@ namespace object
         std::string m_Line;     //ファイルから取得した文字
         std::string m_DrawText; //表示する文字
 
+        const float m_WAITCOU_MAX = 3.0f;    //スタートしてから表示まで待ち時間
+        float m_StartCount;                   //スタートカウント
+        bool m_WaitDone;                      //待ち時間終了したか
+
+        const float m_RISESPEED = 0.01f;			//増化速度
+
         int m_TxtNum;           //表示中の文字数
 
-        bool m_IsClick;         //クリックしたか
         bool m_IsLineSet;       //表示文字をセットしたか
         bool m_IslineAnim;      //表示文字がアニメ中か？
 
-        float m_ClickCount;     //再度クリックできるまで
+        bool m_IsLoadDone;       //文字の読み込みを終えるか
+        bool m_IsDraw;           //文字の表示をするか
+
+        float m_DrawCount;                        //文字の表示を終えるまで
+        const float m_DRAW_COUNTMAX = 0.8f;       //文字の表示時間
+
         float m_AnimCount;      //文字のアニメカウント
         float m_AnimSpeed;      //アニメスピード
 
         const float m_ANIMFPS = 0.1f;   //アニメFPS
-        const float m_SPEED_DEFAULT = 0.1f;    //アニメスピード(default)
-        const float m_SPEED_SLOW = 0.02f;       //アニメスピード(slow)
+        const float m_SPEED_DEFAULT = 0.02f;    //アニメスピード(default)
 
         VECTOR m_NowCollar;                             //現在の文字色
-        VECTOR m_COLLAR_DEFAULT = VGet(255, 255, 255);  //白色
-        VECTOR m_COLLAR_RED = VGet(255, 0, 0);          //赤色
-	};
+        const VECTOR m_COLLAR_DEFAULT = VGet(255, 255, 255);  //白色
+    };
 }
-
-

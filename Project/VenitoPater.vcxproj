@@ -75,6 +75,7 @@
     <ClCompile Include="..\SourceCode\Object\StoryObj\Line\Line.cpp" />
     <ClCompile Include="..\SourceCode\Object\StoryObj\StillDraw\StillDraw.cpp" />
     <ClCompile Include="..\SourceCode\Object\StoryObj\StoryItem\StoryItem.cpp" />
+    <ClCompile Include="..\SourceCode\Object\TextDraw\TextDraw.cpp" />
     <ClCompile Include="..\SourceCode\Object\Time\TimeStatus\TimeStatus.cpp" />
     <ClCompile Include="..\SourceCode\Object\Time\Time\Time.cpp" />
     <ClCompile Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.cpp" />
@@ -138,6 +139,7 @@
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Still_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Story_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\ThreeDays_ObjectTag.h" />
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\TimeOver_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\TitleObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\Result\BackGround\BackGround.h" />
     <ClInclude Include="..\SourceCode\Object\Result\GameClearUi\GameClearUi.h" />
@@ -157,6 +159,7 @@
     <ClInclude Include="..\SourceCode\Object\StoryObj\StillDraw\StillDraw.h" />
     <ClInclude Include="..\SourceCode\Object\StoryObj\StoryItem\CharaItem_Tag.h" />
     <ClInclude Include="..\SourceCode\Object\StoryObj\StoryItem\StoryItem.h" />
+    <ClInclude Include="..\SourceCode\Object\TextDraw\TextDraw.h" />
     <ClInclude Include="..\SourceCode\Object\Time\TimeStatus\TimeStatus.h" />
     <ClInclude Include="..\SourceCode\Object\Time\Time\Time.h" />
     <ClInclude Include="..\SourceCode\Object\TitleObj\SelectMode\PlayMenu.h" />

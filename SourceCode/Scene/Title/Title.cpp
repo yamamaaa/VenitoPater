@@ -7,6 +7,7 @@
 #include"../../Object/NumDays/NumDays.h"
 
 #include"../ThreeDays/ThreeDays.h"
+#include"../Result/Result.h"
 #include"../Story/Story.h"
 
 #include "../../Object/TitleObj/TitleUi/TitleUi.h"
@@ -76,8 +77,8 @@ namespace scene
         //return new Story();
             LevelController::SetLevel(levelStatus.NOMAL);
             object::ObjectManager::ReleaseAllObj();
-            object::ObjectManager::SetNowGameState(object::GamePlay);
-            return new ThreeDays();
+            object::ObjectManager::SetNowGameState(object::TimeOver);
+            return new Result();
 
         //ÉQÅ[ÉÄÉvÉåÉC
         if (object::GamePlay == object::ObjectManager::GetNowGameState())

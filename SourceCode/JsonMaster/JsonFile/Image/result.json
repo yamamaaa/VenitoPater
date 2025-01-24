@@ -5,7 +5,7 @@
         },
         "gameover": {
             "background": "../Asset/image/result/gameover/background.png",
-            "select": "../Asset/image/result/gameclear/select.png"
+            "select": "../Asset/image/result/gameover/select.png"
         }
     }
 }

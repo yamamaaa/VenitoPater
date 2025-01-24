@@ -27,8 +27,6 @@ namespace object
 
 	void Line::LoadObject()
 	{
-		SetFontSize(30);		//フォントサイズ設定
-
 		m_IsClick = true;
 		m_IsLineSet = true;
 		m_IslineAnim = true;
@@ -116,8 +114,40 @@ namespace object
 
 	void Line::UpdateObj(const float deltatime)
 	{
+		UpdateDrawStatus();
+
+		if (m_IslineAnim)
+		{
+			TextAnim();
+		}
+	}
+
+	void Line::UpdateDrawStatus()
+	{
 		LineStatus::SetIsDoneAnim(false);
 
+		ClickStatus();
+
+		//クリックしたら
+		if (!m_IsClick)
+		{
+			m_ClickCount += 0.1;
+			if (m_ClickCount >= 5.0f)
+			{
+				m_ClickCount = 0.0f;
+				m_IsClick = true;
+			}
+		}
+
+		//未セット状態なら
+		if (!m_IsLineSet)
+		{
+			DrawTextSet();
+		}
+	}
+
+	void Line::ClickStatus()
+	{
 		//文字のセットができていてクリック可能状態
 		if (m_IsLineSet && m_IsClick)
 		{
@@ -138,116 +168,111 @@ namespace object
 				m_IsClick = false;
 			}
 		}
+	}
 
-		//クリックしたら
-		if (!m_IsClick)
+	void Line::DrawTextSet()
+	{
+		//前の文字をクリア
+		m_Line.clear();
+		m_TxtNum = 0;
+		m_NowCollar = m_COLLAR_DEFAULT;
+		m_AnimSpeed = m_SPEED_DEFAULT;
+
+		std::string line = "";
+
+		//次の行を読み込み
+		std::getline(m_TxtFile, line);
+
+		bool status_set = false;
+		if (line == "status")
 		{
-			m_ClickCount += 0.1;
-			if (m_ClickCount >= 5.0f)
+			status_set = true;
+		}
+
+		while (status_set)
+		{
+			//次の行を読み込み
+			std::getline(m_TxtFile, line);
+			if (line == "status")
 			{
-				m_ClickCount = 0.0f;
-				m_IsClick = true;
+				status_set = false;
+				std::getline(m_TxtFile, line);
+			}
+			else if (line == m_RED)
+			{
+				m_NowCollar = m_COLLAR_RED;
+			}
+			else if (line == m_SLOW)
+			{
+				m_AnimSpeed = m_SPEED_SLOW;
 			}
 		}
 
-		//未セット状態なら
-		if (!m_IsLineSet)
+		if (line == m_END)	//ファイルの終わりならステータス変更
 		{
-			//前の文字をクリア
-			m_Line.clear();
-			m_TxtNum = 0;
-			m_NowCollar = m_COLLAR_DEFAULT;
-			m_AnimSpeed = m_SPEED_DEFAULT;
+			Text_Processing(line);
+		}
+		else
+		{
+			m_Line = line;
+		}
 
-			std::string line="";
+		m_IsLineSet = true;
+		m_IslineAnim = true;
 
-			//次の行を読み込み
-			std::getline(m_TxtFile, line);
+		LineStatus::SetIsDoneAnim(true);
+	}
 
-			bool status_set = false;
-			if (line == "status")
+	void Line::Text_Processing(std::string line)
+	{
+		//次の行を読み込み
+		std::getline(m_TxtFile, line);
+		if (line == m_DAY)
+		{
+			NumDays::UpdateNumDays();
+		}
+
+		//次の行を読み込み
+		std::getline(m_TxtFile, line);
+		if (line == m_GAMEPLAY)
+		{
+			ObjectManager::SetNextGameState(GamePlay);
+		}
+		if (line == m_STORY)
+		{
+			ObjectManager::SetNextGameState(Story);
+		}
+		if (line == m_STILL)
+		{
+			ObjectManager::SetNextGameState(Still);
+		}
+	}
+
+	void Line::TextAnim()
+	{
+		m_AnimCount += m_AnimSpeed;
+		if (m_AnimCount >= m_ANIMFPS)
+		{
+			if (m_TxtNum == m_Line.size())
 			{
-				status_set = true;
-			}
-
-			while (status_set)
-			{
-				//次の行を読み込み
-				std::getline(m_TxtFile, line);
-				if (line == "status")
-				{
-					status_set = false;
-					std::getline(m_TxtFile, line);
-				}
-				else if (line == m_RED)
-				{
-					m_NowCollar = m_COLLAR_RED;
-				}
-				else if (line == m_SLOW)
-				{
-					m_AnimSpeed = m_SPEED_SLOW;
-				}
-			}
-
-			if (line == m_END)	//ファイルの終わりならステータス変更
-			{
-				//次の行を読み込み
-				std::getline(m_TxtFile, line);
-				if (line == m_DAY)
-				{
-					NumDays::UpdateNumDays();
-				}
-
-				//次の行を読み込み
-				std::getline(m_TxtFile, line);
-				if (line == m_GAMEPLAY)
-				{
-					ObjectManager::SetNextGameState(GamePlay);
-				}
-				if (line == m_STORY)
-				{
-					ObjectManager::SetNextGameState(Story);
-				}
-				if (line == m_STILL)
-				{
-					ObjectManager::SetNextGameState(Still);
-				}
+				m_IslineAnim = false;
 			}
 			else
 			{
-				m_Line = line;
-			}
-
-			m_IsLineSet = true;
-			m_IslineAnim = true;
-
-			LineStatus::SetIsDoneAnim(true);
-		}
-
-		if (m_IslineAnim)
-		{
-			m_AnimCount += m_AnimSpeed;
-			if (m_AnimCount >= m_ANIMFPS)
-			{
-				if (m_TxtNum == m_Line.size())
-				{
-					m_IslineAnim = false;
-				}
-				else
-				{
-					m_TxtNum++;
-					m_AnimCount = 0.0f;
-				}
+				m_TxtNum++;
+				m_AnimCount = 0.0f;
 			}
 		}
 	}
 
 	void Line::DrawObj()
 	{
+		SetFontSize(30);
 		int x = GetDrawStringWidth(m_Line.c_str(), -1);
 		DrawString((1920 - x) / 2, static_cast<int>(m_ObjPos.y), (m_Line.substr(0, m_TxtNum) + " ").c_str(), GetColor(static_cast<int>(m_NowCollar.x), static_cast<int>(m_NowCollar.y), static_cast<int>(m_NowCollar.z)));
 
 #ifdef DEBUG
+		SetFontSize(m_DEBUG_FONTSIZE);
 		DrawFormatString(0, 20, GetColor(255, 255, 255), "m_ClickCount:%f", m_ClickCount);
 #endif // DEBUG
 	}
