@@ -34,6 +34,12 @@ namespace object
 		static int GetNowRItem() { return itemgetnum->m_NowGet_RItem; }
 
 		/// <summary>
+		/// ノルマを達成しているか？
+		/// </summary>
+		/// <returns>true:達成|false:未達成</returns>
+		static bool GetIsNolmClear() { return itemgetnum->m_IsNolmClear; }
+
+		/// <summary>
 		/// デストラクタ
 		/// </summary>
 		~ItemGetNum();
@@ -54,6 +60,7 @@ namespace object
 		int m_NowGet_RItem;			//現在のレアアイテム獲得数
 
 		const int m_MAXNOLM = 20;	//ノルマ達成値
+		bool m_IsNolmClear;			//ノルマを達成したか？
 
 		static std::unique_ptr<ItemGetNum> itemgetnum;	//自身の実態
 	};

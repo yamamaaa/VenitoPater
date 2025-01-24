@@ -58,6 +58,16 @@ namespace object
 
 	const bool EnemyBase::IsObjDraw()
 	{
+		//タイムオーバーしていたら
+		if (TimeStatus::GetIsTimeOver())
+		{
+			//familia以外表示不可
+			if (m_IDnumber != familia)
+			{
+				return false;
+			}
+		}
+
 		//エリア番号の取得
 		int infodata = AreaNumController::GetAreaNum();
 

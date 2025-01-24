@@ -1,5 +1,5 @@
 #pragma once
-#include "../ObjectBase/ObjectBase.h"
+#include "../../ObjectBase/ObjectBase.h"
 
 namespace object
 {
@@ -47,6 +47,8 @@ namespace object
         const int m_FONTSIZE_AM = 35;      //フォントサイズ_am
         const int m_FONTSIZE_TIME = 60;    //フォントサイズ_時刻
 
+        const int m_PLAYTIME_MAX = 5;       //プレイタイムの終了時刻
+
         POINTFLOAT m_TimePos;   //時刻表示位置
 
         float m_NowTime;   //実際の経過時間
@@ -54,5 +56,9 @@ namespace object
         int m_DrawMinutes;    //表示用_分
 
         float m_DrawCount;   //表示時刻の算出
+
+        VECTOR m_NowCollar;                             //現在の文字色
+        VECTOR m_COLLAR_DEFAULT = VGet(255, 255, 255);  //白色
+        VECTOR m_COLLAR_RED = VGet(255, 0, 0);          //赤色
     };
 }

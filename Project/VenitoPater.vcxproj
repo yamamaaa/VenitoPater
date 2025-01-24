@@ -75,7 +75,8 @@
     <ClCompile Include="..\SourceCode\Object\StoryObj\Line\Line.cpp" />
     <ClCompile Include="..\SourceCode\Object\StoryObj\StillDraw\StillDraw.cpp" />
     <ClCompile Include="..\SourceCode\Object\StoryObj\StoryItem\StoryItem.cpp" />
-    <ClCompile Include="..\SourceCode\Object\Time\Time.cpp" />
+    <ClCompile Include="..\SourceCode\Object\Time\TimeStatus\TimeStatus.cpp" />
+    <ClCompile Include="..\SourceCode\Object\Time\Time\Time.cpp" />
     <ClCompile Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.cpp" />
     <ClCompile Include="..\SourceCode\Object\TitleObj\TitleUi\TitleUi.cpp" />
     <ClCompile Include="..\SourceCode\Scene\Result\Result.cpp" />
@@ -156,7 +157,8 @@
     <ClInclude Include="..\SourceCode\Object\StoryObj\StillDraw\StillDraw.h" />
     <ClInclude Include="..\SourceCode\Object\StoryObj\StoryItem\CharaItem_Tag.h" />
     <ClInclude Include="..\SourceCode\Object\StoryObj\StoryItem\StoryItem.h" />
-    <ClInclude Include="..\SourceCode\Object\Time\Time.h" />
+    <ClInclude Include="..\SourceCode\Object\Time\TimeStatus\TimeStatus.h" />
+    <ClInclude Include="..\SourceCode\Object\Time\Time\Time.h" />
     <ClInclude Include="..\SourceCode\Object\TitleObj\SelectMode\PlayMenu.h" />
     <ClInclude Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.h" />
     <ClInclude Include="..\SourceCode\Object\TitleObj\TitleUi\TitleUi.h" />

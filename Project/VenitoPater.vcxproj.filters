@@ -136,9 +136,6 @@
     <ClCompile Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.cpp">
       <Filter>ソースコード\Object\TitleObj\SelectMode</Filter>
     </ClCompile>
-    <ClCompile Include="..\SourceCode\Object\Time\Time.cpp">
-      <Filter>ソースコード\Object\Time</Filter>
-    </ClCompile>
     <ClCompile Include="..\SourceCode\Object\TitleObj\TitleUi\TitleUi.cpp">
       <Filter>ソースコード\Object\TitleObj\TitleUi</Filter>
     </ClCompile>
@@ -198,6 +195,12 @@
     </ClCompile>
     <ClCompile Include="..\SourceCode\Object\NumDays\NumDays.cpp">
       <Filter>ソースコード\Object\NumDays</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\Time\Time\Time.cpp">
+      <Filter>ソースコード\Object\Time\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\Time\TimeStatus\TimeStatus.cpp">
+      <Filter>ソースコード\Object\Time\TimeStatus</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -375,9 +378,6 @@
     <ClInclude Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.h">
       <Filter>ソースコード\Object\TitleObj\SelectMode</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\Object\Time\Time.h">
-      <Filter>ソースコード\Object\Time</Filter>
-    </ClInclude>
     <ClInclude Include="..\SourceCode\Object\TitleObj\TitleUi\TitleUi.h">
       <Filter>ソースコード\Object\TitleObj\TitleUi</Filter>
     </ClInclude>
@@ -440,6 +440,12 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\NumDays\NumDays.h">
       <Filter>ソースコード\Object\NumDays</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\Time\Time\Time.h">
+      <Filter>ソースコード\Object\Time\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\Time\TimeStatus\TimeStatus.h">
+      <Filter>ソースコード\Object\Time\TimeStatus</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -703,6 +709,12 @@
     </Filter>
     <Filter Include="ソースコード\Object\NumDays">
       <UniqueIdentifier>{f7418988-b22b-48cd-a368-ae45319bfc91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\Time\Time">
+      <UniqueIdentifier>{861bb80e-cfbd-4de8-8907-20ba0cde7a55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\Time\TimeStatus">
+      <UniqueIdentifier>{5747fbb2-6324-4cd9-8402-7a75fda8c0cd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
