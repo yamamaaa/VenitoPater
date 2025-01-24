@@ -1,7 +1,7 @@
 #include "BackGround.h"
 #include "../../ObjectTag/GameOver_ObjectTag.h"
 #include "../../ObjectManager/ObjectManager.h"
-#include "../../NumDeys/NumDeys.h"
+#include "../../NumDays/NumDays.h"
 
 namespace object
 {
@@ -31,7 +31,7 @@ namespace object
         }
         if (Story == ObjectManager::GetNowGameState())
         {
-            int day=NumDeys::GetNumDeys();
+            int day=NumDays::GetNumDays();
             std::string imgdata;
             switch (day)
             {

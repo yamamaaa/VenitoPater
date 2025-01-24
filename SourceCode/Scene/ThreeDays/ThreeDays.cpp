@@ -28,7 +28,7 @@
 #include"../../Object/GameUi/AvoidUi/AvoidUi.h"
 #include"../../Object/GameUi/WarningUi/WarningUi.h"
 
-#include"../../Object/NumDeys/NumDeys.h"
+#include"../../Object/NumDays/NumDays.h"
 #include"../../Object/Time/Time.h"
 
 #include"../../Object/CharaObj/Enemy/EnemyAction/EnemyAction.h"
@@ -126,6 +126,6 @@ namespace scene
 		}
 
 		object::ObjectManager::DrawAllObj();
-		object::NumDeys::DrawNumDeys();
+		object::NumDays::DrawNumDays();
 	}
 }
