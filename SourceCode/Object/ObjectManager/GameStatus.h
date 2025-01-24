@@ -11,6 +11,7 @@ namespace object
 		Still,
 		RankingMode,
 		GameClear,
+		TimeOver,
 		GameOver,
 		Continue,
 	};

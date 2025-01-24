@@ -21,7 +21,7 @@ namespace object
     {
         m_ObjPos = { 0,0 };
 
-        if (GameOver == ObjectManager::GetNowGameState())
+        if (GameOver == ObjectManager::GetNowGameState()|| TimeOver == ObjectManager::GetNowGameState())
         {
             m_ObjHandle = LoadGraph(JsonManager::ImgData_Instance()->Get_ResultData_Instance()->GetOverData_BackGround().c_str());
         }

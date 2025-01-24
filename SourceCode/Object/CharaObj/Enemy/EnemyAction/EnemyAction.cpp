@@ -1,6 +1,8 @@
 #include "EnemyAction.h"
 #include "../../../ObjectTag/Global_ObjectTag.h"
 #include "../EnemyManager/EnemyManager.h"
+#include "../../../Time/TimeStatus/TimeStatus.h"
+#include "../../../ObjectManager/ObjectManager.h"
 
 namespace object
 {
@@ -58,5 +60,11 @@ namespace object
 			return;
 
 		DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
+
+		//タイムオーバーしていたら専用演出
+		if (TimeStatus::GetIsTimeOver())
+		{
+			ObjectManager::SetNextGameState(TimeOver);
+		}
 	}
 }

@@ -202,6 +202,9 @@
     <ClCompile Include="..\SourceCode\Object\Time\TimeStatus\TimeStatus.cpp">
       <Filter>ソースコード\Object\Time\TimeStatus</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\TextDraw\TextDraw.cpp">
+      <Filter>ソースコード\Object\TextDraw</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -446,6 +449,12 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\Time\TimeStatus\TimeStatus.h">
       <Filter>ソースコード\Object\Time\TimeStatus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\TimeOver_ObjectTag.h">
+      <Filter>ソースコード\Object\ObjectTag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\TextDraw\TextDraw.h">
+      <Filter>ソースコード\Object\TextDraw</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -715,6 +724,9 @@
     </Filter>
     <Filter Include="ソースコード\Object\Time\TimeStatus">
       <UniqueIdentifier>{5747fbb2-6324-4cd9-8402-7a75fda8c0cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\TextDraw">
+      <UniqueIdentifier>{d75384de-6542-40cc-97b5-794363ffd15c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
