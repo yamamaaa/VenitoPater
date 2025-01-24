@@ -1,7 +1,7 @@
 #include "BackGround.h"
 #include "../../ObjectTag/GameOver_ObjectTag.h"
 #include "../../ObjectManager/ObjectManager.h"
-#include "../../NumDeys/NumDeys.h"
+#include "../../NumDays/NumDays.h"
 
 namespace object
 {
@@ -21,7 +21,7 @@ namespace object
     {
         m_ObjPos = { 0,0 };
 
-        if (GameOver == ObjectManager::GetNowGameState())
+        if (GameOver == ObjectManager::GetNowGameState()|| TimeOver == ObjectManager::GetNowGameState())
         {
             m_ObjHandle = LoadGraph(JsonManager::ImgData_Instance()->Get_ResultData_Instance()->GetOverData_BackGround().c_str());
         }
@@ -31,7 +31,7 @@ namespace object
         }
         if (Story == ObjectManager::GetNowGameState())
         {
-            int day=NumDeys::GetNumDeys();
+            int day=NumDays::GetNumDays();
             std::string imgdata;
             switch (day)
             {

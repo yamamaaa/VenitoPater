@@ -97,9 +97,6 @@
     <ClCompile Include="..\SourceCode\Object\Result\BackGround\BackGround.cpp">
       <Filter>ソースコード\Object\Result\BackGround</Filter>
     </ClCompile>
-    <ClCompile Include="..\SourceCode\Object\NumDeys\NumDeys.cpp">
-      <Filter>ソースコード\Object\NumDeys</Filter>
-    </ClCompile>
     <ClCompile Include="..\SourceCode\Math2D\Math2D.cpp">
       <Filter>ソースコード\Math2D</Filter>
     </ClCompile>
@@ -138,9 +135,6 @@
     </ClCompile>
     <ClCompile Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.cpp">
       <Filter>ソースコード\Object\TitleObj\SelectMode</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SourceCode\Object\Time\Time.cpp">
-      <Filter>ソースコード\Object\Time</Filter>
     </ClCompile>
     <ClCompile Include="..\SourceCode\Object\TitleObj\TitleUi\TitleUi.cpp">
       <Filter>ソースコード\Object\TitleObj\TitleUi</Filter>
@@ -198,6 +192,18 @@
     </ClCompile>
     <ClCompile Include="..\SourceCode\Object\StoryObj\StoryItem\StoryItem.cpp">
       <Filter>ソースコード\Object\StoryObj\StoryItem</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\NumDays\NumDays.cpp">
+      <Filter>ソースコード\Object\NumDays</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\Time\Time\Time.cpp">
+      <Filter>ソースコード\Object\Time\Time</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\Time\TimeStatus\TimeStatus.cpp">
+      <Filter>ソースコード\Object\Time\TimeStatus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\TextDraw\TextDraw.cpp">
+      <Filter>ソースコード\Object\TextDraw</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -309,9 +315,6 @@
     <ClInclude Include="..\SourceCode\Object\Result\BackGround\BackGround.h">
       <Filter>ソースコード\Object\Result\BackGround</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\Object\NumDeys\NumDeys.h">
-      <Filter>ソースコード\Object\NumDeys</Filter>
-    </ClInclude>
     <ClInclude Include="..\SourceCode\Math2D\Math2D.h">
       <Filter>ソースコード\Math2D</Filter>
     </ClInclude>
@@ -378,9 +381,6 @@
     <ClInclude Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.h">
       <Filter>ソースコード\Object\TitleObj\SelectMode</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\Object\Time\Time.h">
-      <Filter>ソースコード\Object\Time</Filter>
-    </ClInclude>
     <ClInclude Include="..\SourceCode\Object\TitleObj\TitleUi\TitleUi.h">
       <Filter>ソースコード\Object\TitleObj\TitleUi</Filter>
     </ClInclude>
@@ -440,6 +440,21 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\StoryObj\StoryItem\CharaItem_Tag.h">
       <Filter>ソースコード\Object\StoryObj\StoryItem</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\NumDays\NumDays.h">
+      <Filter>ソースコード\Object\NumDays</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\Time\Time\Time.h">
+      <Filter>ソースコード\Object\Time\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\Time\TimeStatus\TimeStatus.h">
+      <Filter>ソースコード\Object\Time\TimeStatus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\TimeOver_ObjectTag.h">
+      <Filter>ソースコード\Object\ObjectTag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\TextDraw\TextDraw.h">
+      <Filter>ソースコード\Object\TextDraw</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -581,9 +596,6 @@
     <Filter Include="ソースコード\Transitor\FadeTransitor">
       <UniqueIdentifier>{a93f5aa2-f13e-4f14-bc4e-64c206d2a6de}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースコード\Object\NumDeys">
-      <UniqueIdentifier>{f7418988-b22b-48cd-a368-ae45319bfc91}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソースコード\Math2D">
       <UniqueIdentifier>{aac7204e-5f0b-4d6b-9d84-261ea65a6ed8}</UniqueIdentifier>
     </Filter>
@@ -703,6 +715,18 @@
     </Filter>
     <Filter Include="ソースコード\Object\StoryObj\StoryItem">
       <UniqueIdentifier>{9d8ef316-c524-489b-9342-d3ec3c60b160}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\NumDays">
+      <UniqueIdentifier>{f7418988-b22b-48cd-a368-ae45319bfc91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\Time\Time">
+      <UniqueIdentifier>{861bb80e-cfbd-4de8-8907-20ba0cde7a55}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\Time\TimeStatus">
+      <UniqueIdentifier>{5747fbb2-6324-4cd9-8402-7a75fda8c0cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\TextDraw">
+      <UniqueIdentifier>{d75384de-6542-40cc-97b5-794363ffd15c}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

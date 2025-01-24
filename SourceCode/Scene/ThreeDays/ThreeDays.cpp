@@ -28,8 +28,9 @@
 #include"../../Object/GameUi/AvoidUi/AvoidUi.h"
 #include"../../Object/GameUi/WarningUi/WarningUi.h"
 
-#include"../../Object/NumDeys/NumDeys.h"
-#include"../../Object/Time/Time.h"
+#include"../../Object/NumDays/NumDays.h"
+#include"../../Object/Time/Time/Time.h"
+#include"../../Object/Time/TimeStatus/TimeStatus.h"
 
 #include"../../Object/CharaObj/Enemy/EnemyAction/EnemyAction.h"
 
@@ -80,13 +81,13 @@ namespace scene
 		object::ObjectManager::Entry(new object::RPMHPUi);
 		object::ObjectManager::Entry(new object::AvoidUi);
 		object::ObjectManager::Entry(new object::WarningUi);
+
+		//Time関連生成
+		object::TimeStatus::Initialize();
 		object::ObjectManager::Entry(new object::Time);
 
 		//敵のアクション生成
 		object::ObjectManager::Entry(new object::EnemyAction);
-
-		////削除予定
-		SetDrawBright(0, 0, 0);
 
 		//フェードフラグ初期化
 		m_FadeInSet = false;
@@ -126,6 +127,6 @@ namespace scene
 		}
 
 		object::ObjectManager::DrawAllObj();
-		object::NumDeys::DrawNumDeys();
+		object::NumDays::DrawNumDays();
 	}
 }

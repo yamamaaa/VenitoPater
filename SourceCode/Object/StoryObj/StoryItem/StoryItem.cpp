@@ -1,7 +1,7 @@
 #include "StoryItem.h"
 #include"../../ObjectTag/Story_ObjectTag.h"
 #include"../LineStatus/LineStatus.h"
-#include"../../NumDeys/NumDeys.h"
+#include"../../NumDays/NumDays.h"
 
 namespace object
 {
@@ -32,7 +32,7 @@ namespace object
         m_BackFade= LoadGraph(JsonManager::ImgData_Instance()->Get_StoryImgData_Instance()->GetItemData_BackFade().c_str());
 
         //日数別に読み込むファイルを変更
-        int dey = NumDeys::GetNumDeys();
+        int dey = NumDays::GetNumDays();
         std::string text;
         switch (dey)
         {

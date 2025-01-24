@@ -36,6 +36,9 @@ namespace object
 
 	void Nil::UpdateObj(const float deltatime)
 	{
+		//タイムオーバーしていたら処理なし
+		if (TimeStatus::GetIsTimeOver())
+			return;
 		//出現状態取得
 		bool is_appear = EnemyManager::GetIsAppear(m_IDnumber);
 

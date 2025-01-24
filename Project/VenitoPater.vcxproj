@@ -57,7 +57,7 @@
     <ClCompile Include="..\SourceCode\Object\GameUi\RPMHPUi\RPMHPUi.cpp" />
     <ClCompile Include="..\SourceCode\Object\GameUi\WarningUi\WarningUi.cpp" />
     <ClCompile Include="..\SourceCode\Object\MouseBase\MouseBase.cpp" />
-    <ClCompile Include="..\SourceCode\Object\NumDeys\NumDeys.cpp" />
+    <ClCompile Include="..\SourceCode\Object\NumDays\NumDays.cpp" />
     <ClCompile Include="..\SourceCode\Object\ObjectBase\ObjectBase.cpp" />
     <ClCompile Include="..\SourceCode\Object\ObjectManager\ObjectManager.cpp" />
     <ClCompile Include="..\SourceCode\Object\Result\BackGround\BackGround.cpp" />
@@ -75,7 +75,9 @@
     <ClCompile Include="..\SourceCode\Object\StoryObj\Line\Line.cpp" />
     <ClCompile Include="..\SourceCode\Object\StoryObj\StillDraw\StillDraw.cpp" />
     <ClCompile Include="..\SourceCode\Object\StoryObj\StoryItem\StoryItem.cpp" />
-    <ClCompile Include="..\SourceCode\Object\Time\Time.cpp" />
+    <ClCompile Include="..\SourceCode\Object\TextDraw\TextDraw.cpp" />
+    <ClCompile Include="..\SourceCode\Object\Time\TimeStatus\TimeStatus.cpp" />
+    <ClCompile Include="..\SourceCode\Object\Time\Time\Time.cpp" />
     <ClCompile Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.cpp" />
     <ClCompile Include="..\SourceCode\Object\TitleObj\TitleUi\TitleUi.cpp" />
     <ClCompile Include="..\SourceCode\Scene\Result\Result.cpp" />
@@ -127,7 +129,7 @@
     <ClInclude Include="..\SourceCode\Object\GameUi\RPMHPUi\RPMHPUi.h" />
     <ClInclude Include="..\SourceCode\Object\GameUi\WarningUi\WarningUi.h" />
     <ClInclude Include="..\SourceCode\Object\MouseBase\MouseBase.h" />
-    <ClInclude Include="..\SourceCode\Object\NumDeys\NumDeys.h" />
+    <ClInclude Include="..\SourceCode\Object\NumDays\NumDays.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectBase\ObjectBase.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectManager\GameStatus.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectManager\ObjectManager.h" />
@@ -137,6 +139,7 @@
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Still_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Story_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\ThreeDays_ObjectTag.h" />
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\TimeOver_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\TitleObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\Result\BackGround\BackGround.h" />
     <ClInclude Include="..\SourceCode\Object\Result\GameClearUi\GameClearUi.h" />
@@ -156,7 +159,9 @@
     <ClInclude Include="..\SourceCode\Object\StoryObj\StillDraw\StillDraw.h" />
     <ClInclude Include="..\SourceCode\Object\StoryObj\StoryItem\CharaItem_Tag.h" />
     <ClInclude Include="..\SourceCode\Object\StoryObj\StoryItem\StoryItem.h" />
-    <ClInclude Include="..\SourceCode\Object\Time\Time.h" />
+    <ClInclude Include="..\SourceCode\Object\TextDraw\TextDraw.h" />
+    <ClInclude Include="..\SourceCode\Object\Time\TimeStatus\TimeStatus.h" />
+    <ClInclude Include="..\SourceCode\Object\Time\Time\Time.h" />
     <ClInclude Include="..\SourceCode\Object\TitleObj\SelectMode\PlayMenu.h" />
     <ClInclude Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.h" />
     <ClInclude Include="..\SourceCode\Object\TitleObj\TitleUi\TitleUi.h" />

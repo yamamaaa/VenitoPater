@@ -3,6 +3,7 @@
 #include"../../../ObjectBase/ObjectBase.h"
 #include"../EnemyBase/EnemyLine_Tag.h"
 #include "../EnemyManager/EnemyManager.h"
+#include "../../../Time/TimeStatus/TimeStatus.h"
 
 namespace GameSystem
 {

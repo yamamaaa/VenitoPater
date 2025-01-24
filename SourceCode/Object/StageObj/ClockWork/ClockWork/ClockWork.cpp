@@ -4,6 +4,7 @@
 #include "../../AreaNumController/AreaNumController.h"
 #include "../../ClockWork/RPMController/RPMController.h"
 #include "../../../CharaObj/Enemy/EnemyManager/EnemyManager.h"
+#include "../../../Time/TimeStatus/TimeStatus.h"
 
 namespace object
 {
@@ -92,6 +93,11 @@ namespace object
 
 			rpmhp -= decrement; 		//Hp減らし続ける
 			MoveObj(deltatime);
+
+			if (TimeStatus::GetIsTimeOver())//タイムオーバーしていたらHPを0に
+			{
+				rpmhp = 0;
+			}
 		}
 		else
 		{
