@@ -46,6 +46,8 @@ namespace object
 
 		POINTFLOAT m_DrawPos;	//画像表示座標
 
+		const int m_AVOID_NOTNUM = 3;		//回避行動不可エリア
+
 		const float m_CLICKCOUNT_MAX = 30.0f;	//再びクリックできるまで
 
 		float m_ClickCount ;		//クリックできるまでのカウント
