@@ -3,6 +3,7 @@
 #include"../../ObjectTag/Global_ObjectTag.h"
 #include"../AvoidStatus/AvoidStatus.h"
 #include"../HatUi/HatUi.h"
+#include"../../StageObj/AreaNumController/AreaNumController.h"
 
 namespace object
 {
@@ -37,6 +38,10 @@ namespace object
 
 	void Avoid::UpdateObj(const float deltatime)
 	{
+		//回避行動不可エリアなら処理なし
+		if (AreaNumController::GetAreaNum() == m_AVOID_NOTNUM)
+			return;
+
 		CursorHit();	//カーソルとの当たり判定
 
 		if (GetCursorHit())	//当たっていたら
