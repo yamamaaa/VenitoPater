@@ -18,11 +18,7 @@ namespace object
 		m_TxtFile.close();
 
 		//フォントのアンロード
-		if (RemoveFontResourceEx(m_FontPath, FR_PRIVATE, NULL)) {
-		}
-		else {
-			MessageBox(NULL, "remove failure", "", MB_OK);
-		}
+		RemoveFontResource(m_FontTag.c_str());
 	}
 
 	void Line::LoadObject()
@@ -30,6 +26,8 @@ namespace object
 		m_IsClick = true;
 		m_IsLineSet = true;
 		m_IslineAnim = true;
+		m_IsWeitMode = false;
+		m_IsLineDone = false;
 
 		LineStatus::SetIsDoneAnim(false);
 
@@ -39,6 +37,8 @@ namespace object
 		m_ObjPos = { 0,850 };
 		m_NowCollar = m_COLLAR_DEFAULT;
 		m_AnimSpeed = m_SPEED_DEFAULT;
+
+		m_StartCount = m_WAITCOU_MAX;
 
 		//現在のゲームステータスを取得
 		GameStatus status=ObjectManager::GetNextGameState();
@@ -87,33 +87,43 @@ namespace object
 		m_TxtFile.open(text.c_str());
 		std::getline(m_TxtFile, m_Line);	//一行目読み込み
 
-		//フォントの読み込み
-		/*std::string font = JsonManager::FontData_Instance()->Get_StoryDat_Instance()->GetFontData();
-		m_FontPath = font.c_str();*/
-		m_FontPath = "../Asset/font/story/ShinRetroMaruGothic-Medium.ttf";
-
-		//フォントの読み込みができなかったら
-		if (AddFontResourceEx(m_FontPath, FR_PRIVATE, NULL) > 0)
-		{
-		}
-		else 
-		{
-			// フォント読込エラー処理
-			MessageBox(NULL, "FontErrer", "", MB_OK);
-		}
+		auto t = JsonManager::FontData_Instance()->Get_StoryDat_Instance();
 
 		//フォント名を取得
 		std::ifstream fontname_data;
-		std::string name;
-		fontname_data.open(JsonManager::FontData_Instance()->Get_StoryDat_Instance()->Get_FontTagData().c_str());
-		std::getline(fontname_data, name);
-		//フォントをセット
-		ChangeFont(name.c_str(), DX_CHARSET_DEFAULT);
-		fontname_data.close();
+		fontname_data.open(t->Get_FontTagToChar());
+		std::getline(fontname_data, m_FontTag);
+		AddFontResourceEx(t->GetFontPath().c_str(), FR_PRIVATE, NULL);
+		m_FontHandol = CreateFontToHandle(t->Get_FontTagToChar(), 30, 1, DX_FONTTYPE_ANTIALIASING_EDGE);
+
+		if (m_FontHandol == -1)
+		{
+			//フォント読込エラー処理
+			RemoveFontResource(m_FontTag.c_str());
+			MessageBox(NULL, "FontErrer", "", MB_OK);
+		}
+
+		//fontname_data.close();
+
+		SetFontSize(30);
 	}
 
 	void Line::UpdateObj(const float deltatime)
 	{
+		if (m_IsLineDone)
+			return;
+
+		//スタートから表示までずらす
+		if (!m_WaitDone)
+		{
+			m_StartCount -= m_COUNT_DECREMENT;
+			if (m_StartCount <= 0.0f)
+			{
+				m_WaitDone = true;
+			}
+			return;
+		}
+
 		UpdateDrawStatus();
 
 		if (m_IslineAnim)
@@ -143,8 +153,8 @@ namespace object
 		//クリックしたら
 		if (!m_IsClick)
 		{
-			m_ClickCount += 0.1;
-			if (m_ClickCount >= 5.0f)
+			m_ClickCount -= m_COUNT_DECREMENT;
+			if (m_ClickCount <= 0.0f)
 			{
 				m_ClickCount = 0.0f;
 				m_IsClick = true;
@@ -163,7 +173,14 @@ namespace object
 		//文字のセットができていてクリック可能状態
 		if (m_IsLineSet && m_IsClick)
 		{
-			if (GetMouseInput() & MOUSE_INPUT_LEFT)
+			//カウントモードなら自動切り替え
+			if (m_IsWeitMode)
+			{
+				m_IsWeitMode = false;
+				m_IsLineSet = false;
+				m_IsClick = false;
+			}
+			else if (GetMouseInput() & MOUSE_INPUT_LEFT)
 			{
 				//文字がアニメ中なら
 				if (m_IslineAnim)
@@ -178,18 +195,13 @@ namespace object
 					m_IsLineSet = false;
 				}
 				m_IsClick = false;
+				m_ClickCount = m_CLICKCOU_MAX;
 			}
 		}
 	}
 
 	void Line::DrawTextSet()
 	{
-		//前の文字をクリア
-		m_Line.clear();
-		m_TxtNum = 0;
-		m_NowCollar = m_COLLAR_DEFAULT;
-		m_AnimSpeed = m_SPEED_DEFAULT;
-
 		std::string line = "";
 
 		//次の行を読み込み
@@ -199,6 +211,11 @@ namespace object
 		if (line == "status")
 		{
 			status_set = true;
+		}
+		else if(!m_IsLineDone)
+		{
+			m_NowCollar = m_COLLAR_DEFAULT;
+			m_AnimSpeed = m_SPEED_DEFAULT;
 		}
 
 		while (status_set)
@@ -223,14 +240,29 @@ namespace object
 		if (line == m_END)	//ファイルの終わりならステータス変更
 		{
 			Text_Processing(line);
+			m_IsLineDone = true;
 		}
 		else
 		{
-			m_Line = line;
-		}
+			//前の文字をクリア
+			m_Line.clear();
+			m_TxtNum = 0;
 
-		m_IsLineSet = true;
-		m_IslineAnim = true;
+			if (line == "count")
+			{
+				//再度クリックできるまで持つ
+				m_IsClick = false;
+				m_IsWeitMode = true;
+				m_ClickCount = m_CLICKCOU_WEIT;
+			}
+			else
+			{
+				m_Line = line;
+			}
+
+			m_IsLineSet = true;
+			m_IslineAnim = true;
+		}
 
 		LineStatus::SetIsDoneAnim(true);
 	}
@@ -279,12 +311,10 @@ namespace object
 
 	void Line::DrawObj()
 	{
-		SetFontSize(30);
 		int x = GetDrawStringWidth(m_Line.c_str(), -1);
-		DrawString((1920 - x) / 2, static_cast<int>(m_ObjPos.y), (m_Line.substr(0, m_TxtNum) + " ").c_str(), GetColor(static_cast<int>(m_NowCollar.x), static_cast<int>(m_NowCollar.y), static_cast<int>(m_NowCollar.z)));
+		DrawStringToHandle((1920 - x) / 2, static_cast<int>(m_ObjPos.y), (m_Line.substr(0, m_TxtNum) + " ").c_str(), GetColor(static_cast<int>(m_NowCollar.x), static_cast<int>(m_NowCollar.y), static_cast<int>(m_NowCollar.z)), m_FontHandol);
 
 #ifdef DEBUG
-		SetFontSize(m_DEBUG_FONTSIZE);
 		DrawFormatString(0, 20, GetColor(255, 255, 255), "m_ClickCount:%f", m_ClickCount);
 		DrawString(0, 100, "スペースでスキップ",GetColor(255, 255, 255));
 #endif // DEBUG

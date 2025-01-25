@@ -24,8 +24,8 @@ namespace json_fontdata
 		/// </summary>
 		~StoryData();
 
-		const std::string GetFontData()const { return font; }
-		const std::string Get_FontTagData()const { return fonttag; }
+		const std::string GetFontPath()const { return font; }
+		const const char *Get_FontTagToChar()const { return fonttag.c_str(); }
 
 	private:
 

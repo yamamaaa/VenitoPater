@@ -77,15 +77,29 @@ namespace object
 
         std::ifstream m_TxtFile;//読み込まれたファイル
 
-        LPCSTR m_FontPath;      //フォントタイプ
         std::string m_Line;     //ファイルから取得した文字
         std::string m_DrawText; //表示する文字
 
+        std::string m_FontTag;  //フォント名
+        int m_FontHandol;       //フォントハンドル
+
         int m_TxtNum;           //表示中の文字数
+
+        const float m_WAITCOU_MAX = 3.0f;     //スタートしてから表示まで待ち時間
+        float m_StartCount;                   //スタートカウント
+        bool m_WaitDone;                      //待ち時間終了したか
+
+        const float m_COUNT_DECREMENT = 0.01f;	//カウント減らし量
+        const float m_CLICKCOU_MAX = 0.5f;      //再度クリックできるまで
+        const float m_CLICKCOU_WEIT = 2.0f;    //待機モード中の待ち時間
 
         bool m_IsClick;         //クリックしたか
         bool m_IsLineSet;       //表示文字をセットしたか
         bool m_IslineAnim;      //表示文字がアニメ中か？
+
+        bool m_IsLineDone;      //ファイル末端コードまで読み込んだか
+
+        bool m_IsWeitMode;      //表示が文字無し状態か(待機)
 
         float m_ClickCount;     //再度クリックできるまで
         float m_AnimCount;      //文字のアニメカウント

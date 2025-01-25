@@ -64,13 +64,13 @@ namespace object
         }
 
         //フォント名を取得
-        std::ifstream fontname_data;
-        std::string name;
-        fontname_data.open(JsonManager::FontData_Instance()->Get_StoryDat_Instance()->Get_FontTagData().c_str());
-        std::getline(fontname_data, name);
-        //フォントをセット
-        ChangeFont(name.c_str(), DX_CHARSET_DEFAULT);
-        fontname_data.close();
+        //std::ifstream fontname_data;
+        //std::string name;
+        //fontname_data.open(JsonManager::FontData_Instance()->Get_StoryDat_Instance()->Get_FontTagData().c_str());
+        //std::getline(fontname_data, name);
+        ////フォントをセット
+        //ChangeFont(name.c_str(), DX_CHARSET_DEFAULT);
+        //fontname_data.close();
     }
 
     void TextDraw::UpdateObj(const float deltatime)
