@@ -77,8 +77,8 @@ namespace scene
         //return new Story();
             LevelController::SetLevel(levelStatus.NOMAL);
             object::ObjectManager::ReleaseAllObj();
-            object::ObjectManager::SetNowGameState(object::TimeOver);
-            return new Result();
+            object::ObjectManager::SetNowGameState(object::Still);
+            return new ThreeDays();
 
         //ÉQÅ[ÉÄÉvÉåÉC
         if (object::GamePlay == object::ObjectManager::GetNowGameState())

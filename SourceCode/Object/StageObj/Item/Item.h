@@ -35,6 +35,11 @@ namespace object
         void UpdateObj(const float deltatime) override;
 
         /// <summary>
+        /// アイテムの再表示、出現リセットへのカウント
+        /// </summary>
+        void CountTime();
+
+        /// <summary>
         /// オブジェクトの描画
         /// </summary>
         void DrawObj() override;
@@ -71,7 +76,8 @@ namespace object
         bool m_IsGet;       //アイテムをゲットしたか
         bool m_CanDraw;    //アイテムを表示できるか
 
-        const float m_OCCURCOUNT_MAX = 300.0f;  //アイテム出現間隔
+        const float m_OCCURCOUNT_MAX = 150.0f;    //アイテムの出現間隔
+        const float m_OCCURCOUNT_RESET = 250.0f;  //アイテムの出現リセット間隔
         const float m_COUNT_DECREMENT = 0.1f;   //カウント減分量
         float m_OccurCount;                     //出現までのカウント
 

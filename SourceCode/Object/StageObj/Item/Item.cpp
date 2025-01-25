@@ -29,7 +29,8 @@ namespace object
 		m_IsGet = false;
 		m_CanDraw = false;
 
-		m_OccurCount = m_OCCURCOUNT_MAX;
+		//出現カウント
+		m_OccurCount = 0;
 
 		//クリック可能状態
 		m_CanClick = true;
@@ -68,6 +69,12 @@ namespace object
 			return;
 		}
 
+		if (m_IsOccur)
+		{
+			//状態リセットまでカウント
+			CountTime();
+		}
+
 		//アイテムが出現し表示されているとき
 		if (m_IsOccur && m_CanDraw)
 		{
@@ -78,6 +85,9 @@ namespace object
 			//アイテムをクリックしたら
 			if (GetStateClick() && GetCursorHit())
 			{
+				//再出現カウントをセット
+				m_OccurCount = m_OCCURCOUNT_MAX;
+
 				m_IsGet = true;
 				m_IsOccur = false;
 
@@ -92,22 +102,16 @@ namespace object
 			ItemNumSet();
 			m_IsSet = true;
 			m_IsOccur = true;
+			//リセットカウントをセット
+			m_OccurCount = m_OCCURCOUNT_RESET;
 			ScreenFlip();
 		}
 
 		//アイテムをゲットしたら
 		if (m_IsGet)
 		{
-			m_OccurCount -= m_COUNT_DECREMENT;
-			if (m_OccurCount <= 0.0f)
-			{
-				m_IsSet = false;
-				m_IsGet = false;
-				m_OccurCount = m_OCCURCOUNT_MAX;
-
-				if (m_IsRareItem)	//レアアイテムだったら初期化
-					m_IsRareItem = false;
-			}
+			//再出現までカウント
+			CountTime();
 		}
 
 		//表示アイテムの更新
@@ -127,6 +131,19 @@ namespace object
 		}
 	}
 
+	void Item::CountTime()
+	{
+		m_OccurCount -= m_COUNT_DECREMENT;
+		if (m_OccurCount <= 0.0f)
+		{
+			m_IsSet = false;
+			m_IsGet = false;
+
+			if (m_IsRareItem)	//レアアイテムだったら初期化
+				m_IsRareItem = false;
+		}
+	}
+
 	void Item::DrawObj()
 	{
 		//アイテムが出現し表示されているとき
@@ -141,7 +158,7 @@ namespace object
 		DrawFormatString(0, 260, GetColor(255, 255, 255), "アイテム表示エリア:%d", m_DrawItemArea);
 		DrawFormatString(0, 280, GetColor(255, 255, 255), "アイテム番号:%d", m_NowItemNumber);
 		DrawFormatString(0, 300, GetColor(255, 255, 255), "アイテム再表示まで:%f", m_OccurCount);
-		DrawFormatString(0, 340, GetColor(255, 0, 0), "スペース長押しでノルマ達成");
+		DrawFormatString(0, 340, GetColor(255, 255, 255), "アイテム出現リセットまで:%f", m_OccurCount);
 #endif
 	}
 
