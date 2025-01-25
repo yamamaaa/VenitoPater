@@ -2,6 +2,7 @@
 
 #include"../ThreeDays/ThreeDays.h"
 #include"../Title/Title.h"
+#include"../Story/Story.h"
 
 #include"../../Object/ObjectTag/GameOver_ObjectTag.h"
 
@@ -78,6 +79,13 @@ namespace scene
         {
             object::ObjectManager::ReleaseAllObj();
             return new Title;
+        }
+
+        //ÉQÅ[ÉÄÉNÉäÉAÇµÇΩÇÁ
+        if (object::Story == object::ObjectManager::GetNowGameState() || object::Still == object::ObjectManager::GetNowGameState())
+        {
+            object::ObjectManager::ReleaseAllObj();
+            return new Story;
         }
 
         return this;

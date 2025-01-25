@@ -1,6 +1,5 @@
 #include "SelectMode.h"
 #include "../../ObjectTag/TitleObjectTag.h"
-#include "../../ObjectManager/ObjectManager.h"
 
 namespace object
 {
@@ -56,20 +55,25 @@ namespace object
 			if (GetStateClick() && GetCursorHit())
 			{
 				GameStatus status;
+				PlayMenu menu;
 
 				switch (m_SelectIndex)
 				{
 				case PlayMenu::PlayTutorial:
+					menu = PlayMenu::PlayTutorial;
 					status = GameStatus::Tutorial;
 					break;
 				case PlayMenu::PlayNewGame:
+					menu = PlayMenu::PlayNewGame;
 					status = GameStatus::GamePlay;
 					break;
 				case PlayMenu::PlayRankingMode:
+					menu = PlayMenu::PlayRankingMode;
 					status = GameStatus::RankingMode;
 					break;
 				}
 
+				ObjectManager::SetPlayMode(menu);
 				ObjectManager::SetNextGameState(status);
 
 				return;

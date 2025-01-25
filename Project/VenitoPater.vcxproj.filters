@@ -375,9 +375,6 @@
     <ClInclude Include="..\SourceCode\Object\StoryObj\StillDraw\StillDraw.h">
       <Filter>ソースコード\Object\StoryObj\StillDraw</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\Object\TitleObj\SelectMode\PlayMenu.h">
-      <Filter>ソースコード\Object\TitleObj\SelectMode</Filter>
-    </ClInclude>
     <ClInclude Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.h">
       <Filter>ソースコード\Object\TitleObj\SelectMode</Filter>
     </ClInclude>
@@ -455,6 +452,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\TextDraw\TextDraw.h">
       <Filter>ソースコード\Object\TextDraw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectManager\PlayMenu.h">
+      <Filter>ソースコード\Object\ObjectManager</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
