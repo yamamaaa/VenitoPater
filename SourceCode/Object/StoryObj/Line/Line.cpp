@@ -126,6 +126,18 @@ namespace object
 	{
 		LineStatus::SetIsDoneAnim(false);
 
+#ifdef DEBUG
+		//スペースキーでスキップ
+		if (CheckHitKey(KEY_INPUT_SPACE))
+		{
+			if (m_Line == m_END)
+			{
+				Text_Processing(m_Line);
+			}
+			std::getline(m_TxtFile, m_Line);
+		}
+#endif // DEBUG
+
 		ClickStatus();
 
 		//クリックしたら
@@ -274,6 +286,7 @@ namespace object
 #ifdef DEBUG
 		SetFontSize(m_DEBUG_FONTSIZE);
 		DrawFormatString(0, 20, GetColor(255, 255, 255), "m_ClickCount:%f", m_ClickCount);
+		DrawString(0, 100, "スペースでスキップ",GetColor(255, 255, 255));
 #endif // DEBUG
 	}
 }

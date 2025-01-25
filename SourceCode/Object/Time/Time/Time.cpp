@@ -59,6 +59,14 @@ namespace object
             }
         }
 
+#ifdef DEBUG
+        //F1が押されたら時間経過
+        if (CheckHitKey(KEY_INPUT_F1))
+        {
+            m_DrawTime = m_PLAYTIME_MAX;
+        }
+#endif // DEBUG
+
         //プレイの終了時間になったら
         if (m_DrawTime == m_PLAYTIME_MAX)
         {

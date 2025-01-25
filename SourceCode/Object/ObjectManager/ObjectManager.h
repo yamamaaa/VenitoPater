@@ -5,7 +5,8 @@
 #include <string>
 
 #include"../ObjectBase/ObjectBase.h"
-#include"../ObjectManager/GameStatus.h"
+#include"GameStatus.h"
+#include"PlayMenu.h"
 
 namespace object
 {
@@ -77,16 +78,16 @@ namespace object
 		static void SetNextGameState(GameStatus stats) { objectmanager->m_NextGameStatus = stats; }
 
 		/// <summary>
-		/// 現在のシーン名取得
+		/// 現在のプレイモードを取得
 		/// </summary>
-		/// <returns>現在のシーン名</returns>
-		static std::string GetNowSceneName() { return objectmanager->m_NowScene_Name; }
+		/// <returns>プレイモード</returns>
+		static PlayMenu GetPlayMode() { return objectmanager->m_PlayMode; }
 
 		/// <summary>
-		/// 現在のシーン名セット
+		/// 現在のプレイモードをセット
 		/// </summary>
-		/// <param name="stats">現在のシーン名</param>
-		static void SetNowSceneName(std::string scenename) { objectmanager->m_NowScene_Name = scenename; }
+		/// <param name="select">選んだプレイモード</param>
+		static void SetPlayMode(PlayMenu select) { objectmanager->m_PlayMode = select; }
 
 		/// <summary>
 		/// タグ種類の初めのオブジェクトを返す
@@ -102,10 +103,10 @@ namespace object
 		/// </summary>
 		ObjectManager();
 
-		std::string m_NowScene_Name;	//現在のシーン名
-
 		GameStatus m_NowGameStatus;		//現在のゲーム状態
 		GameStatus m_NextGameStatus;	//次のゲーム状態
+
+		PlayMenu m_PlayMode;			//現在のプレイモード
 
 		static std::unique_ptr<ObjectManager> objectmanager;									// ObjectManagerの実体
 		std::vector<std::string> m_SceneTag;													// 現在のシーンのオブジェクトタグ

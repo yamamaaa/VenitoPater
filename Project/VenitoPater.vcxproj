@@ -133,6 +133,7 @@
     <ClInclude Include="..\SourceCode\Object\ObjectBase\ObjectBase.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectManager\GameStatus.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectManager\ObjectManager.h" />
+    <ClInclude Include="..\SourceCode\Object\ObjectManager\PlayMenu.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\GameClear_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Global_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\GameOver_ObjectTag.h" />
@@ -162,7 +163,6 @@
     <ClInclude Include="..\SourceCode\Object\TextDraw\TextDraw.h" />
     <ClInclude Include="..\SourceCode\Object\Time\TimeStatus\TimeStatus.h" />
     <ClInclude Include="..\SourceCode\Object\Time\Time\Time.h" />
-    <ClInclude Include="..\SourceCode\Object\TitleObj\SelectMode\PlayMenu.h" />
     <ClInclude Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.h" />
     <ClInclude Include="..\SourceCode\Object\TitleObj\TitleUi\TitleUi.h" />
     <ClInclude Include="..\SourceCode\Scene\Result\Result.h" />
