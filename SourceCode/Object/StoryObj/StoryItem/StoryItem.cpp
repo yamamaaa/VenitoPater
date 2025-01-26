@@ -1,5 +1,6 @@
 #include "StoryItem.h"
 #include"../../ObjectTag/Story_ObjectTag.h"
+#include "../../ObjectManager/ObjectManager.h"
 #include"../LineStatus/LineStatus.h"
 #include"../../NumDays/NumDays.h"
 
@@ -27,7 +28,6 @@ namespace object
 
         m_IsDrawObj = false;
         m_IsFade = false;
-        m_IsUpdate_Done = false;
 
         m_BackFade= LoadGraph(JsonManager::ImgData_Instance()->Get_StoryImgData_Instance()->GetItemData_BackFade().c_str());
 
@@ -45,6 +45,9 @@ namespace object
             m_ObjImg[charaItem_Tag.MEDICINE] = LoadGraph(JsonManager::ImgData_Instance()->Get_StoryImgData_Instance()->GetItemData_Medicine().c_str());
             text = JsonManager::TextData_Instance()->Get_CharacterData_Instance()->GetItemData_Day_4();
             break;
+        default:
+            ObjectManager::ReleaseObj(story_ObjectTag.STORYITEM);
+            break;
         }
 
         m_TxtFile.open(text.c_str());
@@ -54,8 +57,6 @@ namespace object
 
     void StoryItem::UpdateObj(const float deltatime)
     {
-        if (m_IsUpdate_Done)
-            return;
         //文字セット前は以下処理なし
         if (!LineStatus::GetIsDoneAnim())
             return;
@@ -69,10 +70,10 @@ namespace object
 
     void StoryItem::UpdateDrawStatus()
     {
+        //ファイル末端ならオブジェクトの削除
         if (m_Line == m_END)
         {
-            m_IsDrawObj = false;
-            m_IsUpdate_Done = true;
+            ObjectManager::ReleaseObj(story_ObjectTag.STORYITEM);
         }
         else if (m_Line == m_BLACKOUT)
         {

@@ -90,6 +90,12 @@ namespace object
 		static void SetPlayMode(PlayMenu select) { objectmanager->m_PlayMode = select; }
 
 		/// <summary>
+		/// 選んだオブジェクトの削除
+		/// </summary>
+		/// <param name="tagname">オブジェクトの種類</param>
+		static void  ReleaseObj(std::string tagname);
+
+		/// <summary>
 		/// タグ種類の初めのオブジェクトを返す
 		/// </summary>
 		/// <param name="tagname">オブジェクトの種類</param>

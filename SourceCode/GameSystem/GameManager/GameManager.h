@@ -3,14 +3,6 @@
 
 #include "../../Scene/SceneManager/SceneManager.h"
 
-///// <summary>
-///// シーン管理クラス
-///// </summary>
-//namespace scene
-//{
-//    class SceneManager;
-//}
-
 namespace GameSystem
 {
     class Window;

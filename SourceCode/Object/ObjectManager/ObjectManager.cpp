@@ -49,11 +49,14 @@ namespace object
     {
         for (std::string& tag : objectmanager->m_SceneTag)
         {
-            // 該当タグにあるすべてのオブジェクトを更新
-            for (auto& obj : objectmanager->m_Objects[tag])
+            if (!objectmanager->m_Objects[tag].empty())
             {
-                //更新
-                obj->UpdateObj(deltatime);
+                // 該当タグにあるすべてのオブジェクトを更新
+                for (auto& obj : objectmanager->m_Objects[tag])
+                {
+                    //更新
+                    obj->UpdateObj(deltatime);
+                }
             }
         }
 
@@ -63,10 +66,22 @@ namespace object
     {
         for (std::string& tag : objectmanager->m_SceneTag)
         {
-            for (auto& obj : objectmanager->m_Objects[tag])
+            if (!objectmanager->m_Objects[tag].empty())
             {
-                obj->DrawObj();
+                for (auto& obj : objectmanager->m_Objects[tag])
+                {
+                    obj->DrawObj();
+                }
             }
+        }
+    }
+
+    void ObjectManager::ReleaseObj(std::string tagname)
+    {
+        //オブジェクトが空じゃないなら削除
+        if (!objectmanager->m_Objects[tagname].empty())
+        {
+            objectmanager->m_Objects[tagname].clear();
         }
     }
 

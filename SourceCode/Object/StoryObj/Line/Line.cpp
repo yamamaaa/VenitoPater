@@ -1,4 +1,4 @@
-#include "Line.h"
+ï»¿#include "Line.h"
 #include"../../ObjectTag/Story_ObjectTag.h"
 #include"../LineStatus/LineStatus.h"
 #include"../../ObjectManager/ObjectManager.h"
@@ -9,7 +9,7 @@ namespace object
 	Line::Line()
 		:ObjectBase(story_ObjectTag.LINE)
 	{
-		//“Ç‚İ‚İŠÖ˜A
+		//èª­ã¿è¾¼ã¿é–¢é€£
 		LoadObject();
 	}
 
@@ -17,8 +17,9 @@ namespace object
 	{
 		m_TxtFile.close();
 
-		//ƒtƒHƒ“ƒg‚ÌƒAƒ“ƒ[ƒh
+		//ãƒ•ã‚©ãƒ³ãƒˆã®ã‚¢ãƒ³ãƒ­ãƒ¼ãƒ‰
 		RemoveFontResource(m_FontTag.c_str());
+		DeleteFontToHandle(m_FontHandle);
 	}
 
 	void Line::LoadObject()
@@ -27,7 +28,9 @@ namespace object
 		m_IsLineSet = true;
 		m_IslineAnim = true;
 		m_IsWeitMode = false;
+		m_IsClickUi = false;
 		m_IsLineDone = false;
+		m_IsMove_Up = false;
 
 		LineStatus::SetIsDoneAnim(false);
 
@@ -35,15 +38,16 @@ namespace object
 		m_AnimCount = 0.0f;
 		m_ClickCount = 0.0f;
 		m_ObjPos = { 0,850 };
+		m_UiPos = m_UIPOS_RESET;
 		m_NowCollar = m_COLLAR_DEFAULT;
 		m_AnimSpeed = m_SPEED_DEFAULT;
 
 		m_StartCount = m_WAITCOU_MAX;
 
-		//Œ»İ‚ÌƒQ[ƒ€ƒXƒe[ƒ^ƒX‚ğæ“¾
+		//ç¾åœ¨ã®ã‚²ãƒ¼ãƒ ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹ã‚’å–å¾—
 		GameStatus status=ObjectManager::GetNextGameState();
 
-		//“ú”•Ê‚É“Ç‚İ‚Şƒtƒ@ƒCƒ‹‚ğ•ÏX
+		//æ—¥æ•°åˆ¥ã«èª­ã¿è¾¼ã‚€ãƒ•ã‚¡ã‚¤ãƒ«ã‚’å¤‰æ›´
 		int dey = NumDays::GetNumDays();
 		std::string text;
 		if (status == Story)
@@ -83,37 +87,42 @@ namespace object
 			}
 		}
 
-		//ƒtƒ@ƒCƒ‹‚Ì“Ç‚İ‚İ
+		//ãƒ•ã‚¡ã‚¤ãƒ«ã®èª­ã¿è¾¼ã¿
 		m_TxtFile.open(text.c_str());
-		std::getline(m_TxtFile, m_Line);	//ˆês–Ú“Ç‚İ‚İ
+		std::getline(m_TxtFile, m_Line);	//ä¸€è¡Œç›®èª­ã¿è¾¼ã¿
 
-		auto t = JsonManager::FontData_Instance()->Get_StoryDat_Instance();
+		auto instance = JsonManager::FontData_Instance()->Get_StoryDat_Instance();
 
-		//ƒtƒHƒ“ƒg–¼‚ğæ“¾
-		std::ifstream fontname_data;
-		fontname_data.open(t->Get_FontTagToChar());
-		std::getline(fontname_data, m_FontTag);
-		AddFontResourceEx(t->GetFontPath().c_str(), FR_PRIVATE, NULL);
-		m_FontHandol = CreateFontToHandle(t->Get_FontTagToChar(), 30, 1, DX_FONTTYPE_ANTIALIASING_EDGE);
+		//ãƒ•ã‚©ãƒ³ãƒˆåã‚’å–å¾—
+		//std::ifstream fontname_data;
+		//fontname_data.open(instance->Get_FontTagToChar());
+		//std::getline(fontname_data, m_FontTag);
+		//AddFontResourceExA("../Asset/font/story/story_font.ttf", FR_PRIVATE, NULL);
+		m_FontHandle = CreateFontToHandle("ãƒ¡ã‚¤ãƒªã‚ª", 30, 5, DX_FONTTYPE_ANTIALIASING_EDGE);
 
-		if (m_FontHandol == -1)
+		if (m_FontHandle == -1)
 		{
-			//ƒtƒHƒ“ƒg“ÇƒGƒ‰[ˆ—
-			RemoveFontResource(m_FontTag.c_str());
+			//ãƒ•ã‚©ãƒ³ãƒˆèª­è¾¼ã‚¨ãƒ©ãƒ¼å‡¦ç†
+			RemoveFontResourceExA("", FR_PRIVATE, NULL);
 			MessageBox(NULL, "FontErrer", "", MB_OK);
 		}
-
 		//fontname_data.close();
-
-		SetFontSize(30);
 	}
 
 	void Line::UpdateObj(const float deltatime)
 	{
-		if (m_IsLineDone)
-			return;
+		LineStatus::SetIsDoneAnim(false);
 
-		//ƒXƒ^[ƒg‚©‚ç•\¦‚Ü‚Å‚¸‚ç‚·
+		if (m_IsLineDone)
+		{
+			if (m_IsClickUi)
+			{
+				ClickUiMoveAnim(deltatime);
+			}
+			return;
+		}
+
+		//ã‚¹ã‚¿ãƒ¼ãƒˆã‹ã‚‰è¡¨ç¤ºã¾ã§ãšã‚‰ã™
 		if (!m_WaitDone)
 		{
 			m_StartCount -= m_COUNT_DECREMENT;
@@ -124,20 +133,23 @@ namespace object
 			return;
 		}
 
-		UpdateDrawStatus();
+		UpdateDrawStatus(deltatime);
 
 		if (m_IslineAnim)
 		{
-			TextAnim();
+			TextAnim(deltatime);
+		}
+		else
+		{
+			m_IsClickUi = true;
+			ClickUiMoveAnim(deltatime);
 		}
 	}
 
-	void Line::UpdateDrawStatus()
+	void Line::UpdateDrawStatus(const float deltatime)
 	{
-		LineStatus::SetIsDoneAnim(false);
-
 #ifdef DEBUG
-		//ƒXƒy[ƒXƒL[‚ÅƒXƒLƒbƒv
+		//ã‚¹ãƒšãƒ¼ã‚¹ã‚­ãƒ¼ã§ã‚¹ã‚­ãƒƒãƒ—
 		if (CheckHitKey(KEY_INPUT_SPACE))
 		{
 			if (m_Line == m_END)
@@ -150,10 +162,10 @@ namespace object
 
 		ClickStatus();
 
-		//ƒNƒŠƒbƒN‚µ‚½‚ç
+		//ã‚¯ãƒªãƒƒã‚¯ã—ãŸã‚‰
 		if (!m_IsClick)
 		{
-			m_ClickCount -= m_COUNT_DECREMENT;
+			m_ClickCount -= m_COUNT_DECREMENT * deltatime;
 			if (m_ClickCount <= 0.0f)
 			{
 				m_ClickCount = 0.0f;
@@ -161,7 +173,7 @@ namespace object
 			}
 		}
 
-		//–¢ƒZƒbƒgó‘Ô‚È‚ç
+		//æœªã‚»ãƒƒãƒˆçŠ¶æ…‹ãªã‚‰
 		if (!m_IsLineSet)
 		{
 			DrawTextSet();
@@ -170,10 +182,10 @@ namespace object
 
 	void Line::ClickStatus()
 	{
-		//•¶š‚ÌƒZƒbƒg‚ª‚Å‚«‚Ä‚¢‚ÄƒNƒŠƒbƒN‰Â”\ó‘Ô
+		//æ–‡å­—ã®ã‚»ãƒƒãƒˆãŒã§ãã¦ã„ã¦ã‚¯ãƒªãƒƒã‚¯å¯èƒ½çŠ¶æ…‹
 		if (m_IsLineSet && m_IsClick)
 		{
-			//ƒJƒEƒ“ƒgƒ‚[ƒh‚È‚ç©“®Ø‚è‘Ö‚¦
+			//ã‚«ã‚¦ãƒ³ãƒˆãƒ¢ãƒ¼ãƒ‰ãªã‚‰è‡ªå‹•åˆ‡ã‚Šæ›¿ãˆ
 			if (m_IsWeitMode)
 			{
 				m_IsWeitMode = false;
@@ -182,16 +194,16 @@ namespace object
 			}
 			else if (GetMouseInput() & MOUSE_INPUT_LEFT)
 			{
-				//•¶š‚ªƒAƒjƒ’†‚È‚ç
+				//æ–‡å­—ãŒã‚¢ãƒ‹ãƒ¡ä¸­ãªã‚‰
 				if (m_IslineAnim)
 				{
-					//•¶š‚ğ‚·‚×‚Ä•\¦‚·‚é
+					//æ–‡å­—ã‚’ã™ã¹ã¦è¡¨ç¤ºã™ã‚‹
 					m_TxtNum = m_Line.size();
 					m_IslineAnim = false;
 				}
 				else
 				{
-					//•¶š‚ÌƒZƒbƒg‚ğs‚¤
+					//æ–‡å­—ã®ã‚»ãƒƒãƒˆã‚’è¡Œã†
 					m_IsLineSet = false;
 				}
 				m_IsClick = false;
@@ -204,23 +216,30 @@ namespace object
 	{
 		std::string line = "";
 
-		//Ÿ‚Ìs‚ğ“Ç‚İ‚İ
+		//æ¬¡ã®è¡Œã‚’èª­ã¿è¾¼ã¿
 		std::getline(m_TxtFile, line);
+
+		if (line == m_END)	//ãƒ•ã‚¡ã‚¤ãƒ«ã®çµ‚ã‚ã‚Šãªã‚‰ã‚¹ãƒ†ãƒ¼ã‚¿ã‚¹å¤‰æ›´
+		{
+			Text_Processing(line);
+			m_IsLineDone = true;
+		}
+
+		if (m_IsLineDone)
+			return;
+
+		m_AnimSpeed = m_SPEED_DEFAULT;
+		m_NowCollar = m_COLLAR_DEFAULT;
 
 		bool status_set = false;
 		if (line == "status")
 		{
 			status_set = true;
 		}
-		else if(!m_IsLineDone)
-		{
-			m_NowCollar = m_COLLAR_DEFAULT;
-			m_AnimSpeed = m_SPEED_DEFAULT;
-		}
 
 		while (status_set)
 		{
-			//Ÿ‚Ìs‚ğ“Ç‚İ‚İ
+			//æ¬¡ã®è¡Œã‚’èª­ã¿è¾¼ã¿
 			std::getline(m_TxtFile, line);
 			if (line == "status")
 			{
@@ -237,46 +256,40 @@ namespace object
 			}
 		}
 
-		if (line == m_END)	//ƒtƒ@ƒCƒ‹‚ÌI‚í‚è‚È‚çƒXƒe[ƒ^ƒX•ÏX
+		//å‰ã®æ–‡å­—ã‚’ã‚¯ãƒªã‚¢
+		m_Line.clear();
+		m_TxtNum = 0;
+
+		if (line == "count")
 		{
-			Text_Processing(line);
-			m_IsLineDone = true;
+			//å†åº¦ã‚¯ãƒªãƒƒã‚¯ã§ãã‚‹ã¾ã§æŒã¤
+			m_IsClick = false;
+			m_IsWeitMode = true;
+			m_ClickCount = m_CLICKCOU_WEIT;
 		}
 		else
 		{
-			//‘O‚Ì•¶š‚ğƒNƒŠƒA
-			m_Line.clear();
-			m_TxtNum = 0;
-
-			if (line == "count")
-			{
-				//Ä“xƒNƒŠƒbƒN‚Å‚«‚é‚Ü‚Å‚Â
-				m_IsClick = false;
-				m_IsWeitMode = true;
-				m_ClickCount = m_CLICKCOU_WEIT;
-			}
-			else
-			{
-				m_Line = line;
-			}
-
-			m_IsLineSet = true;
-			m_IslineAnim = true;
+			m_Line = line;
 		}
+
+		m_IsLineSet = true;
+		m_IslineAnim = true;
+		m_IsClickUi = false;
+		m_UiPos.y = m_UIPOS_RESET.y;
 
 		LineStatus::SetIsDoneAnim(true);
 	}
 
 	void Line::Text_Processing(std::string line)
 	{
-		//Ÿ‚Ìs‚ğ“Ç‚İ‚İ
+		//æ¬¡ã®è¡Œã‚’èª­ã¿è¾¼ã¿
 		std::getline(m_TxtFile, line);
 		if (line == m_DAY)
 		{
 			NumDays::UpdateNumDays();
 		}
 
-		//Ÿ‚Ìs‚ğ“Ç‚İ‚İ
+		//æ¬¡ã®è¡Œã‚’èª­ã¿è¾¼ã¿
 		std::getline(m_TxtFile, line);
 		if (line == m_GAMEPLAY)
 		{
@@ -290,11 +303,15 @@ namespace object
 		{
 			ObjectManager::SetNextGameState(Still);
 		}
+		if (line == m_PLAYEND)
+		{
+			ObjectManager::SetNextGameState(PlayEnd);
+		}
 	}
 
-	void Line::TextAnim()
+	void Line::TextAnim(const float deltatime)
 	{
-		m_AnimCount += m_AnimSpeed;
+		m_AnimCount += m_AnimSpeed* deltatime;
 		if (m_AnimCount >= m_ANIMFPS)
 		{
 			if (m_TxtNum == m_Line.size())
@@ -309,14 +326,55 @@ namespace object
 		}
 	}
 
+	void Line::ClickUiMoveAnim(const float deltatime)
+	{
+		//ç¾åœ¨ã®Uiä½ç½®ã‚’å–å¾—
+		float pos= m_UiPos.y;
+
+		//ä¸Šç§»å‹•ä¸­ãªã‚‰å°‘ã—ãšã¤ä¸ŠãŒã‚‹å‡¦ç†
+		if (m_IsMove_Up)
+		{
+			//ä½ç½®ãŒç§»å‹•æœ€å¤§å€¤ã‚’è¶…ãˆãŸã‚‰åˆ‡ã‚Šæ›¿ãˆå‡¦ç†
+			if (pos < m_UIPOS_RESET.y - m_MOVEPOS_MAX)
+			{
+				m_IsMove_Up = false;
+			}
+			else
+			{
+				pos -= m_MOVESPEED * deltatime;
+			}
+		}
+		else
+		{
+			//å°‘ã—ãšã¤ä¸‹ãŒã‚‹å‡¦ç†
+			if (pos > m_UIPOS_RESET.y + m_MOVEPOS_MAX)
+			{
+				m_IsMove_Up = true;
+			}
+			else
+			{
+				pos += m_MOVESPEED * deltatime;
+			}
+		}
+
+		m_UiPos.y = pos;
+	}
+
 	void Line::DrawObj()
 	{
-		int x = GetDrawStringWidth(m_Line.c_str(), -1);
-		DrawStringToHandle((1920 - x) / 2, static_cast<int>(m_ObjPos.y), (m_Line.substr(0, m_TxtNum) + " ").c_str(), GetColor(static_cast<int>(m_NowCollar.x), static_cast<int>(m_NowCollar.y), static_cast<int>(m_NowCollar.z)), m_FontHandol);
+		if (m_IsClickUi)
+		{
+			DrawStringToHandle(static_cast<int>(m_UiPos.x), static_cast<int>(m_UiPos.y), "â–½", GetColor(static_cast<int>(m_COLLAR_DEFAULT.x), static_cast<int>(m_COLLAR_DEFAULT.y), static_cast<int>(m_COLLAR_DEFAULT.z)), m_FontHandle);
+		}
+
+		//æ–‡å­—ã®é•·ã•ã‚’å–å¾—ã—ã¦ç”»é¢ä¸­å¤®ã«è¡¨ç¤º
+		int x = GetDrawFormatStringWidthToHandle(m_FontHandle,m_Line.c_str(), -1);
+		DrawStringToHandle((1920 - x) / 2, static_cast<int>(m_ObjPos.y), (m_Line.substr(0, m_TxtNum) + " ").c_str(), GetColor(static_cast<int>(m_NowCollar.x), static_cast<int>(m_NowCollar.y), static_cast<int>(m_NowCollar.z)), m_FontHandle);
 
 #ifdef DEBUG
 		DrawFormatString(0, 20, GetColor(255, 255, 255), "m_ClickCount:%f", m_ClickCount);
-		DrawString(0, 100, "ƒXƒy[ƒX‚ÅƒXƒLƒbƒv",GetColor(255, 255, 255));
+		DrawStringToHandle(50, 50, "012345678910    5:0", GetColor(255, 255, 255),m_FontHandle);
+		DrawString(0, 100, "ã‚¹ãƒšãƒ¼ã‚¹ã§ã‚¹ã‚­ãƒƒãƒ—",GetColor(255, 255, 255));
 #endif // DEBUG
 	}
 }
