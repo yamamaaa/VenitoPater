@@ -90,13 +90,6 @@ namespace object
 		m_TxtFile.open(text.c_str());
 		std::getline(m_TxtFile, m_Line);	//一行目読み込み
 
-		auto instance = JsonManager::FontData_Instance()->Get_StoryDat_Instance();
-
-		//フォント名を取得
-		//std::ifstream fontname_data;
-		//fontname_data.open(instance->Get_FontTagToChar());
-		//std::getline(fontname_data, m_FontTag);
-		//AddFontResourceExA("../Asset/font/story/story_font.ttf", FR_PRIVATE, NULL);
 		m_FontHandle = CreateFontToHandle("メイリオ", 30, 5, DX_FONTTYPE_ANTIALIASING);
 
 		if (m_FontHandle == -1)
@@ -104,7 +97,6 @@ namespace object
 			//フォント読込エラー処理
 			MessageBox(NULL, "FontErrer", "", MB_OK);
 		}
-		//fontname_data.close();
 	}
 
 	void Line::UpdateObj(const float deltatime)
