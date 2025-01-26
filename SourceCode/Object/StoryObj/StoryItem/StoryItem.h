@@ -67,8 +67,6 @@ namespace object
 
         bool m_IsFade;       //フェードが終わったか
 
-        bool m_IsUpdate_Done;   //読み込みを終了するか
-
         std::unordered_map<std::string, int> m_ObjImg;  //画像データ
 
         //画像位置

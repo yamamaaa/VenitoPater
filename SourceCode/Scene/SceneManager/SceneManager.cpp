@@ -14,7 +14,6 @@ namespace scene
     {
         //初期化処理
         ObjectManager::Initialize();
-        //AssetManager::InitAssetManager(); インスタンス生成
 
         //現在のシーンをタイトルに設定
         m_NowScene.emplace(new Title);
