@@ -6,8 +6,7 @@ namespace jsonmaster
 
 	JsonManager::JsonManager()
 		: master_img_data(new json_imgdata::MasterImgData),
-		master_text_data(new json_textdata::MasterTextData),
-		master_font_data(new json_fontdata::MasterFontData)
+		master_text_data(new json_textdata::MasterTextData)
 	{
 		//ˆ—‚È‚µ
 	}
