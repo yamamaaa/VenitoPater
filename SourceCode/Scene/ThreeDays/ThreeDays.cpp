@@ -28,9 +28,9 @@
 #include"../../Object/GameUi/AvoidUi/AvoidUi.h"
 #include"../../Object/GameUi/WarningUi/WarningUi.h"
 
-#include"../../Object/NumDays/NumDays.h"
 #include"../../Object/Time/Time/Time.h"
 #include"../../Object/Time/TimeStatus/TimeStatus.h"
+#include"../../Object/TextDraw/TextDraw.h"
 
 #include"../../Object/CharaObj/Enemy/EnemyAction/EnemyAction.h"
 
@@ -86,6 +86,9 @@ namespace scene
 		object::TimeStatus::Initialize();
 		object::ObjectManager::Entry(new object::Time);
 
+		//テキスト関連
+		object::ObjectManager::Entry(new object::TextDraw);
+
 		//敵のアクション生成
 		object::ObjectManager::Entry(new object::EnemyAction);
 
@@ -127,6 +130,5 @@ namespace scene
 		}
 
 		object::ObjectManager::DrawAllObj();
-		object::NumDays::DrawNumDays();
 	}
 }

@@ -87,12 +87,12 @@ namespace object
 
 	void GameOverUi::DrawObj()
 	{
-		SetFontSize(100);
+		//SetFontSize(100);
 		DrawFormatString(m_ResultLogo_Pos.x, m_ResultLogo_Pos.y, GetColor(255, 255, 255), "GameOver");
 
 		DrawGraph(static_cast<int>(m_Uipos.x), static_cast<int>(m_Uipos.y),m_ObjHandle, TRUE);
 
-		SetFontSize(30);
+		//SetFontSize(30);
 		DrawFormatString(m_SelectUi_Pos[0].x+ m_UiOffset[0].x, m_SelectUi_Pos[0].y + m_UiOffset[0].y, GetColor(255, 255, 255), "コンテニュー");
 		DrawFormatString(m_SelectUi_Pos[1].x + m_UiOffset[1].x, m_SelectUi_Pos[1].y + m_UiOffset[1].y, GetColor(255, 255, 255), "タイトルへ");
 
@@ -101,7 +101,6 @@ namespace object
 		DrawBox(m_SelectUi_Pos[1].x, m_SelectUi_Pos[1].y, m_SelectUi_Pos[1].x + m_ObjSize.x, m_SelectUi_Pos[1].y + m_ObjSize.y, GetColor(0, 255, 0),FALSE);
 
 #ifdef DEBUG
-		SetFontSize(16);
 		DrawFormatString(0, 20, GetColor(255, 255, 255), "セレクト状態:%s", m_selectstatus.c_str());
 #endif // DEBUG
 	}

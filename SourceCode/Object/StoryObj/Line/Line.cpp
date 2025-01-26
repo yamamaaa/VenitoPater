@@ -18,7 +18,6 @@ namespace object
 		m_TxtFile.close();
 
 		//フォントのアンロード
-		RemoveFontResource(m_FontTag.c_str());
 		DeleteFontToHandle(m_FontHandle);
 	}
 
@@ -98,12 +97,11 @@ namespace object
 		//fontname_data.open(instance->Get_FontTagToChar());
 		//std::getline(fontname_data, m_FontTag);
 		//AddFontResourceExA("../Asset/font/story/story_font.ttf", FR_PRIVATE, NULL);
-		m_FontHandle = CreateFontToHandle("メイリオ", 30, 5, DX_FONTTYPE_ANTIALIASING_EDGE);
+		m_FontHandle = CreateFontToHandle("メイリオ", 30, 5, DX_FONTTYPE_ANTIALIASING);
 
 		if (m_FontHandle == -1)
 		{
 			//フォント読込エラー処理
-			RemoveFontResourceExA("", FR_PRIVATE, NULL);
 			MessageBox(NULL, "FontErrer", "", MB_OK);
 		}
 		//fontname_data.close();

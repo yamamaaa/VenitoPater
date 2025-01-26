@@ -39,12 +39,9 @@ namespace object
     void ItemUi::DrawObj()
     {
         //アイテムゲット数表示
-        SetFontSize(m_FONTSIZE);
         DrawFormatString(static_cast<int>(m_NItemNum_Pos.x), static_cast<int>(m_NItemNum_Pos.y), GetColor(m_COLLARCODE, m_COLLARCODE, m_COLLARCODE), "%d", ItemGetNum::GetNowNItem());
         DrawFormatString(static_cast<int>(m_RItemNum_Pos.x), static_cast<int>(m_RItemNum_Pos.y), GetColor(m_COLLARCODE, m_COLLARCODE, m_COLLARCODE), "%d", ItemGetNum::GetNowRItem());
-#ifdef DEBUG
-        SetFontSize(m_DEBUG_FONTSIZE);
-#endif
+
         //アイテムアイコン表示
         DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
         DrawGraph(static_cast<int>(m_RItem_ObjPos.x), static_cast<int>(m_RItem_ObjPos.y), m_RItem_Handole, TRUE);
