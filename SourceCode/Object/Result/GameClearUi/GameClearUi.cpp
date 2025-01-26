@@ -67,11 +67,9 @@ namespace object
 
 	void GameClearUi::DrawObj()
 	{
-		SetFontSize(m_FONTSIZE);
 		DrawFormatString(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), GetColor(m_CORRER_CODE, m_CORRER_CODE, m_CORRER_CODE), "5 : 0");
 
 #ifdef DEBUG
-		SetFontSize(m_DEBUG_FONTSIZE);
 		DrawFormatString(0, 0, GetColor(255, 255, 255), "•\Ž¦ŽžŠÔ : %f", m_DrawCount);
 #endif // DEBUG
 	}

@@ -87,12 +87,12 @@ namespace object
 
     void Time::DrawObj()
     {
-        SetFontSize(m_FONTSIZE_AM);
+        //SetFontSize(m_FONTSIZE_AM);
         DrawFormatString(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), GetColor(static_cast<int>(m_NowCollar.x), static_cast<int>(m_NowCollar.y), static_cast<int>(m_NowCollar.z)), "AM");
-        SetFontSize(m_FONTSIZE_TIME);
+        //SetFontSize(m_FONTSIZE_TIME);
         DrawFormatString(static_cast<int>(m_TimePos.x), static_cast<int>(m_TimePos.y), GetColor(static_cast<int>(m_NowCollar.x), static_cast<int>(m_NowCollar.y), static_cast<int>(m_NowCollar.z)), "%d:%d", m_DrawTime, m_DrawMinutes);
 #ifdef DEBUG
-        SetFontSize(m_DEBUG_FONTSIZE);
+        //SetFontSize(m_DEBUG_FONTSIZE);
         DrawFormatString(0, 1060, GetColor(255, 255, 255), "é¿ç€åoâﬂéûä‘:%f", m_NowTime);
 #endif // DEBUG
     }

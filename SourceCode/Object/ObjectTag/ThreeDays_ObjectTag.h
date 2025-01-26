@@ -26,6 +26,7 @@ namespace objecttag
         std::string WARNINGUI = "warningUi";
         std::string TIME = "time";
         std::string ENEMYACTION = "enemyaction";
+        std::string TEXTDRAW = "textdraw";
     } threedays_objtag;
 
 
@@ -51,5 +52,6 @@ namespace objecttag
         threedays_objtag.WARNINGUI,
         threedays_objtag.TIME,
         threedays_objtag.ENEMYACTION,
+        threedays_objtag.TEXTDRAW,
     };
 }
