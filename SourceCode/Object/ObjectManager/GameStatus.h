@@ -13,7 +13,6 @@ namespace object
 		GameClear,
 		TimeOver,
 		GameOver,
-		Continue,
 		PlayEnd,
 	};
 }
