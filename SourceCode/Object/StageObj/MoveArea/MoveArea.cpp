@@ -124,7 +124,7 @@ namespace object
                 m_ObjSize.x = static_cast<int>(m_HitSize[tag].x);
                 m_ObjSize.y = static_cast<int>(m_HitSize[tag].y);
 
-                DrawBox(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), static_cast<int>(m_ObjPos.x) + m_ObjSize.x, static_cast<int>(m_ObjPos.y) + m_ObjSize.y, GetColor(static_cast<int>(d_CollarCode[tag].x), static_cast<int>(d_CollarCode[tag].y), static_cast<int>(d_CollarCode[tag].z)), FALSE);
+                DrawBox(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), static_cast<int>(m_ObjPos.x) + m_ObjSize.x, static_cast<int>(m_ObjPos.y) + m_ObjSize.y, GetColor(static_cast<int>(d_ColorCode[tag].x), static_cast<int>(d_ColorCode[tag].y), static_cast<int>(d_ColorCode[tag].z)), FALSE);
             }
         }
         DrawFormatString(0, 100, GetColor(255, 255, 255), "ê‘:è„");

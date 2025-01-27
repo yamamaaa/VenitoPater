@@ -103,26 +103,26 @@ namespace object
 
         int m_FontHandle;               //フォントハンドル
 
-        const float m_WAITCOU_MAX = 3.0f;    //スタートしてから表示まで待ち時間
+        const float m_WAITCOU_MAX = 1.0f;    //スタートしてから表示まで待ち時間
         float m_StartCount;                   //スタートカウント
         bool m_WaitDone;                      //待ち時間終了したか
 
-        const float m_RISESPEED = 0.01f;			//増化速度
+        const float m_RISESPEED = 0.1f;			//増化速度
 
         int m_TxtNum;           //表示中の文字数
 
         bool m_IsLineSet;       //表示文字をセットしたか
         bool m_IslineAnim;      //表示文字がアニメ中か？
 
-        const float m_DRAW_COUNTMAX = 0.8f;       //文字の表示時間
+        const float m_DRAW_COUNTMAX = 0.3f;       //文字の表示時間
 
         float m_AnimCount;      //文字のアニメカウント
         float m_AnimSpeed;      //アニメスピード
 
         const float m_ANIMFPS = 0.1f;           //アニメFPS
-        const float m_SPEED_DEFAULT = 0.02f;    //アニメスピード(default)
+        const float m_SPEED_DEFAULT = 2.0f;    //アニメスピード(default)
 
-        VECTOR m_NowCollar;                             //現在の文字色
-        const VECTOR m_COLLAR_DEFAULT = VGet(255, 255, 255);  //白色
+        VECTOR m_NowColor;                             //現在の文字色
+        const VECTOR m_COLOR_DEFAULT = VGet(255, 255, 255);  //白色
     };
 }

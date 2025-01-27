@@ -24,21 +24,22 @@ namespace object
 	void Line::LoadObject()
 	{
 		m_IsClick = true;
-		m_IsLineSet = true;
-		m_IslineAnim = true;
+		m_IsLineSet =false;
+		m_IslineAnim =false;
 		m_IsWeitMode = false;
 		m_IsClickUi = false;
 		m_IsLineDone = false;
 		m_IsMove_Up = false;
+		m_IsFirst = true;
 
 		LineStatus::SetIsDoneAnim(false);
 
 		m_TxtNum = 0;
 		m_AnimCount = 0.0f;
 		m_ClickCount = 0.0f;
-		m_ObjPos = { 0,850 };
+		m_ObjPos = { 0.0f,875.0f };
 		m_UiPos = m_UIPOS_RESET;
-		m_NowCollar = m_COLLAR_DEFAULT;
+		m_NowColor = m_COLOR_DEFAULT;
 		m_AnimSpeed = m_SPEED_DEFAULT;
 
 		m_StartCount = m_WAITCOU_MAX;
@@ -86,11 +87,10 @@ namespace object
 			}
 		}
 
+		m_FontHandle = CreateFontToHandle("メイリオ", 30, 5, DX_FONTTYPE_ANTIALIASING);
+
 		//ファイルの読み込み
 		m_TxtFile.open(text.c_str());
-		std::getline(m_TxtFile, m_Line);	//一行目読み込み
-
-		m_FontHandle = CreateFontToHandle("メイリオ", 30, 5, DX_FONTTYPE_ANTIALIASING);
 
 		if (m_FontHandle == -1)
 		{
@@ -103,22 +103,22 @@ namespace object
 	{
 		LineStatus::SetIsDoneAnim(false);
 
+		//スタートから表示までずらす
+		if (!m_WaitDone)
+		{
+			m_StartCount -= m_COUNT_DECREMENT* deltatime;
+			if (m_StartCount <= 0.0f)
+			{
+				m_WaitDone = true;
+			}
+			return;
+		}
+
 		if (m_IsLineDone)
 		{
 			if (m_IsClickUi)
 			{
 				ClickUiMoveAnim(deltatime);
-			}
-			return;
-		}
-
-		//スタートから表示までずらす
-		if (!m_WaitDone)
-		{
-			m_StartCount -= m_COUNT_DECREMENT;
-			if (m_StartCount <= 0.0f)
-			{
-				m_WaitDone = true;
 			}
 			return;
 		}
@@ -219,7 +219,7 @@ namespace object
 			return;
 
 		m_AnimSpeed = m_SPEED_DEFAULT;
-		m_NowCollar = m_COLLAR_DEFAULT;
+		m_NowColor = m_COLOR_DEFAULT;
 
 		bool status_set = false;
 		if (line == "status")
@@ -238,7 +238,7 @@ namespace object
 			}
 			else if (line == m_RED)
 			{
-				m_NowCollar = m_COLLAR_RED;
+				m_NowColor = m_COLOR_RED;
 			}
 			else if (line == m_SLOW)
 			{
@@ -267,7 +267,14 @@ namespace object
 		m_IsClickUi = false;
 		m_UiPos.y = m_UIPOS_RESET.y;
 
-		LineStatus::SetIsDoneAnim(true);
+		if (m_IsFirst)
+		{
+			m_IsFirst = false;
+		}
+		else
+		{
+			LineStatus::SetIsDoneAnim(true);
+		}
 	}
 
 	void Line::Text_Processing(std::string line)
@@ -354,16 +361,16 @@ namespace object
 	{
 		if (m_IsClickUi)
 		{
-			DrawStringToHandle(static_cast<int>(m_UiPos.x), static_cast<int>(m_UiPos.y), "▽", GetColor(static_cast<int>(m_COLLAR_DEFAULT.x), static_cast<int>(m_COLLAR_DEFAULT.y), static_cast<int>(m_COLLAR_DEFAULT.z)), m_FontHandle);
+			DrawStringToHandle(static_cast<int>(m_UiPos.x), static_cast<int>(m_UiPos.y), "▽", GetColor(static_cast<int>(m_COLOR_DEFAULT.x), static_cast<int>(m_COLOR_DEFAULT.y), static_cast<int>(m_COLOR_DEFAULT.z)), m_FontHandle);
 		}
 
 		//文字の長さを取得して画面中央に表示
 		int x = GetDrawFormatStringWidthToHandle(m_FontHandle,m_Line.c_str(), -1);
-		DrawStringToHandle((1920 - x) / 2, static_cast<int>(m_ObjPos.y), (m_Line.substr(0, m_TxtNum) + " ").c_str(), GetColor(static_cast<int>(m_NowCollar.x), static_cast<int>(m_NowCollar.y), static_cast<int>(m_NowCollar.z)), m_FontHandle);
+		DrawStringToHandle((1920 - x) / 2, static_cast<int>(m_ObjPos.y), (m_Line.substr(0, m_TxtNum) + " ").c_str(), GetColor(static_cast<int>(m_NowColor.x), static_cast<int>(m_NowColor.y), static_cast<int>(m_NowColor.z)), m_FontHandle);
 
 #ifdef DEBUG
 		DrawFormatString(0, 20, GetColor(255, 255, 255), "m_ClickCount:%f", m_ClickCount);
-		DrawStringToHandle(50, 50, "012345678910    5:0", GetColor(255, 255, 255),m_FontHandle);
+		DrawFormatString(0, 40, GetColor(255, 255, 255), "m_StartCount:%f", m_StartCount);
 		DrawString(0, 100, "スペースでスキップ",GetColor(255, 255, 255));
 #endif // DEBUG
 	}

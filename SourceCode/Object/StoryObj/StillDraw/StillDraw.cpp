@@ -23,7 +23,7 @@ namespace object
         m_ObjPos = { 0,184 };
         m_Index = 0;
 
-        m_Collar = 0;
+        m_Color = 0;
         m_Calculation = 0;
 
         m_IsFadeIn_Done = false;
@@ -131,30 +131,30 @@ namespace object
         if (m_IsFadeIn_Done)
         {
             //ÇæÇÒÇæÇÒñæÇÈÇ≠
-            m_Collar += static_cast<int>(m_Calculation);
-            if (m_Collar >= m_COLLARCODE)
+            m_Color += static_cast<int>(m_Calculation);
+            if (m_Color >= m_COLORCODE)
             {
                 m_IsFade = false;	//èàóùÇÃäÆóπ
                 m_Calculation = 0;
                 m_IsFadeIn_Done = false;
-                m_Collar = m_COLLARCODE;
+                m_Color = m_COLORCODE;
             }
         }
         else
         {
             //ÇæÇÒÇæÇÒà√Ç≠
-            m_Collar -= static_cast<int>(m_Calculation);
-            if (m_Collar <= 0)
+            m_Color -= static_cast<int>(m_Calculation);
+            if (m_Color <= 0)
             {
                 m_IsFadeIn_Done = true;	//èàóùÇÃäÆóπ
                 m_Calculation = 0;
-                m_Collar = 0;
+                m_Color = 0;
                 m_ObjHandle = m_ObjImg[m_Index];
                 m_Index++;
             }
         }
 
-        SetDrawBlendMode(DX_BLENDMODE_ALPHA, m_Collar);
+        SetDrawBlendMode(DX_BLENDMODE_ALPHA, m_Color);
         DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
         SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
     }

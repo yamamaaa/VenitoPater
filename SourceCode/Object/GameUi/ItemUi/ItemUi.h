@@ -45,7 +45,11 @@ namespace object
         POINTFLOAT m_NItemNum_Pos;           //アイテム獲得数表示位置
         POINTFLOAT m_RItemNum_Pos;           //レアアイテム獲得数表示位置
 
-        const int m_COLLARCODE = 255;        //カラーコード
-        const int m_FONTSIZE = 35;           //フォントサイズ
+        std::string m_ItemText = "%d";            //アイテムテキスト
+
+        int m_FontHandle;                         //フォントハンドル
+        const POINTS m_FONTSIZE = { 50,20 };     //フォントサイズ
+
+        const int m_COLOR = 255;        //カラーコード
     };
 }

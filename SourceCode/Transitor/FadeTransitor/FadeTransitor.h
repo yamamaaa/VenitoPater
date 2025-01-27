@@ -55,12 +55,12 @@ namespace transitor
 		const float m_DROPSPEED = 5.0f;				//減分速度
 		const float m_RISESPEED = 0.01f;			//増化速度
 
-		const int m_COLLARCODE = 255;	//カラーコード
+		const int m_COLORCODE = 255;	//カラーコード
 
 		const float m_WAITMAX = 50.0f;			//待ち時間
 		const float m_COUNT_DECREMENT = 1.0f;	//カウント減分値
 
-		int m_Collar;					//カラーコード
+		int m_Color;					//カラーコード
 		float m_Calculation;			//算出
 
 		bool m_IsFadeDone;				//処理が終わったか
