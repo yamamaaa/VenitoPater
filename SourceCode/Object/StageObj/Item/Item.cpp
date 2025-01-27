@@ -5,6 +5,7 @@
 #include "../AreaNumController/AreaNumController.h"
 #include "../ItemGetNum/ItemGetNum.h"
 #include "../../Time/TimeStatus/TimeStatus.h"
+#include "../../CharaObj/Enemy/EnemyManager/EnemyManager.h"
 
 namespace object
 {
@@ -73,6 +74,14 @@ namespace object
 		{
 			//状態リセットまでカウント
 			CountTime(deltatime);
+
+			//emyが出現中でレアアイテムがあればアイテム削除
+			int emy = EnemyManager::GetAppearNumNow();
+			if (emy > 0 && m_IsRareItem)
+			{
+				m_IsOccur = false;
+				m_IsRareItem = false;
+			}
 		}
 
 		//アイテムが出現し表示されているとき
@@ -138,9 +147,7 @@ namespace object
 		{
 			m_IsSet = false;
 			m_IsGet = false;
-
-			if (m_IsRareItem)	//レアアイテムだったら初期化
-				m_IsRareItem = false;
+			m_IsRareItem = false;
 		}
 	}
 
