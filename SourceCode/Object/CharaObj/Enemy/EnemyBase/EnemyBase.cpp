@@ -144,6 +144,7 @@ namespace object
 	{
 		//“Gî•ñ‚Ì‰Šú‰»
 		m_IsAppear = false;
+		m_CanAvoid = false;
 		m_EnemyBoxPos = m_EMYBOX_RESETPOS;
 		m_ObjHandle = -0;
 		m_ObjPos = { 0.0f,0.0f };
@@ -170,6 +171,7 @@ namespace object
 		{
 			DrawLine(m_EmyLine_Pos[tag].x, m_EmyLine_Pos[tag].y, m_EmyLine_Pos[tag].x + m_ObjSize.x, m_EmyLine_Pos[tag].y + m_ObjSize.y, GetColor(static_cast<int>(m_collarcode[tag].x), static_cast<int>(m_collarcode[tag].y), static_cast<int>(m_collarcode[tag].z)), FALSE);
 		}
+		DrawFormatString(0, 800, GetColor(255, 255, 255), "“G‚ÌƒŠƒZƒbƒg‚Ü‚Å:%f", m_ResetCount);
 	}
 #endif
 }
