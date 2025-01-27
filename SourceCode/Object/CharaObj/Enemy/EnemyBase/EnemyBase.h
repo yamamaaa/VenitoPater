@@ -130,11 +130,11 @@ namespace object
 		/// <param name="deltatime">デルタタイム</param>
 		void MoveObj(const float deltatime)override {};
 
-		const float m_COUNTSPPED_RESET = 0.1f;	//敵のリセットを行うまで(カウントスピード)
-		const float m_COUNTRESET_MAX = 100.0f;	//敵のリセットを行うまで(カウント最大値)
+		const float m_COUNTSPPED_RESET = 6.0f;	//敵のリセットを行うまで(カウントスピード)
+		const float m_COUNTRESET_MAX = 12.0f;	//敵のリセットを行うまで(カウント最大値)
 
-		const float m_COUSPPED_BLINKING = 0.1f;	//画面の点滅時間(カウントスピード)
-		const float m_BLINKING_COUMAX = 20.0f;	//画面の点滅時間(カウント最大値)
+		const float m_COUSPPED_BLINKING = 12.0f;	//画面の点滅時間(カウントスピード)
+		const float m_BLINKING_COUMAX = 6.0f;	//画面の点滅時間(カウント最大値)
 
 		int m_HitLineIndex;		//当たったenemylineのindex
 		float m_BlinkingCount;	//画面を点滅させる時間
