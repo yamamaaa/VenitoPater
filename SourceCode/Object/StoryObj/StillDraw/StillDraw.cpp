@@ -83,9 +83,15 @@ namespace object
 
     void StillDraw::UpdateObj(const float deltatime)
     {
+        if (m_IsFade)
+        {
+            FadeObj(deltatime);
+        }
+
         //文字セット前は以下処理なし
         if (!LineStatus::GetIsDoneAnim())
             return;
+        LineStatus::SetIsDoneImgDraw(false);
 
         UpdateDrawStatus();
     }
@@ -96,11 +102,13 @@ namespace object
 
         if (m_Line == m_NEXT)
         {
+            LineStatus::SetIsDoneImgDraw(true);
             return;
         }
         else if (m_Line == m_BLACKOUT)
         {
             IsBlackOut = true;
+            LineStatus::SetIsDoneImgDraw(true);
         }
         else if (m_Line == m_STILLDRAW)
         {
@@ -109,24 +117,9 @@ namespace object
         }
     }
 
-    void StillDraw::DrawObj()
+    void StillDraw::FadeObj(const float deltatime)
     {
-        if (!IsBlackOut)
-        {
-            if (m_IsFade)
-            {
-                FadeObj();
-            }
-            else
-            {
-                DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
-            }
-        }
-    }
-
-    void StillDraw::FadeObj()
-    {
-        m_Calculation += m_FADESPEED;
+        m_Calculation += m_FADESPEED * deltatime;
 
         if (m_IsFadeIn_Done)
         {
@@ -138,6 +131,7 @@ namespace object
                 m_Calculation = 0;
                 m_IsFadeIn_Done = false;
                 m_Color = m_COLORCODE;
+                LineStatus::SetIsDoneImgDraw(true);
             }
         }
         else
@@ -153,9 +147,22 @@ namespace object
                 m_Index++;
             }
         }
-
-        SetDrawBlendMode(DX_BLENDMODE_ALPHA, m_Color);
-        DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
-        SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+    }
+    
+    void StillDraw::DrawObj()
+    {
+        if (!IsBlackOut)
+        {
+            if (m_IsFade)
+            {
+                SetDrawBlendMode(DX_BLENDMODE_ALPHA, m_Color);
+                DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
+                SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+            }
+            else
+            {
+                DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
+            }
+        }
     }
 }

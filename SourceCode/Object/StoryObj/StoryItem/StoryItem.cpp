@@ -63,6 +63,11 @@ namespace object
             ObjectManager::ReleaseObj(story_ObjectTag.STORYITEM);
         }
 
+        if (m_IsFade)
+        {
+            FadeObj(deltatime);
+        }
+
         //文字セット前は以下処理なし
         if (!LineStatus::GetIsDoneAnim())
             return;
@@ -95,28 +100,9 @@ namespace object
         }
     }
 
-    void StoryItem::DrawObj()
+    void StoryItem::FadeObj(const float deltatime)
     {
-        if (m_IsDrawObj)
-        {
-            DrawGraph(0, 0, m_BackFade, TRUE);
-            if (m_IsFade)
-            {
-                FadeObj();
-            }
-            else
-            {
-                DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
-#ifdef DEBUG
-                DrawFormatString(0, 80, GetColor(255, 255, 255), "表示アイテム:%s", m_Line.c_str());
-#endif // DEBUG
-            }
-        }
-    }
-
-    void StoryItem::FadeObj()
-    {
-        m_Calculation += m_FADESPEED;
+        m_Calculation += m_FADESPEED * deltatime;
 
         //だんだん明るく
         m_Color += static_cast<int>(m_Calculation);
@@ -126,9 +112,26 @@ namespace object
             m_Calculation = 0;
             m_Color = m_COLORCODE;
         }
+    }
 
-        SetDrawBlendMode(DX_BLENDMODE_ALPHA, m_Color);
-        DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
-        SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+    void StoryItem::DrawObj()
+    {
+        if (m_IsDrawObj)
+        {
+            DrawGraph(0, 0, m_BackFade, TRUE);
+            if (m_IsFade)
+            {
+                SetDrawBlendMode(DX_BLENDMODE_ALPHA, m_Color);
+                DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
+                SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+            }
+            else
+            {
+                DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
+#ifdef DEBUG
+                DrawFormatString(0, 80, GetColor(255, 255, 255), "表示アイテム:%s", m_Line.c_str());
+#endif // DEBUG
+            }
+        }
     }
 }

@@ -30,8 +30,8 @@ namespace object
         if (m_IsMove)
         {
             //再び移動できるまでカウント
-            m_MoveCount--;
-            if (m_MoveCount == 0)
+            m_MoveCount-=m_COUNTSPPED_MOVE* deltatime;
+            if (m_MoveCount <= 0.0f)
             {
                 m_IsMove = false;
                 m_CanMove = true;
@@ -127,17 +127,13 @@ namespace object
                 DrawBox(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), static_cast<int>(m_ObjPos.x) + m_ObjSize.x, static_cast<int>(m_ObjPos.y) + m_ObjSize.y, GetColor(static_cast<int>(d_ColorCode[tag].x), static_cast<int>(d_ColorCode[tag].y), static_cast<int>(d_ColorCode[tag].z)), FALSE);
             }
         }
-        DrawFormatString(0, 100, GetColor(255, 255, 255), "赤:上");
-        DrawFormatString(0, 120, GetColor(255, 255, 255), "黄:左");
-        DrawFormatString(0, 140, GetColor(255, 255, 255), "緑:右");
-        DrawFormatString(0, 160, GetColor(255, 255, 255), "青:下");
 
         DrawFormatString(0, 180, GetColor(255, 255, 255), "上:%s", d_CursorHit[areaMove_PosTag.UP].c_str());
         DrawFormatString(0, 200, GetColor(255, 255, 255), "左:%s", d_CursorHit[areaMove_PosTag.RIGHT].c_str());
         DrawFormatString(0, 220, GetColor(255, 255, 255), "右:%s", d_CursorHit[areaMove_PosTag.LEFT].c_str());
         DrawFormatString(0, 240, GetColor(255, 255, 255), "下:%s", d_CursorHit[areaMove_PosTag.DOWN].c_str());
         DrawFormatString(0, 320, GetColor(255, 255, 255), "表示中エリア:%d", AreaNumController::GetAreaNum());
-        DrawFormatString(300, 320, GetColor(255, 255, 255), "表示カウント:%f", m_MoveCount);
+        DrawFormatString(300, 320, GetColor(255, 255, 255), "エリア移動できるまで:%f", m_MoveCount);
 #endif
     }
 

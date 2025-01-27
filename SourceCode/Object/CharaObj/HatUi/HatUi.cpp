@@ -47,7 +47,7 @@ namespace object
 		{
 			hatui->m_IsMoveDone = false;	//動き処理セット
 			hatui->m_IsMoveDown = true;		//動く方向セット
-			hatui->m_UiPos.y = m_UIMOVE_POS;	//座標セット
+			hatui->m_UiPos.y = hatui->m_UIMOVE_POS;	//座標セット
 		}
 		else
 		{
@@ -62,20 +62,22 @@ namespace object
 		{
 			//画像を特定の位置まで移動
 			hatui->m_UiPos.y += hatui->m_UIMOVE_SPEED;
-			if (hatui->m_UiPos.y == 0.0f)
+			if (hatui->m_UiPos.y >= 0.0f)
 			{
 				hatui->m_IsMoveDone = true;
 				hatui->m_IsMoveDown = false;
+				hatui->m_UiPos.y = 0.0f;
 			}
 		}
 		else
 		{
 			//画像を特定の位置まで移動
 			hatui->m_UiPos.y -= hatui->m_UIMOVE_SPEED;
-			if (hatui->m_UiPos.y == m_UIMOVE_POS)
+			if (hatui->m_UiPos.y <= hatui->m_UIMOVE_POS)
 			{
 				hatui->m_IsMoveDone = true;
 				AvoidStatus::SetIsAvoid(false);		//回避行動の解除
+				hatui->m_UiPos.y = hatui->m_UIMOVE_POS;
 			}
 		}
 	}

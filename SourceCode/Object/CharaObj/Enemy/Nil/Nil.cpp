@@ -25,7 +25,7 @@ namespace object
 		m_DrawObjPos[replace] = { 900.0f,450.0f };
 		m_DrawObjPos[replace_2] = { 770.0f,270.0f };
 
-		m_MoveSpeed = 0.4f;
+		m_MoveSpeed = 24.0f;
 		m_ObjDrawArea = 1;
 
 		m_ObjImg[0] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetNilData(0).c_str());
@@ -49,7 +49,7 @@ namespace object
 		//プレイヤーが回避行動をしたら
 		if (AvoidStatus::GetIsAvoid())
 		{
-			AvoidAction();	//回避行動時処理
+			AvoidAction(deltatime);	//回避行動時処理
 		}
 
 		//他の敵がアクションを起こしてなかったら
@@ -71,7 +71,7 @@ namespace object
 		//プレイヤーが回避成功したらobjのリセット
 		if (m_IsEmyReset)
 		{
-			ExitObj();
+			ExitObj(deltatime);
 		}
 	}
 
@@ -93,6 +93,6 @@ namespace object
 
 	void Nil::MoveObj(const float deltatime)
 	{
-		m_EnemyBoxPos.y += m_MoveSpeed;	//移動速度計算
+		m_EnemyBoxPos.y += m_MoveSpeed* deltatime;	//移動速度計算
 	}
 }

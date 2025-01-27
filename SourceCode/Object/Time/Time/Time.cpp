@@ -48,10 +48,10 @@ namespace object
             return;
 
         //ŽÀÛ‚ÌŽžŒvŽZ
-        m_NowTime += m_RISETIME;
+        m_NowTime += m_RISETIME* deltatime;
 
         //•\Ž¦Žž‚ðÝ’è
-        m_DrawCount += m_RISETIME;
+        m_DrawCount += m_RISETIME* deltatime;
 
         if (m_DrawCount > m_TIMER_MAX / m_TIMERFPS)
         {

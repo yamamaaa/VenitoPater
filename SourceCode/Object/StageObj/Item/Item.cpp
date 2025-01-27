@@ -72,7 +72,7 @@ namespace object
 		if (m_IsOccur)
 		{
 			//状態リセットまでカウント
-			CountTime();
+			CountTime(deltatime);
 		}
 
 		//アイテムが出現し表示されているとき
@@ -111,7 +111,7 @@ namespace object
 		if (m_IsGet)
 		{
 			//再出現までカウント
-			CountTime();
+			CountTime(deltatime);
 		}
 
 		//表示アイテムの更新
@@ -131,9 +131,9 @@ namespace object
 		}
 	}
 
-	void Item::CountTime()
+	void Item::CountTime(const float deltatime)
 	{
-		m_OccurCount -= m_COUNT_DECREMENT;
+		m_OccurCount -= m_COUNT_DECREMENT* deltatime;
 		if (m_OccurCount <= 0.0f)
 		{
 			m_IsSet = false;
@@ -157,8 +157,8 @@ namespace object
 #ifdef DEBUG
 		DrawFormatString(0, 260, GetColor(255, 255, 255), "アイテム表示エリア:%d", m_DrawItemArea);
 		DrawFormatString(0, 280, GetColor(255, 255, 255), "アイテム番号:%d", m_NowItemNumber);
-		DrawFormatString(0, 300, GetColor(255, 255, 255), "アイテム再表示まで:%f", m_OccurCount);
-		DrawFormatString(0, 340, GetColor(255, 255, 255), "アイテム出現リセットまで:%f", m_OccurCount);
+		DrawFormatString(0, 300, GetColor(255, 255, 255), "アイテム再表示,出現リセットまで:%f", m_OccurCount);
+		DrawString(0, 340, "スペースキーでアイテムゲット",GetColor(255, 0, 0));
 #endif
 	}
 

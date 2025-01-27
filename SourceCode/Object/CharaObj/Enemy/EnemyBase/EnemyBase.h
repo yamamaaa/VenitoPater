@@ -49,7 +49,8 @@ namespace object
 		/// <summary>
 		/// 回避行動時のアクション
 		/// </summary>
-		void AvoidAction();
+		/// <param name="deltatime">デルタタイム</param>
+		void AvoidAction(const float deltatime);
 
 		/// <summary>
 		/// EmyLineに当たったらObjステータスの更新
@@ -59,7 +60,8 @@ namespace object
 		/// <summary>
 		/// オブジェクト退出処理
 		/// </summary>
-		void ExitObj();
+		/// <param name="deltatime">デルタタイム</param>
+		void ExitObj(const float deltatime);
 
 		/// <summary>
 		/// オブジェクトのリセット
@@ -102,12 +104,7 @@ namespace object
 		bool m_IsEmyReset;		//オブジェクトをリセットするか
 
 		//enemyline通過ごとの画像表示位置
-		std::unordered_map<int, POINTFLOAT> m_DrawObjPos{
-			//{appear,{0.0f,0.0f}},
-			//{replace,{0.0f,0.0f}},
-			//{replace_2,{0.0f,0.0f}},
-			//{action,{0.0f,0.0f}},
-		};
+		std::unordered_map<int, POINTFLOAT> m_DrawObjPos{};
 
 	private:
 
@@ -119,7 +116,7 @@ namespace object
 		/// <summary>
 		/// 更新
 		/// </summary>
-		/// <param name="deltatime"></param>
+		/// <param name="deltatime">デルタタイム</param>
 		void UpdateObj(const float deltatime) override {};
 
 		/// <summary>
@@ -130,10 +127,16 @@ namespace object
 		/// <summary>
 		/// 移動処理
 		/// </summary>
+		/// <param name="deltatime">デルタタイム</param>
 		void MoveObj(const float deltatime)override {};
 
-		int m_HitLineIndex;			//当たったenemylineのindex
+		const float m_COUNTSPPED_RESET = 0.1f;	//敵のリセットを行うまで(カウントスピード)
+		const float m_COUNTRESET_MAX = 100.0f;	//敵のリセットを行うまで(カウント最大値)
 
+		const float m_COUSPPED_BLINKING = 0.1f;	//画面の点滅時間(カウントスピード)
+		const float m_BLINKING_COUMAX = 20.0f;	//画面の点滅時間(カウント最大値)
+
+		int m_HitLineIndex;		//当たったenemylineのindex
 		float m_BlinkingCount;	//画面を点滅させる時間
 		float m_ResetCount;		//リセットするまでのカウント
 

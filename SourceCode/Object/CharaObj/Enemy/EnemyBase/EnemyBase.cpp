@@ -82,7 +82,7 @@ namespace object
 		}
 	}
 
-	void EnemyBase::AvoidAction()
+	void EnemyBase::AvoidAction(const float deltatime)
 	{
 		//回避できないなら処理なし
 		if (!m_CanAvoid)
@@ -91,8 +91,8 @@ namespace object
 		//敵が出現中で表示できるとき
 		if (m_IsAppear && IsObjDraw())
 		{
-			m_ResetCount++;
-			if (m_ResetCount >= 100.0f)	//カウントが規定値に達したらリセット
+			m_ResetCount+= m_COUNTSPPED_RESET *deltatime;
+			if (m_ResetCount >= m_COUNTRESET_MAX)	//カウントが規定値に達したらリセット
 			{
 				m_IsEmyReset = true;
 				m_ResetCount = 0.0f;
@@ -127,12 +127,12 @@ namespace object
 		}
 	}
 
-	void EnemyBase::ExitObj()
+	void EnemyBase::ExitObj(const float deltatime)
 	{
 		//敵の退出時画面を点滅させる
 		LightController::SetIsBlinking(true);
-		m_BlinkingCount++;
-		if (m_BlinkingCount >= 20.0f)
+		m_BlinkingCount+= m_COUSPPED_BLINKING*deltatime;
+		if (m_BlinkingCount >= m_BLINKING_COUMAX)
 		{
 			ResetObj();
 			m_IsEmyReset = false;

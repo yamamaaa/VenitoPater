@@ -47,6 +47,12 @@ namespace scene
 
     SceneBase* Title::UpdateScene(float deltaTime)
     {
+        LevelController::SetLevel(levelStatus.NOMAL);
+        object::ObjectManager::ReleaseAllObj();
+        object::ObjectManager::SetNowGameState(object::Story);
+        object::ObjectManager::SetPlayMode(object::PlayNewGame);
+        return new Story();
+
         if (!m_FadeInSet)
         {
             transitor::FadeTransitor::FadeInStart(deltaTime);
@@ -67,18 +73,6 @@ namespace scene
         {
             object::ObjectManager::UpdateAllObj(deltaTime);
         }
-
-        //LevelController::SetLevel(levelStatus.NOMAL);
-        //object::ObjectManager::ReleaseAllObj();
-        //object::ObjectManager::SetNowGameState(object::GamePlay);
-        //object::ObjectManager::SetNowGameState(object::Story);
-        //return new Story();
-
-            //LevelController::SetLevel(levelStatus.NOMAL);
-            //object::ObjectManager::ReleaseAllObj();
-            //object::ObjectManager::SetNowGameState(object::GamePlay);
-            //object::ObjectManager::SetPlayMode(object::PlayNewGame);
-            //return new ThreeDays();
 
         //ÉQÅ[ÉÄÉvÉåÉC
         if (object::GamePlay == status)

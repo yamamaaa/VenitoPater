@@ -60,8 +60,8 @@ namespace object
 		bool m_IsMoveDone;		//Uiの動きが完了したか
 		bool m_IsMoveDown;		//下に動き処理するか
 
-		static const int m_UIMOVE_POS = -320;		//Ui移動座標
-		const float m_UIMOVE_SPEED = 40.0f;			//Ui移動速度
+		const float m_UIMOVE_POS = -320.0f;		//Ui移動座標
+		const float m_UIMOVE_SPEED = 30.0f;		//Ui座標移動速度
 
 		static std::unique_ptr<HatUi> hatui;	//自身の実態
 	};

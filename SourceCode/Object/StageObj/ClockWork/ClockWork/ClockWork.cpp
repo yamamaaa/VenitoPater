@@ -54,7 +54,7 @@ namespace object
 
 			if (m_IsClickNow)
 			{
-				rpmhp++;						//回転量Hpを増やす
+				rpmhp+= m_RPMHP_COUNTSPEED *deltatime;						//回転量Hpを増やす
 				m_AnimationFPS = m_CLICK_FPS;	//アニメーション設定
 				MoveObj(deltatime);
 			}
@@ -88,10 +88,10 @@ namespace object
 			if (EnemyManager::GetBeefUpEmyIsAction())
 			{
 				//HP減らし量を増加する
-				decrement *= m_EMYRPM_DECREMENT;
+				decrement += m_EMYRPM_DECREMENT*deltatime;
 			}
 
-			rpmhp -= decrement; 		//Hp減らし続ける
+			rpmhp -= decrement * deltatime; 		//Hp減らし続ける
 			MoveObj(deltatime);
 
 			if (TimeStatus::GetIsTimeOver())//タイムオーバーしていたらHPを0に

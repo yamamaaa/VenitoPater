@@ -98,7 +98,7 @@ namespace transitor
 
 	void FadeTransitor::WaitTime(const float deltatime)
 	{
-		fadetransitor->m_WaitCount -= fadetransitor->m_COUNT_DECREMENT;
+		fadetransitor->m_WaitCount -= fadetransitor->m_COUNT_DECREMENT* deltatime;
 
 		if (fadetransitor->m_WaitCount <= 0.0f)
 		{

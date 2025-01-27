@@ -72,8 +72,8 @@ namespace transitor
 
 		static const int m_COLORCODE = 255;	//カラーコード
 
-		const float m_WAITMAX = 10.0f;			//待ち時間
-		const float m_COUNT_DECREMENT = 1.0f;	//カウント減分値
+		const float m_WAITMAX = 1.2f;			//待ち時間
+		const float m_COUNT_DECREMENT = 3.0f;	//カウント減分値
 
 		int m_Color;					//カラーコード
 		float m_Calculation;			//算出

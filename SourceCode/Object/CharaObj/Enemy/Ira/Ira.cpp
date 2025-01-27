@@ -25,7 +25,7 @@ namespace object
 		m_DrawObjPos[replace_2] = { 632.0f,525.0f };
 		m_DrawObjPos[action] = { 0.0f,665.0f };
 
-		m_MoveSpeed = 0.3f;
+		m_MoveSpeed = 18.0f;
 		m_ObjDrawArea = 0;
 
 		m_ObjImg[0] = -1;
@@ -51,7 +51,7 @@ namespace object
 		{
 			if (!EnemyManager::GetBeefUpEmyIsAction())
 			{
-				AvoidAction();	//回避行動時処理
+				AvoidAction(deltatime);	//回避行動時処理
 			}
 		}
 
@@ -75,7 +75,7 @@ namespace object
 		//プレイヤーが回避成功したらobjのリセット
 		if (m_IsEmyReset)
 		{
-			ExitObj();
+			ExitObj(deltatime);
 		}
 	}
 
@@ -98,6 +98,6 @@ namespace object
 
 	void Ira::MoveObj(const float deltatime)
 	{
-		m_EnemyBoxPos.y += m_MoveSpeed;	//移動速度計算
+		m_EnemyBoxPos.y += m_MoveSpeed* deltatime;	//移動速度計算
 	}
 }

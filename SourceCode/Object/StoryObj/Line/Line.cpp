@@ -114,6 +114,11 @@ namespace object
 			return;
 		}
 
+		//画像のセットが終わっていなかったら処理なし
+		if (!LineStatus::GetIsDoneImgDraw())
+			return;
+
+		//クリックUiの更新
 		if (m_IsLineDone)
 		{
 			if (m_IsClickUi)
@@ -359,7 +364,7 @@ namespace object
 
 	void Line::DrawObj()
 	{
-		if (m_IsClickUi)
+		if (m_IsClickUi&&!m_IsWeitMode)
 		{
 			DrawStringToHandle(static_cast<int>(m_UiPos.x), static_cast<int>(m_UiPos.y), "▽", GetColor(static_cast<int>(m_COLOR_DEFAULT.x), static_cast<int>(m_COLOR_DEFAULT.y), static_cast<int>(m_COLOR_DEFAULT.z)), m_FontHandle);
 		}

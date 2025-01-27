@@ -18,7 +18,7 @@ namespace object
 
 	void Familia::LoadObject()
 	{
-		m_MoveSpeed = 0.3f;
+		m_MoveSpeed = 18.0f;
 		m_ObjDrawArea = 3;
 
 		m_IDnumber = familia;
@@ -80,6 +80,6 @@ namespace object
 
 	void Familia::MoveObj(const float deltatime)
 	{
-		m_EnemyBoxPos.y += m_MoveSpeed;	//移動速度計算
+		m_EnemyBoxPos.y += m_MoveSpeed* deltatime;	//移動速度計算
 	}
 }

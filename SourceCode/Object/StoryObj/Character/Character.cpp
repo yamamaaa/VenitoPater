@@ -46,6 +46,7 @@ namespace object
 
 		//テキストファイルの展開
 		m_TxtFile.open((text.c_str()));
+		LineStatus::SetIsDoneImgDraw(true);
 		//表示画像データ更新
 		UpdateDrawStatus();
 	}
