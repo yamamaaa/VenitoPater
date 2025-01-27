@@ -51,10 +51,11 @@ namespace object
         /// </summary>
         void CursorHitControl();
 
+        const float m_COUNTSPPED_MOVE = 60.0f;   //再び移動できるまで(カウントスピード)
+        const float m_MOVECOUNT_MAX = 18.0f;     //再び移動できるまで(カウント最大値)
+
         const int m_CEILINGAREA_NUM = 3;    //天井エリアナンバー
         const int m_FRONTAREA_NUM = 1;      //正面エリアナンバー
-
-        const float m_MOVECOUNT_MAX = 30.0f;     //再び移動できるまで
 
         bool m_IsMove;       //エリア移動したか
         bool m_CanMove;       //エリア移動できるか
@@ -87,7 +88,7 @@ namespace object
 #ifdef DEBUG
 
         //上左右下のHitlineのカラーコード
-        std::unordered_map<std::string, VECTOR> d_CollarCode{
+        std::unordered_map<std::string, VECTOR> d_ColorCode{
             {areaMove_PosTag.UP,{255,40,0}},
             {areaMove_PosTag.RIGHT,{250,245,0}},
             {areaMove_PosTag.LEFT,{53,161,107}},

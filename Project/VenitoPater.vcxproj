@@ -24,8 +24,6 @@
     <ClCompile Include="..\SourceCode\GameSystem\GameManager\GameManager.cpp" />
     <ClCompile Include="..\SourceCode\GameSystem\GameSetting\GameSetting.cpp" />
     <ClCompile Include="..\SourceCode\GameSystem\Window\Window.cpp" />
-    <ClCompile Include="..\SourceCode\JsonMaster\FontData\MasterFontData\MasterFontData.cpp" />
-    <ClCompile Include="..\SourceCode\JsonMaster\FontData\StoryData\StoryData.cpp" />
     <ClCompile Include="..\SourceCode\JsonMaster\ImageData\MasterImgData\MasterImgData.cpp" />
     <ClCompile Include="..\SourceCode\JsonMaster\ImageData\PlayData\PlayData.cpp" />
     <ClCompile Include="..\SourceCode\JsonMaster\ImageData\ResultData\ResultData.cpp" />
@@ -94,8 +92,6 @@
     <ClInclude Include="..\SourceCode\GameSystem\GameManager\GameManager.h" />
     <ClInclude Include="..\SourceCode\GameSystem\GameSetting\GameSetting.h" />
     <ClInclude Include="..\SourceCode\GameSystem\Window\Window.h" />
-    <ClInclude Include="..\SourceCode\JsonMaster\FontData\MasterFontData\MasterFontData.h" />
-    <ClInclude Include="..\SourceCode\JsonMaster\FontData\StoryData\StoryData.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\ImageData\MasterImgData\MasterImgData.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\ImageData\PlayData\PlayData.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\ImageData\ResultData\ResultData.h" />
@@ -174,7 +170,6 @@
     <ClInclude Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="..\SourceCode\JsonMaster\JsonFile\Font\story.json" />
     <None Include="..\SourceCode\JsonMaster\JsonFile\Image\play.json" />
     <None Include="..\SourceCode\JsonMaster\JsonFile\Image\result.json" />
     <None Include="..\SourceCode\JsonMaster\JsonFile\Image\story.json" />

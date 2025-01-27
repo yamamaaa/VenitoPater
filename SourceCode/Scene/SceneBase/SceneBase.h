@@ -3,14 +3,6 @@
 #include"../../Object/ObjectManager/ObjectManager.h"
 #include"../../Transitor/FadeTransitor/FadeTransitor.h"
 
-namespace transitor
-{
-    /// <summary>
-    /// 画面移転_フェード関連
-    /// </summary>
-    class FadeTransitor;
-}
-
 namespace scene
 {
     /// <summary>
@@ -59,8 +51,7 @@ namespace scene
         /// </summary>
         void TransitorScene();
 
-        transitor::FadeTransitor* fade_transitor;   //フェード関連
-
-        bool m_FadeInSet;
+        bool m_IsChangeScene;       //シーン切り替えを行うか
+        bool m_FadeInSet;           //フェードインを行ったか
     };
 }

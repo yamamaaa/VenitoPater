@@ -25,7 +25,7 @@ namespace object
 		m_DrawObjPos[replace] = { 600.0f,505.0f };
 		m_DrawObjPos[replace_2] = { 1028.0f,450.0 };
 
-		m_MoveSpeed = 0.3f;
+		m_MoveSpeed = 18.0f;
 		m_ObjDrawArea = 0;
 
 		m_ObjImg[0] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetSperoData(0).c_str());
@@ -49,7 +49,7 @@ namespace object
 		//プレイヤーが回避行動をしたら
 		if (AvoidStatus::GetIsAvoid())
 		{
-			AvoidAction();	//回避行動時処理
+			AvoidAction(deltatime);	//回避行動時処理
 		}
 
 		//他の敵がアクションを起こしてなかったら
@@ -71,7 +71,7 @@ namespace object
 		//プレイヤーが回避成功したらobjのリセット
 		if (m_IsEmyReset)
 		{
-			ExitObj();
+			ExitObj(deltatime);
 		}
 	}
 
@@ -94,6 +94,6 @@ namespace object
 
 	void Spero::MoveObj(const float deltatime)
 	{
-		m_EnemyBoxPos.y += m_MoveSpeed;	//移動速度計算
+		m_EnemyBoxPos.y += m_MoveSpeed* deltatime;	//移動速度計算
 	}
 }

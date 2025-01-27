@@ -63,20 +63,54 @@ namespace scene
 
 	SceneBase* Story::UpdateScene(const float deltaTime)
 	{
-		object::ObjectManager::UpdateAllObj(deltaTime);
-
-		if (object::GamePlay == object::ObjectManager::GetNowGameState())
+		if (!m_FadeInSet)
 		{
-			object::ObjectManager::ReleaseAllObj();
+			transitor::FadeTransitor::FadeInStart(deltaTime);
+			LoadScene();
+		}
+
+		//現在のステータスを取得
+		object::GameStatus status = object::ObjectManager::GetNowGameState();
+
+		//ゲームステータスが変わったらシーン切り替え処理をする
+		if (status != object::ObjectManager::GetNextGameState())
+		{
+			m_IsChangeScene = true;
+			transitor::FadeTransitor::FadeOutStart(deltaTime);
+
+			//処理が終わったらステータスの変更と後処理
+			if (transitor::FadeTransitor::IsFadeDone())
+			{
+				//次のステータスを取得しセット
+				object::GameStatus status_next = object::ObjectManager::GetNextGameState();
+				object::ObjectManager::SetNowGameState(status);
+
+				object::ObjectManager::ReleaseAllObj();
+				transitor::FadeTransitor::FadeProcessing();
+
+				//次のシーンが同じストーリーシーンか
+				if (object::Story == status_next || object::Still == status_next)
+				{
+					IsNextStory = true;
+				}
+			}
+		}
+		else
+		{
+			object::ObjectManager::UpdateAllObj(deltaTime);
+		}
+
+		if (object::GamePlay == status)
+		{
 			return new ThreeDays;
 		}
 
-		if (IsNextStory )
+		if (IsNextStory)
 		{
-			object::ObjectManager::ReleaseAllObj();
 			IsNextStory = false;
 			return new Story;
 		}
+
 		return this;
 	}
 
@@ -84,30 +118,9 @@ namespace scene
 	{
 		DrawFormatString(0, 0, GetColor(255, 255, 255), "Story");
 
-		//ゲームステータスが変わったら
-		//書き直し予定
-		if (object::ObjectManager::GetNowGameState() != object::ObjectManager::GetNextGameState())
+		if (m_IsChangeScene || !m_FadeInSet)
 		{
-			//フェード処理をする
-			fade_transitor->FadeOutStart(true);
-			if (fade_transitor->IsFadeDone())
-			{
-				//処理が終わったらステータスの変更
-				object::ObjectManager::SetNowGameState(object::ObjectManager::GetNextGameState());
-				fade_transitor->FadeProcessing();
-				//次のシーンが同じストーリーシーンか
-				if (object::Story == object::ObjectManager::GetNextGameState() || object::Still == object::ObjectManager::GetNextGameState())
-				{
-					IsNextStory = true;
-				}
-			}
-		}
-
-		if (!m_FadeInSet)
-		{
-			//フェードイン
-			fade_transitor->FadeInStart(false);
-			LoadScene();
+			transitor::FadeTransitor::DrawFade();
 		}
 
 		object::ObjectManager::DrawAllObj();

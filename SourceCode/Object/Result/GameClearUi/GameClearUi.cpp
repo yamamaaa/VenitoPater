@@ -1,5 +1,6 @@
 #include "GameClearUi.h"
 #include "../../ObjectTag/GameClear_ObjectTag.h"
+#include "../../../GameSystem/Window/Window.h"
 #include "../../ObjectManager/ObjectManager.h"
 #include "../../NumDays/NumDays.h"
 
@@ -14,13 +15,24 @@ namespace object
 
 	GameClearUi::~GameClearUi()
 	{
-		//処理なし
+		//フォントハンドルの解放
+		DeleteFontToHandle(m_FontHandle);
 	}
 
 	void GameClearUi::LoadObject()
 	{
-		m_ObjPos = { 770 ,400 };
 		m_DrawCount = m_DRAWCOUNT_MAX;
+
+		window = nullptr;	//windowのインスタンス生成
+		POINTS windowsize = window->GetWindowSize();
+
+		m_FontHandle = CreateFontToHandle("メイリオ", m_FONTSIZE.x, m_FONTSIZE.y, DX_FONTTYPE_ANTIALIASING);
+
+		//文字の長さを取得して画面中央に座標を設定
+		int x = GetDrawFormatStringWidthToHandle(m_FontHandle, m_TimeText.c_str(), 0);
+		float ans_x = static_cast<float>((windowsize.x - x) / 2);
+		float ans_y = static_cast<float>((windowsize.y - m_FONTSIZE.x) / 2);
+		m_ObjPos = { ans_x, ans_y };
 	}
 
 	void GameClearUi::UpdateObj(const float deltatime)
@@ -40,7 +52,7 @@ namespace object
 		}
 		else
 		{
-			m_DrawCount -= m_COUNT_DECREMENT;
+			m_DrawCount -= m_COUNT_DECREMENT* deltatime;
 		}
 	}
 
@@ -67,11 +79,8 @@ namespace object
 
 	void GameClearUi::DrawObj()
 	{
-		SetFontSize(m_FONTSIZE);
-		DrawFormatString(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), GetColor(m_CORRER_CODE, m_CORRER_CODE, m_CORRER_CODE), "5 : 0");
-
+		DrawStringFToHandle(m_ObjPos.x, m_ObjPos.y, m_TimeText.c_str(), GetColor(m_COLOR, m_COLOR, m_COLOR), m_FontHandle);
 #ifdef DEBUG
-		SetFontSize(m_DEBUG_FONTSIZE);
 		DrawFormatString(0, 0, GetColor(255, 255, 255), "表示時間 : %f", m_DrawCount);
 #endif // DEBUG
 	}

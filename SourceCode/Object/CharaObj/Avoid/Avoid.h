@@ -48,7 +48,8 @@ namespace object
 
 		const int m_AVOID_NOTNUM = 3;		//回避行動不可エリア
 
-		const float m_CLICKCOUNT_MAX = 30.0f;	//再びクリックできるまで
+		const float m_CLICKCOUNT_MAX = 5.0f;	//再びクリックできるまで
+		const float m_COUNTSPPED = 20.0f;		//カウントスピード
 
 		float m_ClickCount ;		//クリックできるまでのカウント
 		bool m_IsClick = true;		//クリックができるか

@@ -28,5 +28,6 @@ namespace object
 	void LineStatus::LoadObject()
 	{
 		linestatus->m_IsDoneAnim = false;
+		linestatus->m_IsDoneImgDraw = true;
 	}
 }

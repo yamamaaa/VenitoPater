@@ -23,7 +23,7 @@ namespace object
         m_ObjPos = { 0,184 };
         m_Index = 0;
 
-        m_Collar = 0;
+        m_Color = 0;
         m_Calculation = 0;
 
         m_IsFadeIn_Done = false;
@@ -83,9 +83,15 @@ namespace object
 
     void StillDraw::UpdateObj(const float deltatime)
     {
+        if (m_IsFade)
+        {
+            FadeObj(deltatime);
+        }
+
         //文字セット前は以下処理なし
         if (!LineStatus::GetIsDoneAnim())
             return;
+        LineStatus::SetIsDoneImgDraw(false);
 
         UpdateDrawStatus();
     }
@@ -96,11 +102,13 @@ namespace object
 
         if (m_Line == m_NEXT)
         {
+            LineStatus::SetIsDoneImgDraw(true);
             return;
         }
         else if (m_Line == m_BLACKOUT)
         {
             IsBlackOut = true;
+            LineStatus::SetIsDoneImgDraw(true);
         }
         else if (m_Line == m_STILLDRAW)
         {
@@ -109,53 +117,52 @@ namespace object
         }
     }
 
+    void StillDraw::FadeObj(const float deltatime)
+    {
+        m_Calculation += m_FADESPEED * deltatime;
+
+        if (m_IsFadeIn_Done)
+        {
+            //だんだん明るく
+            m_Color += static_cast<int>(m_Calculation);
+            if (m_Color >= m_COLORCODE)
+            {
+                m_IsFade = false;	//処理の完了
+                m_Calculation = 0;
+                m_IsFadeIn_Done = false;
+                m_Color = m_COLORCODE;
+                LineStatus::SetIsDoneImgDraw(true);
+            }
+        }
+        else
+        {
+            //だんだん暗く
+            m_Color -= static_cast<int>(m_Calculation);
+            if (m_Color <= 0)
+            {
+                m_IsFadeIn_Done = true;	//処理の完了
+                m_Calculation = 0;
+                m_Color = 0;
+                m_ObjHandle = m_ObjImg[m_Index];
+                m_Index++;
+            }
+        }
+    }
+    
     void StillDraw::DrawObj()
     {
         if (!IsBlackOut)
         {
             if (m_IsFade)
             {
-                FadeObj();
+                SetDrawBlendMode(DX_BLENDMODE_ALPHA, m_Color);
+                DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
+                SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
             }
             else
             {
                 DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
             }
         }
-    }
-
-    void StillDraw::FadeObj()
-    {
-        m_Calculation += m_FADESPEED;
-
-        if (m_IsFadeIn_Done)
-        {
-            //だんだん明るく
-            m_Collar += static_cast<int>(m_Calculation);
-            if (m_Collar >= m_COLLARCODE)
-            {
-                m_IsFade = false;	//処理の完了
-                m_Calculation = 0;
-                m_IsFadeIn_Done = false;
-                m_Collar = m_COLLARCODE;
-            }
-        }
-        else
-        {
-            //だんだん暗く
-            m_Collar -= static_cast<int>(m_Calculation);
-            if (m_Collar <= 0)
-            {
-                m_IsFadeIn_Done = true;	//処理の完了
-                m_Calculation = 0;
-                m_Collar = 0;
-                m_ObjHandle = m_ObjImg[m_Index];
-                m_Index++;
-            }
-        }
-
-        SetDrawBlendMode(DX_BLENDMODE_ALPHA, m_Collar);
-        DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
-        SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
     }
 }

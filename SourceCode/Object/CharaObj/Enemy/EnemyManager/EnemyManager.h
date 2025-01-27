@@ -22,7 +22,7 @@ namespace object
 		/// <summary>
 		/// 敵の出現設定
 		/// </summary>
-		static void EmyAppearSetting();
+		static void EmyAppearSetting(const float deltatime);
 
 		/// <summary>
 		/// 出現状態のセット
@@ -114,7 +114,7 @@ namespace object
 		/// <summary>
 		/// 出現カウント処理
 		/// </summary>
-		static void AppearCount();
+		static void AppearCount(const float deltatime);
 
 		/// <summary>
 		/// 出現処理
@@ -127,9 +127,9 @@ namespace object
 		static const int m_EMYSCREEN_MAX = 3;	//画面内敵の出現総数
 		static const int m_APPEAR_RANGE = 4;	//出現時のランダム範囲
 
-		const float m_STARTWAIT_MAX = 100.0f;	//スタート時の排出待ち時間
-		const float m_APPEARCOUNT_MAX = 100.0f;	//再び出現できるまでのカウント
-		const float m_COUNT_DECREMENT = 0.1f;	//カウント減分値
+		const float m_STARTWAIT_MAX = 30.0f;	//スタート時の排出待ち時間
+		const float m_APPEARCOUNT_MAX = 25.0f;	//再び出現できるまでのカウント
+		const float m_COUNT_DECREMENT = 0.5f;	//カウント減分値
 
 		float m_StartCount;						//スタート時の排出カウント
 		float m_AppearCount;					//敵の排出カウント

@@ -28,9 +28,9 @@
 #include"../../Object/GameUi/AvoidUi/AvoidUi.h"
 #include"../../Object/GameUi/WarningUi/WarningUi.h"
 
-#include"../../Object/NumDays/NumDays.h"
 #include"../../Object/Time/Time/Time.h"
 #include"../../Object/Time/TimeStatus/TimeStatus.h"
+#include"../../Object/TextDraw/TextDraw.h"
 
 #include"../../Object/CharaObj/Enemy/EnemyAction/EnemyAction.h"
 
@@ -86,19 +86,38 @@ namespace scene
 		object::TimeStatus::Initialize();
 		object::ObjectManager::Entry(new object::Time);
 
+		//テキスト関連
+		object::ObjectManager::Entry(new object::TextDraw);
+
 		//敵のアクション生成
 		object::ObjectManager::Entry(new object::EnemyAction);
-
-		//フェードフラグ初期化
-		m_FadeInSet = false;
 	}
 
 	SceneBase* ThreeDays::UpdateScene(const float deltaTime)
 	{
-		object::ObjectManager::UpdateAllObj(deltaTime);
+		if (!m_FadeInSet)
+		{
+			transitor::FadeTransitor::FadeInStart(deltaTime);
+			LoadScene();
+		}
+
+		//現在のステータスを取得
+		object::GameStatus status = object::ObjectManager::GetNowGameState();
+
+		//ゲームステータスが変わったらシーン切り替え処理をする
+		if (status != object::ObjectManager::GetNextGameState())
+		{
+			m_IsChangeScene = true;
+			transitor::FadeTransitor::FadeOutStart(deltaTime);
+			TransitorScene();
+		}
+		else
+		{
+			object::ObjectManager::UpdateAllObj(deltaTime);
+		}
 
 		//ゲームクリアしたら
-		if (object::GameClear== object::ObjectManager::GetNowGameState() || object::GameOver == object::ObjectManager::GetNowGameState())
+		if (object::GameClear== status || object::GameOver == status || object::TimeOver == status)
 		{
 			object::ObjectManager::ReleaseAllObj();
 			return new Result;
@@ -111,22 +130,11 @@ namespace scene
 	{
 		DrawFormatString(0, 0, GetColor(255, 255, 255), "3Days");
 
-		//ゲームステータスが変わったら
-		if (object::ObjectManager::GetNowGameState() != object::ObjectManager::GetNextGameState())
+		if (m_IsChangeScene || !m_FadeInSet)
 		{
-			//フェード処理をする
-			fade_transitor->FadeOutStart(true);
-			TransitorScene();
-		}
-
-		if (!m_FadeInSet)
-		{
-			//フェードイン
-			fade_transitor->FadeInStart(false);
-			LoadScene();
+			transitor::FadeTransitor::DrawFade();
 		}
 
 		object::ObjectManager::DrawAllObj();
-		object::NumDays::DrawNumDays();
 	}
 }

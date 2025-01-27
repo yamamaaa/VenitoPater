@@ -46,7 +46,7 @@ namespace object
 
 		//テキストファイルの展開
 		m_TxtFile.open((text.c_str()));
-
+		LineStatus::SetIsDoneImgDraw(true);
 		//表示画像データ更新
 		UpdateDrawStatus();
 	}
@@ -92,6 +92,7 @@ namespace object
 	void Character::DrawObj()
 	{
 		DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
+
 #ifdef DEBUG
 		DrawFormatString(0, 40, GetColor(255, 255, 255), "表情:%s", m_Status.c_str());
 #endif // DEBUG

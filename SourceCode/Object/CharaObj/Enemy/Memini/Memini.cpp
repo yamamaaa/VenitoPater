@@ -25,7 +25,7 @@ namespace object
 		m_DrawObjPos[replace] = { 1020.0f,538.0f };
 		m_DrawObjPos[replace_2] = { 720.0f,214.0f };
 
-		m_MoveSpeed = 0.5f;
+		m_MoveSpeed = 30.0f;
 		m_ObjDrawArea = 2;
 
 		m_ObjImg[0] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetMeminiData(0).c_str());
@@ -40,7 +40,7 @@ namespace object
 		if (TimeStatus::GetIsTimeOver())
 			return;
 
-		EnemyManager::EmyAppearSetting();
+		EnemyManager::EmyAppearSetting(deltatime);
 
 		//出現状態取得
 		bool is_appear = EnemyManager::GetIsAppear(m_IDnumber);
@@ -52,7 +52,7 @@ namespace object
 		//プレイヤーが回避行動をしたら
 		if (AvoidStatus::GetIsAvoid())
 		{
-			AvoidAction();	//回避行動時処理
+			AvoidAction(deltatime);	//回避行動時処理
 		}
 
 		//他の敵がアクションを起こしてなかったら
@@ -75,7 +75,7 @@ namespace object
 		if (m_IsEmyReset)
 		{
 			LightController::SetIsBlinking(true);
-			ExitObj();
+			ExitObj(deltatime);
 		}
 	}
 
@@ -98,6 +98,6 @@ namespace object
 
 	void Memini::MoveObj(const float deltatime)
 	{
-		m_EnemyBoxPos.y += m_MoveSpeed;	//移動速度計算
+		m_EnemyBoxPos.y += m_MoveSpeed* deltatime;	//移動速度計算
 	}
 }

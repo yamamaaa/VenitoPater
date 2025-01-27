@@ -48,6 +48,7 @@ namespace object
         /// </summary>
         void DrawObj() override;
 
+        const float m_RPMHP_COUNTSPEED = 24.0f;      //Hp増量スピード
         static const int m_AnimPattern = 4;         // アニメーションのパターン数
         const int m_AnimType = 1;            // アニメーションの種類
 
@@ -69,7 +70,7 @@ namespace object
         bool m_IsClickNow = false;           //クリック中か
         const int m_DrawAreaNum = 3;         //表示できるエリアナンバー
 
-        const float m_EMYRPM_DECREMENT = 3.5f;   //強化モンスターRPM減らし量
+        const float m_EMYRPM_DECREMENT = 150.0f;   //強化モンスターRPM減らし量
     };
 
 }

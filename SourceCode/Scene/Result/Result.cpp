@@ -58,33 +58,46 @@ namespace scene
             object::ObjectManager::Entry(new object::BackGround);
             object::ObjectManager::Entry(new object::GameClearUi);
         }
-
-        //フェードフラグ初期化
-        m_FadeInSet = false;
     }
 
     SceneBase* Result::UpdateScene(const float deltaTime)
     {
-        object::ObjectManager::UpdateAllObj(deltaTime);
+        if (!m_FadeInSet)
+        {
+            transitor::FadeTransitor::FadeInStart(deltaTime);
+            LoadScene();
+        }
+
+        //現在のステータスを取得
+        object::GameStatus status = object::ObjectManager::GetNowGameState();
+
+        //ゲームステータスが変わったらシーン切り替え処理をする
+        if (status != object::ObjectManager::GetNextGameState())
+        {
+            m_IsChangeScene = true;
+            transitor::FadeTransitor::FadeOutStart(deltaTime);
+            TransitorScene();
+        }
+        else
+        {
+            object::ObjectManager::UpdateAllObj(deltaTime);
+        }
 
         //コンテニュー
-        if (object::Continue == object::ObjectManager::GetNowGameState()|| object::GamePlay == object::ObjectManager::GetNowGameState())
+        if (object::GamePlay == status)
         {
-            object::ObjectManager::ReleaseAllObj();
             return new ThreeDays;
         }
 
         //タイトルへ戻る
-        if (object::Title == object::ObjectManager::GetNowGameState())
+        if (object::Title == status)
         {
-            object::ObjectManager::ReleaseAllObj();
             return new Title;
         }
 
         //ゲームクリアしたら
-        if (object::Story == object::ObjectManager::GetNowGameState() || object::Still == object::ObjectManager::GetNowGameState())
+        if (object::Story == status || object::Still == status)
         {
-            object::ObjectManager::ReleaseAllObj();
             return new Story;
         }
 
@@ -95,19 +108,9 @@ namespace scene
     {
         DrawFormatString(0, 0, GetColor(255, 255, 255), "Result");
 
-        //ゲームステータスが変わったら
-        if (object::ObjectManager::GetNowGameState() != object::ObjectManager::GetNextGameState())
+        if (m_IsChangeScene || !m_FadeInSet)
         {
-            //フェード処理をする
-            fade_transitor->FadeOutStart(true);
-            TransitorScene();
-        }
-
-        if (!m_FadeInSet)
-        {
-            //フェードイン
-            fade_transitor->FadeInStart(false);
-            LoadScene();
+            transitor::FadeTransitor::DrawFade();
         }
 
         object::ObjectManager::DrawAllObj();

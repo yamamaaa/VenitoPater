@@ -43,48 +43,41 @@ namespace scene
         //Title画面の全Ui生成
         object::ObjectManager::Entry(new object::TitleUi);
         object::ObjectManager::Entry(new object::SelectMode);
-
-        m_FadeInSet = false;
     }
 
     SceneBase* Title::UpdateScene(float deltaTime)
     {
-        object::ObjectManager::UpdateAllObj(deltaTime);
+        LevelController::SetLevel(levelStatus.NOMAL);
+        object::ObjectManager::ReleaseAllObj();
+        object::ObjectManager::SetNowGameState(object::Story);
+        object::ObjectManager::SetPlayMode(object::PlayNewGame);
+        return new Story();
 
-        ////F1が押されたらノーマルモード
-        //if (CheckHitKey(KEY_INPUT_F1))
-        //{
-        //    //プレイ中に切り替え
-        //    LevelController::SetLevel(levelStatus.NOMAL);
-        //    return new ThreeDays();
-        //}
+        if (!m_FadeInSet)
+        {
+            transitor::FadeTransitor::FadeInStart(deltaTime);
+            LoadScene();
+        }
 
-        ////F2が押されたらハードモード
-        //else if (CheckHitKey(KEY_INPUT_F2))
-        //{
-        //    //プレイ中に切り替え
-        //    LevelController::SetLevel(levelStatus.HARD);
-        //    return new ThreeDays();
-        //}
+        //現在のステータスを取得
+        object::GameStatus status = object::ObjectManager::GetNowGameState();
 
-        //LevelController::SetLevel(levelStatus.NOMAL);
-        //object::ObjectManager::ReleaseAllObj();
-        //return new ThreeDays();
-
-        //LevelController::SetLevel(levelStatus.NOMAL);
-        //object::ObjectManager::ReleaseAllObj();
-        //object::ObjectManager::SetNowGameState(object::Still);
-        //return new Story();
-            //LevelController::SetLevel(levelStatus.NOMAL);
-            //object::ObjectManager::ReleaseAllObj();
-            //object::ObjectManager::SetNowGameState(object::Still);
-            //return new ThreeDays();
+        //ゲームステータスが変わったらシーン切り替え処理をする
+        if (status != object::ObjectManager::GetNextGameState())
+        {
+            m_IsChangeScene = true;
+            transitor::FadeTransitor::FadeOutStart(deltaTime);
+            TransitorScene();
+        }
+        else
+        {
+            object::ObjectManager::UpdateAllObj(deltaTime);
+        }
 
         //ゲームプレイ
-        if (object::GamePlay == object::ObjectManager::GetNowGameState())
+        if (object::GamePlay == status)
         {
             LevelController::SetLevel(levelStatus.NOMAL);
-            object::ObjectManager::ReleaseAllObj();
             object::ObjectManager::SetNowGameState(object::Still);
             return new Story();
         }
@@ -96,19 +89,9 @@ namespace scene
     {
         DrawFormatString(0, 0, GetColor(255, 255, 255), "title");
 
-        //ゲームステータスが変わったら
-        if (object::ObjectManager::GetNowGameState() != object::ObjectManager::GetNextGameState())
+        if (m_IsChangeScene || !m_FadeInSet)
         {
-            //フェード処理をする
-            fade_transitor->FadeOutStart(true);
-            TransitorScene();
-        }
-
-        if (!m_FadeInSet)
-        {
-            //フェードイン
-            fade_transitor->FadeInStart(false);
-            LoadScene();
+            transitor::FadeTransitor::DrawFade();
         }
 
         object::ObjectManager::DrawAllObj();

@@ -39,14 +39,15 @@ namespace object
         void UpdateDrawStatus();
 
         /// <summary>
+        /// フェード処理
+        /// </summary>
+        /// <param name="deltatime">デルタタイム</param>
+        void FadeObj(const float deltatime);
+
+        /// <summary>
         /// 描画
         /// </summary>
         void DrawObj()override;
-
-        /// <summary>
-        /// フェード処理
-        /// </summary>
-        void FadeObj();
 
         std::ifstream m_TxtFile;    //読み込まれたファイル
         std::string m_Line;         //ファイルから取得した文字
@@ -58,10 +59,10 @@ namespace object
 
         bool IsBlackOut = false;    //画像を非表示にするか
 
-        const float m_FADESPEED = 1.0f; //フェード速度
-        const int m_COLLARCODE = 255;	//カラーコード
+        const float m_FADESPEED = 60.0f; //フェード速度
+        const int m_COLORCODE = 255;	//カラーコード
 
-        float m_Collar;       //画像透明度
+        float m_Color;       //画像透明度
         float m_Calculation;  //透明度変動分
 
         bool m_IsFadeIn_Done; //フェードインがおわったか

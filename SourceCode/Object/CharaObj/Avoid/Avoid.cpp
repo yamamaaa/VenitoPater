@@ -81,8 +81,8 @@ namespace object
 		//再びクリックできるまでカウント
 		if (!m_IsClick)
 		{
-			m_ClickCount -- ;
-			if (m_ClickCount == 0.0f)
+			m_ClickCount -= m_COUNTSPPED * deltatime;
+			if (m_ClickCount <= 0.0f)
 			{
 				m_ClickCount = m_CLICKCOUNT_MAX;
 				m_IsClick = true;

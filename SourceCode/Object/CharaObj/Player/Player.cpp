@@ -12,6 +12,7 @@ namespace object
     {
         LoadObject();
     }
+
     Player::~Player()
     {
     }

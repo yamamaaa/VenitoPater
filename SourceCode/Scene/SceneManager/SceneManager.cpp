@@ -3,8 +3,7 @@
 #include"../Title/Title.h"
 #include"../../Fps/Fps.h"
 #include"../../Object/ObjectManager/ObjectManager.h"
-
-using namespace object;
+#include"../../Transitor/FadeTransitor/FadeTransitor.h"
 
 namespace scene
 {
@@ -13,8 +12,8 @@ namespace scene
         , fps(new fps::Fps)
     {
         //初期化処理
-        ObjectManager::Initialize();
-        //AssetManager::InitAssetManager(); インスタンス生成
+        object::ObjectManager::Initialize();
+        transitor::FadeTransitor::Initialize();
 
         //現在のシーンをタイトルに設定
         m_NowScene.emplace(new Title);

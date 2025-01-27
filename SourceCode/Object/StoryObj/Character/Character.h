@@ -39,6 +39,12 @@ namespace object
         void UpdateDrawStatus();
 
         /// <summary>
+        /// フェード処理
+        /// </summary>
+        /// <param name="deltatime">デルタタイム</param>
+        void FadeObj(const float deltatime);
+
+        /// <summary>
         /// 描画
         /// </summary>
         void DrawObj()override ;

@@ -49,12 +49,12 @@ namespace object
 		enemymanager->m_EmyIsAction = false;			//敵がアクションを起こすか
 	}
 
-	void EnemyManager::EmyAppearSetting()
+	void EnemyManager::EmyAppearSetting(const float deltatime)
 	{
 		//ゲームをスタートしたから最初の出現までずらす
 		if (enemymanager->m_StartCount >= 0.0f)
 		{
-			enemymanager->m_StartCount -= enemymanager->m_COUNT_DECREMENT;
+			enemymanager->m_StartCount -= enemymanager->m_COUNT_DECREMENT* deltatime;
 			return;
 		}
 
@@ -71,7 +71,7 @@ namespace object
 		//出現がストップされたら
 		if (!enemymanager->m_CanAppear)
 		{
-			AppearCount();
+			AppearCount(deltatime);
 		}
 	}
 
@@ -111,9 +111,9 @@ namespace object
 		}
 	}
 
-	void EnemyManager::AppearCount()
+	void EnemyManager::AppearCount(const float deltatime)
 	{
-		enemymanager->m_AppearCount -= enemymanager->m_COUNT_DECREMENT;		//出現までのカウントを開始
+		enemymanager->m_AppearCount -= enemymanager->m_COUNT_DECREMENT * deltatime;		//出現までのカウントを開始
 
 		if (enemymanager->m_AppearCount <= 0.0f)		//規定値に達したら敵の出現
 		{
