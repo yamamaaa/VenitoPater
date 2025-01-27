@@ -83,7 +83,7 @@ namespace scene
 			{
 				//次のステータスを取得しセット
 				object::GameStatus status_next = object::ObjectManager::GetNextGameState();
-				object::ObjectManager::SetNowGameState(status);
+				object::ObjectManager::SetNowGameState(status_next);
 
 				object::ObjectManager::ReleaseAllObj();
 				transitor::FadeTransitor::FadeProcessing();

@@ -94,10 +94,6 @@ namespace object
 
         int m_TxtNum;           //表示中の文字数
 
-        const float m_WAITCOU_MAX = 9.0f;     //スタートしてから表示まで待ち時間
-        float m_StartCount;                   //スタートカウント
-        bool m_WaitDone;                      //待ち時間終了したか
-
         const float m_COUNT_DECREMENT = 2.5f;	//カウント減らし量
         const float m_CLICKCOU_MAX = 1.0f;      //再度クリックできるまで
         const float m_CLICKCOU_WEIT = 6.0f;    //待機モード中の待ち時間

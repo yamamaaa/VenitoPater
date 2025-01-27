@@ -2,6 +2,7 @@
 #include"../../ObjectTag/Story_ObjectTag.h"
 #include"../LineStatus/LineStatus.h"
 #include"../../ObjectManager/ObjectManager.h"
+#include"../../../MouseStatus/MouseStatus.h"
 #include"../../NumDays/NumDays.h"
 
 namespace object
@@ -41,8 +42,6 @@ namespace object
 		m_UiPos = m_UIPOS_RESET;
 		m_NowColor = m_COLOR_DEFAULT;
 		m_AnimSpeed = m_SPEED_DEFAULT;
-
-		m_StartCount = m_WAITCOU_MAX;
 
 		//現在のゲームステータスを取得
 		GameStatus status=ObjectManager::GetNextGameState();
@@ -103,16 +102,9 @@ namespace object
 	{
 		LineStatus::SetIsDoneAnim(false);
 
-		//スタートから表示までずらす
-		if (!m_WaitDone)
-		{
-			m_StartCount -= m_COUNT_DECREMENT* deltatime;
-			if (m_StartCount <= 0.0f)
-			{
-				m_WaitDone = true;
-			}
+		//入力状態が不可の時は処理なし
+		if (!mousestatus::MouseStatus::GetIsFadeDone())
 			return;
-		}
 
 		//画像のセットが終わっていなかったら処理なし
 		if (!LineStatus::GetIsDoneImgDraw())
@@ -299,7 +291,7 @@ namespace object
 		}
 		if (line == m_STORY)
 		{
-			ObjectManager::SetNextGameState(Story);
+      		ObjectManager::SetNextGameState(Story);
 		}
 		if (line == m_STILL)
 		{
@@ -375,7 +367,6 @@ namespace object
 
 #ifdef DEBUG
 		DrawFormatString(0, 20, GetColor(255, 255, 255), "m_ClickCount:%f", m_ClickCount);
-		DrawFormatString(0, 40, GetColor(255, 255, 255), "m_StartCount:%f", m_StartCount);
 		DrawString(0, 100, "スペースでスキップ",GetColor(255, 255, 255));
 #endif // DEBUG
 	}
