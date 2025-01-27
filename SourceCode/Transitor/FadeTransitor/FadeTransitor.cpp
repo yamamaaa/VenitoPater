@@ -56,27 +56,27 @@ namespace transitor
 
 		if (!m_CanFade)
 		{
-			m_Collar = m_COLLARCODE;	//カラーコード初期値
+			m_Color = m_COLORCODE;	//カラーコード初期値
 			m_CanFade = true;
 		}
 
 		if (m_WaitDone)
 		{
-			if (m_Collar <= 0)
+			if (m_Color <= 0)
 			{
 				m_IsFadeDone = true;	//処理の完了
-				m_Collar = 0;			//誤差の修正
+				m_Color = 0;			//誤差の修正
 			}
 			else
 			{
 				//だんだん画面を暗くする
-				m_Collar -= static_cast<int>(m_Calculation);
+				m_Color -= static_cast<int>(m_Calculation);
 				m_Calculation += m_DROPSPEED;
 			}
-			SetDrawBright(m_Collar, m_Collar, m_Collar);
+			SetDrawBright(m_Color, m_Color, m_Color);
 		}
 
-		DrawFormatString(700, 300, GetColor(255, 255, 255), "カラーコード:%d", m_Collar);
+		DrawFormatString(700, 300, GetColor(255, 255, 255), "カラーコード:%d", m_Color);
 	}
 
 	void FadeTransitor::FadeInStart(bool wait)
@@ -93,27 +93,27 @@ namespace transitor
 
 		if (!m_CanFade)
 		{
-			m_Collar = 0;	//カラーコード初期値
+			m_Color = 0;	//カラーコード初期値
 			m_CanFade = true;
 		}
 
 		if (m_WaitDone)
 		{
-			if (m_Collar >= m_COLLARCODE)
+			if (m_Color >= m_COLORCODE)
 			{
 				m_IsFadeDone = true;			//処理の完了
-				m_Collar = m_COLLARCODE;		//誤差の修正
+				m_Color = m_COLORCODE;		//誤差の修正
 			}
 			else 
 			{
-				m_Collar += static_cast<int>(m_Calculation);
+				m_Color += static_cast<int>(m_Calculation);
 				m_Calculation += m_RISESPEED;
 			}
 
 			//だんだん画面を明るく
-			SetDrawBright(m_Collar, m_Collar, m_Collar);
+			SetDrawBright(m_Color, m_Color, m_Color);
 		}
 
-		DrawFormatString(700, 300, GetColor(255, 255, 255), "カラーコード:%d", m_Collar);
+		DrawFormatString(700, 300, GetColor(255, 255, 255), "カラーコード:%d", m_Color);
 	}
 }

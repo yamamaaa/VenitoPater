@@ -26,13 +26,13 @@ namespace object
     void TextDraw::LoadObject()
     {
         m_WaitDone = false;
-        m_IsLineSet = true;
+        m_IsLineSet = false;
         m_IslineAnim = false;
         m_StartCount = 0.0f;
         m_DrawCount = 0.0f;
         m_TxtNum = 0;
         m_AnimCount = 0.0f;
-        m_NowCollar = m_COLLAR_DEFAULT;
+        m_NowColor = m_COLOR_DEFAULT;
         m_AnimSpeed = m_SPEED_DEFAULT;
 
         window = nullptr;	//windowのインスタンス生成
@@ -73,7 +73,7 @@ namespace object
         //スタートしてから少し待つ
         if (!m_WaitDone)
         {
-            m_StartCount += m_RISESPEED;
+            m_StartCount += m_RISESPEED* deltatime;
             if (m_StartCount >= m_WAITCOU_MAX)
             {
                 m_WaitDone = true;
@@ -121,7 +121,7 @@ namespace object
         //前の文字をクリア
         m_Line.clear();
         m_TxtNum = 0;
-        m_NowCollar = m_COLLAR_DEFAULT;
+        m_NowColor = m_COLOR_DEFAULT;
         m_AnimSpeed = m_SPEED_DEFAULT;
 
         std::string line = "";
@@ -165,10 +165,10 @@ namespace object
         m_DrawCount += m_COUNTSPEED * deltatime;
         if (m_DrawCount >= m_COUNTMAX)
         {
-            m_NowCollar.x -= m_DROPSPEED * deltatime;
+            m_NowColor.x -= m_DROPSPEED * deltatime;
 
             //処理が完了したらオブジェクトの削除
-            if (m_NowCollar.x <= 0.0f)
+            if (m_NowColor.x <= 0.0f)
             {
                 ObjectManager::ReleaseObj(threedays_objtag.TEXTDRAW);
             }
@@ -178,13 +178,13 @@ namespace object
     void TextDraw::LineDraw()
     {
         //文字の横幅を取得し座標を画面中央に設定
-        int x = GetDrawStringWidthToHandle(m_Line.c_str(),m_FontHandle,0);
+        int x = GetDrawFormatStringWidthToHandle(m_FontHandle, m_Line.c_str(), -1);
         m_ObjPos.x = static_cast<float>((m_WindowSize.x - x) / 2);
 
         std::string text = (m_Line.substr(0, m_TxtNum) + " ");
 
         //セリフの表示
-        DrawStringFToHandle(m_ObjPos.x, m_ObjPos.y,text.c_str(), GetColor(static_cast<int>(m_NowCollar.x), static_cast<int>(m_NowCollar.y), static_cast<int>(m_NowCollar.z)), m_FontHandle);
+        DrawStringFToHandle(m_ObjPos.x, m_ObjPos.y,text.c_str(), GetColor(static_cast<int>(m_NowColor.x), static_cast<int>(m_NowColor.y), static_cast<int>(m_NowColor.z)), m_FontHandle);
 #ifdef DEBUG
         DrawFormatString(0, 40, GetColor(255, 255, 255), "文字再読み込みまで:%f", m_DrawCount);
         DrawFormatString(0, 60, GetColor(255, 255, 255), "文字スタートまで:%f", m_StartCount);
@@ -195,7 +195,7 @@ namespace object
     {
         //現在の日数を表示
         int day = NumDays::GetNumDays();
-        int collar = static_cast<int>(m_NowCollar.x);
+        int collar = static_cast<int>(m_NowColor.x);
 
         SetDrawBlendMode(DX_BLENDMODE_ALPHA, collar);
         DrawFormatStringFToHandle(m_ObjPos.x, m_ObjPos.y, GetColor(collar, collar, collar), m_FontHandle, "%d日目", day);

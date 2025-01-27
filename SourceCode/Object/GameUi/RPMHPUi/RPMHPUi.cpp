@@ -33,8 +33,8 @@ namespace object
 		m_LineBoxSize.x = 500;
 		m_LineBoxSize.y = 60;
 
-		m_FillBox_Collar = VGet(255, 255, 0);
-		m_LineBox_Collar = VGet(255, 255, 255);
+		m_FillBox_Color = VGet(255, 255, 0);
+		m_LineBox_Color = VGet(255, 255, 255);
 
 		m_CanDraw = false;
 	}
@@ -66,8 +66,8 @@ namespace object
 	{
 		if (m_CanDraw)
 		{
-			DrawFillBox(static_cast<int>(m_HPDrawPos.x), static_cast<int>(m_HPDrawPos.y), static_cast<int>(m_HPDrawPos.x) + static_cast<int>(m_DrawValue), static_cast<int>(m_HPDrawPos.y) + m_FillBoxSize.y, GetColor(static_cast<int>(m_FillBox_Collar.x), static_cast<int>(m_FillBox_Collar.y), static_cast<int>(m_FillBox_Collar.z)));
-			DrawLineBox(static_cast<int>(m_HPDrawPos.x), static_cast<int>(m_HPDrawPos.y), static_cast<int>(m_HPDrawPos.x) + m_LineBoxSize.x, static_cast<int>(m_HPDrawPos.y) + m_LineBoxSize.y, GetColor(static_cast<int>(m_LineBox_Collar.x), static_cast<int>(m_LineBox_Collar.y), static_cast<int>(m_LineBox_Collar.z)));
+			DrawFillBox(static_cast<int>(m_HPDrawPos.x), static_cast<int>(m_HPDrawPos.y), static_cast<int>(m_HPDrawPos.x) + static_cast<int>(m_DrawValue), static_cast<int>(m_HPDrawPos.y) + m_FillBoxSize.y, GetColor(static_cast<int>(m_FillBox_Color.x), static_cast<int>(m_FillBox_Color.y), static_cast<int>(m_FillBox_Color.z)));
+			DrawLineBox(static_cast<int>(m_HPDrawPos.x), static_cast<int>(m_HPDrawPos.y), static_cast<int>(m_HPDrawPos.x) + m_LineBoxSize.x, static_cast<int>(m_HPDrawPos.y) + m_LineBoxSize.y, GetColor(static_cast<int>(m_LineBox_Color.x), static_cast<int>(m_LineBox_Color.y), static_cast<int>(m_LineBox_Color.z)));
 		}
 	}
 }

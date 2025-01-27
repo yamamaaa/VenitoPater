@@ -43,8 +43,8 @@ namespace object
         POINTS m_FillBoxSize;     //回転量HP残量表示サイズ
         POINTS m_LineBoxSize;     //HPバーの囲いサイズ
 
-        VECTOR m_FillBox_Collar;    //カラーコード
-        VECTOR m_LineBox_Collar;
+        VECTOR m_FillBox_Color;    //カラーコード
+        VECTOR m_LineBox_Color;
 
         float m_DrawValue;       //HP残量表示用
         bool m_CanDraw; //表示できるか

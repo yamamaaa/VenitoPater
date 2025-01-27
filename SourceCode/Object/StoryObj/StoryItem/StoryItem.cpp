@@ -23,18 +23,19 @@ namespace object
         m_ObjImg.clear();
         m_ObjPos = { 0,0 };
 
-        m_Collar = 0;
+        m_Color = 0;
         m_Calculation = 0;
 
         m_IsDrawObj = false;
         m_IsFade = false;
+        m_IsReleaseObj = false;
 
         m_BackFade= LoadGraph(JsonManager::ImgData_Instance()->Get_StoryImgData_Instance()->GetItemData_BackFade().c_str());
 
         //日数別に読み込むファイルを変更
-        int dey = NumDays::GetNumDays();
+        int day = NumDays::GetNumDays();
         std::string text;
-        switch (dey)
+        switch (day)
         {
         case 0:
             m_ObjImg[charaItem_Tag.DUCK]=LoadGraph(JsonManager::ImgData_Instance()->Get_StoryImgData_Instance()->GetItemData_Duck().c_str());
@@ -46,7 +47,7 @@ namespace object
             text = JsonManager::TextData_Instance()->Get_CharacterData_Instance()->GetItemData_Day_4();
             break;
         default:
-            ObjectManager::ReleaseObj(story_ObjectTag.STORYITEM);
+            m_IsReleaseObj = true;
             break;
         }
 
@@ -57,6 +58,11 @@ namespace object
 
     void StoryItem::UpdateObj(const float deltatime)
     {
+        if (m_IsReleaseObj)
+        {
+            ObjectManager::ReleaseObj(story_ObjectTag.STORYITEM);
+        }
+
         //文字セット前は以下処理なし
         if (!LineStatus::GetIsDoneAnim())
             return;
@@ -73,7 +79,7 @@ namespace object
         //ファイル末端ならオブジェクトの削除
         if (m_Line == m_END)
         {
-            ObjectManager::ReleaseObj(story_ObjectTag.STORYITEM);
+            m_IsReleaseObj = true;
         }
         else if (m_Line == m_BLACKOUT)
         {
@@ -83,7 +89,7 @@ namespace object
         {
             m_ObjHandle = m_ObjImg[m_Line.c_str()];
             m_ObjPos = m_ImgPos[m_Line.c_str()];
-            m_Collar = 0;
+            m_Color = 0;
             m_IsDrawObj = true;
             m_IsFade = true;
         }
@@ -113,15 +119,15 @@ namespace object
         m_Calculation += m_FADESPEED;
 
         //だんだん明るく
-        m_Collar += static_cast<int>(m_Calculation);
-        if (m_Collar >= m_COLLARCODE)
+        m_Color += static_cast<int>(m_Calculation);
+        if (m_Color >= m_COLORCODE)
         {
             m_IsFade = false;	//処理の完了
             m_Calculation = 0;
-            m_Collar = m_COLLARCODE;
+            m_Color = m_COLORCODE;
         }
 
-        SetDrawBlendMode(DX_BLENDMODE_ALPHA, m_Collar);
+        SetDrawBlendMode(DX_BLENDMODE_ALPHA, m_Color);
         DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
         SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
     }

@@ -59,9 +59,9 @@ namespace object
         bool IsBlackOut = false;    //画像を非表示にするか
 
         const float m_FADESPEED = 1.0f; //フェード速度
-        const int m_COLLARCODE = 255;	//カラーコード
+        const int m_COLORCODE = 255;	//カラーコード
 
-        float m_Collar;       //画像透明度
+        float m_Color;       //画像透明度
         float m_Calculation;  //透明度変動分
 
         bool m_IsFadeIn_Done; //フェードインがおわったか

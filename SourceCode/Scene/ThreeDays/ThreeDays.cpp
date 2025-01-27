@@ -98,10 +98,14 @@ namespace scene
 
 	SceneBase* ThreeDays::UpdateScene(const float deltaTime)
 	{
-		object::ObjectManager::UpdateAllObj(deltaTime);
+		//ゲームステータスが同じ間更新
+		if (object::ObjectManager::GetNowGameState() == object::ObjectManager::GetNextGameState())
+		{
+			object::ObjectManager::UpdateAllObj(deltaTime);
+		}
 
 		//ゲームクリアしたら
-		if (object::GameClear== object::ObjectManager::GetNowGameState() || object::GameOver == object::ObjectManager::GetNowGameState())
+		if (object::GameClear== object::ObjectManager::GetNowGameState() || object::GameOver == object::ObjectManager::GetNowGameState()|| object::TimeOver == object::ObjectManager::GetNowGameState())
 		{
 			object::ObjectManager::ReleaseAllObj();
 			return new Result;

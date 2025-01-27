@@ -87,7 +87,7 @@ namespace object
 #ifdef DEBUG
 
         //上左右下のHitlineのカラーコード
-        std::unordered_map<std::string, VECTOR> d_CollarCode{
+        std::unordered_map<std::string, VECTOR> d_ColorCode{
             {areaMove_PosTag.UP,{255,40,0}},
             {areaMove_PosTag.RIGHT,{250,245,0}},
             {areaMove_PosTag.LEFT,{53,161,107}},

@@ -94,7 +94,7 @@ namespace object
 
         int m_TxtNum;           //表示中の文字数
 
-        const float m_WAITCOU_MAX = 3.0f;     //スタートしてから表示まで待ち時間
+        const float m_WAITCOU_MAX = 9.0f;     //スタートしてから表示まで待ち時間
         float m_StartCount;                   //スタートカウント
         bool m_WaitDone;                      //待ち時間終了したか
 
@@ -116,18 +116,20 @@ namespace object
 
         const float m_ANIMFPS = 0.1f;   //アニメFPS
         const float m_SPEED_DEFAULT = 7.0f;    //アニメスピード(default)
-        const float m_SPEED_SLOW = 2.0f;       //アニメスピード(slow)
+        const float m_SPEED_SLOW = 1.0f;       //アニメスピード(slow)
 
         const float m_MOVESPEED = 30.0f;        //移動スピード
         const float m_MOVEPOS_MAX = 3.0f;     //クリックUi移動量最大値
+
+        bool m_IsFirst;         //一番初めの表示か
 
         const POINTFLOAT m_UIPOS_RESET = {1780.0f,980.0f};     //クリックUi初期位置
 
         POINTFLOAT m_UiPos;     //クリックUi位置
 
-        VECTOR m_NowCollar;                             //現在の文字色
-        VECTOR m_COLLAR_DEFAULT = VGet(255, 255, 255);  //白色
-        VECTOR m_COLLAR_RED = VGet(255, 0, 0);          //赤色
+        VECTOR m_NowColor;                             //現在の文字色
+        VECTOR m_COLOR_DEFAULT = VGet(255, 255, 255);  //白色
+        VECTOR m_COLOR_RED = VGet(255, 0, 0);          //赤色
 	};
 }
 

@@ -3,6 +3,9 @@
 
 namespace object
 {
+    /// <summary>
+    /// ゲーム内時間関連
+    /// </summary>
     class Time :public ObjectBase
     {
     public:
@@ -44,8 +47,11 @@ namespace object
         const int m_MINUTES_RISETIME =10;    //表示用分増化分
         const int m_MINUTES_MAX = 60;    //表示用分増化最大値
 
-        const int m_FONTSIZE_AM = 35;      //フォントサイズ_am
-        const int m_FONTSIZE_TIME = 60;    //フォントサイズ_時刻
+        const POINTS m_FONTSIZE_AM = { 35,20 };      //フォントサイズ_am
+        const POINTS m_FONTSIZE_TIME = { 60,20 };    //フォントサイズ_時刻
+
+        int m_FontHandle_Am;    //フォントハンドル(am)
+        int m_FontHandle_Time;  //フォントハンドル(time)
 
         const int m_PLAYTIME_MAX = 5;       //プレイタイムの終了時刻
 
@@ -57,8 +63,12 @@ namespace object
 
         float m_DrawCount;   //表示時刻の算出
 
-        VECTOR m_NowCollar;                             //現在の文字色
-        VECTOR m_COLLAR_DEFAULT = VGet(255, 255, 255);  //白色
-        VECTOR m_COLLAR_RED = VGet(255, 0, 0);          //赤色
+        std::string m_AmText = "AM";            //表示テキスト(am)
+        std::string m_TimeText = "%d:%d";       //表示テキスト(time)
+        std::string m_TimeText_Zero = "%d:00";  //表示テキスト(time_zeromin)
+
+        VECTOR m_NowColor;                             //現在の文字色
+        VECTOR m_COLOR_DEFAULT = VGet(255, 255, 255);  //白色
+        VECTOR m_COLOR_RED = VGet(255, 0, 0);          //赤色
     };
 }
