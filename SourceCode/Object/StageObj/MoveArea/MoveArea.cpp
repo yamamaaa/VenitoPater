@@ -2,6 +2,7 @@
 #include "../../ObjectTag/Global_ObjectTag.h"
 #include "../../StageObj/AreaNumController/AreaNumController.h"
 #include "../../CharaObj/AvoidStatus/AvoidStatus.h"
+#include "../../../MouseStatus/MouseStatus.h"
 
 namespace object
 {
@@ -26,6 +27,10 @@ namespace object
 
     void MoveArea::UpdateObj(const float deltatime)
     {
+        //“ü—Íó‘Ô‚ª•s‰Â‚Ì‚Íˆ—‚È‚µ
+        if (!mousestatus::MouseStatus::GetIsFadeDone())
+            return;
+
         //ˆÚ“®‚µ‚½‚ç
         if (m_IsMove)
         {

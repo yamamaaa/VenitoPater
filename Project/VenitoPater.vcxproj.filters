@@ -199,6 +199,9 @@
     <ClCompile Include="..\SourceCode\Object\TextDraw\TextDraw.cpp">
       <Filter>ソースコード\Object\TextDraw</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\MouseStatus\MouseStatus.cpp">
+      <Filter>ソースコード\MouseStatus</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -443,6 +446,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\ObjectManager\PlayMenu.h">
       <Filter>ソースコード\Object\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\MouseStatus\MouseStatus.h">
+      <Filter>ソースコード\MouseStatus</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -703,6 +709,9 @@
     </Filter>
     <Filter Include="ソースコード\Object\TextDraw">
       <UniqueIdentifier>{d75384de-6542-40cc-97b5-794363ffd15c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\MouseStatus">
+      <UniqueIdentifier>{def61a4f-b10e-41d7-b68b-98dc23582d2e}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
