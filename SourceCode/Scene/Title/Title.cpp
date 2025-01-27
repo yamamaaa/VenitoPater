@@ -47,11 +47,11 @@ namespace scene
 
     SceneBase* Title::UpdateScene(float deltaTime)
     {
-        //LevelController::SetLevel(levelStatus.NOMAL);
-        //object::ObjectManager::ReleaseAllObj();
-        //object::ObjectManager::SetNowGameState(object::GameOver);
-        //object::ObjectManager::SetPlayMode(object::PlayNewGame);
-        //return new Result();
+        LevelController::SetLevel(levelStatus.NOMAL);
+        object::ObjectManager::ReleaseAllObj();
+        object::ObjectManager::SetNowGameState(object::GamePlay);
+        object::ObjectManager::SetPlayMode(object::PlayNewGame);
+        return new ThreeDays();
 
         if (!m_FadeInSet)
         {
