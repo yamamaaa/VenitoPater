@@ -87,7 +87,7 @@ namespace object
 				{
 					if (i == 0)	//コンテニューなら
 					{
-						ObjectManager::SetNextGameState(Continue);
+						ObjectManager::SetNextGameState(GamePlay);
 					}
 					else		//タイトルに戻るなら
 					{

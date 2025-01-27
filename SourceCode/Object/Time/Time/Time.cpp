@@ -80,7 +80,7 @@ namespace object
             if (ItemGetNum::GetIsNolmClear())
             {
                 //’B¬‚µ‚Ä‚¢‚½‚çƒNƒŠƒA‰æ–Ê‚Ö
-                ObjectManager::SetNowGameState(GameClear);
+                ObjectManager::SetNextGameState(GameClear);
             }
             else
             {
