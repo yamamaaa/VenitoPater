@@ -2,6 +2,8 @@
 #include "../../../ObjectTag/Global_ObjectTag.h"
 #include "../../../CharaObj/AvoidStatus/AvoidStatus.h"
 #include "../../LightController/LightController.h"
+#include "../../../ObjectManager/ObjectManager.h"
+#include "../../../NumDays/NumDays.h"
 
 namespace object
 {
@@ -25,7 +27,26 @@ namespace object
 		m_DrawObjPos[replace] = { 900.0f,450.0f };
 		m_DrawObjPos[replace_2] = { 770.0f,270.0f };
 
-		m_MoveSpeed = 24.0f;
+		m_MoveSpeed[0] = 12.0f;
+		m_MoveSpeed[1] = 18.0f;
+		m_MoveSpeed[2] = 20.0f;
+
+		//プレイモード別に初期設定
+		PlayMenu menu = ObjectManager::GetPlayMode();
+		if (menu == PlayNewGame)
+		{
+			//現在が何日目か取得
+			int day = NumDays::GetNumDays();
+
+			//カウント値の初期化
+			m_NowMoveSpeed = m_MoveSpeed[day -1];
+		}
+		else
+		{
+			//カウント値の初期化
+			m_NowMoveSpeed = m_MoveSpeed[2];
+		}
+
 		m_ObjDrawArea = 1;
 
 		m_ObjImg[0] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetNilData(0).c_str());
@@ -93,6 +114,6 @@ namespace object
 
 	void Nil::MoveObj(const float deltatime)
 	{
-		m_EnemyBoxPos.y += m_MoveSpeed* deltatime;	//移動速度計算
+		m_EnemyBoxPos.y += m_NowMoveSpeed * deltatime;	//移動速度計算
 	}
 }
