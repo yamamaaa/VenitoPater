@@ -32,6 +32,7 @@
     <ClCompile Include="..\SourceCode\JsonMaster\IOUtility\IOUtility.cpp" />
     <ClCompile Include="..\SourceCode\JsonMaster\JsonManager\JsonManager.cpp" />
     <ClCompile Include="..\SourceCode\JsonMaster\TextData\CharacterData\CharacterData.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\TextData\GameOverData\GameOverData.cpp" />
     <ClCompile Include="..\SourceCode\JsonMaster\TextData\MasterTextData\MasterTextData.cpp" />
     <ClCompile Include="..\SourceCode\JsonMaster\TextData\StillData\StillData.cpp" />
     <ClCompile Include="..\SourceCode\LevelController\LevelController.cpp" />
@@ -99,8 +100,10 @@
     <ClInclude Include="..\SourceCode\JsonMaster\ImageData\StoryImgData\StoryImgData.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\ImageData\TitleData\TitleData.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\IOUtility\IOUtility.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\JsonFile\Text\gameover.json" />
     <ClInclude Include="..\SourceCode\JsonMaster\JsonManager\JsonManager.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\TextData\CharacterData\CharacterData.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\TextData\GameOverData\GameOverData.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\TextData\MasterTextData\MasterTextData.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\TextData\StillData\StillData.h" />
     <ClInclude Include="..\SourceCode\LevelController\LevelController.h" />
@@ -138,7 +141,6 @@
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Still_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Story_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\ThreeDays_ObjectTag.h" />
-    <ClInclude Include="..\SourceCode\Object\ObjectTag\TimeOver_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\TitleObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\Result\BackGround\BackGround.h" />
     <ClInclude Include="..\SourceCode\Object\Result\GameClearUi\GameClearUi.h" />

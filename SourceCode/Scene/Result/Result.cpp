@@ -8,9 +8,6 @@
 
 #include"../../Object/Result/BackGround/BackGround.h"
 #include"../../Object/Result/GameOverUi/GameOverUi.h"
-
-#include"../../Object/ObjectTag/TimeOver_ObjectTag.h"
-
 #include"../../Object/TextDraw/TextDraw.h"
 
 #include"../../Object/ObjectTag/GameClear_ObjectTag.h"
@@ -40,10 +37,11 @@ namespace scene
             object::ObjectManager::SetNextGameState(object::GameOver);
             object::ObjectManager::Entry(new object::BackGround);
             object::ObjectManager::Entry(new object::GameOverUi);
+            object::ObjectManager::Entry(new object::TextDraw);
         }
         else if (object::ObjectManager::GetNowGameState() == object::TimeOver)
         {
-            object::ObjectManager::NowSceneSet(objecttag::TimeOver_ObjectTagAll);
+            object::ObjectManager::NowSceneSet(objecttag::GameOver_ObjectTagAll);
             object::ObjectManager::SetNextGameState(object::TimeOver);
 
             object::ObjectManager::Entry(new object::BackGround);
