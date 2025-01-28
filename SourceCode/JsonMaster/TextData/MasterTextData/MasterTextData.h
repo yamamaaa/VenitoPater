@@ -2,6 +2,7 @@
 #include<memory>
 #include "../CharacterData/CharacterData.h"
 #include "../StillData/StillData.h"
+#include "../GameOverData/GameOverData.h"
 
 namespace jsonmaster
 {
@@ -42,11 +43,18 @@ namespace json_textdata
 		/// <returns>Stillデータ</returns>
 		class StillData* Get_StillData_Instance() { return stilldata.get(); }
 
+		/// <summary>
+		/// GameOverDataインスタンス
+		/// </summary>
+		/// <returns>GameOverデータ</returns>
+		class GameOverData* Get_GameOverData_Instance() { return gameoverdata.get(); }
+
 	private:
 
 		jsonmaster::IOUtility* ioutility;							//IOUtilityインスタンス
 
 		std::unique_ptr<class CharacterData> characterdata;
 		std::unique_ptr<class StillData> stilldata;
+		std::unique_ptr<class GameOverData> gameoverdata;
 	};
 }

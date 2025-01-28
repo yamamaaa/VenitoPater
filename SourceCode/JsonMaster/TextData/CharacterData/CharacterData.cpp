@@ -14,7 +14,6 @@ namespace json_textdata
 		lineData.day_0 = json["line"]["day_0"];
 		lineData.day_1 = json["line"]["day_1"];
 		lineData.day_4 = json["line"]["day_4"];
-		lineData.gameover = json["line"]["gameover"];
 	}
 
 	CharacterData::~CharacterData()

@@ -12,8 +12,7 @@
     "line": {
       "day_0": "../Asset/text/character/line/day_0.txt",
       "day_1": "../Asset/text/character/line/day_1.txt",
-      "day_4": "../Asset/text/character/line/day_4.txt",
-      "gameover": "../Asset/text/character/line/gameover.txt"
+      "day_4": "../Asset/text/character/line/day_4.txt"
     }
   }
 }

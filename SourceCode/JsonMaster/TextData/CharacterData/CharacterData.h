@@ -34,7 +34,6 @@ namespace json_textdata
 		const std::string GetLineData_Day_0()const { return lineData.day_0; }
 		const std::string GetLineData_Day_1()const { return lineData.day_1; }
 		const std::string GetLineData_Day_4()const { return lineData.day_4; }
-		const std::string GetLineData_GameOver()const { return lineData.gameover; }
 
 	private:
 
@@ -56,7 +55,6 @@ namespace json_textdata
 			std::string day_0;
 			std::string day_1;
 			std::string day_4;
-			std::string gameover;
 		}lineData;
 	};
 }

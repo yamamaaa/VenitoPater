@@ -13,6 +13,9 @@ namespace json_textdata
 
 		Json stilljson = ioutility->Analysis("../SourceCode/JsonMaster/JsonFile/Text/still.json");
 		stilldata.reset(new StillData(stilljson["still"]));
+
+		Json gameoverjson = ioutility->Analysis("../SourceCode/JsonMaster/JsonFile/Text/gameover.json");
+		gameoverdata.reset(new GameOverData(gameoverjson["gameover"]));
 	}
 
 	MasterTextData::~MasterTextData()

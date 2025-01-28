@@ -11,6 +11,7 @@ namespace objecttag
     {
         std::string BACKGROUND = "background";
         std::string GAMEOVERUI = "gameoverui";
+        std::string TEXTDRAW = "textdraw";
     } gameOver_ObjectTag;
 
 
@@ -21,5 +22,6 @@ namespace objecttag
     {
         gameOver_ObjectTag.BACKGROUND,
         gameOver_ObjectTag.GAMEOVERUI,
+        gameOver_ObjectTag.TEXTDRAW,
     };
 }

@@ -1,0 +1,9 @@
+{
+    "gameover": {
+        "line_0": "../Asset/text/gameover/line_0.txt",
+        "line_1": "../Asset/text/gameover/line_1.txt",
+        "line_2": "../Asset/text/gameover/line_2.txt",
+        "line_3": "../Asset/text/gameover/line_3.txt",
+        "timeover": "../Asset/text/gameover/timeover.txt"
+    }
+}
