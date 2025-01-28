@@ -2,8 +2,8 @@
 #include "../../../ObjectTag/Global_ObjectTag.h"
 #include "../../../CharaObj/AvoidStatus/AvoidStatus.h"
 #include "../../LightController/LightController.h"
-#include "../../../NumDays/NumDays.h"
 #include "../../../ObjectManager/ObjectManager.h"
+#include "../../../NumDays/NumDays.h"
 
 namespace object
 {
@@ -23,13 +23,13 @@ namespace object
 	{
 		m_IDnumber = ira;
 
-		m_MoveSpeed[0] = 6.0f;
-		m_MoveSpeed[1] = 18.0f;
-		m_MoveSpeed[2] = 24.0f;
-
 		m_DrawObjPos[replace] = { 1000.0f,630.0f };
 		m_DrawObjPos[replace_2] = { 632.0f,525.0f };
 		m_DrawObjPos[action] = { 0.0f,665.0f };
+
+		m_MoveSpeed[0] = 6.0f;
+		m_MoveSpeed[1] = 18.0f;
+		m_MoveSpeed[2] = 24.0f;
 
 		//プレイモード別に初期設定
 		PlayMenu menu = ObjectManager::GetPlayMode();
@@ -39,12 +39,12 @@ namespace object
 			int day = NumDays::GetNumDays();
 
 			//カウント値の初期化
-			m_NowMoveSpeed = m_MoveSpeed[0];
+			m_NowMoveSpeed = m_MoveSpeed[day-1];
 		}
 		else
 		{
 			//カウント値の初期化
-			m_NowMoveSpeed = 18.0f;
+			m_NowMoveSpeed = m_MoveSpeed[2];
 		}
 
 		m_ObjDrawArea = 0;

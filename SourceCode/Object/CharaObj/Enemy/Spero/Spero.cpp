@@ -2,6 +2,8 @@
 #include "../../../ObjectTag/Global_ObjectTag.h"
 #include "../../../CharaObj/AvoidStatus/AvoidStatus.h"
 #include "../../LightController/LightController.h"
+#include "../../../ObjectManager/ObjectManager.h"
+#include "../../../NumDays/NumDays.h"
 
 namespace object
 {
@@ -25,7 +27,25 @@ namespace object
 		m_DrawObjPos[replace] = { 600.0f,505.0f };
 		m_DrawObjPos[replace_2] = { 1028.0f,450.0 };
 
-		m_MoveSpeed = 18.0f;
+		m_MoveSpeed[0] = 12.0f;
+		m_MoveSpeed[1] = 16.0f;
+		m_MoveSpeed[2] = 18.0f;
+
+		//プレイモード別に初期設定
+		PlayMenu menu = ObjectManager::GetPlayMode();
+		if (menu == PlayNewGame)
+		{
+			//現在が何日目か取得
+			int day = NumDays::GetNumDays();
+
+			//カウント値の初期化
+			m_NowMoveSpeed = m_MoveSpeed[day-1];
+		}
+		else
+		{
+			//カウント値の初期化
+			m_NowMoveSpeed = m_MoveSpeed[2];
+		}
 		m_ObjDrawArea = 0;
 
 		m_ObjImg[0] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetSperoData(0).c_str());
@@ -94,6 +114,6 @@ namespace object
 
 	void Spero::MoveObj(const float deltatime)
 	{
-		m_EnemyBoxPos.y += m_MoveSpeed* deltatime;	//移動速度計算
+		m_EnemyBoxPos.y += m_NowMoveSpeed* deltatime;	//移動速度計算
 	}
 }

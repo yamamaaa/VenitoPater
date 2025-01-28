@@ -51,8 +51,8 @@ namespace object
 		else
 		{
 			//カウント値の初期化
-			enemymanager->m_StartCount = enemymanager->m_STARTWAIT_MAX[2];
-			enemymanager->m_AppearCount_Max = enemymanager->m_APPEARCOUNT_MAX[2];
+			enemymanager->m_StartCount = enemymanager->m_STARTWAIT_MAX[1];
+			enemymanager->m_AppearCount_Max = enemymanager->m_APPEARCOUNT_MAX[1];
 			enemymanager->m_AppearCount = enemymanager->m_AppearCount_Max;
 		}
 
