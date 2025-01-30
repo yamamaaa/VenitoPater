@@ -3,6 +3,7 @@
 #include "../../../StageObj/AreaNumController/AreaNumController.h"
 #include"../../../ObjectManager/ObjectManager.h"
 #include "../../LightController/LightController.h"
+#include "../../../../SoundController/SoundController.h"
 
 namespace object
 {
@@ -35,6 +36,8 @@ namespace object
 
 		m_ObjSize = window->GetWindowSize();	//windowサイズの取得
 		m_ObjSize.y = 0;
+
+		sound_controller::SoundController::AddSoundData("../Asset/sound/play/light.mp3","light", 250, true);
 	}
 
 	void EnemyBase::IsHitEnemyLine()
@@ -100,6 +103,12 @@ namespace object
 		}
 	}
 
+	void EnemyBase::AvoidReset()
+	{
+		//カウントのリセット
+		m_ResetCount = 0.0f;
+	}
+
 	void EnemyBase::ObjStatusUp()
 	{
 		//当たったEmylineによって状態切り替え
@@ -131,6 +140,7 @@ namespace object
 	{
 		//敵の退出時画面を点滅させる
 		LightController::SetIsBlinking(true);
+		sound_controller::SoundController::StartSound("light");
 		m_BlinkingCount+= m_COUSPPED_BLINKING*deltatime;
 		if (m_BlinkingCount >= m_BLINKING_COUMAX)
 		{

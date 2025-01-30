@@ -49,7 +49,8 @@ namespace scene
         /// <summary>
         /// シーン切り替え時処理
         /// </summary>
-        void TransitorScene();
+        /// <param name="deltaTime">デルタタイム</param>
+        void TransitorScene(const float deltatime);
 
         bool m_IsChangeScene;       //シーン切り替えを行うか
         bool m_FadeInSet;           //フェードインを行ったか

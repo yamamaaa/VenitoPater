@@ -4,6 +4,7 @@
 #include "../../LightController/LightController.h"
 #include "../../../ObjectManager/ObjectManager.h"
 #include "../../../NumDays/NumDays.h"
+#include "../../../../SoundController/SoundController.h"
 
 namespace object
 {
@@ -47,6 +48,8 @@ namespace object
 			m_NowMoveSpeed = m_MoveSpeed[2];
 		}
 
+		sound_controller::SoundController::AddSoundData("../Asset/sound/play/ira.mp3", "ira", 200, true);
+
 		m_ObjDrawArea = 0;
 
 		m_ObjImg[0] = -1;
@@ -75,13 +78,9 @@ namespace object
 				AvoidAction(deltatime);	//回避行動時処理
 			}
 		}
-
-		//他の敵がアクションを起こしてなかったら
-		if (!EnemyManager::GetEmyIsAction())
+		else
 		{
-			MoveObj(deltatime);	//移動処理
-			IsHitEnemyLine();	//enemyline当たり判定
-			ObjStatusUp();		//hitしたらobjのセット
+			AvoidReset();
 		}
 
 		//当たったラインを調べる
@@ -91,6 +90,22 @@ namespace object
 		if (action == linenum)
 		{
 			EnemyManager::SetBeefUpEmyIsAction(true);
+
+			//action中で表示できるときBGMを流す
+			if (IsObjDraw()&& !EnemyManager::GetEmyIsAction())
+				sound_controller::SoundController::StartSound("ira");
+			else
+				sound_controller::SoundController::StopSound("ira");
+		}
+		else
+		{
+			//他の敵がアクションを起こしてなかったら
+			if (!EnemyManager::GetEmyIsAction())
+			{
+				MoveObj(deltatime);	//移動処理
+				IsHitEnemyLine();	//enemyline当たり判定
+				ObjStatusUp();		//hitしたらobjのセット
+			}
 		}
 
 		//プレイヤーが回避成功したらobjのリセット

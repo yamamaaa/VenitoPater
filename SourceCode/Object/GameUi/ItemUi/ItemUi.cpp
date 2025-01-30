@@ -64,9 +64,16 @@ namespace object
         int item_n = ItemGetNum::GetNowNItem();
         int item_r = ItemGetNum::GetNowRItem();
 
-        //所持アイテム数表示
-        DrawFormatStringFToHandle(m_NItemNum_Pos.x, m_NItemNum_Pos.y, cr, m_FontHandle, m_ItemText.c_str(), item_n);
-        DrawFormatStringFToHandle(m_RItemNum_Pos.x, m_RItemNum_Pos.y, cr, m_FontHandle, m_ItemText.c_str(), item_n);
+        if (ObjectManager::GetPlayMode() == PlayMenu::PlayRankingMode)
+        {
+            DrawFormatStringFToHandle(m_NItemNum_Pos.x, m_NItemNum_Pos.y, cr, m_FontHandle, m_ItemText.c_str(), item_n);
+            DrawFormatStringFToHandle(m_RItemNum_Pos.x, m_RItemNum_Pos.y, cr, m_FontHandle, m_ItemText.c_str(), item_r);
+        }
+        else
+        {
+            //所持アイテム数表示
+            DrawFormatStringFToHandle(m_NItemNum_Pos.x, m_NItemNum_Pos.y, cr, m_FontHandle, m_ItemText.c_str(), item_n+ item_r);
+        }
 
         //アイテムアイコン表示
         DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);

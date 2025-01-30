@@ -47,7 +47,7 @@ namespace transitor
 		/// フェード後処理
 		/// </summary>
 		/// <returns></returns>
-		static const void FadeProcessing();
+		static void FadeProcessing();
 
 	private:
 

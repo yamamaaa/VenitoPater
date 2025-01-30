@@ -3,6 +3,7 @@
 #include "../EnemyManager/EnemyManager.h"
 #include "../../../Time/TimeStatus/TimeStatus.h"
 #include "../../../ObjectManager/ObjectManager.h"
+#include "../../../../SoundController/SoundController.h"
 
 namespace object
 {
@@ -26,6 +27,9 @@ namespace object
 		m_EmyActionImg[1] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetNilData(3).c_str());
 		m_EmyActionImg[2] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetSperoData(3).c_str());
 		m_EmyActionImg[3] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetFamiliaData(2).c_str());
+
+		sound_controller::SoundController::AddSoundData("../Asset/sound/play/enemy.mp3", "enemy", 250, false);
+		sound_controller::SoundController::AddSoundData("../Asset/sound/play/emyaction.mp3", "emyaction", 180, false);
 	}
 
 	void EnemyAction::UpdateObj(const float deltatime)
@@ -57,6 +61,9 @@ namespace object
 		{
 			ObjectManager::SetNextGameState(TimeOver);
 		}
+
+		sound_controller::SoundController::StartSound("enemy");
+		sound_controller::SoundController::StartSound("emyaction");
 	}
 
 	void EnemyAction::DrawObj()

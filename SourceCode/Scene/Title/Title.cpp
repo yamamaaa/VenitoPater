@@ -40,18 +40,18 @@ namespace scene
         LevelController::Initialize();
         object::NumDays::Initialize();
 
-        //TitleâÊñ ÇÃëSUiê∂ê¨
-        object::ObjectManager::Entry(new object::TitleUi);
-        object::ObjectManager::Entry(new object::SelectMode);
+        ////TitleâÊñ ÇÃëSUiê∂ê¨
+        //object::ObjectManager::Entry(new object::TitleUi);
+        //object::ObjectManager::Entry(new object::SelectMode);
     }
 
     SceneBase* Title::UpdateScene(float deltaTime)
     {
         LevelController::SetLevel(levelStatus.NOMAL);
         object::ObjectManager::ReleaseAllObj();
-        object::ObjectManager::SetNowGameState(object::GameOver);
+        object::ObjectManager::SetNowGameState(object::GamePlay);
         object::ObjectManager::SetPlayMode(object::PlayNewGame);
-        return new Result();
+        return new ThreeDays();
 
         if (!m_FadeInSet)
         {
@@ -67,7 +67,7 @@ namespace scene
         {
             m_IsChangeScene = true;
             transitor::FadeTransitor::FadeOutStart(deltaTime);
-            TransitorScene();
+            TransitorScene(deltaTime);
         }
         else
         {

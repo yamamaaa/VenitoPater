@@ -94,9 +94,9 @@ namespace object
 
         int m_TxtNum;           //表示中の文字数
 
-        const float m_COUNT_DECREMENT = 2.5f;	//カウント減らし量
-        const float m_CLICKCOU_MAX = 1.0f;      //再度クリックできるまで
-        const float m_CLICKCOU_WEIT = 6.0f;    //待機モード中の待ち時間
+        const float m_COUNT_DECREMENT = 2.4f;	//カウント減らし量
+        const float m_CLICKCOU_MAX = 1.2f;      //再度クリックできるまで
+        const float m_CLICKCOU_WEIT = 4.0f;    //待機モード中の待ち時間
 
         bool m_IsClick;         //クリックしたか
         bool m_IsLineSet;       //表示文字をセットしたか
@@ -110,14 +110,15 @@ namespace object
         float m_AnimCount;      //文字のアニメカウント
         float m_AnimSpeed;      //アニメスピード
 
-        const float m_ANIMFPS = 0.1f;   //アニメFPS
-        const float m_SPEED_DEFAULT = 7.0f;    //アニメスピード(default)
-        const float m_SPEED_SLOW = 1.0f;       //アニメスピード(slow)
+        const float m_ANIMFPS = 1.0f;          //アニメFPS
+        const float m_SPEED_DEFAULT = 200.0f;    //アニメスピード(default)
+        const float m_SPEED_SLOW = 0.2f;       //アニメスピード(slow)
 
         const float m_MOVESPEED = 30.0f;        //移動スピード
         const float m_MOVEPOS_MAX = 3.0f;     //クリックUi移動量最大値
 
-        bool m_IsFirst;         //一番初めの表示か
+        bool m_IsSound_Start;       //サウンドを再生再生するか
+        bool m_IsFirst;             //一番初めの表示か
 
         const POINTFLOAT m_UIPOS_RESET = {1780.0f,980.0f};     //クリックUi初期位置
 

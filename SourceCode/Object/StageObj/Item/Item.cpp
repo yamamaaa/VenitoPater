@@ -6,6 +6,7 @@
 #include "../ItemGetNum/ItemGetNum.h"
 #include "../../Time/TimeStatus/TimeStatus.h"
 #include "../../CharaObj/Enemy/EnemyManager/EnemyManager.h"
+#include "../../../SoundController/SoundController.h"
 
 namespace object
 {
@@ -46,6 +47,10 @@ namespace object
 			m_ItemImg_area1[i] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->Get_ItemData_Area_1(i).c_str());
 			m_ItemImg_area2[i] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->Get_ItemData_Area_2(i).c_str());
 		}
+
+		sound_controller::SoundController::AddSoundData("../Asset/sound/play/duck_0.mp3", "duck_0", 200, false);
+		sound_controller::SoundController::AddSoundData("../Asset/sound/play/duck_1.mp3", "duck_1", 200, false);
+		sound_controller::SoundController::AddSoundData("../Asset/sound/play/duck_2.mp3", "duck_2", 200, false);
 	}
 
 	void Item::UpdateObj(const float deltatime)
@@ -80,6 +85,7 @@ namespace object
 			if (emy > 0 && m_IsRareItem)
 			{
 				m_IsOccur = false;
+				m_IsSet = false;
 				m_IsRareItem = false;
 			}
 		}
@@ -94,6 +100,22 @@ namespace object
 			//アイテムをクリックしたら
 			if (GetStateClick() && GetCursorHit())
 			{
+				int range = 3;
+				int getse = rand() % range;
+
+				switch (getse)
+				{
+				case 0:
+					sound_controller::SoundController::StartSound("duck_0");
+					break;
+				case 1:
+					sound_controller::SoundController::StartSound("duck_1");
+					break;
+				case 2:
+					sound_controller::SoundController::StartSound("duck_2");
+					break;
+				}
+
 				//再出現カウントをセット
 				m_OccurCount = m_OCCURCOUNT_MAX;
 
@@ -178,9 +200,20 @@ namespace object
 		//レアアイテムだったら
 		if (itemnum <= m_RARECHANCA)
 		{
-			//現在のアイテム番号をレアアイテムに
-			m_NowItemNumber = m_RAREITEM_INDEX;
-			m_IsRareItem = true;
+			//敵が出現していないならレアアイテムセット
+			int emy = EnemyManager::GetAppearNumNow();
+			if (emy > 0)
+			{
+				//出現するアイテムの番号をセット
+				int range = m_TOTAlITEM_NUM;
+				m_NowItemNumber = rand() % range;	//ランダム生成
+			}
+			else
+			{
+				//現在のアイテム番号をレアアイテムに
+				m_NowItemNumber = m_RAREITEM_INDEX;
+				m_IsRareItem = true;
+			}
 		}
 		else
 		{
