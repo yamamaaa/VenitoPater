@@ -205,6 +205,9 @@
     <ClCompile Include="..\SourceCode\JsonMaster\TextData\GameOverData\GameOverData.cpp">
       <Filter>ソースコード\JsonMaster\TextData\GameOberData</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\SoundController\SoundController.cpp">
+      <Filter>ソースコード\SoundController</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -455,6 +458,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\JsonMaster\TextData\GameOverData\GameOverData.h">
       <Filter>ソースコード\JsonMaster\TextData\GameOberData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\SoundController\SoundController.h">
+      <Filter>ソースコード\SoundController</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -721,6 +727,9 @@
     </Filter>
     <Filter Include="ソースコード\JsonMaster\TextData\GameOberData">
       <UniqueIdentifier>{f8487604-0a72-4395-bdf3-795abe4e5569}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\SoundController">
+      <UniqueIdentifier>{cb191739-a926-4a79-8218-4fa0cc58210f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

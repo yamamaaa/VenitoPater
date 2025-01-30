@@ -40,9 +40,10 @@ namespace object
         /// </summary>
         void DrawObj() override;
 
+        int index;
         int m_SelectIndex;        //インデックス
-
         int m_MenuHandol;         //メニュー画像ハンドル
+
         POINTFLOAT m_MenuPos;     //メニュー画像位置
         POINTFLOAT m_SelectPos;   //セレクト画像位置
 

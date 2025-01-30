@@ -29,7 +29,7 @@ namespace object
     void NumDays::LoadObject()
     {
         //“ú”‚Ì‰Šú‰»
-        numdays->m_NumDays = 0;
+        numdays->m_NumDays = 3;
     }
 
     void NumDays::UpdateNumDays()

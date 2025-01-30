@@ -86,6 +86,7 @@
     <ClCompile Include="..\SourceCode\Scene\Story\Story.cpp" />
     <ClCompile Include="..\SourceCode\Scene\ThreeDays\ThreeDays.cpp" />
     <ClCompile Include="..\SourceCode\Scene\Title\Title.cpp" />
+    <ClCompile Include="..\SourceCode\SoundController\SoundController.cpp" />
     <ClCompile Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -171,6 +172,7 @@
     <ClInclude Include="..\SourceCode\Scene\Story\Story.h" />
     <ClInclude Include="..\SourceCode\Scene\ThreeDays\ThreeDays.h" />
     <ClInclude Include="..\SourceCode\Scene\Title\Title.h" />
+    <ClInclude Include="..\SourceCode\SoundController\SoundController.h" />
     <ClInclude Include="..\SourceCode\Transitor\FadeTransitor\FadeTransitor.h" />
   </ItemGroup>
   <ItemGroup>

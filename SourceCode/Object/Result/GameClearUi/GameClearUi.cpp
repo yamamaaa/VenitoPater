@@ -3,6 +3,7 @@
 #include "../../../GameSystem/Window/Window.h"
 #include "../../ObjectManager/ObjectManager.h"
 #include "../../NumDays/NumDays.h"
+#include "../../../SoundController/SoundController.h"
 
 namespace object
 {
@@ -23,8 +24,13 @@ namespace object
 	{
 		m_DrawCount = m_DRAWCOUNT_MAX;
 
+		m_IsSound = false;
+
 		window = nullptr;	//windowのインスタンス生成
 		POINTS windowsize = window->GetWindowSize();
+
+		sound_controller::SoundController::AddSoundData("../Asset/sound/gameclear/bgm.mp3", "bgm", 200, false);
+		sound_controller::SoundController::AddSoundData("../Asset/sound/gameclear/applause.mp3", "applause", 200, false);
 
 		m_FontHandle = CreateFontToHandle("メイリオ", m_FONTSIZE.x, m_FONTSIZE.y, DX_FONTTYPE_ANTIALIASING);
 
@@ -37,6 +43,13 @@ namespace object
 
 	void GameClearUi::UpdateObj(const float deltatime)
 	{
+		if (!m_IsSound)
+		{
+			sound_controller::SoundController::StartSound("bgm");
+			sound_controller::SoundController::StartSound("applause");
+			m_IsSound = true;
+		}
+
 		//一定時間文字の表示
 		if (m_DrawCount <= 0.0f)
 		{

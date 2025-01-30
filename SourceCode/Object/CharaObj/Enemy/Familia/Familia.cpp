@@ -19,6 +19,8 @@ namespace object
 	void Familia::LoadObject()
 	{
 		m_NowMoveSpeed = 18.0f;
+		m_NowMoveSpeed = 600.0f;
+
 		m_ObjDrawArea = 3;
 
 		m_IDnumber = familia;

@@ -127,8 +127,8 @@ namespace object
 		static const int m_EMYSCREEN_MAX = 3;	//画面内敵の出現総数
 		static const int m_APPEAR_RANGE = 4;	//出現時のランダム範囲
 
-		const float m_STARTWAIT_MAX[3] = { 90.0f,30.0f,18.0f};		//スタート時の排出待ち時間
-		const float m_APPEARCOUNT_MAX[3] = {120.0f, 60.0f,24.0f};		//再び出現できるまでのカウント
+		const float m_STARTWAIT_MAX[3] = { 60.0f,24.0f,6.0f};			//スタート時の排出待ち時間
+		const float m_APPEARCOUNT_MAX[3] = {120.0f,12.0f,3.0f};		//再び出現できるまでのカウント
 
 		float m_AppearCount_Max;	//現在の再出現までのカウント
 

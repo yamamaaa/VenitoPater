@@ -53,6 +53,12 @@ namespace object
 		void AvoidAction(const float deltatime);
 
 		/// <summary>
+		/// 回避行動キャンセルをしたら
+		/// </summary>
+		/// <param name="deltatime">デルタタイム</param>
+		void AvoidReset();
+
+		/// <summary>
 		/// EmyLineに当たったらObjステータスの更新
 		/// </summary>
 		void ObjStatusUp();
@@ -133,7 +139,7 @@ namespace object
 		void MoveObj(const float deltatime)override {};
 
 		const float m_COUNTSPPED_RESET = 6.0f;	//敵のリセットを行うまで(カウントスピード)
-		const float m_COUNTRESET_MAX = 12.0f;	//敵のリセットを行うまで(カウント最大値)
+		const float m_COUNTRESET_MAX = 18.0f;	//敵のリセットを行うまで(カウント最大値)
 
 		const float m_COUSPPED_BLINKING = 12.0f;	//画面の点滅時間(カウントスピード)
 		const float m_BLINKING_COUMAX = 6.0f;	//画面の点滅時間(カウント最大値)

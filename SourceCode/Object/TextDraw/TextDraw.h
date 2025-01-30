@@ -110,7 +110,7 @@ namespace object
 
         int m_FontHandle;               //フォントハンドル
 
-        const float m_WAITCOU_MAX = 2.4f;     //スタートしてから表示まで待ち時間
+        const float m_WAITCOU_MAX = 3.0f;     //スタートしてから表示まで待ち時間
         float m_StartCount;                   //スタートカウント
         bool m_WaitDone;                      //待ち時間終了したか
 

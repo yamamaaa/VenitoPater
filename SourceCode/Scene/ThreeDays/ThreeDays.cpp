@@ -109,7 +109,7 @@ namespace scene
 		{
 			m_IsChangeScene = true;
 			transitor::FadeTransitor::FadeOutStart(deltaTime);
-			TransitorScene();
+			TransitorScene(deltaTime);
 		}
 		else
 		{

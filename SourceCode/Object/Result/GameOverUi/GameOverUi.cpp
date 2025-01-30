@@ -2,6 +2,7 @@
 #include "../../ObjectTag/GameOver_ObjectTag.h"
 #include "../../../GameSystem/Window/Window.h"
 #include "../../ObjectManager/ObjectManager.h"
+#include "../../../SoundController/SoundController.h"
 
 namespace object
 {
@@ -31,6 +32,10 @@ namespace object
 
 		m_ObjHandle = LoadGraph(JsonManager::ImgData_Instance()->Get_ResultData_Instance()->GetOverData_Select().c_str());
 
+		sound_controller::SoundController::AddSoundData("../Asset/sound/gameover/bgm.mp3", "bgm", 230, true);
+		sound_controller::SoundController::AddSoundData("../Asset/sound/gameover/back.mp3", "back", 250, false);
+		sound_controller::SoundController::AddSoundData("../Asset/sound/gameover/button.mp3", "button", 250, false);
+
 		m_Uipos.x = m_SelectUi_Pos[0].x;
 		m_Uipos.y = m_SelectUi_Pos[0].y;
 
@@ -50,6 +55,8 @@ namespace object
 	void GameOverUi::UpdateObj(const float deltatime)
 	{
 		//マウスがエリア移動の位置にあるか
+
+		sound_controller::SoundController::StartSound("bgm");
 
 		for (int i = 0; i < 2; i++)
 		{
@@ -87,10 +94,12 @@ namespace object
 				{
 					if (i == 0)	//コンテニューなら
 					{
+						sound_controller::SoundController::StartSound("button");
 						ObjectManager::SetNextGameState(GamePlay);
 					}
 					else		//タイトルに戻るなら
 					{
+						sound_controller::SoundController::StartSound("back");
 						ObjectManager::SetNextGameState(Title);
 					}
 				}

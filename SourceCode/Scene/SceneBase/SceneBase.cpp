@@ -23,7 +23,7 @@ namespace scene
         }
     }
 
-    void SceneBase::TransitorScene()
+    void SceneBase::TransitorScene(const float deltatime)
     {
         //処理が終わったらステータスの変更と後処理
         if (transitor::FadeTransitor::IsFadeDone())

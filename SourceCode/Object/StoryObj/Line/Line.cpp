@@ -4,6 +4,7 @@
 #include"../../ObjectManager/ObjectManager.h"
 #include"../../../MouseStatus/MouseStatus.h"
 #include"../../NumDays/NumDays.h"
+#include"../../../SoundController/SoundController.h"
 
 namespace object
 {
@@ -31,6 +32,7 @@ namespace object
 		m_IsClickUi = false;
 		m_IsLineDone = false;
 		m_IsMove_Up = false;
+		m_IsSound_Start = false;
 		m_IsFirst = true;
 
 		LineStatus::SetIsDoneAnim(false);
@@ -44,7 +46,7 @@ namespace object
 		m_AnimSpeed = m_SPEED_DEFAULT;
 
 		//現在のゲームステータスを取得
-		GameStatus status=ObjectManager::GetNextGameState();
+		GameStatus status=ObjectManager::GetNowGameState();
 
 		//日数別に読み込むファイルを変更
 		int dey = NumDays::GetNumDays();
@@ -63,33 +65,41 @@ namespace object
 				text = JsonManager::TextData_Instance()->Get_CharacterData_Instance()->GetLineData_Day_4();
 				break;
 			}
+			sound_controller::SoundController::AddSoundData("../Asset/sound/story/story_bgm.mp3", "bgm", 200, true);
 		}
 		if (status == Still)
 		{
 			switch (dey)
 			{
 			case 0:
+				sound_controller::SoundController::AddSoundData("../Asset/sound/story/still_day_0_bgm.mp3", "bgm", 200, true);
 				text = JsonManager::TextData_Instance()->Get_StillData_Instance()->GetLineData_Day_0();
 				break;
 			case 1:
+				sound_controller::SoundController::AddSoundData("../Asset/sound/story/still_day_1_bgm.mp3", "bgm", 200, true);
 				text = JsonManager::TextData_Instance()->Get_StillData_Instance()->GetLineData_Day_1();
 				break;
 			case 2:
+				sound_controller::SoundController::AddSoundData("../Asset/sound/story/still_day_2_bgm.mp3", "bgm", 200, true);
 				text = JsonManager::TextData_Instance()->Get_StillData_Instance()->GetLineData_Day_2();
 				break;
 			case 3:
+				sound_controller::SoundController::AddSoundData("../Asset/sound/story/still_day_3_bgm.mp3", "bgm", 160, true);
 				text = JsonManager::TextData_Instance()->Get_StillData_Instance()->GetLineData_Day_3();
 				break;
 			case 4:
+				sound_controller::SoundController::AddSoundData("../Asset/sound/story/still_day_4_bgm.mp3", "bgm", 250, true);
 				text = JsonManager::TextData_Instance()->Get_StillData_Instance()->GetLineData_Day_4();
 				break;
 			}
 		}
 
-		m_FontHandle = CreateFontToHandle("メイリオ", 30, 5, DX_FONTTYPE_ANTIALIASING);
-
 		//ファイルの読み込み
 		m_TxtFile.open(text.c_str());
+
+		sound_controller::SoundController::AddSoundData("../Asset/sound/story/button.mp3", "button", 220, false);
+
+		m_FontHandle = CreateFontToHandle("メイリオ", 30, 5, DX_FONTTYPE_ANTIALIASING);
 
 		if (m_FontHandle == -1)
 		{
@@ -101,6 +111,15 @@ namespace object
 	void Line::UpdateObj(const float deltatime)
 	{
 		LineStatus::SetIsDoneAnim(false);
+
+		if (m_IsSound_Start)
+		{
+			sound_controller::SoundController::StartSound("bgm");
+		}
+		else
+		{
+			sound_controller::SoundController::StopSound("bgm");
+		}
 
 		//入力状態が不可の時は処理なし
 		if (!mousestatus::MouseStatus::GetIsFadeDone())
@@ -192,6 +211,7 @@ namespace object
 				{
 					//文字のセットを行う
 					m_IsLineSet = false;
+					sound_controller::SoundController::StartSound("button");
 				}
 				m_IsClick = false;
 				m_ClickCount = m_CLICKCOU_MAX;
@@ -240,6 +260,14 @@ namespace object
 			else if (line == m_SLOW)
 			{
 				m_AnimSpeed = m_SPEED_SLOW;
+			}
+			else if (line == "soundstop")
+			{
+				m_IsSound_Start = false;
+			}
+			else if (line == "soundstart")
+			{
+				m_IsSound_Start = true;
 			}
 		}
 
@@ -305,12 +333,14 @@ namespace object
 
 	void Line::TextAnim(const float deltatime)
 	{
-		m_AnimCount += m_AnimSpeed* deltatime;
+		m_AnimCount += m_AnimSpeed;
+
 		if (m_AnimCount >= m_ANIMFPS)
 		{
 			if (m_TxtNum == m_Line.size())
 			{
 				m_IslineAnim = false;
+				m_AnimCount = 0.0f;
 			}
 			else
 			{

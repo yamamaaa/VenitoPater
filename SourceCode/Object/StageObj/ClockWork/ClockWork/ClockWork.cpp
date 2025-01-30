@@ -5,6 +5,7 @@
 #include "../../ClockWork/RPMController/RPMController.h"
 #include "../../../CharaObj/Enemy/EnemyManager/EnemyManager.h"
 #include "../../../Time/TimeStatus/TimeStatus.h"
+#include "../../../../SoundController/SoundController.h"
 
 namespace object
 {
@@ -41,6 +42,9 @@ namespace object
 
 		//画像の読み込み
 		LoadDivGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetClockWork().c_str(), m_AnimPattern * m_AnimType, m_AnimPattern, m_AnimType, m_colwidth, m_colheight, m_Handle);
+
+		sound_controller::SoundController::AddSoundData("../Asset/sound/play/musicbox.mp3","musicbox", 250, true);
+		sound_controller::SoundController::AddSoundData("../Asset/sound/play/clockwork.mp3", "clockwork", 160, true);
 	}
 
 	void ClockWork::UpdateObj(const float deltatime)
@@ -54,8 +58,9 @@ namespace object
 
 			if (m_IsClickNow)
 			{
-				rpmhp+= m_RPMHP_COUNTSPEED *deltatime;						//回転量Hpを増やす
-				m_AnimationFPS = m_CLICK_FPS;	//アニメーション設定
+				sound_controller::SoundController::StartSound("clockwork");
+				rpmhp+= m_RPMHP_COUNTSPEED *deltatime;		//回転量Hpを増やす
+				m_AnimationFPS = m_CLICK_FPS;				//アニメーション設定
 				MoveObj(deltatime);
 			}
 			m_IsClickNow = false;
@@ -73,6 +78,7 @@ namespace object
 		else
 		{
 			m_CanDraw = false;
+			sound_controller::SoundController::StopSound("musicbox");
 		}
 
 		//回転量が0以下の場合処理なし
@@ -101,6 +107,7 @@ namespace object
 		}
 		else
 		{
+			sound_controller::SoundController::StopSound("musicbox");
 			RPMController::SetIsRPMLost(true);
 		}
 
@@ -113,6 +120,7 @@ namespace object
 		if (!m_CanDraw)
 			return;
 
+		sound_controller::SoundController::StartSound("musicbox");
 		m_AnimTimer += deltatime;
 
 		//アニメーションの計算

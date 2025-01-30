@@ -1,6 +1,7 @@
 #include "Area.h"
 #include "../../ObjectTag/Global_ObjectTag.h"
 #include "../AreaNumController/AreaNumController.h"
+#include "../../../SoundController/SoundController.h"
 
 namespace object
 {
@@ -33,12 +34,15 @@ namespace object
 
 		//表示エリアの初期値セット
 		m_ObjHandle = m_AreaImg[AreaNumController::GetAreaNum()];
+
+		sound_controller::SoundController::AddSoundData("../Asset/sound/play/bgm.mp3","bgm", 150, true);
 	}
 
 	void Area::UpdateObj(const float deltatime)
 	{
 		//表示エリアの更新
 		m_ObjHandle = m_AreaImg[AreaNumController::GetAreaNum()];
+		sound_controller::SoundController::StartSound("bgm");
 	}
 
 	void Area::DrawObj()

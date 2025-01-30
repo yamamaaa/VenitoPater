@@ -72,6 +72,10 @@ namespace object
 		{
 			AvoidAction(deltatime);	//回避行動時処理
 		}
+		else
+		{
+			AvoidReset();
+		}
 
 		//他の敵がアクションを起こしてなかったら
 		if (!EnemyManager::GetEmyIsAction())

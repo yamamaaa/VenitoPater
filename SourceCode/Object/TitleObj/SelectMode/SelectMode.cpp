@@ -1,5 +1,6 @@
 #include "SelectMode.h"
 #include "../../ObjectTag/TitleObjectTag.h"
+#include "../../../SoundController/SoundController.h"
 
 namespace object
 {
@@ -27,14 +28,20 @@ namespace object
 		//クリック可能状態
 		m_CanClick = true;
 
+
 		m_ObjHandle = LoadGraph(JsonManager::ImgData_Instance()->Get_TitleData_Instance()->GetSelectData().c_str());
 		m_MenuHandol= LoadGraph(JsonManager::ImgData_Instance()->Get_TitleData_Instance()->GetMenuData().c_str());
+		sound_controller::SoundController::AddSoundData("../Asset/sound/title/bgm.mp3", "bgm", 150, true);
+		sound_controller::SoundController::AddSoundData("../Asset/sound/title/select.mp3", "select", 100, false);
+		sound_controller::SoundController::AddSoundData("../Asset/sound/title/button.mp3", "button", 150, false);
+		sound_controller::SoundController::AddSoundData("../Asset/sound/title/transition.mp3", "transition", 230, false);
 	}
 
 	void SelectMode::UpdateObj(const float deltatime)
 	{
-		m_SelectIndex = 0;
+		sound_controller::SoundController::StartSound("bgm");
 
+		m_SelectIndex = 0;
 		for (int i = 0; i < 3; i++)
 		{
 			//マウスがエリア移動の位置にあるか
@@ -50,6 +57,11 @@ namespace object
 				CanClick();
 				m_SelectPos.x = m_SelectMenuPos[i].x;
 				m_SelectPos.y = m_SelectMenuPos[i].y;
+				if (index != m_SelectIndex)
+				{
+					index = m_SelectIndex;
+					sound_controller::SoundController::StartSound("select");
+				}
 			}
 			//アイテムをクリックしたら
 			if (GetStateClick() && GetCursorHit())
@@ -73,10 +85,19 @@ namespace object
 					break;
 				}
 
+				if (menu == PlayMenu::PlayNewGame)
+				{
+					sound_controller::SoundController::StartSound("transition");
+				}
+				else
+				{
+					sound_controller::SoundController::StartSound("button");
+				}
+
+				WaitTimer(240);
+
 				ObjectManager::SetPlayMode(menu);
 				ObjectManager::SetNextGameState(status);
-
-				return;
 			}
 			else
 			{

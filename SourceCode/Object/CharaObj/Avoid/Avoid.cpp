@@ -4,6 +4,7 @@
 #include"../AvoidStatus/AvoidStatus.h"
 #include"../HatUi/HatUi.h"
 #include"../../StageObj/AreaNumController/AreaNumController.h"
+#include"../../../SoundController/SoundController.h"
 
 namespace object
 {
@@ -34,6 +35,8 @@ namespace object
 
 		//HatUi‚Ì‰Šú‰»
 		HatUi::Initialize();
+
+		sound_controller::SoundController::AddSoundData("../Asset/sound/play/hat.mp3", "hat", 255, false);
 	}
 
 	void Avoid::UpdateObj(const float deltatime)
@@ -51,6 +54,8 @@ namespace object
 			//ƒNƒŠƒbƒNó‘Ô‚Ì
 			if (GetStateClick()&& m_IsClick)
 			{
+				sound_controller::SoundController::StartSound("hat");
+
 				if (!AvoidStatus::GetIsAvoid())
 				{
 					HatUi::SetMove();
