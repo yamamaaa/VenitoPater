@@ -1,24 +1,26 @@
 #pragma once
+#pragma once
 #include"../../Scene/SceneBase/SceneBase.h"
 
 namespace scene
 {
     /// <summary>
-    /// result画面関連
-    /// </summary>
-    class Result:public SceneBase
+     /// ゲーム終了画面関連
+     /// </summary>
+    class Clear:public SceneBase
     {
     public:
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        Result();
+        Clear();
 
         /// <summary>
         /// デストラクタ
         /// </summary>
-        ~Result();
+        ~Clear();
+
     private:
 
         /// <summary>
@@ -37,5 +39,7 @@ namespace scene
         /// シーン更新処理
         /// </summary>
         void DrawScene()override;
+
+        bool m_IsNextSame;      //次も同じシーンか
     };
 }

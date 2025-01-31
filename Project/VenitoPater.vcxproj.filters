@@ -214,6 +214,9 @@
     <ClCompile Include="..\SourceCode\Object\ScoreDraw\ScoreDraw.cpp">
       <Filter>ソースコード\Object\ScoreDraw</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Scene\Clear\Clear.cpp">
+      <Filter>ソースコード\Scene\Clear</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -476,6 +479,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\ScoreDraw\ScoreDraw.h">
       <Filter>ソースコード\Object\ScoreDraw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Scene\Clear\Clear.h">
+      <Filter>ソースコード\Scene\Clear</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -751,6 +757,9 @@
     </Filter>
     <Filter Include="ソースコード\Object\StageObj\Item\ClockWork\RPMController">
       <UniqueIdentifier>{5650a5ef-843d-4de9-8bc2-1f54085b9839}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Scene\Clear">
+      <UniqueIdentifier>{f32f800d-912f-45b0-86db-3b4a83f016dc}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

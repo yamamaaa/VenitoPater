@@ -3,6 +3,7 @@
 #include"../../Object/ObjectTag/Story_ObjectTag.h"
 
 #include"../ThreeDays/ThreeDays.h"
+#include"../PlayEnd/PlayEnd.h"
 
 #include"../../Object/StoryObj/LineStatus/LineStatus.h"
 
@@ -85,12 +86,17 @@ namespace scene
 
 		if (object::GamePlay == status)
 		{
+			object::ObjectManager::ReleaseAllObj();
 			return new ThreeDays;
+		}
+
+		if (object::PlayEnd == status)
+		{
+			return new PlayEnd;
 		}
 
 		if (m_IsNextSame)
 		{
-			m_IsNextSame = false;
 			return new Story;
 		}
 

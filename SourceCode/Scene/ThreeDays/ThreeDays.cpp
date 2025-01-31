@@ -3,6 +3,7 @@
 #include"../../Object/ObjectManager/ObjectManager.h"
 #include"../../Object/ObjectTag/ThreeDays_ObjectTag.h"
 
+#include"../Clear/Clear.h"
 #include"../Result/Result.h"
 
 #include"../../Object/CharaObj/AvoidStatus/AvoidStatus.h"
@@ -121,9 +122,14 @@ namespace scene
 		}
 
 		//ゲームクリアしたら
-		if (object::GameClear== status || object::GameOver == status || object::TimeOver == status)
+		if (object::GameClear == status)
 		{
-			object::ObjectManager::ReleaseAllObj();
+			return new Clear;
+		}
+
+		//ゲームオーバー
+		if (object::GameOver == status || object::TimeOver == status)
+		{
 			return new Result;
 		}
 
@@ -132,8 +138,6 @@ namespace scene
 
 	void ThreeDays::DrawScene()
 	{
-		DrawFormatString(0, 0, GetColor(255, 255, 255), "3Days");
-
 		if (m_IsChangeScene || !m_FadeInSet)
 		{
 			transitor::FadeTransitor::DrawFade();
