@@ -1,0 +1,48 @@
+{
+    "play": {
+        "bgm": {
+            "name": "bgm",
+            "path": "../Asset/sound/play/bgm.mp3"
+        },
+        "clockwork": {
+            "name": "clockwork",
+            "path": "../Asset/sound/play/clockwork.mp3"
+        },
+        "duck_0": {
+            "name": "duck_0",
+            "path": "../Asset/sound/play/duck_0.mp3"
+        },
+        "duck_1": {
+            "name": "duck_1",
+            "path": "../Asset/sound/play/duck_1.mp3"
+        },
+        "duck_2": {
+            "name": "duck_2",
+            "path": "../Asset/sound/play/duck_2.mp3"
+        },
+        "emyaction": {
+            "name": "emyaction",
+            "path": "../Asset/sound/play/emyaction.mp3"
+        },
+        "enemy": {
+            "name": "enemy",
+            "path": "../Asset/sound/play/enemy.mp3"
+        },
+        "hat": {
+            "name": "hat",
+            "path": "../Asset/sound/play/hat.mp3"
+        },
+        "ira": {
+            "name": "ira",
+            "path": "../Asset/sound/play/ira.mp3"
+        },
+        "light": {
+            "name": "light",
+            "path": "../Asset/sound/play/light.mp3"
+        },
+        "musicbox": {
+            "name": "musicbox",
+            "path": "../Asset/sound/play/musicbox.mp3"
+        }
+    }
+}

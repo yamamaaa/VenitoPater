@@ -1,0 +1,32 @@
+{
+    "story": {
+         "button": {
+            "name": " button",
+            "path": "../Asset/sound/story/ button.mp3"
+        },
+        "still_day_0_bgm": {
+            "name": "still_day_0_bgm",
+            "path": "../Asset/sound/story/still_day_0_bgm.mp3"
+        },
+        "still_day_1_bgm": {
+            "name": "still_day_1_bgm",
+            "path": "../Asset/sound/story/still_day_1_bgm.mp3"
+        },
+        "still_day_2_bgm": {
+            "name": "still_day_2_bgm",
+            "path": "../Asset/sound/story/still_day_2_bgm.mp3"
+        },
+        "still_day_3_bgm": {
+            "name": "still_day_3_bgm",
+            "path": "../Asset/sound/story/still_day_3_bgm.mp3"
+        },
+        "still_day_4_bgm": {
+            "name": "still_day_4_bgm",
+            "path": "../Asset/sound/story/still_day_4_bgm.mp3"
+        },
+        "story_bgm": {
+            "name": "story_bgm",
+            "path": "../Asset/sound/story/story_bgm.mp3"
+        }
+    }
+}
