@@ -1,0 +1,16 @@
+{
+    "tutorial": {
+        "back": {
+            "name": "back",
+            "path": "../Asset/sound/tutorial/back.mp3"
+        },
+        "bgm": {
+            "name": "bgm",
+            "path": "../Asset/sound/tutorial/bgm.mp3"
+        },
+        "button": {
+            "name": "button",
+            "path": "../Asset/sound/tutorial/button.mp3"
+        }
+    }
+}

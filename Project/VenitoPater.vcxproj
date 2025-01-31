@@ -31,6 +31,14 @@
     <ClCompile Include="..\SourceCode\JsonMaster\ImageData\TitleData\TitleData.cpp" />
     <ClCompile Include="..\SourceCode\JsonMaster\IOUtility\IOUtility.cpp" />
     <ClCompile Include="..\SourceCode\JsonMaster\JsonManager\JsonManager.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Clear＿SoundData\Clear_SoundData.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\MasterSoundData\MasterSoundData.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Play＿SoundData\Play_SoundData.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Result＿SoundData\Result_SoundData.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Score＿SoundData\Score_SoundData.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Story＿SoundData\Story_SoundData.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Title＿SoundData\Title_SoundData.cpp" />
+    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Tutorial＿SoundData\Tutorial_SoundData.cpp" />
     <ClCompile Include="..\SourceCode\JsonMaster\TextData\CharacterData\CharacterData.cpp" />
     <ClCompile Include="..\SourceCode\JsonMaster\TextData\GameOverData\GameOverData.cpp" />
     <ClCompile Include="..\SourceCode\JsonMaster\TextData\MasterTextData\MasterTextData.cpp" />
@@ -104,8 +112,17 @@
     <ClInclude Include="..\SourceCode\JsonMaster\ImageData\StoryImgData\StoryImgData.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\ImageData\TitleData\TitleData.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\IOUtility\IOUtility.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\JsonFile\Sound\title.json" />
     <ClInclude Include="..\SourceCode\JsonMaster\JsonFile\Text\gameover.json" />
     <ClInclude Include="..\SourceCode\JsonMaster\JsonManager\JsonManager.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Clear＿SoundData\Clear_SoundData.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\MasterSoundData\MasterSoundData.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Play＿SoundData\Play_SoundData.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Result＿SoundData\Result_SoundData.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Score＿SoundData\Score_SoundData.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Story＿SoundData\Story_SoundData.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Title＿SoundData\Title_SoundData.h" />
+    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Tutorial＿SoundData\Tutorial_SoundData.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\TextData\CharacterData\CharacterData.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\TextData\GameOverData\GameOverData.h" />
     <ClInclude Include="..\SourceCode\JsonMaster\TextData\MasterTextData\MasterTextData.h" />
@@ -186,6 +203,12 @@
     <None Include="..\SourceCode\JsonMaster\JsonFile\Image\result.json" />
     <None Include="..\SourceCode\JsonMaster\JsonFile\Image\story.json" />
     <None Include="..\SourceCode\JsonMaster\JsonFile\Image\title.json" />
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Sound\gameclear.json" />
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Sound\gameover.json" />
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Sound\play.json" />
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Sound\score.json" />
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Sound\story.json" />
+    <None Include="..\SourceCode\JsonMaster\JsonFile\Sound\tutorial.json" />
     <None Include="..\SourceCode\JsonMaster\JsonFile\Text\character.json" />
     <None Include="..\SourceCode\JsonMaster\JsonFile\Text\still.json" />
   </ItemGroup>

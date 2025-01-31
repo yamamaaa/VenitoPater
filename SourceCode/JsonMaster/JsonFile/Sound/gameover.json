@@ -1,0 +1,16 @@
+{
+    "gameover": {
+        "back": {
+            "name": "back",
+            "path": "../Asset/sound/gameover/back.mp3"
+        },
+        "bgm": {
+            "name": "bgm",
+            "path": "../Asset/sound/gameover/bgm.mp3"
+        },
+        "button": {
+            "name": "button",
+            "path": "../Asset/sound/gameover/button.mp3"
+        }
+    }
+}

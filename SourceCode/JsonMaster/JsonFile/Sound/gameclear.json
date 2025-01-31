@@ -1,0 +1,12 @@
+{
+    "gameclear": {
+        "applause": {
+            "name": "applause",
+            "path": "../Asset/sound/gameclear/applause.mp3"
+        },
+        "bgm": {
+            "name": "bgm",
+            "path": "../Asset/sound/gameclear/bgm.mp3"
+        }
+    }
+}

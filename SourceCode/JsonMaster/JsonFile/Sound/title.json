@@ -1,0 +1,20 @@
+{
+    "title": {
+        "bgm": {
+            "name": "bgm",
+            "path": "../Asset/sound/title/bgm.mp3"
+        },
+        "button": {
+            "name": "button",
+            "path": "../Asset/sound/title/button.mp3"
+        },
+        "select": {
+            "name": "select",
+            "path": "../Asset/sound/title/select.mp3"
+        },
+        "transiton": {
+            "name": "transiton",
+            "path": "../Asset/sound/title/transiton.mp3"
+        }
+    }
+}
