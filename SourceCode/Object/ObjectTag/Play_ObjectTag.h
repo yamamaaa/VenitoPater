@@ -5,9 +5,9 @@
 namespace objecttag
 {
     /// <summary>
-    /// 3Daysモード内の種類別タグ
+    /// ゲーム内の種類別タグ
     /// </summary>
-    static struct ThreeDays_ObjTag
+    static struct Play_ObjectTag
     {
         std::string AREA = "area";
         std::string MOVEAREA = "movearea";
@@ -27,31 +27,31 @@ namespace objecttag
         std::string TIME = "time";
         std::string ENEMYACTION = "enemyaction";
         std::string TEXTDRAW = "textdraw";
-    } threedays_objtag;
+    } play_ObjectTag;
 
 
     /// <summary>
     /// ループ制御用
     /// </summary>
-    static std::vector<std::string>ThreeDays_ObjTagAll
+    static std::vector<std::string>Play_ObjectTagAll
     {
-        threedays_objtag.AREA,
-        threedays_objtag.MOVEAREA,
-        threedays_objtag.ClOCKWORK,
-        threedays_objtag.ITEM,
-        threedays_objtag.FAMILIA,
-        threedays_objtag.MEMINI,
-        threedays_objtag.NIL,
-        threedays_objtag.SPERO,
-        threedays_objtag.IRA,
-        threedays_objtag.AVOID,
-        threedays_objtag.PLAYER,
-        threedays_objtag.ITEMUI,
-        threedays_objtag.RPMHPUi,
-        threedays_objtag.AVOIDUI,
-        threedays_objtag.WARNINGUI,
-        threedays_objtag.TIME,
-        threedays_objtag.ENEMYACTION,
-        threedays_objtag.TEXTDRAW,
+        play_ObjectTag.AREA,
+        play_ObjectTag.MOVEAREA,
+        play_ObjectTag.ClOCKWORK,
+        play_ObjectTag.ITEM,
+        play_ObjectTag.FAMILIA,
+        play_ObjectTag.MEMINI,
+        play_ObjectTag.NIL,
+        play_ObjectTag.SPERO,
+        play_ObjectTag.IRA,
+        play_ObjectTag.AVOID,
+        play_ObjectTag.PLAYER,
+        play_ObjectTag.ITEMUI,
+        play_ObjectTag.RPMHPUi,
+        play_ObjectTag.AVOIDUI,
+        play_ObjectTag.WARNINGUI,
+        play_ObjectTag.TIME,
+        play_ObjectTag.ENEMYACTION,
+        play_ObjectTag.TEXTDRAW,
     };
 }

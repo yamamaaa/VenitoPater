@@ -5,21 +5,21 @@
 namespace scene
 {
 	/// <summary>
-	/// 3Daysモードの進行管理クラス
+	/// ゲーム中の進行管理クラス
 	/// </summary>
-	class ThreeDays:public SceneBase
+	class Play:public SceneBase
 	{
 	public:
 
 		/// <summary>
 		/// コンストラクタ
 		/// </summary>
-		ThreeDays();
+		Play();
 
 		/// <summary>
 		/// デストラクタ
 		/// </summary>
-		~ThreeDays();
+		~Play();
 
 	private:
 

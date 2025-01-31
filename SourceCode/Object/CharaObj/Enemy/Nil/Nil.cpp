@@ -1,5 +1,5 @@
 #include "Nil.h"
-#include "../../../ObjectTag/Global_ObjectTag.h"
+#include "../../../ObjectTag/Play_ObjectTag.h"
 #include "../../../CharaObj/AvoidStatus/AvoidStatus.h"
 #include "../../LightController/LightController.h"
 #include "../../../ObjectManager/ObjectManager.h"
@@ -8,7 +8,7 @@
 namespace object
 {
 	Nil::Nil()
-		:EnemyBase(global_objecttag.NIL)
+		:EnemyBase(play_ObjectTag.NIL)
 	{
 		//ì«Ç›çûÇ›ä÷òA
 		LoadObject();

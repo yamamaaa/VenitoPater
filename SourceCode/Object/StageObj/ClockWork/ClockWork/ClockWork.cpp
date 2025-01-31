@@ -1,5 +1,5 @@
 #include "ClockWork.h"
-#include "../../../ObjectTag/Global_ObjectTag.h"
+#include "../../../ObjectTag/Play_ObjectTag.h"
 #include "../../../ObjectManager/ObjectManager.h"
 #include "../../AreaNumController/AreaNumController.h"
 #include "../../ClockWork/RPMController/RPMController.h"
@@ -10,7 +10,7 @@
 namespace object
 {
 	ClockWork::ClockWork()
-		:MouseBase(global_objecttag.ClOCKWORK)
+		:MouseBase(play_ObjectTag.ClOCKWORK)
 	{
 		//ì«Ç›çûÇ›ä÷òA
 		LoadObject();

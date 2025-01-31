@@ -2,7 +2,7 @@
 #include<Dxlib.h>
 #include<string>
 #include"../../JsonMaster/JsonManager/JsonManager.h"
-#include"../../Object/ObjectTag/ThreeDays_ObjectTag.h"
+#include"../../Object/ObjectTag/Play_ObjectTag.h"
 #include"../../Collision/Collision.h"
 #include"../../Math2D/Math2D.h"
 
@@ -11,7 +11,6 @@ using namespace jsonmaster;
 using namespace collision;
 using namespace math2d;
 using namespace objecttag;
-
 
 namespace object
 {

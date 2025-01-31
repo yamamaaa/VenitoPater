@@ -1,7 +1,7 @@
 ﻿#include <ctime>
 
 #include "Item.h"
-#include "../../ObjectTag/Global_ObjectTag.h"
+#include "../../ObjectTag/Play_ObjectTag.h"
 #include "../AreaNumController/AreaNumController.h"
 #include "../ItemGetNum/ItemGetNum.h"
 #include "../../Time/TimeStatus/TimeStatus.h"
@@ -11,7 +11,7 @@
 namespace object
 {
 	Item::Item()
-		:MouseBase(global_objecttag.ITEM)
+		:MouseBase(play_ObjectTag.ITEM)
 	{
 		//読み込み関連
 		LoadObject();

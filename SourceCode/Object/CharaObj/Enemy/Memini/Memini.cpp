@@ -1,5 +1,5 @@
 #include "Memini.h"
-#include "../../../ObjectTag/Global_ObjectTag.h"
+#include "../../../ObjectTag/Play_ObjectTag.h"
 #include "../../../CharaObj/AvoidStatus/AvoidStatus.h"
 #include "../../LightController/LightController.h"
 #include "../../../ObjectManager/ObjectManager.h"
@@ -8,7 +8,7 @@
 namespace object
 {
 	Memini::Memini()
-		:EnemyBase(global_objecttag.MEMINI)
+		:EnemyBase(play_ObjectTag.MEMINI)
 	{
 		//ì«Ç›çûÇ›ä÷òA
 		LoadObject();

@@ -1,12 +1,12 @@
 #include "ItemUi.h"
-#include "../../ObjectTag/Global_ObjectTag.h"
+#include "../../ObjectTag/Play_ObjectTag.h"
 #include "../../StageObj/ItemGetNum/ItemGetNum.h"
 #include "../../ObjectManager/ObjectManager.h"
 
 namespace object
 {
     ItemUi::ItemUi()
-        :ObjectBase(global_objecttag.ITEMUI)
+        :ObjectBase(play_ObjectTag.ITEMUI)
     {
         //ì«Ç›çûÇ›ä÷òA
         LoadObject();

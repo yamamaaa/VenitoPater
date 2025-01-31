@@ -1,11 +1,11 @@
 #include "Familia.h"
-#include "../../../ObjectTag/Global_ObjectTag.h"
+#include "../../../ObjectTag/Play_ObjectTag.h"
 #include "../../../StageObj/ClockWork/RPMController/RPMController.h"
 
 namespace object
 {
 	Familia::Familia()
-		:EnemyBase(global_objecttag.FAMILIA)
+		:EnemyBase(play_ObjectTag.FAMILIA)
 	{
 		//ì«Ç›çûÇ›ä÷òA
 		LoadObject();
