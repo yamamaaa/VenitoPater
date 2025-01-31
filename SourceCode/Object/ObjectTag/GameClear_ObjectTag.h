@@ -12,15 +12,15 @@ namespace objecttag
         std::string BACKGROUND = "background";
         std::string GAMECLEARUI = "gameclearui";
         std::string SCORE = "score";
-    } gameClear_Objecttag;
+    } gameClear_ObjectTag;
 
     /// <summary>
     /// ÉãÅ[Évêßå‰óp
     /// </summary>
     static std::vector<std::string>GameClear_ObjectTagAll
     {
-        gameClear_Objecttag.BACKGROUND,
-        gameClear_Objecttag.GAMECLEARUI,
-        gameClear_Objecttag.SCORE,
+        gameClear_ObjectTag.BACKGROUND,
+        gameClear_ObjectTag.GAMECLEARUI,
+        gameClear_ObjectTag.SCORE,
     };
 }

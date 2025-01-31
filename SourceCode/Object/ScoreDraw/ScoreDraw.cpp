@@ -12,7 +12,7 @@
 namespace object
 {
     ScoreDraw::ScoreDraw()
-        :ObjectBase(gameClear_Objecttag.SCORE)
+        :ObjectBase(gameClear_ObjectTag.SCORE)
     {
         //ì«Ç›çûÇ›ä÷òA
         LoadObject();
