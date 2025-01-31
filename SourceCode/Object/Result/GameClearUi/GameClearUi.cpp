@@ -8,7 +8,7 @@
 namespace object
 {
 	GameClearUi::GameClearUi()
-		:ObjectBase(gameClear_Objecttag.GAMECLEARUI)
+		:ObjectBase(gameClear_ObjectTag.GAMECLEARUI)
 	{
 		//ì«Ç›çûÇ›ä÷òA
 		LoadObject();
