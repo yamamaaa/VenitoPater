@@ -98,9 +98,9 @@ namespace object
 		const POINTFLOAT m_EMYBOX_RESETPOS = { 900.0f,0.0f };	//EmyBoxの初期位置
 		POINTFLOAT m_EnemyBoxPos = m_EMYBOX_RESETPOS;			//EmyBoxの座標
 
-		int m_ObjImg[4];			//obj画像
-		int m_MoveSpeed[3];			//レベル別移動スピード
-		int m_NowMoveSpeed;			//現在の移動スピード
+		int m_ObjImg[4];				//obj画像
+		float m_MoveSpeed[3];			//レベル別移動スピード
+		float m_NowMoveSpeed;			//現在の移動スピード
 
 		EnemyID m_IDnumber;	//敵識別番号
 

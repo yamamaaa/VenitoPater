@@ -161,7 +161,7 @@ namespace object
         if (drawobj <= ans)
         {
             float def = m_Compute_Spped * deltatime;
-            drawobj += def;
+            drawobj += static_cast<int>(def);
         }
         else
         {

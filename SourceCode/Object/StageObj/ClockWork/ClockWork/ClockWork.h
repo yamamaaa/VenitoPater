@@ -59,7 +59,7 @@ namespace object
         int m_AnimNowPattern;                          // 現在のアニメパターン
         int m_AnimNowIndex;                            // アニメーション画像配列の添え字
 
-        const float m_CLICK_FPS = 4.2;              // クリック状態時FPS
+        const float m_CLICK_FPS = 4.2f;              // クリック状態時FPS
         const float m_DEFAULT_FPS = 3.0f;           // デフォルトFPS
         float m_AnimationFPS;                       // アニメーションFPS
 

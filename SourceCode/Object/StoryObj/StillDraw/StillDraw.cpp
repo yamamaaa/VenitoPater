@@ -130,7 +130,7 @@ namespace object
                 m_IsFade = false;	//èàóùÇÃäÆóπ
                 m_Calculation = 0;
                 m_IsFadeIn_Done = false;
-                m_Color = m_COLORCODE;
+                m_Color = static_cast<float>(m_COLORCODE);
                 LineStatus::SetIsDoneImgDraw(true);
             }
         }
@@ -155,7 +155,7 @@ namespace object
         {
             if (m_IsFade)
             {
-                SetDrawBlendMode(DX_BLENDMODE_ALPHA, m_Color);
+                SetDrawBlendMode(DX_BLENDMODE_ALPHA, static_cast<int>(m_Color));
                 DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
                 SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
             }

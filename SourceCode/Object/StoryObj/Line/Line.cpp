@@ -204,7 +204,7 @@ namespace object
 				if (m_IslineAnim)
 				{
 					//文字をすべて表示する
-					m_TxtNum = m_Line.size();
+					m_TxtNum = static_cast<int>(m_Line.size());
 					m_IslineAnim = false;
 				}
 				else
