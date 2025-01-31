@@ -113,19 +113,19 @@ namespace object
 
 		DrawStringFToHandle(m_ResultLogo_Pos.x, m_ResultLogo_Pos.y, m_Title.c_str(), GetColor(m_COLOR, m_COLOR, m_COLOR),m_FontHandle);
 
-		int ui_x0 = m_SelectUi_Pos[0].x + m_UiOffset[0].x;
-		int ui_y0 = m_SelectUi_Pos[0].y + m_UiOffset[0].y;
+		float ui_x0 = m_SelectUi_Pos[0].x + m_UiOffset[0].x;
+		float ui_y0 = m_SelectUi_Pos[0].y + m_UiOffset[0].y;
 
 		DrawStringFToHandle(ui_x0, ui_y0, m_SelectText[0].c_str(), GetColor(m_COLOR, m_COLOR, m_COLOR), m_FontHandle_Ui);
 
-		int ui_x1 = m_SelectUi_Pos[1].x + m_UiOffset[1].x;
-		int ui_y1= m_SelectUi_Pos[1].y + m_UiOffset[1].y;
+		float ui_x1 = m_SelectUi_Pos[1].x + m_UiOffset[1].x;
+		float ui_y1= m_SelectUi_Pos[1].y + m_UiOffset[1].y;
 
 		DrawStringFToHandle(ui_x1, ui_y1, m_SelectText[1].c_str(),GetColor(m_COLOR, m_COLOR, m_COLOR), m_FontHandle_Ui);
 
 #ifdef DEBUG
-		DrawBox(m_SelectUi_Pos[0].x, m_SelectUi_Pos[0].y, m_SelectUi_Pos[0].x + m_ObjSize.x, m_SelectUi_Pos[0].y + m_ObjSize.y, GetColor(255,0,0),FALSE);
-		DrawBox(m_SelectUi_Pos[1].x, m_SelectUi_Pos[1].y, m_SelectUi_Pos[1].x + m_ObjSize.x, m_SelectUi_Pos[1].y + m_ObjSize.y, GetColor(0, 255, 0),FALSE);
+		DrawBox(static_cast<int>(m_SelectUi_Pos[0].x), static_cast<int>(m_SelectUi_Pos[0].y), static_cast<int>(m_SelectUi_Pos[0].x + m_ObjSize.x), static_cast<int>(m_SelectUi_Pos[0].y + m_ObjSize.y), GetColor(255,0,0),FALSE);
+		DrawBox(static_cast<int>(m_SelectUi_Pos[1].x), static_cast<int>(m_SelectUi_Pos[1].y), static_cast<int>(m_SelectUi_Pos[1].x + m_ObjSize.x), static_cast<int>(m_SelectUi_Pos[1].y + m_ObjSize.y), GetColor(0, 255, 0),FALSE);
 		DrawFormatString(0, 20, GetColor(255, 255, 255), "ÉZÉåÉNÉgèÛë‘:%s", m_selectstatus.c_str());
 #endif // DEBUG
 	}

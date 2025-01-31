@@ -27,9 +27,9 @@ namespace object
 		m_DrawObjPos[replace] = { 1020.0f,538.0f };
 		m_DrawObjPos[replace_2] = { 720.0f,214.0f };
 
-		m_MoveSpeed[0] = 12.0f;
+		m_MoveSpeed[0] = 18.0f;
 		m_MoveSpeed[1] = 24.0f;
-		m_MoveSpeed[2] = 25.0f;
+		m_MoveSpeed[2] = 30.0f;
 
 		//プレイモード別に初期設定
 		PlayMenu menu = ObjectManager::GetPlayMode();
