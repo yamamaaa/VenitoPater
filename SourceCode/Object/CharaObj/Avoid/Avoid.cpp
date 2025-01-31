@@ -1,6 +1,6 @@
 #include<Dxlib.h>
 #include "Avoid.h"
-#include"../../ObjectTag/Global_ObjectTag.h"
+#include"../../ObjectTag/Play_ObjectTag.h"
 #include"../AvoidStatus/AvoidStatus.h"
 #include"../HatUi/HatUi.h"
 #include"../../StageObj/AreaNumController/AreaNumController.h"
@@ -9,7 +9,7 @@
 namespace object
 {
 	Avoid::Avoid()
-		:MouseBase(global_objecttag.AVOID)
+		:MouseBase(play_ObjectTag.AVOID)
 	{
 		//ì«Ç›çûÇ›ä÷òA
 		LoadObject();

@@ -1,5 +1,4 @@
 #include "EnemyAction.h"
-#include "../../../ObjectTag/Global_ObjectTag.h"
 #include "../EnemyManager/EnemyManager.h"
 #include "../../../Time/TimeStatus/TimeStatus.h"
 #include "../../../ObjectManager/ObjectManager.h"
@@ -8,7 +7,7 @@
 namespace object
 {
 	EnemyAction::EnemyAction()
-		:ObjectBase(global_objecttag.ENEMYACTION)
+		:ObjectBase(play_ObjectTag.ENEMYACTION)
 	{
 		//ì«Ç›çûÇ›ä÷òA
 		LoadObject();

@@ -1,5 +1,5 @@
 #include "Time.h"
-#include "../../ObjectTag/Global_ObjectTag.h"
+#include "../../ObjectTag/Play_ObjectTag.h"
 #include "../../StageObj/ItemGetNum/ItemGetNum.h"
 #include "../../ObjectManager/ObjectManager.h"
 #include "../TimeStatus/TimeStatus.h"
@@ -7,7 +7,7 @@
 namespace object
 {
     Time::Time()
-        :ObjectBase(global_objecttag.TIME)
+        :ObjectBase(play_ObjectTag.TIME)
     {
         //ì«Ç›çûÇ›ä÷òA
         LoadObject();

@@ -2,7 +2,7 @@
 
 #include"../../Object/ObjectTag/Story_ObjectTag.h"
 
-#include"../ThreeDays/ThreeDays.h"
+#include"../Play/Play.h"
 #include"../PlayEnd/PlayEnd.h"
 
 #include"../../Object/StoryObj/LineStatus/LineStatus.h"
@@ -87,7 +87,7 @@ namespace scene
 		if (object::GamePlay == status)
 		{
 			object::ObjectManager::ReleaseAllObj();
-			return new ThreeDays;
+			return new Play;
 		}
 
 		if (object::PlayEnd == status)

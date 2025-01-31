@@ -1,12 +1,12 @@
 #include "Area.h"
-#include "../../ObjectTag/Global_ObjectTag.h"
+#include "../../ObjectTag/Play_ObjectTag.h"
 #include "../AreaNumController/AreaNumController.h"
 #include "../../../SoundController/SoundController.h"
 
 namespace object
 {
 	Area::Area()
-		:ObjectBase(global_objecttag.AREA)
+		:ObjectBase(play_ObjectTag.AREA)
 	{
 		//ì«Ç›çûÇ›ä÷òA
 		LoadObject();

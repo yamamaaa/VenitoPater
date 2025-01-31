@@ -1,5 +1,5 @@
 #include "Spero.h"
-#include "../../../ObjectTag/Global_ObjectTag.h"
+#include "../../../ObjectTag/Play_ObjectTag.h"
 #include "../../../CharaObj/AvoidStatus/AvoidStatus.h"
 #include "../../LightController/LightController.h"
 #include "../../../ObjectManager/ObjectManager.h"
@@ -8,7 +8,7 @@
 namespace object
 {
 	Spero::Spero()
-		:EnemyBase(global_objecttag.SPERO)
+		:EnemyBase(play_ObjectTag.SPERO)
 	{
 		//ì«Ç›çûÇ›ä÷òA
 		LoadObject();

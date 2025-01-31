@@ -1,7 +1,7 @@
-#include "ThreeDays.h"
+#include "Play.h"
 
 #include"../../Object/ObjectManager/ObjectManager.h"
-#include"../../Object/ObjectTag/ThreeDays_ObjectTag.h"
+#include"../../Object/ObjectTag/Play_ObjectTag.h"
 
 #include"../Clear/Clear.h"
 #include"../Result/Result.h"
@@ -37,22 +37,22 @@
 
 namespace scene
 {
-	ThreeDays::ThreeDays()
+	Play::Play()
 		:SceneBase()
 	{
 		//読み込み関連
 		LoadObject();
 	}
 
-	ThreeDays::~ThreeDays()
+	Play::~Play()
 	{
 		//処理なし
 	}
 
-	void ThreeDays::LoadObject()
+	void Play::LoadObject()
 	{
 		//オブジェクトタグをセット
-		object::ObjectManager::NowSceneSet(objecttag::ThreeDays_ObjTagAll);
+		object::ObjectManager::NowSceneSet(objecttag::Play_ObjectTagAll);
 		//Game状態をセット
 		object::ObjectManager::SetNowGameState(object::GamePlay);
 		object::ObjectManager::SetNextGameState(object::GamePlay);
@@ -98,7 +98,7 @@ namespace scene
 		object::ObjectManager::Entry(new object::EnemyAction);
 	}
 
-	SceneBase* ThreeDays::UpdateScene(const float deltaTime)
+	SceneBase* Play::UpdateScene(const float deltaTime)
 	{
 		if (!m_FadeInSet)
 		{
@@ -136,7 +136,7 @@ namespace scene
 		return this;
 	}
 
-	void ThreeDays::DrawScene()
+	void Play::DrawScene()
 	{
 		if (m_IsChangeScene || !m_FadeInSet)
 		{

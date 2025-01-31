@@ -1,6 +1,6 @@
 #include "Result.h"
 
-#include"../ThreeDays/ThreeDays.h"
+#include"../Play/Play.h"
 #include"../Title/Title.h"
 
 #include"../../Object/ObjectTag/GameOver_ObjectTag.h"
@@ -69,7 +69,7 @@ namespace scene
         if (object::GamePlay == status)
         {
             object::ObjectManager::ReleaseAllObj();
-            return new ThreeDays;
+            return new Play;
         }
 
         //ƒ^ƒCƒgƒ‹‚Ö–ß‚é

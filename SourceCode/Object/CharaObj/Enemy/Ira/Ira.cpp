@@ -1,5 +1,5 @@
 #include "Ira.h"
-#include "../../../ObjectTag/Global_ObjectTag.h"
+#include "../../../ObjectTag/Play_ObjectTag.h"
 #include "../../../CharaObj/AvoidStatus/AvoidStatus.h"
 #include "../../LightController/LightController.h"
 #include "../../../ObjectManager/ObjectManager.h"
@@ -9,7 +9,7 @@
 namespace object
 {
 	Ira::Ira()
-		:EnemyBase(global_objecttag.IRA)
+		:EnemyBase(play_ObjectTag.IRA)
 	{
 		//ì«Ç›çûÇ›ä÷òA
 		LoadObject();

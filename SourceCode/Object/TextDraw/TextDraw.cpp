@@ -1,14 +1,14 @@
 #include <ctime>
 
 #include "TextDraw.h"
-#include "../ObjectTag/ThreeDays_ObjectTag.h"
+#include "../ObjectTag/Play_ObjectTag.h"
 #include "../../GameSystem/Window/Window.h"
 #include "../../NumDays/NumDays.h"
 
 namespace object
 {
     TextDraw::TextDraw()
-        :ObjectBase(threedays_objtag.TEXTDRAW)
+        :ObjectBase(play_ObjectTag.TEXTDRAW)
     {
         //読み込み関連
         LoadObject();
@@ -125,7 +125,7 @@ namespace object
     {
         if (m_IsReleaseObj)
         {
-            ObjectManager::ReleaseObj(threedays_objtag.TEXTDRAW);
+            ObjectManager::ReleaseObj(play_ObjectTag.TEXTDRAW);
         }
 
         //スタートしてから少し待つ
@@ -228,7 +228,7 @@ namespace object
             //処理が完了したらオブジェクトの削除
             if (m_NowColor.x <= 0.0f)
             {
-                ObjectManager::ReleaseObj(threedays_objtag.TEXTDRAW);
+                ObjectManager::ReleaseObj(play_ObjectTag.TEXTDRAW);
             }
         }
     }

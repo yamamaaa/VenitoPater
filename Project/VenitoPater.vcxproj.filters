@@ -148,9 +148,6 @@
     <ClCompile Include="..\SourceCode\Scene\Story\Story.cpp">
       <Filter>ソースコード\Scene\Story</Filter>
     </ClCompile>
-    <ClCompile Include="..\SourceCode\Scene\ThreeDays\ThreeDays.cpp">
-      <Filter>ソースコード\Scene\ThreeDays</Filter>
-    </ClCompile>
     <ClCompile Include="..\SourceCode\Scene\Title\Title.cpp">
       <Filter>ソースコード\Scene\Title</Filter>
     </ClCompile>
@@ -216,6 +213,9 @@
     </ClCompile>
     <ClCompile Include="..\SourceCode\Scene\Clear\Clear.cpp">
       <Filter>ソースコード\Scene\Clear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Scene\Play\Play.cpp">
+      <Filter>ソースコード\Scene\Play</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -345,13 +345,10 @@
     <ClInclude Include="..\SourceCode\Object\GameUi\RPMHPUi\RPMHPUi.h">
       <Filter>ソースコード\Object\GameUi\RPMHPUi</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\Object\ObjectTag\Global_ObjectTag.h">
-      <Filter>ソースコード\Object\ObjectTag</Filter>
-    </ClInclude>
     <ClInclude Include="..\SourceCode\Object\ObjectTag\GameOver_ObjectTag.h">
       <Filter>ソースコード\Object\ObjectTag</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\Object\ObjectTag\ThreeDays_ObjectTag.h">
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\Play_ObjectTag.h">
       <Filter>ソースコード\Object\ObjectTag</Filter>
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Story_ObjectTag.h">
@@ -401,9 +398,6 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Scene\Story\Story.h">
       <Filter>ソースコード\Scene\Story</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SourceCode\Scene\ThreeDays\ThreeDays.h">
-      <Filter>ソースコード\Scene\ThreeDays</Filter>
     </ClInclude>
     <ClInclude Include="..\SourceCode\Scene\Title\Title.h">
       <Filter>ソースコード\Scene\Title</Filter>
@@ -483,6 +477,9 @@
     <ClInclude Include="..\SourceCode\Scene\Clear\Clear.h">
       <Filter>ソースコード\Scene\Clear</Filter>
     </ClInclude>
+    <ClInclude Include="..\SourceCode\Scene\Play\Play.h">
+      <Filter>ソースコード\Scene\Play</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="ソースコード">
@@ -541,9 +538,6 @@
     </Filter>
     <Filter Include="ソースコード\Scene\Title">
       <UniqueIdentifier>{75805411-4c38-4c96-ad7e-829c890d0fbd}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースコード\Scene\ThreeDays">
-      <UniqueIdentifier>{8a1a8d4c-36b8-4b6e-be93-a1dab95ad257}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースコード\Object\CharaObj">
       <UniqueIdentifier>{5eb7a711-e128-411f-bd54-8f0ee40722e6}</UniqueIdentifier>
@@ -760,6 +754,9 @@
     </Filter>
     <Filter Include="ソースコード\Scene\Clear">
       <UniqueIdentifier>{f32f800d-912f-45b0-86db-3b4a83f016dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Scene\Play">
+      <UniqueIdentifier>{8a1a8d4c-36b8-4b6e-be93-a1dab95ad257}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

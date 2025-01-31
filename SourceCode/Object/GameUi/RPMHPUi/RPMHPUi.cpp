@@ -1,12 +1,12 @@
 #include "RPMHPUi.h"
-#include "../../ObjectTag/Global_ObjectTag.h"
+#include "../../ObjectTag/Play_ObjectTag.h"
 #include "../../StageObj/AreaNumController/AreaNumController.h"
 #include "../../StageObj/ClockWork/RPMController/RPMController.h"
 
 namespace object
 {
 	RPMHPUi::RPMHPUi()
-		:MouseBase(global_objecttag.RPMHPUi)
+		:MouseBase(play_ObjectTag.RPMHPUi)
 	{
 		//ì«Ç›çûÇ›ä÷òA
 		LoadObject();

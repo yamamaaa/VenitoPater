@@ -6,7 +6,7 @@
 #include"../../LevelController/LevelStatus.h"
 #include"../../NumDays/NumDays.h"
 
-#include"../ThreeDays/ThreeDays.h"
+#include"../Play/Play.h"
 #include"../Story/Story.h"
 
 #include "../../Object/TitleObj/TitleUi/TitleUi.h"
@@ -83,7 +83,7 @@ namespace scene
         if (object::GamePlay == status)
         {
             LevelController::SetLevel(levelStatus.NOMAL);
-            return new ThreeDays();
+            return new Play();
         }
 
         return this;

@@ -1,5 +1,5 @@
 #include "MoveArea.h"
-#include "../../ObjectTag/Global_ObjectTag.h"
+#include "../../ObjectTag/Play_ObjectTag.h"
 #include "../../StageObj/AreaNumController/AreaNumController.h"
 #include "../../CharaObj/AvoidStatus/AvoidStatus.h"
 #include "../../../MouseStatus/MouseStatus.h"
@@ -7,7 +7,7 @@
 namespace object
 {
     MoveArea::MoveArea()
-        :MouseBase(global_objecttag.MOVEAREA)
+        :MouseBase(play_ObjectTag.MOVEAREA)
     {
         //ì«Ç›çûÇ›ä÷òA
         LoadObject();
