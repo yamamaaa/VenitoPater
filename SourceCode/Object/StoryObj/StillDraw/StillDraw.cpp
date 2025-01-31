@@ -1,7 +1,7 @@
 #include "StillDraw.h"
 #include"../../ObjectTag/Still_ObjectTag.h"
 #include"../LineStatus/LineStatus.h"
-#include"../../NumDays/NumDays.h"
+#include"../../../NumDays/NumDays.h"
 
 namespace object
 {

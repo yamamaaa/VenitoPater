@@ -59,10 +59,10 @@
       <Filter>ソースコード\Object\CharaObj\HatUi</Filter>
     </ClCompile>
     <ClCompile Include="..\SourceCode\Object\StageObj\ClockWork\ClockWork\ClockWork.cpp">
-      <Filter>ソースコード\Object\StageObj\ClockWork\ClockWork</Filter>
+      <Filter>ソースコード\Object\StageObj\Item\ClockWork\ClockWork</Filter>
     </ClCompile>
     <ClCompile Include="..\SourceCode\Object\StageObj\ClockWork\RPMController\RPMController.cpp">
-      <Filter>ソースコード\Object\StageObj\ClockWork\RPMController</Filter>
+      <Filter>ソースコード\Object\StageObj\Item\ClockWork\RPMController</Filter>
     </ClCompile>
     <ClCompile Include="..\SourceCode\Object\CharaObj\LightController\LightController.cpp">
       <Filter>ソースコード\Object\CharaObj\LightController</Filter>
@@ -187,9 +187,6 @@
     <ClCompile Include="..\SourceCode\Object\StoryObj\StoryItem\StoryItem.cpp">
       <Filter>ソースコード\Object\StoryObj\StoryItem</Filter>
     </ClCompile>
-    <ClCompile Include="..\SourceCode\Object\NumDays\NumDays.cpp">
-      <Filter>ソースコード\Object\NumDays</Filter>
-    </ClCompile>
     <ClCompile Include="..\SourceCode\Object\Time\Time\Time.cpp">
       <Filter>ソースコード\Object\Time\Time</Filter>
     </ClCompile>
@@ -207,6 +204,15 @@
     </ClCompile>
     <ClCompile Include="..\SourceCode\SoundController\SoundController.cpp">
       <Filter>ソースコード\SoundController</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Scene\PlayEnd\PlayEnd.cpp">
+      <Filter>ソースコード\Scene\PlayEnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\NumDays\NumDays.cpp">
+      <Filter>ソースコード\NumDays</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\ScoreDraw\ScoreDraw.cpp">
+      <Filter>ソースコード\Object\ScoreDraw</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -277,10 +283,10 @@
       <Filter>ソースコード\Object\CharaObj\HatUi</Filter>
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\StageObj\ClockWork\ClockWork\ClockWork.h">
-      <Filter>ソースコード\Object\StageObj\ClockWork\ClockWork</Filter>
+      <Filter>ソースコード\Object\StageObj\Item\ClockWork\ClockWork</Filter>
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\StageObj\ClockWork\RPMController\RPMController.h">
-      <Filter>ソースコード\Object\StageObj\ClockWork\RPMController</Filter>
+      <Filter>ソースコード\Object\StageObj\Item\ClockWork\RPMController</Filter>
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\CharaObj\LightController\LightController.h">
       <Filter>ソースコード\Object\CharaObj\LightController</Filter>
@@ -435,9 +441,6 @@
     <ClInclude Include="..\SourceCode\Object\StoryObj\StoryItem\CharaItem_Tag.h">
       <Filter>ソースコード\Object\StoryObj\StoryItem</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\Object\NumDays\NumDays.h">
-      <Filter>ソースコード\Object\NumDays</Filter>
-    </ClInclude>
     <ClInclude Include="..\SourceCode\Object\Time\Time\Time.h">
       <Filter>ソースコード\Object\Time\Time</Filter>
     </ClInclude>
@@ -461,6 +464,18 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\SoundController\SoundController.h">
       <Filter>ソースコード\SoundController</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Scene\PlayEnd\PlayEnd.h">
+      <Filter>ソースコード\Scene\PlayEnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\NumDays\NumDays.h">
+      <Filter>ソースコード\NumDays</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\PlayEnd_ObjectTag.h">
+      <Filter>ソースコード\Object\ObjectTag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ScoreDraw\ScoreDraw.h">
+      <Filter>ソースコード\Object\ScoreDraw</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -556,15 +571,6 @@
     </Filter>
     <Filter Include="ソースコード\Object\CharaObj\HatUi">
       <UniqueIdentifier>{db3e61c9-f456-4caf-bc68-757f869204a0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースコード\Object\StageObj\ClockWork">
-      <UniqueIdentifier>{84af56d7-23b1-426e-b531-779f78a1feec}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースコード\Object\StageObj\ClockWork\ClockWork">
-      <UniqueIdentifier>{85db2f17-b60d-4625-b713-e56f1448bf6e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースコード\Object\StageObj\ClockWork\RPMController">
-      <UniqueIdentifier>{5650a5ef-843d-4de9-8bc2-1f54085b9839}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースコード\Object\CharaObj\LightController">
       <UniqueIdentifier>{f25751d8-5106-4a83-bba8-ddd806247b25}</UniqueIdentifier>
@@ -710,9 +716,6 @@
     <Filter Include="ソースコード\Object\StoryObj\StoryItem">
       <UniqueIdentifier>{9d8ef316-c524-489b-9342-d3ec3c60b160}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースコード\Object\NumDays">
-      <UniqueIdentifier>{f7418988-b22b-48cd-a368-ae45319bfc91}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソースコード\Object\Time\Time">
       <UniqueIdentifier>{861bb80e-cfbd-4de8-8907-20ba0cde7a55}</UniqueIdentifier>
     </Filter>
@@ -730,6 +733,24 @@
     </Filter>
     <Filter Include="ソースコード\SoundController">
       <UniqueIdentifier>{cb191739-a926-4a79-8218-4fa0cc58210f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Scene\PlayEnd">
+      <UniqueIdentifier>{ade1abe0-4219-4b35-ba54-b64203fbbbad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\NumDays">
+      <UniqueIdentifier>{f7418988-b22b-48cd-a368-ae45319bfc91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\ScoreDraw">
+      <UniqueIdentifier>{0e723264-a393-47bb-917d-e2d03b64a81a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StageObj\Item\ClockWork">
+      <UniqueIdentifier>{84af56d7-23b1-426e-b531-779f78a1feec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StageObj\Item\ClockWork\ClockWork">
+      <UniqueIdentifier>{85db2f17-b60d-4625-b713-e56f1448bf6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StageObj\Item\ClockWork\RPMController">
+      <UniqueIdentifier>{5650a5ef-843d-4de9-8bc2-1f54085b9839}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

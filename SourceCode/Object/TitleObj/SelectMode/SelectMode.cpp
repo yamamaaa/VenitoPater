@@ -81,7 +81,7 @@ namespace object
 					break;
 				case PlayMenu::PlayRankingMode:
 					menu = PlayMenu::PlayRankingMode;
-					status = GameStatus::RankingMode;
+					status = GameStatus::GamePlay;
 					break;
 				}
 

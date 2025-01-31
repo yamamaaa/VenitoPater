@@ -3,7 +3,7 @@
 #include "TextDraw.h"
 #include "../ObjectTag/ThreeDays_ObjectTag.h"
 #include "../../GameSystem/Window/Window.h"
-#include "../NumDays/NumDays.h"
+#include "../../NumDays/NumDays.h"
 
 namespace object
 {
@@ -62,7 +62,6 @@ namespace object
             m_FontHandle = CreateFontToHandle("メイリオ", m_FONTSIZE_Line.x, m_FONTSIZE_Line.y, DX_FONTTYPE_ANTIALIASING);
 
             m_ObjPos = { 0,600 };
-            //ファイルの読み込み
         }
         if (m_Status == GamePlay)
         {

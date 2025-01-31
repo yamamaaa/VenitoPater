@@ -3,7 +3,7 @@
 #include"../LineStatus/LineStatus.h"
 #include"../../ObjectManager/ObjectManager.h"
 #include"../../../MouseStatus/MouseStatus.h"
-#include"../../NumDays/NumDays.h"
+#include"../../../NumDays/NumDays.h"
 #include"../../../SoundController/SoundController.h"
 
 namespace object

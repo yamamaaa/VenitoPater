@@ -87,7 +87,11 @@ namespace scene
 		object::ObjectManager::Entry(new object::Time);
 
 		//テキスト関連
-		object::ObjectManager::Entry(new object::TextDraw);
+		object::PlayMenu menu = object::ObjectManager::GetPlayMode();
+		if (menu == object::PlayMenu::PlayNewGame)
+		{
+			object::ObjectManager::Entry(new object::TextDraw);
+		}
 
 		//敵のアクション生成
 		object::ObjectManager::Entry(new object::EnemyAction);

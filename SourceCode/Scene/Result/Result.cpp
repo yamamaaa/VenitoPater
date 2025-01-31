@@ -3,6 +3,7 @@
 #include"../ThreeDays/ThreeDays.h"
 #include"../Title/Title.h"
 #include"../Story/Story.h"
+#include"../PlayEnd/PlayEnd.h"
 
 #include"../../Object/ObjectTag/GameOver_ObjectTag.h"
 
@@ -97,6 +98,10 @@ namespace scene
         if (object::Story == status || object::Still == status)
         {
             return new Story;
+        }
+        if (object::Score == status)
+        {
+            return new PlayEnd;
         }
 
         return this;
