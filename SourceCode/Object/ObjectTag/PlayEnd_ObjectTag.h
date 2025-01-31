@@ -9,7 +9,6 @@ namespace objecttag
     /// </summary>
     static struct PlayEnd_ObjectTag
     {
-        std::string SCORE = "score";
     } playEnd_ObjectTag;
 
     /// <summary>
@@ -17,6 +16,5 @@ namespace objecttag
     /// </summary>
     static std::vector<std::string>PlayEnd_ObjectTagAll
     {
-        playEnd_ObjectTag.SCORE,
     };
 }

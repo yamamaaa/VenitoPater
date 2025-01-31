@@ -11,6 +11,7 @@ namespace objecttag
     {
         std::string BACKGROUND = "background";
         std::string GAMECLEARUI = "gameclearui";
+        std::string SCORE = "score";
     } gameClear_Objecttag;
 
     /// <summary>
@@ -20,5 +21,6 @@ namespace objecttag
     {
         gameClear_Objecttag.BACKGROUND,
         gameClear_Objecttag.GAMECLEARUI,
+        gameClear_Objecttag.SCORE,
     };
 }

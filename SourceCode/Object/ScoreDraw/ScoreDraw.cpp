@@ -1,6 +1,6 @@
 #include "ScoreDraw.h"
 
-#include"../../Object/ObjectTag/PlayEnd_ObjectTag.h"
+#include"../../Object/ObjectTag/GameClear_ObjectTag.h"
 #include "../../GameSystem/Window/Window.h"
 #include "../StageObj/ItemGetNum/ItemGetNum.h"
 #include "../../LevelController/LevelController.h"
@@ -12,7 +12,7 @@
 namespace object
 {
     ScoreDraw::ScoreDraw()
-        :ObjectBase(playEnd_ObjectTag.SCORE)
+        :ObjectBase(gameClear_Objecttag.SCORE)
     {
         //ì«Ç›çûÇ›ä÷òA
         LoadObject();

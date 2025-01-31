@@ -2,18 +2,12 @@
 
 #include"../ThreeDays/ThreeDays.h"
 #include"../Title/Title.h"
-#include"../Story/Story.h"
-#include"../PlayEnd/PlayEnd.h"
 
 #include"../../Object/ObjectTag/GameOver_ObjectTag.h"
 
 #include"../../Object/Result/BackGround/BackGround.h"
 #include"../../Object/Result/GameOverUi/GameOverUi.h"
 #include"../../Object/TextDraw/TextDraw.h"
-
-#include"../../Object/ObjectTag/GameClear_ObjectTag.h"
-
-#include"../../Object/Result/GameClearUi/GameClearUi.h"
 
 namespace scene
 {
@@ -32,31 +26,20 @@ namespace scene
     void Result::LoadObject()
     {
         //Game状態をセット
+        object::ObjectManager::NowSceneSet(objecttag::GameOver_ObjectTagAll);
+
         if (object::ObjectManager::GetNowGameState() == object::GameOver)
         {
-            object::ObjectManager::NowSceneSet(objecttag::GameOver_ObjectTagAll);
             object::ObjectManager::SetNextGameState(object::GameOver);
-            object::ObjectManager::Entry(new object::BackGround);
-            object::ObjectManager::Entry(new object::GameOverUi);
-            object::ObjectManager::Entry(new object::TextDraw);
         }
         else if (object::ObjectManager::GetNowGameState() == object::TimeOver)
         {
-            object::ObjectManager::NowSceneSet(objecttag::GameOver_ObjectTagAll);
             object::ObjectManager::SetNextGameState(object::TimeOver);
-
-            object::ObjectManager::Entry(new object::BackGround);
-            object::ObjectManager::Entry(new object::GameOverUi);
-            object::ObjectManager::Entry(new object::TextDraw);
         }
-        else if (object::ObjectManager::GetNowGameState() == object::GameClear)
-        {
-            object::ObjectManager::NowSceneSet(objecttag::GameClear_ObjectTagAll);
-            object::ObjectManager::SetNextGameState(object::GameClear);
 
-            object::ObjectManager::Entry(new object::BackGround);
-            object::ObjectManager::Entry(new object::GameClearUi);
-        }
+        object::ObjectManager::Entry(new object::BackGround);
+        object::ObjectManager::Entry(new object::GameOverUi);
+        object::ObjectManager::Entry(new object::TextDraw);
     }
 
     SceneBase* Result::UpdateScene(const float deltaTime)
@@ -85,6 +68,7 @@ namespace scene
         //コンテニュー
         if (object::GamePlay == status)
         {
+            object::ObjectManager::ReleaseAllObj();
             return new ThreeDays;
         }
 
@@ -92,16 +76,6 @@ namespace scene
         if (object::Title == status)
         {
             return new Title;
-        }
-
-        //ゲームクリアしたら
-        if (object::Story == status || object::Still == status)
-        {
-            return new Story;
-        }
-        if (object::Score == status)
-        {
-            return new PlayEnd;
         }
 
         return this;

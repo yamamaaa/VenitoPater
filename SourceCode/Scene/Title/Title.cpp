@@ -7,9 +7,7 @@
 #include"../../NumDays/NumDays.h"
 
 #include"../ThreeDays/ThreeDays.h"
-#include"../Result/Result.h"
 #include"../Story/Story.h"
-#include "../PlayEnd/PlayEnd.h"
 
 #include "../../Object/TitleObj/TitleUi/TitleUi.h"
 #include "../../Object/TitleObj/SelectMode/SelectMode.h"
@@ -48,7 +46,6 @@ namespace scene
 
     SceneBase* Title::UpdateScene(float deltaTime)
     {
-        //LevelController::SetLevel(levelStatus.NOMAL);
         //object::ObjectManager::ReleaseAllObj();
         //object::ObjectManager::SetNowGameState(object::Score);
         //object::ObjectManager::SetPlayMode(object::PlayMenu::PlayRankingMode);
@@ -75,22 +72,18 @@ namespace scene
             object::ObjectManager::UpdateAllObj(deltaTime);
         }
 
-        //ゲームプレイ
+        //ニューゲーム
+        if (object::Still == status)
+        {
+            LevelController::SetLevel(levelStatus.NOMAL);
+            return new Story();
+        }
+
+        //ランキングモード
         if (object::GamePlay == status)
         {
             LevelController::SetLevel(levelStatus.NOMAL);
-
-            object::PlayMenu menu = object::ObjectManager::GetPlayMode();
-            if (menu == object::PlayMenu::PlayNewGame)
-            {
-                object::ObjectManager::SetNowGameState(object::Still);
-                return new Story();
-            }
-            else
-            {
-                object::ObjectManager::SetNowGameState(object::GamePlay);
-                return new ThreeDays();
-            }
+            return new ThreeDays();
         }
 
         return this;

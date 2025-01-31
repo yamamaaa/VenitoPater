@@ -4,8 +4,6 @@
 
 #include"../../Object/ObjectTag/PlayEnd_ObjectTag.h"
 
-#include"../../Object/ScoreDraw/ScoreDraw.h"
-
 namespace scene
 {
     PlayEnd::PlayEnd()
@@ -22,20 +20,11 @@ namespace scene
 
     void PlayEnd::LoadObject()
     {
-        //現在のステータスを確認し読み込みデータを切り替える
-        object::GameStatus status = object::ObjectManager::GetNowGameState();
-
-        if (status == object::GameStatus::PlayEnd)
-        {
-            //object::ObjectManager::SetNowGameState(object::Still);
-            //object::ObjectManager::SetNextGameState(object::GameOver);
-        }
-        else
-        {
-            object::ObjectManager::NowSceneSet(objecttag::PlayEnd_ObjectTagAll);
-            object::ObjectManager::SetNextGameState(object::GameStatus::Score);
-            object::ObjectManager::Entry(new object::ScoreDraw);
-        }
+        //object::ObjectManager::NowSceneSet(objecttag::GameOver_ObjectTagAll);
+        //object::ObjectManager::SetNextGameState(object::GameOver);
+        //object::ObjectManager::Entry(new object::BackGround);
+        //object::ObjectManager::Entry(new object::GameOverUi);
+        //object::ObjectManager::Entry(new object::TextDraw);
 
         //初期化
         m_IsNextSame = false;
@@ -57,7 +46,7 @@ namespace scene
         {
             m_IsChangeScene = true;
             transitor::FadeTransitor::FadeOutStart(deltaTime);
-            TransitorScene(deltaTime, object::GameStatus::Score, object::GameStatus::PlayEnd, m_IsNextSame);
+            TransitorScene(deltaTime);
         }
         else
         {

@@ -77,7 +77,7 @@ namespace object
 					break;
 				case PlayMenu::PlayNewGame:
 					menu = PlayMenu::PlayNewGame;
-					status = GameStatus::GamePlay;
+					status = GameStatus::Still;
 					break;
 				case PlayMenu::PlayRankingMode:
 					menu = PlayMenu::PlayRankingMode;
