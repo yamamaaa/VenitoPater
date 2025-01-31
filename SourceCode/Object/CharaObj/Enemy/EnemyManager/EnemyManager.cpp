@@ -1,7 +1,7 @@
 #include <Dxlib.h>
 #include <ctime>
 #include "EnemyManager.h"
-#include "../../../NumDays/NumDays.h"
+#include "../../../../NumDays/NumDays.h"
 #include "../../../ObjectManager/ObjectManager.h"
 
 namespace object

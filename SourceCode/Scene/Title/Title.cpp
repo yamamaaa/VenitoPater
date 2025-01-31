@@ -4,11 +4,12 @@
 
 #include"../../LevelController/LevelController.h"
 #include"../../LevelController/LevelStatus.h"
-#include"../../Object/NumDays/NumDays.h"
+#include"../../NumDays/NumDays.h"
 
 #include"../ThreeDays/ThreeDays.h"
 #include"../Result/Result.h"
 #include"../Story/Story.h"
+#include "../PlayEnd/PlayEnd.h"
 
 #include "../../Object/TitleObj/TitleUi/TitleUi.h"
 #include "../../Object/TitleObj/SelectMode/SelectMode.h"
@@ -41,17 +42,17 @@ namespace scene
         object::NumDays::Initialize();
 
         ////TitleâÊñ ÇÃëSUiê∂ê¨
-        //object::ObjectManager::Entry(new object::TitleUi);
-        //object::ObjectManager::Entry(new object::SelectMode);
+        object::ObjectManager::Entry(new object::TitleUi);
+        object::ObjectManager::Entry(new object::SelectMode);
     }
 
     SceneBase* Title::UpdateScene(float deltaTime)
     {
-        LevelController::SetLevel(levelStatus.NOMAL);
-        object::ObjectManager::ReleaseAllObj();
-        object::ObjectManager::SetNowGameState(object::GamePlay);
-        object::ObjectManager::SetPlayMode(object::PlayNewGame);
-        return new ThreeDays();
+        //LevelController::SetLevel(levelStatus.NOMAL);
+        //object::ObjectManager::ReleaseAllObj();
+        //object::ObjectManager::SetNowGameState(object::Score);
+        //object::ObjectManager::SetPlayMode(object::PlayMenu::PlayRankingMode);
+        //return new PlayEnd();
 
         if (!m_FadeInSet)
         {
@@ -78,8 +79,18 @@ namespace scene
         if (object::GamePlay == status)
         {
             LevelController::SetLevel(levelStatus.NOMAL);
-            object::ObjectManager::SetNowGameState(object::Still);
-            return new Story();
+
+            object::PlayMenu menu = object::ObjectManager::GetPlayMode();
+            if (menu == object::PlayMenu::PlayNewGame)
+            {
+                object::ObjectManager::SetNowGameState(object::Still);
+                return new Story();
+            }
+            else
+            {
+                object::ObjectManager::SetNowGameState(object::GamePlay);
+                return new ThreeDays();
+            }
         }
 
         return this;

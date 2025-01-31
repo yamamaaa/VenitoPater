@@ -39,6 +39,7 @@
     <ClCompile Include="..\SourceCode\Main.cpp" />
     <ClCompile Include="..\SourceCode\Math2D\Math2D.cpp" />
     <ClCompile Include="..\SourceCode\MouseStatus\MouseStatus.cpp" />
+    <ClCompile Include="..\SourceCode\NumDays\NumDays.cpp" />
     <ClCompile Include="..\SourceCode\Object\CharaObj\AvoidStatus\AvoidStatus.cpp" />
     <ClCompile Include="..\SourceCode\Object\CharaObj\Avoid\Avoid.cpp" />
     <ClCompile Include="..\SourceCode\Object\CharaObj\Enemy\EnemyAction\EnemyAction.cpp" />
@@ -57,12 +58,12 @@
     <ClCompile Include="..\SourceCode\Object\GameUi\RPMHPUi\RPMHPUi.cpp" />
     <ClCompile Include="..\SourceCode\Object\GameUi\WarningUi\WarningUi.cpp" />
     <ClCompile Include="..\SourceCode\Object\MouseBase\MouseBase.cpp" />
-    <ClCompile Include="..\SourceCode\Object\NumDays\NumDays.cpp" />
     <ClCompile Include="..\SourceCode\Object\ObjectBase\ObjectBase.cpp" />
     <ClCompile Include="..\SourceCode\Object\ObjectManager\ObjectManager.cpp" />
     <ClCompile Include="..\SourceCode\Object\Result\BackGround\BackGround.cpp" />
     <ClCompile Include="..\SourceCode\Object\Result\GameClearUi\GameClearUi.cpp" />
     <ClCompile Include="..\SourceCode\Object\Result\GameOverUi\GameOverUi.cpp" />
+    <ClCompile Include="..\SourceCode\Object\ScoreDraw\ScoreDraw.cpp" />
     <ClCompile Include="..\SourceCode\Object\StageObj\AreaNumController\AreaNumController.cpp" />
     <ClCompile Include="..\SourceCode\Object\StageObj\Area\Area.cpp" />
     <ClCompile Include="..\SourceCode\Object\StageObj\ClockWork\ClockWork\ClockWork.cpp" />
@@ -80,6 +81,7 @@
     <ClCompile Include="..\SourceCode\Object\Time\Time\Time.cpp" />
     <ClCompile Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.cpp" />
     <ClCompile Include="..\SourceCode\Object\TitleObj\TitleUi\TitleUi.cpp" />
+    <ClCompile Include="..\SourceCode\Scene\PlayEnd\PlayEnd.cpp" />
     <ClCompile Include="..\SourceCode\Scene\Result\Result.cpp" />
     <ClCompile Include="..\SourceCode\Scene\SceneBase\SceneBase.cpp" />
     <ClCompile Include="..\SourceCode\Scene\SceneManager\SceneManager.cpp" />
@@ -111,6 +113,7 @@
     <ClInclude Include="..\SourceCode\LevelController\LevelStatus.h" />
     <ClInclude Include="..\SourceCode\Math2D\Math2D.h" />
     <ClInclude Include="..\SourceCode\MouseStatus\MouseStatus.h" />
+    <ClInclude Include="..\SourceCode\NumDays\NumDays.h" />
     <ClInclude Include="..\SourceCode\Object\CharaObj\AvoidStatus\AvoidStatus.h" />
     <ClInclude Include="..\SourceCode\Object\CharaObj\Avoid\Avoid.h" />
     <ClInclude Include="..\SourceCode\Object\CharaObj\Enemy\EnemyAction\EnemyAction.h" />
@@ -131,7 +134,6 @@
     <ClInclude Include="..\SourceCode\Object\GameUi\RPMHPUi\RPMHPUi.h" />
     <ClInclude Include="..\SourceCode\Object\GameUi\WarningUi\WarningUi.h" />
     <ClInclude Include="..\SourceCode\Object\MouseBase\MouseBase.h" />
-    <ClInclude Include="..\SourceCode\Object\NumDays\NumDays.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectBase\ObjectBase.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectManager\GameStatus.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectManager\ObjectManager.h" />
@@ -139,6 +141,7 @@
     <ClInclude Include="..\SourceCode\Object\ObjectTag\GameClear_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Global_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\GameOver_ObjectTag.h" />
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\PlayEnd_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Still_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Story_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\ThreeDays_ObjectTag.h" />
@@ -146,6 +149,7 @@
     <ClInclude Include="..\SourceCode\Object\Result\BackGround\BackGround.h" />
     <ClInclude Include="..\SourceCode\Object\Result\GameClearUi\GameClearUi.h" />
     <ClInclude Include="..\SourceCode\Object\Result\GameOverUi\GameOverUi.h" />
+    <ClInclude Include="..\SourceCode\Object\ScoreDraw\ScoreDraw.h" />
     <ClInclude Include="..\SourceCode\Object\StageObj\AreaNumController\AreaNumController.h" />
     <ClInclude Include="..\SourceCode\Object\StageObj\Area\Area.h" />
     <ClInclude Include="..\SourceCode\Object\StageObj\Area\AreaMove_PosTag.h" />
@@ -166,6 +170,7 @@
     <ClInclude Include="..\SourceCode\Object\Time\Time\Time.h" />
     <ClInclude Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.h" />
     <ClInclude Include="..\SourceCode\Object\TitleObj\TitleUi\TitleUi.h" />
+    <ClInclude Include="..\SourceCode\Scene\PlayEnd\PlayEnd.h" />
     <ClInclude Include="..\SourceCode\Scene\Result\Result.h" />
     <ClInclude Include="..\SourceCode\Scene\SceneBase\SceneBase.h" />
     <ClInclude Include="..\SourceCode\Scene\SceneManager\SceneManager.h" />

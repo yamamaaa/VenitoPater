@@ -76,6 +76,14 @@ namespace object
         //プレイの終了時間になったら
         if (m_DrawTime == m_PLAYTIME_MAX)
         {
+            //ランキングモードならクリア画面へ
+            object::PlayMenu menu = object::ObjectManager::GetPlayMode();
+            if (menu == object::PlayMenu::PlayRankingMode)
+            {
+                ObjectManager::SetNextGameState(GameClear);
+                return;
+            }
+
             //ノルマ達成しているか
             if (ItemGetNum::GetIsNolmClear())
             {

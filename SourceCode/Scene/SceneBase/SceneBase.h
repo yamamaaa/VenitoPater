@@ -52,6 +52,12 @@ namespace scene
         /// <param name="deltaTime">デルタタイム</param>
         void TransitorScene(const float deltatime);
 
+        /// <summary>
+        /// シーン切り替え時処理.切り替え先が同じシーンか？
+        /// </summary>
+        /// <param name="deltaTime">デルタタイム</param>
+        void TransitorScene(const float deltatime, object::GameStatus scene_1, object::GameStatus scene_2, bool& is_same);
+
         bool m_IsChangeScene;       //シーン切り替えを行うか
         bool m_FadeInSet;           //フェードインを行ったか
     };

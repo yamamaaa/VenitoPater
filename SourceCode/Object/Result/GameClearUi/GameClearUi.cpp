@@ -2,7 +2,7 @@
 #include "../../ObjectTag/GameClear_ObjectTag.h"
 #include "../../../GameSystem/Window/Window.h"
 #include "../../ObjectManager/ObjectManager.h"
-#include "../../NumDays/NumDays.h"
+#include "../../../NumDays/NumDays.h"
 #include "../../../SoundController/SoundController.h"
 
 namespace object
@@ -60,7 +60,7 @@ namespace object
 			}
 			else if (ObjectManager::GetPlayMode() == PlayMenu::PlayRankingMode)
 			{
-				//ObjectManager::SetNextGameState(GameStatus);
+				ObjectManager::SetNextGameState(GameStatus::Score);
 			}
 		}
 		else

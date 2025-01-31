@@ -2,7 +2,7 @@
 #include"../../ObjectTag/Story_ObjectTag.h"
 #include"../LineStatus/LineStatus.h"
 #include"../../ObjectManager/ObjectManager.h"
-#include"../../NumDays/NumDays.h"
+#include"../../../NumDays/NumDays.h"
 
 namespace object
 {

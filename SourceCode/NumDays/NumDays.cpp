@@ -1,5 +1,5 @@
 #include "NumDays.h"
-#include "../../GameSystem/Window/Window.h"
+#include "../GameSystem/Window/Window.h"
 
 namespace object
 {
@@ -29,7 +29,7 @@ namespace object
     void NumDays::LoadObject()
     {
         //“ú”‚Ì‰Šú‰»
-        numdays->m_NumDays = 3;
+        numdays->m_NumDays = 0;
     }
 
     void NumDays::UpdateNumDays()

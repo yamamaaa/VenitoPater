@@ -3,7 +3,7 @@
 #include "../../../CharaObj/AvoidStatus/AvoidStatus.h"
 #include "../../LightController/LightController.h"
 #include "../../../ObjectManager/ObjectManager.h"
-#include "../../../NumDays/NumDays.h"
+#include "../../../../NumDays/NumDays.h"
 #include "../../../../SoundController/SoundController.h"
 
 namespace object
