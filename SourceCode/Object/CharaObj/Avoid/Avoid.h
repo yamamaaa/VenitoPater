@@ -44,7 +44,7 @@ namespace object
 		/// <param name="deltatime">デルタタイム</param>
 		void MoveObj(const float deltatime)override;
 
-		POINTFLOAT m_DrawPos;	//画像表示座標
+		std::string m_JsonTag;	//サウンド用Jsonタグ
 
 		const int m_AVOID_NOTNUM = 3;		//回避行動不可エリア
 

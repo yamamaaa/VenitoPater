@@ -2,6 +2,7 @@
 #include "../../ObjectTag/GameOver_ObjectTag.h"
 #include "../../../GameSystem/Window/Window.h"
 #include "../../ObjectManager/ObjectManager.h"
+#include "../../../SoundController/SoundController.h"
 
 namespace object
 {
@@ -14,6 +15,8 @@ namespace object
 
 	GameOverUi::~GameOverUi()
 	{
+		delete window;
+		DeleteGraph(m_ObjHandle);
 		//フォントハンドルの解放
 		DeleteFontToHandle(m_FontHandle);
 		DeleteFontToHandle(m_FontHandle_Ui);
@@ -30,6 +33,14 @@ namespace object
 		m_UiOffset[1] = { 60,30 };
 
 		m_ObjHandle = LoadGraph(JsonManager::ImgData_Instance()->Get_ResultData_Instance()->GetOverData_Select().c_str());
+
+		auto json = JsonManager::SoundData_Instance()->Get_Result_SoundData_Instance();
+		m_JsonTag[0] = json->GetBgmNameData();
+		m_JsonTag[1] = json->GetBackNameData();
+		m_JsonTag[2] = json->GetButtonNameData();
+		sound_controller::SoundController::AddSoundData(json->GetBgmPathData(), m_JsonTag[0],json->GetBgmVolumeData(), json->GetBgmTypeData());
+		sound_controller::SoundController::AddSoundData(json->GetBackPathData(), m_JsonTag[1], json->GetBackVolumeData(), json->GetBackTypeData());
+		sound_controller::SoundController::AddSoundData(json->GetButtonPathData(), m_JsonTag[2], json->GetButtonVolumeData(), json->GetButtonTypeData());
 
 		m_Uipos.x = m_SelectUi_Pos[0].x;
 		m_Uipos.y = m_SelectUi_Pos[0].y;
@@ -50,6 +61,8 @@ namespace object
 	void GameOverUi::UpdateObj(const float deltatime)
 	{
 		//マウスがエリア移動の位置にあるか
+
+		sound_controller::SoundController::StartSound(m_JsonTag[0]);
 
 		for (int i = 0; i < 2; i++)
 		{
@@ -87,10 +100,12 @@ namespace object
 				{
 					if (i == 0)	//コンテニューなら
 					{
+						sound_controller::SoundController::StartSound(m_JsonTag[2]);
 						ObjectManager::SetNextGameState(GamePlay);
 					}
 					else		//タイトルに戻るなら
 					{
+						sound_controller::SoundController::StartSound(m_JsonTag[1]);
 						ObjectManager::SetNextGameState(Title);
 					}
 				}
@@ -104,19 +119,19 @@ namespace object
 
 		DrawStringFToHandle(m_ResultLogo_Pos.x, m_ResultLogo_Pos.y, m_Title.c_str(), GetColor(m_COLOR, m_COLOR, m_COLOR),m_FontHandle);
 
-		int ui_x0 = m_SelectUi_Pos[0].x + m_UiOffset[0].x;
-		int ui_y0 = m_SelectUi_Pos[0].y + m_UiOffset[0].y;
+		float ui_x0 = m_SelectUi_Pos[0].x + m_UiOffset[0].x;
+		float ui_y0 = m_SelectUi_Pos[0].y + m_UiOffset[0].y;
 
 		DrawStringFToHandle(ui_x0, ui_y0, m_SelectText[0].c_str(), GetColor(m_COLOR, m_COLOR, m_COLOR), m_FontHandle_Ui);
 
-		int ui_x1 = m_SelectUi_Pos[1].x + m_UiOffset[1].x;
-		int ui_y1= m_SelectUi_Pos[1].y + m_UiOffset[1].y;
+		float ui_x1 = m_SelectUi_Pos[1].x + m_UiOffset[1].x;
+		float ui_y1= m_SelectUi_Pos[1].y + m_UiOffset[1].y;
 
 		DrawStringFToHandle(ui_x1, ui_y1, m_SelectText[1].c_str(),GetColor(m_COLOR, m_COLOR, m_COLOR), m_FontHandle_Ui);
 
 #ifdef DEBUG
-		DrawBox(m_SelectUi_Pos[0].x, m_SelectUi_Pos[0].y, m_SelectUi_Pos[0].x + m_ObjSize.x, m_SelectUi_Pos[0].y + m_ObjSize.y, GetColor(255,0,0),FALSE);
-		DrawBox(m_SelectUi_Pos[1].x, m_SelectUi_Pos[1].y, m_SelectUi_Pos[1].x + m_ObjSize.x, m_SelectUi_Pos[1].y + m_ObjSize.y, GetColor(0, 255, 0),FALSE);
+		DrawBox(static_cast<int>(m_SelectUi_Pos[0].x), static_cast<int>(m_SelectUi_Pos[0].y), static_cast<int>(m_SelectUi_Pos[0].x + m_ObjSize.x), static_cast<int>(m_SelectUi_Pos[0].y + m_ObjSize.y), GetColor(255,0,0),FALSE);
+		DrawBox(static_cast<int>(m_SelectUi_Pos[1].x), static_cast<int>(m_SelectUi_Pos[1].y), static_cast<int>(m_SelectUi_Pos[1].x + m_ObjSize.x), static_cast<int>(m_SelectUi_Pos[1].y + m_ObjSize.y), GetColor(0, 255, 0),FALSE);
 		DrawFormatString(0, 20, GetColor(255, 255, 255), "セレクト状態:%s", m_selectstatus.c_str());
 #endif // DEBUG
 	}

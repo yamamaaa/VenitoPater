@@ -2,12 +2,13 @@
 #include "../../ObjectTag/GameClear_ObjectTag.h"
 #include "../../../GameSystem/Window/Window.h"
 #include "../../ObjectManager/ObjectManager.h"
-#include "../../NumDays/NumDays.h"
+#include "../../../NumDays/NumDays.h"
+#include "../../../SoundController/SoundController.h"
 
 namespace object
 {
 	GameClearUi::GameClearUi()
-		:ObjectBase(gameClear_Objecttag.GAMECLEARUI)
+		:ObjectBase(gameClear_ObjectTag.GAMECLEARUI)
 	{
 		//読み込み関連
 		LoadObject();
@@ -15,6 +16,7 @@ namespace object
 
 	GameClearUi::~GameClearUi()
 	{
+		delete window;
 		//フォントハンドルの解放
 		DeleteFontToHandle(m_FontHandle);
 	}
@@ -23,8 +25,16 @@ namespace object
 	{
 		m_DrawCount = m_DRAWCOUNT_MAX;
 
+		m_IsSound = false;
+
 		window = nullptr;	//windowのインスタンス生成
 		POINTS windowsize = window->GetWindowSize();
+
+		auto json = JsonManager::SoundData_Instance()->Get_Clear_SoundData_Instance();
+		m_JsonTag[0] = json->GetBgmNameData();
+		m_JsonTag[1] = json->GetApplauseNameData();
+		sound_controller::SoundController::AddSoundData(json->GetBgmPathData(), m_JsonTag[0],json->GetBgmVolumeData(), json->GetBgmTypeData());
+		sound_controller::SoundController::AddSoundData(json->GetApplausePathData(), m_JsonTag[1], json->GetApplauseVolumeData(), json->GetApplauseTypeData());
 
 		m_FontHandle = CreateFontToHandle("メイリオ", m_FONTSIZE.x, m_FONTSIZE.y, DX_FONTTYPE_ANTIALIASING);
 
@@ -37,6 +47,13 @@ namespace object
 
 	void GameClearUi::UpdateObj(const float deltatime)
 	{
+		if (!m_IsSound)
+		{
+			sound_controller::SoundController::StartSound(m_JsonTag[0]);
+			sound_controller::SoundController::StartSound(m_JsonTag[1]);
+			m_IsSound = true;
+		}
+
 		//一定時間文字の表示
 		if (m_DrawCount <= 0.0f)
 		{
@@ -47,7 +64,7 @@ namespace object
 			}
 			else if (ObjectManager::GetPlayMode() == PlayMenu::PlayRankingMode)
 			{
-				//ObjectManager::SetNextGameState(GameStatus);
+				ObjectManager::SetNextGameState(GameStatus::Score);
 			}
 		}
 		else

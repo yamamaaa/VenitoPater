@@ -1,12 +1,13 @@
 #include "MoveArea.h"
-#include "../../ObjectTag/Global_ObjectTag.h"
+#include "../../ObjectTag/Play_ObjectTag.h"
 #include "../../StageObj/AreaNumController/AreaNumController.h"
 #include "../../CharaObj/AvoidStatus/AvoidStatus.h"
+#include "../../../MouseStatus/MouseStatus.h"
 
 namespace object
 {
     MoveArea::MoveArea()
-        :MouseBase(global_objecttag.MOVEAREA)
+        :MouseBase(play_ObjectTag.MOVEAREA)
     {
         //“Ç‚İ‚İŠÖ˜A
         LoadObject();
@@ -14,7 +15,13 @@ namespace object
 
     MoveArea::~MoveArea()
     {
-        //ˆ—‚È‚µ
+        m_HitSize.clear();
+        m_MovePos.clear();
+        m_AreaNumber.clear();
+#ifdef DEBUG
+        d_ColorCode.clear();
+        d_CursorHit.clear();
+#endif // DEBUG
     }
 
     void MoveArea::LoadObject()
@@ -26,6 +33,10 @@ namespace object
 
     void MoveArea::UpdateObj(const float deltatime)
     {
+        //“ü—Íó‘Ô‚ª•s‰Â‚Ì‚Íˆ—‚È‚µ
+        if (!mousestatus::MouseStatus::GetIsFadeDone())
+            return;
+
         //ˆÚ“®‚µ‚½‚ç
         if (m_IsMove)
         {

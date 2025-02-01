@@ -1,7 +1,7 @@
 #include "BackGround.h"
 #include "../../ObjectTag/GameOver_ObjectTag.h"
 #include "../../ObjectManager/ObjectManager.h"
-#include "../../NumDays/NumDays.h"
+#include "../../../NumDays/NumDays.h"
 
 namespace object
 {
@@ -14,7 +14,7 @@ namespace object
 
     BackGround::~BackGround()
     {
-        //èàóùÇ»Çµ
+        DeleteGraph(m_ObjHandle);
     }
 
     void BackGround::LoadObject()

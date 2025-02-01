@@ -1,4 +1,5 @@
 #include "MouseBase.h"
+#include "../../MouseStatus/MouseStatus.h"
 
 namespace object
 {
@@ -41,6 +42,10 @@ namespace object
 
     void MouseBase::MouseClick()
     {
+        //入力状態が不可の時は処理なし
+        if (!mousestatus::MouseStatus::GetIsFadeDone())
+            return;
+
         //クリック可能状態の時
         if (m_CanClick)
         {

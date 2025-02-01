@@ -36,6 +36,11 @@ namespace object
         void LoadObject() override;
 
         /// <summary>
+        /// ランダムで表示するセリフをセット
+        /// </summary>
+        void RandomLineSet();
+
+        /// <summary>
         /// 更新
         /// </summary>
         /// <param name="deltatime">デルタタイム</param>
@@ -95,6 +100,8 @@ namespace object
         const POINTS m_FONTSIZE_Line = { 30,5 };      //フォントサイズ_セリフ
         const POINTS m_FONTSIZE_Day = { 200,15 };     //フォントサイズ_日数
 
+        bool m_IsReleaseObj;        //処理を終わるか
+
         const float m_DROPSPEED = 70.0f;		      //減分速度
         const float m_COUNTSPEED = 5.0f;              //タイムカウントスピード
         const float m_COUNTMAX = 40.0f;               //カウント最大値
@@ -103,18 +110,18 @@ namespace object
 
         int m_FontHandle;               //フォントハンドル
 
-        const float m_WAITCOU_MAX = 1.0f;    //スタートしてから表示まで待ち時間
+        const float m_WAITCOU_MAX = 3.0f;     //スタートしてから表示まで待ち時間
         float m_StartCount;                   //スタートカウント
         bool m_WaitDone;                      //待ち時間終了したか
 
-        const float m_RISESPEED = 0.1f;			//増化速度
+        const float m_RISESPEED = 0.6f;			//増化速度
 
         int m_TxtNum;           //表示中の文字数
 
         bool m_IsLineSet;       //表示文字をセットしたか
         bool m_IslineAnim;      //表示文字がアニメ中か？
 
-        const float m_DRAW_COUNTMAX = 0.3f;       //文字の表示時間
+        const float m_DRAW_COUNTMAX = 2.4f;       //文字の表示時間
 
         float m_AnimCount;      //文字のアニメカウント
         float m_AnimSpeed;      //アニメスピード
@@ -124,5 +131,6 @@ namespace object
 
         VECTOR m_NowColor;                             //現在の文字色
         const VECTOR m_COLOR_DEFAULT = VGet(255, 255, 255);  //白色
+
     };
 }

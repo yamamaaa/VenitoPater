@@ -1,8 +1,9 @@
-#include "ThreeDays.h"
+#include "Play.h"
 
 #include"../../Object/ObjectManager/ObjectManager.h"
-#include"../../Object/ObjectTag/ThreeDays_ObjectTag.h"
+#include"../../Object/ObjectTag/Play_ObjectTag.h"
 
+#include"../Clear/Clear.h"
 #include"../Result/Result.h"
 
 #include"../../Object/CharaObj/AvoidStatus/AvoidStatus.h"
@@ -34,24 +35,26 @@
 
 #include"../../Object/CharaObj/Enemy/EnemyAction/EnemyAction.h"
 
+#include"../a/a.h"
+
 namespace scene
 {
-	ThreeDays::ThreeDays()
+	Play::Play()
 		:SceneBase()
 	{
 		//読み込み関連
 		LoadObject();
 	}
 
-	ThreeDays::~ThreeDays()
+	Play::~Play()
 	{
 		//処理なし
 	}
 
-	void ThreeDays::LoadObject()
+	void Play::LoadObject()
 	{
 		//オブジェクトタグをセット
-		object::ObjectManager::NowSceneSet(objecttag::ThreeDays_ObjTagAll);
+		object::ObjectManager::NowSceneSet(objecttag::Play_ObjectTagAll);
 		//Game状態をセット
 		object::ObjectManager::SetNowGameState(object::GamePlay);
 		object::ObjectManager::SetNextGameState(object::GamePlay);
@@ -87,13 +90,17 @@ namespace scene
 		object::ObjectManager::Entry(new object::Time);
 
 		//テキスト関連
-		object::ObjectManager::Entry(new object::TextDraw);
+		object::PlayMenu menu = object::ObjectManager::GetPlayMode();
+		if (menu == object::PlayMenu::PlayNewGame)
+		{
+			object::ObjectManager::Entry(new object::TextDraw);
+		}
 
 		//敵のアクション生成
 		object::ObjectManager::Entry(new object::EnemyAction);
 	}
 
-	SceneBase* ThreeDays::UpdateScene(const float deltaTime)
+	SceneBase* Play::UpdateScene(const float deltaTime)
 	{
 		if (!m_FadeInSet)
 		{
@@ -109,7 +116,7 @@ namespace scene
 		{
 			m_IsChangeScene = true;
 			transitor::FadeTransitor::FadeOutStart(deltaTime);
-			TransitorScene();
+			TransitorScene(deltaTime);
 		}
 		else
 		{
@@ -117,19 +124,23 @@ namespace scene
 		}
 
 		//ゲームクリアしたら
-		if (object::GameClear== status || object::GameOver == status || object::TimeOver == status)
+		if (object::GameClear == status)
 		{
-			object::ObjectManager::ReleaseAllObj();
+			return new Clear;
+			//return new a;
+		}
+
+		//ゲームオーバー
+		if (object::GameOver == status || object::TimeOver == status)
+		{
 			return new Result;
 		}
 
 		return this;
 	}
 
-	void ThreeDays::DrawScene()
+	void Play::DrawScene()
 	{
-		DrawFormatString(0, 0, GetColor(255, 255, 255), "3Days");
-
 		if (m_IsChangeScene || !m_FadeInSet)
 		{
 			transitor::FadeTransitor::DrawFade();

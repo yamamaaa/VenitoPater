@@ -86,6 +86,11 @@ namespace object
 		/// <returns>敵ID</returns>
 		static EnemyID GetEmyIDAction() { return enemymanager->m_EmyId_Action; }
 
+		/// <summary>
+		/// 後処理
+		/// </summary>
+		static void Processing();
+
 		//削除予定
 		static void D_DrawStatus();
 
@@ -127,9 +132,12 @@ namespace object
 		static const int m_EMYSCREEN_MAX = 3;	//画面内敵の出現総数
 		static const int m_APPEAR_RANGE = 4;	//出現時のランダム範囲
 
-		const float m_STARTWAIT_MAX = 30.0f;	//スタート時の排出待ち時間
-		const float m_APPEARCOUNT_MAX = 25.0f;	//再び出現できるまでのカウント
-		const float m_COUNT_DECREMENT = 0.5f;	//カウント減分値
+		const float m_STARTWAIT_MAX[3] = { 40.0f,24.0f,6.0f};			//スタート時の排出待ち時間
+		const float m_APPEARCOUNT_MAX[3] = {50.0f,12.0f,3.0f};		//再び出現できるまでのカウント
+
+		float m_AppearCount_Max;	//現在の再出現までのカウント
+
+		const float m_COUNT_DECREMENT = 0.6f;	//カウント減分値
 
 		float m_StartCount;						//スタート時の排出カウント
 		float m_AppearCount;					//敵の排出カウント
@@ -140,13 +148,7 @@ namespace object
 		bool m_EmyIsAction;				//動ける状態か
 
 		//敵の出現フラグ
-		std::unordered_map<EnemyID, bool> m_IsAppear{
-			{memini,false},
-			{nil,false},
-			{spero,false},
-			{ira,false},
-			{familia,false},
-		};
+		std::unordered_map<EnemyID, bool> m_IsAppear{};
 
 		static std::unique_ptr<EnemyManager> enemymanager;	//自身の実態
 	};

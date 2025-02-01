@@ -2,7 +2,8 @@
 
 #include"../../Object/ObjectTag/Story_ObjectTag.h"
 
-#include"../ThreeDays/ThreeDays.h"
+#include"../Play/Play.h"
+#include"../PlayEnd/PlayEnd.h"
 
 #include"../../Object/StoryObj/LineStatus/LineStatus.h"
 
@@ -14,6 +15,8 @@
 #include"../../Object/ObjectTag/Still_ObjectTag.h"
 
 #include"../../Object/StoryObj/StillDraw/StillDraw.h"
+
+#include"../a/a.h"
 
 namespace scene
 {
@@ -56,9 +59,8 @@ namespace scene
 			object::ObjectManager::Entry(new object::Line);
 		}
 
-		//フェードフラグ初期化
-		m_FadeInSet = false;
-		IsNextStory = false;
+		//初期化
+		m_IsNextSame = false;
 	}
 
 	SceneBase* Story::UpdateScene(const float deltaTime)
@@ -77,23 +79,7 @@ namespace scene
 		{
 			m_IsChangeScene = true;
 			transitor::FadeTransitor::FadeOutStart(deltaTime);
-
-			//処理が終わったらステータスの変更と後処理
-			if (transitor::FadeTransitor::IsFadeDone())
-			{
-				//次のステータスを取得しセット
-				object::GameStatus status_next = object::ObjectManager::GetNextGameState();
-				object::ObjectManager::SetNowGameState(status);
-
-				object::ObjectManager::ReleaseAllObj();
-				transitor::FadeTransitor::FadeProcessing();
-
-				//次のシーンが同じストーリーシーンか
-				if (object::Story == status_next || object::Still == status_next)
-				{
-					IsNextStory = true;
-				}
-			}
+			TransitorScene(deltaTime, object::GameStatus::Story, object::GameStatus::Still, m_IsNextSame);
 		}
 		else
 		{
@@ -102,12 +88,17 @@ namespace scene
 
 		if (object::GamePlay == status)
 		{
-			return new ThreeDays;
+			object::ObjectManager::ReleaseAllObj();
+			return new Play;
 		}
 
-		if (IsNextStory)
+		if (object::PlayEnd == status)
 		{
-			IsNextStory = false;
+			return new PlayEnd;
+		}
+
+		if (m_IsNextSame)
+		{
 			return new Story;
 		}
 

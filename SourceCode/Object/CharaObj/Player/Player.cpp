@@ -1,6 +1,6 @@
 #include "Player.h"
 #include"../../../LevelController/LevelController.h"
-#include"../../ObjectTag/Global_ObjectTag.h"
+#include"../../ObjectTag/Play_ObjectTag.h"
 #include"../LightController/LightController.h"
 
 using namespace level_controller;
@@ -8,13 +8,14 @@ using namespace level_controller;
 namespace object
 {
     Player::Player()
-        :MouseBase(global_objecttag.PLAYER)
+        :MouseBase(play_ObjectTag.PLAYER)
     {
         LoadObject();
     }
 
     Player::~Player()
     {
+        LightController::Processing();
     }
 
     void Player::LoadObject()

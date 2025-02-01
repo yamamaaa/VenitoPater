@@ -4,6 +4,7 @@
 #include"../../Fps/Fps.h"
 #include"../../Object/ObjectManager/ObjectManager.h"
 #include"../../Transitor/FadeTransitor/FadeTransitor.h"
+#include"../../SoundController/SoundController.h"
 
 namespace scene
 {
@@ -14,6 +15,7 @@ namespace scene
         //初期化処理
         object::ObjectManager::Initialize();
         transitor::FadeTransitor::Initialize();
+        sound_controller::SoundController::Initialize();
 
         //現在のシーンをタイトルに設定
         m_NowScene.emplace(new Title);

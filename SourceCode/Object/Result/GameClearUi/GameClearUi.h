@@ -53,12 +53,16 @@ namespace object
 
         GameSystem::Window* window;
 
+        std::string m_JsonTag[2];	//サウンド用Jsonタグ
+
         int m_FontHandle;                       //フォントハンドル
         const POINTS m_FONTSIZE = { 200,60 };   //フォントサイズ
 
         std::string m_TimeText = "5:00";        //表示テキスト
 
-        const float m_DRAWCOUNT_MAX = 17.0f;    //表示時間
+        bool m_IsSound;      //サウンドを再生したか
+
+        const float m_DRAWCOUNT_MAX = 12.0f;    //表示時間
         const float m_COUNT_DECREMENT = 1.0f;	//カウント減分値
         const int m_COLOR = 255;                //カラーコード
 

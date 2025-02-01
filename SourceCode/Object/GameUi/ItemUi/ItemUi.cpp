@@ -1,12 +1,12 @@
 #include "ItemUi.h"
-#include "../../ObjectTag/Global_ObjectTag.h"
+#include "../../ObjectTag/Play_ObjectTag.h"
 #include "../../StageObj/ItemGetNum/ItemGetNum.h"
 #include "../../ObjectManager/ObjectManager.h"
 
 namespace object
 {
     ItemUi::ItemUi()
-        :ObjectBase(global_objecttag.ITEMUI)
+        :ObjectBase(play_ObjectTag.ITEMUI)
     {
         //読み込み関連
         LoadObject();
@@ -16,6 +16,8 @@ namespace object
     {
         //フォントハンドルの解放
         DeleteFontToHandle(m_FontHandle);
+        DeleteGraph(m_ObjHandle);
+        DeleteGraph(m_RItem_Handole);
     }
 
     void ItemUi::LoadObject()
@@ -64,9 +66,16 @@ namespace object
         int item_n = ItemGetNum::GetNowNItem();
         int item_r = ItemGetNum::GetNowRItem();
 
-        //所持アイテム数表示
-        DrawFormatStringFToHandle(m_NItemNum_Pos.x, m_NItemNum_Pos.y, cr, m_FontHandle, m_ItemText.c_str(), item_n);
-        DrawFormatStringFToHandle(m_RItemNum_Pos.x, m_RItemNum_Pos.y, cr, m_FontHandle, m_ItemText.c_str(), item_n);
+        if (ObjectManager::GetPlayMode() == PlayMenu::PlayRankingMode)
+        {
+            DrawFormatStringFToHandle(m_NItemNum_Pos.x, m_NItemNum_Pos.y, cr, m_FontHandle, m_ItemText.c_str(), item_n);
+            DrawFormatStringFToHandle(m_RItemNum_Pos.x, m_RItemNum_Pos.y, cr, m_FontHandle, m_ItemText.c_str(), item_r);
+        }
+        else
+        {
+            //所持アイテム数表示
+            DrawFormatStringFToHandle(m_NItemNum_Pos.x, m_NItemNum_Pos.y, cr, m_FontHandle, m_ItemText.c_str(), item_n+ item_r);
+        }
 
         //アイテムアイコン表示
         DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);

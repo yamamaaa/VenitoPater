@@ -1,11 +1,12 @@
 #include "Area.h"
-#include "../../ObjectTag/Global_ObjectTag.h"
+#include "../../ObjectTag/Play_ObjectTag.h"
 #include "../AreaNumController/AreaNumController.h"
+#include "../../../SoundController/SoundController.h"
 
 namespace object
 {
 	Area::Area()
-		:ObjectBase(global_objecttag.AREA)
+		:ObjectBase(play_ObjectTag.AREA)
 	{
 		//読み込み関連
 		LoadObject();
@@ -13,7 +14,11 @@ namespace object
 
 	Area::~Area()
 	{
-		//処理なし
+		for (int i = 0; i < 4; i++)
+		{
+			DeleteGraph(m_AreaImg[i]);
+		}
+		DeleteGraph(m_ObjHandle);
 	}
 
 	void Area::LoadObject()
@@ -33,12 +38,16 @@ namespace object
 
 		//表示エリアの初期値セット
 		m_ObjHandle = m_AreaImg[AreaNumController::GetAreaNum()];
+		auto json = JsonManager::SoundData_Instance()->Get_Play_SoundData_Instance();
+		m_JsonTag = json->GetBgmNameData();
+		sound_controller::SoundController::AddSoundData(json->GetBgmPathData(), m_JsonTag, json->GetBgmVolumeData(), json->GetBgmTypeData());
 	}
 
 	void Area::UpdateObj(const float deltatime)
 	{
 		//表示エリアの更新
 		m_ObjHandle = m_AreaImg[AreaNumController::GetAreaNum()];
+		sound_controller::SoundController::StartSound(m_JsonTag);
 	}
 
 	void Area::DrawObj()

@@ -148,9 +148,6 @@
     <ClCompile Include="..\SourceCode\Scene\Story\Story.cpp">
       <Filter>ソースコード\Scene\Story</Filter>
     </ClCompile>
-    <ClCompile Include="..\SourceCode\Scene\ThreeDays\ThreeDays.cpp">
-      <Filter>ソースコード\Scene\ThreeDays</Filter>
-    </ClCompile>
     <ClCompile Include="..\SourceCode\Scene\Title\Title.cpp">
       <Filter>ソースコード\Scene\Title</Filter>
     </ClCompile>
@@ -187,9 +184,6 @@
     <ClCompile Include="..\SourceCode\Object\StoryObj\StoryItem\StoryItem.cpp">
       <Filter>ソースコード\Object\StoryObj\StoryItem</Filter>
     </ClCompile>
-    <ClCompile Include="..\SourceCode\Object\NumDays\NumDays.cpp">
-      <Filter>ソースコード\Object\NumDays</Filter>
-    </ClCompile>
     <ClCompile Include="..\SourceCode\Object\Time\Time\Time.cpp">
       <Filter>ソースコード\Object\Time\Time</Filter>
     </ClCompile>
@@ -198,6 +192,57 @@
     </ClCompile>
     <ClCompile Include="..\SourceCode\Object\TextDraw\TextDraw.cpp">
       <Filter>ソースコード\Object\TextDraw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\MouseStatus\MouseStatus.cpp">
+      <Filter>ソースコード\MouseStatus</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\TextData\GameOverData\GameOverData.cpp">
+      <Filter>ソースコード\JsonMaster\TextData\GameOberData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\SoundController\SoundController.cpp">
+      <Filter>ソースコード\SoundController</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Scene\PlayEnd\PlayEnd.cpp">
+      <Filter>ソースコード\Scene\PlayEnd</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\NumDays\NumDays.cpp">
+      <Filter>ソースコード\NumDays</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\ScoreDraw\ScoreDraw.cpp">
+      <Filter>ソースコード\Object\ScoreDraw</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Scene\Clear\Clear.cpp">
+      <Filter>ソースコード\Scene\Clear</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Scene\Play\Play.cpp">
+      <Filter>ソースコード\Scene\Play</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\MasterSoundData\MasterSoundData.cpp">
+      <Filter>ソースコード\JsonMaster\SoundData\MasterSoundData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Clear_SoundData\Clear_SoundData.cpp">
+      <Filter>ソースコード\JsonMaster\SoundData\Clear_SoundData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Play_SoundData\Play_SoundData.cpp">
+      <Filter>ソースコード\JsonMaster\SoundData\Play_SoundData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Result_SoundData\Result_SoundData.cpp">
+      <Filter>ソースコード\JsonMaster\SoundData\Result_SoundData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Score_SoundData\Score_SoundData.cpp">
+      <Filter>ソースコード\JsonMaster\SoundData\Score_SoundData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Story_SoundData\Story_SoundData.cpp">
+      <Filter>ソースコード\JsonMaster\SoundData\Story_SoundData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Title_SoundData\Title_SoundData.cpp">
+      <Filter>ソースコード\JsonMaster\SoundData\Title_SoundData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Tutorial_SoundData\Tutorial_SoundData.cpp">
+      <Filter>ソースコード\JsonMaster\SoundData\Tutorial_SoundData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Scene\a\a.cpp">
+      <Filter>ソースコード\Scene\a</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -327,13 +372,10 @@
     <ClInclude Include="..\SourceCode\Object\GameUi\RPMHPUi\RPMHPUi.h">
       <Filter>ソースコード\Object\GameUi\RPMHPUi</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\Object\ObjectTag\Global_ObjectTag.h">
-      <Filter>ソースコード\Object\ObjectTag</Filter>
-    </ClInclude>
     <ClInclude Include="..\SourceCode\Object\ObjectTag\GameOver_ObjectTag.h">
       <Filter>ソースコード\Object\ObjectTag</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\Object\ObjectTag\ThreeDays_ObjectTag.h">
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\Play_ObjectTag.h">
       <Filter>ソースコード\Object\ObjectTag</Filter>
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Story_ObjectTag.h">
@@ -384,9 +426,6 @@
     <ClInclude Include="..\SourceCode\Scene\Story\Story.h">
       <Filter>ソースコード\Scene\Story</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\Scene\ThreeDays\ThreeDays.h">
-      <Filter>ソースコード\Scene\ThreeDays</Filter>
-    </ClInclude>
     <ClInclude Include="..\SourceCode\Scene\Title\Title.h">
       <Filter>ソースコード\Scene\Title</Filter>
     </ClInclude>
@@ -426,23 +465,71 @@
     <ClInclude Include="..\SourceCode\Object\StoryObj\StoryItem\CharaItem_Tag.h">
       <Filter>ソースコード\Object\StoryObj\StoryItem</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\Object\NumDays\NumDays.h">
-      <Filter>ソースコード\Object\NumDays</Filter>
-    </ClInclude>
     <ClInclude Include="..\SourceCode\Object\Time\Time\Time.h">
       <Filter>ソースコード\Object\Time\Time</Filter>
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\Time\TimeStatus\TimeStatus.h">
       <Filter>ソースコード\Object\Time\TimeStatus</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\Object\ObjectTag\TimeOver_ObjectTag.h">
-      <Filter>ソースコード\Object\ObjectTag</Filter>
-    </ClInclude>
     <ClInclude Include="..\SourceCode\Object\TextDraw\TextDraw.h">
       <Filter>ソースコード\Object\TextDraw</Filter>
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\ObjectManager\PlayMenu.h">
       <Filter>ソースコード\Object\ObjectManager</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\MouseStatus\MouseStatus.h">
+      <Filter>ソースコード\MouseStatus</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\TextData\GameOverData\GameOverData.h">
+      <Filter>ソースコード\JsonMaster\TextData\GameOberData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\SoundController\SoundController.h">
+      <Filter>ソースコード\SoundController</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Scene\PlayEnd\PlayEnd.h">
+      <Filter>ソースコード\Scene\PlayEnd</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\NumDays\NumDays.h">
+      <Filter>ソースコード\NumDays</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\PlayEnd_ObjectTag.h">
+      <Filter>ソースコード\Object\ObjectTag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ScoreDraw\ScoreDraw.h">
+      <Filter>ソースコード\Object\ScoreDraw</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Scene\Clear\Clear.h">
+      <Filter>ソースコード\Scene\Clear</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Scene\Play\Play.h">
+      <Filter>ソースコード\Scene\Play</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\MasterSoundData\MasterSoundData.h">
+      <Filter>ソースコード\JsonMaster\SoundData\MasterSoundData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Clear_SoundData\Clear_SoundData.h">
+      <Filter>ソースコード\JsonMaster\SoundData\Clear_SoundData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Play_SoundData\Play_SoundData.h">
+      <Filter>ソースコード\JsonMaster\SoundData\Play_SoundData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Result_SoundData\Result_SoundData.h">
+      <Filter>ソースコード\JsonMaster\SoundData\Result_SoundData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Score_SoundData\Score_SoundData.h">
+      <Filter>ソースコード\JsonMaster\SoundData\Score_SoundData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Story_SoundData\Story_SoundData.h">
+      <Filter>ソースコード\JsonMaster\SoundData\Story_SoundData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Title_SoundData\Title_SoundData.h">
+      <Filter>ソースコード\JsonMaster\SoundData\Title_SoundData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Tutorial_SoundData\Tutorial_SoundData.h">
+      <Filter>ソースコード\JsonMaster\SoundData\Tutorial_SoundData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Scene\a\a.h">
+      <Filter>ソースコード\Scene\a</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -503,9 +590,6 @@
     <Filter Include="ソースコード\Scene\Title">
       <UniqueIdentifier>{75805411-4c38-4c96-ad7e-829c890d0fbd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースコード\Scene\ThreeDays">
-      <UniqueIdentifier>{8a1a8d4c-36b8-4b6e-be93-a1dab95ad257}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソースコード\Object\CharaObj">
       <UniqueIdentifier>{5eb7a711-e128-411f-bd54-8f0ee40722e6}</UniqueIdentifier>
     </Filter>
@@ -538,15 +622,6 @@
     </Filter>
     <Filter Include="ソースコード\Object\CharaObj\HatUi">
       <UniqueIdentifier>{db3e61c9-f456-4caf-bc68-757f869204a0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースコード\Object\StageObj\ClockWork">
-      <UniqueIdentifier>{84af56d7-23b1-426e-b531-779f78a1feec}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースコード\Object\StageObj\ClockWork\ClockWork">
-      <UniqueIdentifier>{85db2f17-b60d-4625-b713-e56f1448bf6e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースコード\Object\StageObj\ClockWork\RPMController">
-      <UniqueIdentifier>{5650a5ef-843d-4de9-8bc2-1f54085b9839}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースコード\Object\CharaObj\LightController">
       <UniqueIdentifier>{f25751d8-5106-4a83-bba8-ddd806247b25}</UniqueIdentifier>
@@ -638,12 +713,6 @@
     <Filter Include="ソースコード\Scene\Story">
       <UniqueIdentifier>{962b8690-339f-437d-9046-592028dab4cd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースコード\JsonMaster\JsonFile">
-      <UniqueIdentifier>{b04abbf7-6fd0-4555-827a-c0ec5ae576c4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースコード\JsonMaster\JsonFile\Image">
-      <UniqueIdentifier>{8dc2485d-0633-429b-bfc5-898cf0c11f37}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソースコード\JsonMaster\ImageData">
       <UniqueIdentifier>{cc33ed31-8ab2-42a2-9423-79be27275162}</UniqueIdentifier>
     </Filter>
@@ -658,9 +727,6 @@
     </Filter>
     <Filter Include="ソースコード\JsonMaster\ImageData\TitleData">
       <UniqueIdentifier>{2daaefe0-3721-4d06-a788-2dc74f22fdf6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースコード\JsonMaster\JsonFile\Text">
-      <UniqueIdentifier>{4db04759-8486-4344-a282-3f0f4a7f764d}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースコード\JsonMaster\TextData">
       <UniqueIdentifier>{abbbb85a-b106-4f89-ac8b-0dfed57d3eba}</UniqueIdentifier>
@@ -692,9 +758,6 @@
     <Filter Include="ソースコード\Object\StoryObj\StoryItem">
       <UniqueIdentifier>{9d8ef316-c524-489b-9342-d3ec3c60b160}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースコード\Object\NumDays">
-      <UniqueIdentifier>{f7418988-b22b-48cd-a368-ae45319bfc91}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソースコード\Object\Time\Time">
       <UniqueIdentifier>{861bb80e-cfbd-4de8-8907-20ba0cde7a55}</UniqueIdentifier>
     </Filter>
@@ -704,25 +767,68 @@
     <Filter Include="ソースコード\Object\TextDraw">
       <UniqueIdentifier>{d75384de-6542-40cc-97b5-794363ffd15c}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\SourceCode\JsonMaster\JsonFile\Image\play.json">
-      <Filter>ソースコード\JsonMaster\JsonFile\Image</Filter>
-    </None>
-    <None Include="..\SourceCode\JsonMaster\JsonFile\Image\result.json">
-      <Filter>ソースコード\JsonMaster\JsonFile\Image</Filter>
-    </None>
-    <None Include="..\SourceCode\JsonMaster\JsonFile\Image\story.json">
-      <Filter>ソースコード\JsonMaster\JsonFile\Image</Filter>
-    </None>
-    <None Include="..\SourceCode\JsonMaster\JsonFile\Image\title.json">
-      <Filter>ソースコード\JsonMaster\JsonFile\Image</Filter>
-    </None>
-    <None Include="..\SourceCode\JsonMaster\JsonFile\Text\character.json">
-      <Filter>ソースコード\JsonMaster\JsonFile\Text</Filter>
-    </None>
-    <None Include="..\SourceCode\JsonMaster\JsonFile\Text\still.json">
-      <Filter>ソースコード\JsonMaster\JsonFile\Text</Filter>
-    </None>
+    <Filter Include="ソースコード\MouseStatus">
+      <UniqueIdentifier>{def61a4f-b10e-41d7-b68b-98dc23582d2e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\TextData\GameOberData">
+      <UniqueIdentifier>{f8487604-0a72-4395-bdf3-795abe4e5569}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\SoundController">
+      <UniqueIdentifier>{cb191739-a926-4a79-8218-4fa0cc58210f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Scene\PlayEnd">
+      <UniqueIdentifier>{ade1abe0-4219-4b35-ba54-b64203fbbbad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\NumDays">
+      <UniqueIdentifier>{f7418988-b22b-48cd-a368-ae45319bfc91}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\ScoreDraw">
+      <UniqueIdentifier>{0e723264-a393-47bb-917d-e2d03b64a81a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Scene\Clear">
+      <UniqueIdentifier>{f32f800d-912f-45b0-86db-3b4a83f016dc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Scene\Play">
+      <UniqueIdentifier>{8a1a8d4c-36b8-4b6e-be93-a1dab95ad257}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\SoundData">
+      <UniqueIdentifier>{391e948a-0f04-437d-b025-e73ed22dec61}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\SoundData\MasterSoundData">
+      <UniqueIdentifier>{ffd42890-a789-4f23-b3b9-dd80141fe5cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\SoundData\Play_SoundData">
+      <UniqueIdentifier>{20abdb96-f949-4ef7-a9bd-52da6dc58169}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\SoundData\Score_SoundData">
+      <UniqueIdentifier>{e1086cd0-542c-479d-8c55-4d7ea41252d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\SoundData\Story_SoundData">
+      <UniqueIdentifier>{5a47cee9-6743-429c-af65-8e1595f1c939}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\SoundData\Result_SoundData">
+      <UniqueIdentifier>{c254ae47-9070-467f-b4ea-17cd9758fc2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\SoundData\Clear_SoundData">
+      <UniqueIdentifier>{fca47eba-1e43-4210-89a4-3aa66e868c25}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\SoundData\Title_SoundData">
+      <UniqueIdentifier>{7f1bec62-8249-42af-944c-d6773c8bb4f7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\JsonMaster\SoundData\Tutorial_SoundData">
+      <UniqueIdentifier>{e543531d-3746-4fc9-81de-a3ea16c88901}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Scene\a">
+      <UniqueIdentifier>{f4e5fd70-ed0a-4667-8b31-5a311641d33a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StageObj\ClockWork">
+      <UniqueIdentifier>{84af56d7-23b1-426e-b531-779f78a1feec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StageObj\ClockWork\ClockWork">
+      <UniqueIdentifier>{85db2f17-b60d-4625-b713-e56f1448bf6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StageObj\ClockWork\RPMController">
+      <UniqueIdentifier>{5650a5ef-843d-4de9-8bc2-1f54085b9839}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

@@ -1,11 +1,11 @@
 #include "AvoidUi.h"
-#include "../../ObjectTag/Global_ObjectTag.h"
+#include "../../ObjectTag/Play_ObjectTag.h"
 #include "../../StageObj/AreaNumController/AreaNumController.h"
 
 namespace object
 {
 	AvoidUi::AvoidUi()
-		:ObjectBase(global_objecttag.AVOIDUI)
+		:ObjectBase(play_ObjectTag.AVOIDUI)
 	{
 		//ì«Ç›çûÇ›ä÷òA
 		LoadObject();
@@ -13,7 +13,7 @@ namespace object
 
 	AvoidUi::~AvoidUi()
 	{
-		//èàóùÇ»Çµ
+		DeleteGraph(m_ObjHandle);
 	}
 
 	void AvoidUi::LoadObject()

@@ -11,6 +11,7 @@ namespace object
 		Still,
 		RankingMode,
 		GameClear,
+		Score,
 		TimeOver,
 		GameOver,
 		PlayEnd,

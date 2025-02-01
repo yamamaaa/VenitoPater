@@ -1,7 +1,7 @@
 #include "StillDraw.h"
 #include"../../ObjectTag/Still_ObjectTag.h"
 #include"../LineStatus/LineStatus.h"
-#include"../../NumDays/NumDays.h"
+#include"../../../NumDays/NumDays.h"
 
 namespace object
 {
@@ -15,6 +15,11 @@ namespace object
     StillDraw::~StillDraw()
     {
         m_TxtFile.close();
+
+        for (int i = 0; i < m_ImgTotal; i++)
+        {
+            DeleteGraph(m_ObjImg[i]);
+        }
     }
 
     void StillDraw::LoadObject()
@@ -25,51 +30,51 @@ namespace object
 
         m_Color = 0;
         m_Calculation = 0;
+        m_ImgTotal = 0;
 
         m_IsFadeIn_Done = false;
         m_IsFade = false;
 
         //日数別に読み込むファイルを変更
         int dey = NumDays::GetNumDays();
-        int max;
         std::string text;
         switch (dey)
         {
         case 0:
-            max = 2;
-            for (int i = 0; i < max; i++)
+            m_ImgTotal = 2;
+            for (int i = 0; i < m_ImgTotal; i++)
             {
                 m_ObjImg.push_back(LoadGraph(JsonManager::ImgData_Instance()->Get_StoryImgData_Instance()->GetStillData_Day_0(i).c_str()));
             }
             text = JsonManager::TextData_Instance()->Get_StillData_Instance()->GetDrawImgData_Day_0();
             break;
         case 1:
-            max = 3;
-            for (int i = 0; i < max; i++)
+            m_ImgTotal = 3;
+            for (int i = 0; i < m_ImgTotal; i++)
             {
                 m_ObjImg.push_back(LoadGraph(JsonManager::ImgData_Instance()->Get_StoryImgData_Instance()->GetStillData_Day_1(i).c_str()));
             }
             text = JsonManager::TextData_Instance()->Get_StillData_Instance()->GetDrawImgData_Day_1();
             break;
         case 2:
-            max = 6;
-            for (int i = 0; i < max; i++)
+            m_ImgTotal = 6;
+            for (int i = 0; i < m_ImgTotal; i++)
             {
                 m_ObjImg.push_back(LoadGraph(JsonManager::ImgData_Instance()->Get_StoryImgData_Instance()->GetStillData_Day_2(i).c_str()));
             }
             text = JsonManager::TextData_Instance()->Get_StillData_Instance()->GetDrawImgData_Day_2();
             break;
         case 3:
-            max = 8;
-            for (int i = 0; i < max; i++)
+            m_ImgTotal = 8;
+            for (int i = 0; i < m_ImgTotal; i++)
             {
                 m_ObjImg.push_back(LoadGraph(JsonManager::ImgData_Instance()->Get_StoryImgData_Instance()->GetStillData_Day_3(i).c_str()));
             }
             text = JsonManager::TextData_Instance()->Get_StillData_Instance()->GetDrawImgData_Day_3();
             break;
         case 4:
-            max = 2;
-            for (int i = 0; i < max; i++)
+            m_ImgTotal = 2;
+            for (int i = 0; i < m_ImgTotal; i++)
             {
                 m_ObjImg.push_back(LoadGraph(JsonManager::ImgData_Instance()->Get_StoryImgData_Instance()->GetStillData_Day_4(i).c_str()));
             }
@@ -130,7 +135,7 @@ namespace object
                 m_IsFade = false;	//処理の完了
                 m_Calculation = 0;
                 m_IsFadeIn_Done = false;
-                m_Color = m_COLORCODE;
+                m_Color = static_cast<float>(m_COLORCODE);
                 LineStatus::SetIsDoneImgDraw(true);
             }
         }
@@ -155,7 +160,7 @@ namespace object
         {
             if (m_IsFade)
             {
-                SetDrawBlendMode(DX_BLENDMODE_ALPHA, m_Color);
+                SetDrawBlendMode(DX_BLENDMODE_ALPHA, static_cast<int>(m_Color));
                 DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
                 SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
             }

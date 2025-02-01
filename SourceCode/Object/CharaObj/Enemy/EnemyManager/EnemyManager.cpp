@@ -1,6 +1,8 @@
 #include <Dxlib.h>
 #include <ctime>
 #include "EnemyManager.h"
+#include "../../../../NumDays/NumDays.h"
+#include "../../../ObjectManager/ObjectManager.h"
 
 namespace object
 {
@@ -14,7 +16,7 @@ namespace object
 
 	EnemyManager::~EnemyManager()
 	{
-		//処理なし
+		m_IsAppear.clear();
 	}
 
 	void EnemyManager::Initialize()
@@ -33,9 +35,26 @@ namespace object
 		//ランダム生成の初期化
 		srand(static_cast<unsigned int>(time(0)));
 
-		//カウント値の初期化
-		enemymanager->m_StartCount = enemymanager->m_STARTWAIT_MAX;
-		enemymanager->m_AppearCount = enemymanager->m_APPEARCOUNT_MAX;
+		//プレイモード別に初期設定
+		PlayMenu menu = ObjectManager::GetPlayMode();
+		if (menu == PlayNewGame)
+		{
+			//現在が何日目か取得
+			int day = NumDays::GetNumDays();
+
+			//カウント値の初期化
+			enemymanager->m_StartCount = enemymanager->m_STARTWAIT_MAX[day-1];
+			enemymanager->m_AppearCount_Max = enemymanager->m_APPEARCOUNT_MAX[day-1];
+
+			enemymanager->m_AppearCount = enemymanager->m_AppearCount_Max;
+		}
+		else
+		{
+			//カウント値の初期化
+			enemymanager->m_StartCount = enemymanager->m_STARTWAIT_MAX[1];
+			enemymanager->m_AppearCount_Max = enemymanager->m_APPEARCOUNT_MAX[1];
+			enemymanager->m_AppearCount = enemymanager->m_AppearCount_Max;
+		}
 
 		enemymanager->m_IsAppear[memini] = false;
 		enemymanager->m_IsAppear[nil] = false;
@@ -126,7 +145,12 @@ namespace object
 		enemymanager->m_IsAppear[enemymanager->m_EmyId_Data] = true;	//選ばれた敵の出現
 		enemymanager->m_CanAppear = true;								//敵の出現を再び開始
 		enemymanager->m_AppearNumNow++;									//出現中の敵総数計算
-		enemymanager->m_AppearCount = enemymanager->m_APPEARCOUNT_MAX;	//カウントを初期化
+		enemymanager->m_AppearCount = enemymanager->m_AppearCount_Max;	//カウントを初期化
+	}
+
+	void EnemyManager::Processing()
+	{
+		enemymanager->m_IsAppear.clear();
 	}
 
 	void EnemyManager::D_DrawStatus()

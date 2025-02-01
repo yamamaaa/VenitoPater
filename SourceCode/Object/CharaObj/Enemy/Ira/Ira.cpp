@@ -1,12 +1,15 @@
 #include "Ira.h"
-#include "../../../ObjectTag/Global_ObjectTag.h"
+#include "../../../ObjectTag/Play_ObjectTag.h"
 #include "../../../CharaObj/AvoidStatus/AvoidStatus.h"
 #include "../../LightController/LightController.h"
+#include "../../../ObjectManager/ObjectManager.h"
+#include "../../../../NumDays/NumDays.h"
+#include "../../../../SoundController/SoundController.h"
 
 namespace object
 {
 	Ira::Ira()
-		:EnemyBase(global_objecttag.IRA)
+		:EnemyBase(play_ObjectTag.IRA)
 	{
 		//読み込み関連
 		LoadObject();
@@ -14,7 +17,12 @@ namespace object
 
 	Ira::~Ira()
 	{
-		//処理なし
+		DeleteGraph(m_ObjHandle);
+
+		for (int i = 0; i < 4; i++)
+		{
+			DeleteGraph(m_ObjImg[i]);
+		}
 	}
 
 	void Ira::LoadObject()
@@ -25,7 +33,30 @@ namespace object
 		m_DrawObjPos[replace_2] = { 632.0f,525.0f };
 		m_DrawObjPos[action] = { 0.0f,665.0f };
 
-		m_MoveSpeed = 18.0f;
+		m_MoveSpeed[0] = 18.0f;
+		m_MoveSpeed[1] = 24.0f;
+		m_MoveSpeed[2] = 30.0f;
+
+		//プレイモード別に初期設定
+		PlayMenu menu = ObjectManager::GetPlayMode();
+		if (menu == PlayNewGame)
+		{
+			//現在が何日目か取得
+			int day = NumDays::GetNumDays();
+
+			//カウント値の初期化
+			m_NowMoveSpeed = m_MoveSpeed[day-1];
+		}
+		else
+		{
+			//カウント値の初期化
+			m_NowMoveSpeed = m_MoveSpeed[2];
+		}
+
+		auto json = JsonManager::SoundData_Instance()->Get_Play_SoundData_Instance();
+		m_JsonTag = json->GetIra_NameData();
+		sound_controller::SoundController::AddSoundData(json->GetIra_PathData(), m_JsonTag, json->GetIra_VolumeData(), json->GetIra_TypeData());
+
 		m_ObjDrawArea = 0;
 
 		m_ObjImg[0] = -1;
@@ -54,13 +85,9 @@ namespace object
 				AvoidAction(deltatime);	//回避行動時処理
 			}
 		}
-
-		//他の敵がアクションを起こしてなかったら
-		if (!EnemyManager::GetEmyIsAction())
+		else
 		{
-			MoveObj(deltatime);	//移動処理
-			IsHitEnemyLine();	//enemyline当たり判定
-			ObjStatusUp();		//hitしたらobjのセット
+			AvoidReset();
 		}
 
 		//当たったラインを調べる
@@ -70,6 +97,22 @@ namespace object
 		if (action == linenum)
 		{
 			EnemyManager::SetBeefUpEmyIsAction(true);
+
+			//action中で表示できるときBGMを流す
+			if (IsObjDraw()&& !EnemyManager::GetEmyIsAction())
+				sound_controller::SoundController::StartSound(m_JsonTag);
+			else
+				sound_controller::SoundController::StopSound(m_JsonTag);
+		}
+		else
+		{
+			//他の敵がアクションを起こしてなかったら
+			if (!EnemyManager::GetEmyIsAction())
+			{
+				MoveObj(deltatime);	//移動処理
+				IsHitEnemyLine();	//enemyline当たり判定
+				ObjStatusUp();		//hitしたらobjのセット
+			}
 		}
 
 		//プレイヤーが回避成功したらobjのリセット
@@ -98,6 +141,6 @@ namespace object
 
 	void Ira::MoveObj(const float deltatime)
 	{
-		m_EnemyBoxPos.y += m_MoveSpeed* deltatime;	//移動速度計算
+		m_EnemyBoxPos.y += m_NowMoveSpeed * deltatime;	//移動速度計算
 	}
 }

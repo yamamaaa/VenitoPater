@@ -1,5 +1,5 @@
 #include "Time.h"
-#include "../../ObjectTag/Global_ObjectTag.h"
+#include "../../ObjectTag/Play_ObjectTag.h"
 #include "../../StageObj/ItemGetNum/ItemGetNum.h"
 #include "../../ObjectManager/ObjectManager.h"
 #include "../TimeStatus/TimeStatus.h"
@@ -7,7 +7,7 @@
 namespace object
 {
     Time::Time()
-        :ObjectBase(global_objecttag.TIME)
+        :ObjectBase(play_ObjectTag.TIME)
     {
         //読み込み関連
         LoadObject();
@@ -18,6 +18,7 @@ namespace object
         //フォントハンドルの解放
         DeleteFontToHandle(m_FontHandle_Am);
         DeleteFontToHandle(m_FontHandle_Time);
+
     }
 
     void Time::LoadObject()
@@ -76,6 +77,14 @@ namespace object
         //プレイの終了時間になったら
         if (m_DrawTime == m_PLAYTIME_MAX)
         {
+            //ランキングモードならクリア画面へ
+            object::PlayMenu menu = object::ObjectManager::GetPlayMode();
+            if (menu == object::PlayMenu::PlayRankingMode)
+            {
+                ObjectManager::SetNextGameState(GameClear);
+                return;
+            }
+
             //ノルマ達成しているか
             if (ItemGetNum::GetIsNolmClear())
             {

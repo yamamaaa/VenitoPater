@@ -1,11 +1,11 @@
 #include "Familia.h"
-#include "../../../ObjectTag/Global_ObjectTag.h"
+#include "../../../ObjectTag/Play_ObjectTag.h"
 #include "../../../StageObj/ClockWork/RPMController/RPMController.h"
 
 namespace object
 {
 	Familia::Familia()
-		:EnemyBase(global_objecttag.FAMILIA)
+		:EnemyBase(play_ObjectTag.FAMILIA)
 	{
 		//読み込み関連
 		LoadObject();
@@ -13,12 +13,18 @@ namespace object
 
 	Familia::~Familia()
 	{
-		//処理なし
+		DeleteGraph(m_ObjHandle);
+
+		for (int i = 0; i < 4; i++)
+		{
+			DeleteGraph(m_ObjImg[i]);
+		}
 	}
 
 	void Familia::LoadObject()
 	{
-		m_MoveSpeed = 18.0f;
+		m_NowMoveSpeed = 18.0f;
+
 		m_ObjDrawArea = 3;
 
 		m_IDnumber = familia;
@@ -80,6 +86,6 @@ namespace object
 
 	void Familia::MoveObj(const float deltatime)
 	{
-		m_EnemyBoxPos.y += m_MoveSpeed* deltatime;	//移動速度計算
+		m_EnemyBoxPos.y += m_NowMoveSpeed* deltatime;	//移動速度計算
 	}
 }

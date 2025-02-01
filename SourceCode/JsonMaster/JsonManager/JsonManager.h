@@ -3,6 +3,7 @@
 
 #include "../ImageData/MasterImgData/MasterImgData.h"
 #include "../TextData/MasterTextData/MasterTextData.h"
+#include "../SoundData/MasterSoundData/MasterSoundData.h"
 
 namespace jsonmaster
 {
@@ -30,6 +31,12 @@ namespace jsonmaster
 		///<returns>テキストデータ</returns>
 		static class json_textdata::MasterTextData* TextData_Instance() { return json_manager->master_text_data.get(); }
 
+		///<summary>
+		///サウンドインスタンス
+		//</summary>
+		///<returns>サウンドデータ</returns>
+		static class json_sounddata::MasterSoundData* SoundData_Instance() { return json_manager->master_sound_data.get(); }
+
 		/// <summary>
 		/// デストラクタ
 		/// </summary>
@@ -46,5 +53,6 @@ namespace jsonmaster
 
 		std::unique_ptr<class json_imgdata::MasterImgData> master_img_data;
 		std::unique_ptr<class json_textdata::MasterTextData> master_text_data;
+		std::unique_ptr<class json_sounddata::MasterSoundData> master_sound_data;
 	};
 }

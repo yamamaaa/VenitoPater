@@ -4,14 +4,14 @@
 
 #include"../../LevelController/LevelController.h"
 #include"../../LevelController/LevelStatus.h"
-#include"../../Object/NumDays/NumDays.h"
+#include"../../NumDays/NumDays.h"
 
-#include"../ThreeDays/ThreeDays.h"
-#include"../Result/Result.h"
+#include"../Play/Play.h"
 #include"../Story/Story.h"
 
 #include "../../Object/TitleObj/TitleUi/TitleUi.h"
 #include "../../Object/TitleObj/SelectMode/SelectMode.h"
+#include"../a/a.h"
 
 using namespace level_controller;
 
@@ -40,19 +40,13 @@ namespace scene
         LevelController::Initialize();
         object::NumDays::Initialize();
 
-        //Title画面の全Ui生成
+        ////Title画面の全Ui生成
         object::ObjectManager::Entry(new object::TitleUi);
         object::ObjectManager::Entry(new object::SelectMode);
     }
 
     SceneBase* Title::UpdateScene(float deltaTime)
     {
-        LevelController::SetLevel(levelStatus.NOMAL);
-        object::ObjectManager::ReleaseAllObj();
-        object::ObjectManager::SetNowGameState(object::Story);
-        object::ObjectManager::SetPlayMode(object::PlayNewGame);
-        return new Story();
-
         if (!m_FadeInSet)
         {
             transitor::FadeTransitor::FadeInStart(deltaTime);
@@ -67,19 +61,25 @@ namespace scene
         {
             m_IsChangeScene = true;
             transitor::FadeTransitor::FadeOutStart(deltaTime);
-            TransitorScene();
+            TransitorScene(deltaTime);
         }
         else
         {
             object::ObjectManager::UpdateAllObj(deltaTime);
         }
 
-        //ゲームプレイ
+        //ニューゲーム
+        if (object::Still == status)
+        {
+            LevelController::SetLevel(levelStatus.NOMAL);
+            return new Story();
+        }
+
+        //ランキングモード
         if (object::GamePlay == status)
         {
             LevelController::SetLevel(levelStatus.NOMAL);
-            object::ObjectManager::SetNowGameState(object::Still);
-            return new Story();
+            return new Play();
         }
 
         return this;

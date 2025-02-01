@@ -30,4 +30,9 @@ namespace object
 	{
 		avoidstatus->m_IsAvoid = false;
 	}
+
+	void AvoidStatus::Processing()
+	{
+		avoidstatus.reset();
+	}
 }

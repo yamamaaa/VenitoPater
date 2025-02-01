@@ -1,14 +1,16 @@
 #include<Dxlib.h>
 #include "Avoid.h"
-#include"../../ObjectTag/Global_ObjectTag.h"
+#include"../../ObjectTag/Play_ObjectTag.h"
 #include"../AvoidStatus/AvoidStatus.h"
 #include"../HatUi/HatUi.h"
+
 #include"../../StageObj/AreaNumController/AreaNumController.h"
+#include"../../../SoundController/SoundController.h"
 
 namespace object
 {
 	Avoid::Avoid()
-		:MouseBase(global_objecttag.AVOID)
+		:MouseBase(play_ObjectTag.AVOID)
 	{
 		//読み込み関連
 		LoadObject();
@@ -16,7 +18,8 @@ namespace object
 
 	Avoid::~Avoid()
 	{
-		//処理なし
+		HatUi::Processing();
+		AvoidStatus::Processing();
 	}
 
 	void Avoid::LoadObject()
@@ -34,6 +37,9 @@ namespace object
 
 		//HatUiの初期化
 		HatUi::Initialize();
+		auto json = JsonManager::SoundData_Instance()->Get_Play_SoundData_Instance();
+		m_JsonTag = json->GetHat_NameData();
+		sound_controller::SoundController::AddSoundData(json->GetHat_PathData(), m_JsonTag, json->GetHat_VolumeData(), json->GetHat_TypeData());
 	}
 
 	void Avoid::UpdateObj(const float deltatime)
@@ -51,6 +57,8 @@ namespace object
 			//クリック状態の時
 			if (GetStateClick()&& m_IsClick)
 			{
+				sound_controller::SoundController::StartSound(m_JsonTag);
+
 				if (!AvoidStatus::GetIsAvoid())
 				{
 					HatUi::SetMove();

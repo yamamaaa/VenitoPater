@@ -36,6 +36,6 @@ namespace scene
 		/// </summary>
 		void DrawScene()override;
 
-		bool IsNextStory = false; //次のシーンがストーリーシーンか
+		bool m_IsNextSame; //次のシーンが同じシーンかか
 	};
 }

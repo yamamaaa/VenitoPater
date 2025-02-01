@@ -1,15 +1,16 @@
 #include "ClockWork.h"
-#include "../../../ObjectTag/Global_ObjectTag.h"
+#include "../../../ObjectTag/Play_ObjectTag.h"
 #include "../../../ObjectManager/ObjectManager.h"
 #include "../../AreaNumController/AreaNumController.h"
 #include "../../ClockWork/RPMController/RPMController.h"
 #include "../../../CharaObj/Enemy/EnemyManager/EnemyManager.h"
 #include "../../../Time/TimeStatus/TimeStatus.h"
+#include "../../../../SoundController/SoundController.h"
 
 namespace object
 {
 	ClockWork::ClockWork()
-		:MouseBase(global_objecttag.ClOCKWORK)
+		:MouseBase(play_ObjectTag.ClOCKWORK)
 	{
 		//読み込み関連
 		LoadObject();
@@ -17,7 +18,10 @@ namespace object
 
 	ClockWork::~ClockWork()
 	{
-		//処理なし
+		for(int i= 0; i < m_AnimPattern; i++)
+		{
+			DeleteGraph(m_Handle[i]);
+		}
 	}
 
 	void ClockWork::LoadObject()
@@ -41,6 +45,11 @@ namespace object
 
 		//画像の読み込み
 		LoadDivGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetClockWork().c_str(), m_AnimPattern * m_AnimType, m_AnimPattern, m_AnimType, m_colwidth, m_colheight, m_Handle);
+		auto json = JsonManager::SoundData_Instance()->Get_Play_SoundData_Instance();
+		m_JsonTag[0] = json->GetMusicbox_NameData();
+		m_JsonTag[1] = json->GetClockwork_NameData();
+		sound_controller::SoundController::AddSoundData(json->GetMusicbox_PathData(), m_JsonTag[0], json->GetMusicbox_VolumeData(), json->GetMusicbox_TypeData());
+		sound_controller::SoundController::AddSoundData(json->GetClockwork_PathData(), m_JsonTag[1], json->GetClockwork_VolumeData(), json->GetClockwork_TypeData());
 	}
 
 	void ClockWork::UpdateObj(const float deltatime)
@@ -54,8 +63,9 @@ namespace object
 
 			if (m_IsClickNow)
 			{
-				rpmhp+= m_RPMHP_COUNTSPEED *deltatime;						//回転量Hpを増やす
-				m_AnimationFPS = m_CLICK_FPS;	//アニメーション設定
+				sound_controller::SoundController::StartSound(m_JsonTag[1]);
+				rpmhp+= m_RPMHP_COUNTSPEED *deltatime;		//回転量Hpを増やす
+				m_AnimationFPS = m_CLICK_FPS;				//アニメーション設定
 				MoveObj(deltatime);
 			}
 			m_IsClickNow = false;
@@ -73,6 +83,7 @@ namespace object
 		else
 		{
 			m_CanDraw = false;
+			sound_controller::SoundController::StopSound(m_JsonTag[0]);
 		}
 
 		//回転量が0以下の場合処理なし
@@ -101,6 +112,7 @@ namespace object
 		}
 		else
 		{
+			sound_controller::SoundController::StopSound(m_JsonTag[0]);
 			RPMController::SetIsRPMLost(true);
 		}
 
@@ -113,6 +125,7 @@ namespace object
 		if (!m_CanDraw)
 			return;
 
+		sound_controller::SoundController::StartSound(m_JsonTag[0]);
 		m_AnimTimer += deltatime;
 
 		//アニメーションの計算
@@ -152,9 +165,6 @@ namespace object
 		if (m_CanDraw)
 		{
 			DrawGraph(static_cast<int>(m_ObjPos.x) + m_DrawOffset.x, static_cast<int>(m_ObjPos.y) + m_DrawOffset.y, m_Handle[m_AnimNowIndex], TRUE);
-#ifdef DEBUG
-			DrawBox(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), static_cast<int>(m_ObjPos.x) + m_ObjSize.x, static_cast<int>(m_ObjPos.y) + m_ObjSize.y, GetColor(255, 40, 0), FALSE);
-#endif
 		}
 #ifdef DEBUG
 		DrawFormatString(0, 360, GetColor(255, 255, 255), "m_AnimNowIndex:%d", m_AnimNowIndex);

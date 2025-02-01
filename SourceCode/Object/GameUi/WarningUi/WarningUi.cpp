@@ -1,12 +1,12 @@
 #include "WarningUi.h"
-#include "../../ObjectTag/Global_ObjectTag.h"
+#include "../../ObjectTag/Play_ObjectTag.h"
 #include "../../StageObj/ClockWork/RPMController/RPMController.h"
 #include "../../StageObj/AreaNumController/AreaNumController.h"
 
 namespace object
 {
 	WarningUi::WarningUi()
-		:ObjectBase(global_objecttag.WARNINGUI)
+		:ObjectBase(play_ObjectTag.WARNINGUI)
 	{
 		//ì«Ç›çûÇ›ä÷òA
 		LoadObject();
@@ -14,7 +14,7 @@ namespace object
 
 	WarningUi::~WarningUi()
 	{
-		//èàóùÇ»Çµ
+		DeleteGraph(m_ObjHandle);
 	}
 
 	void WarningUi::LoadObject()

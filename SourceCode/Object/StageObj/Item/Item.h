@@ -55,6 +55,8 @@ namespace object
         /// </summary>
         void DrawItemSet();
 
+        std::string m_JsonTag[3];	//サウンド用Jsonタグ
+
         const int m_TOTAlITEM_NUM = 5;    //エリア内のアイテム総数
         const int m_ITEMOCCUR_AREA = 3;   //アイテムを表示するエリアの数
         const int m_RARECHANCA = 3;       //レアアイテム出現確率
@@ -76,10 +78,14 @@ namespace object
         bool m_IsSet;        //セットアップが完了したか
         bool m_IsGet;       //アイテムをゲットしたか
         bool m_CanDraw;    //アイテムを表示できるか
+        bool m_RItem_Reset; //レアアイテムのリセットが可能か
 
-        const float m_OCCURCOUNT_MAX = 180.0f;    //アイテムの出現間隔
-        const float m_OCCURCOUNT_RESET = 300.0f;  //アイテムの出現リセット間隔
-        const float m_COUNT_DECREMENT = 6.0f;   //カウント減分量
+        const float m_OCCURCOUNT_MAX = 60.0f;      //アイテムの出現間隔
+        const float m_OCCURCOUNT_MAX_R = 20.0f;     //アイテムの出現間隔(ランキングモード)
+        const float m_OCCURCOUNT_RESET = 120.0f;    //アイテムの出現リセット間隔
+        const float m_COUNT_DECREMENT = 6.0f;       //カウント減分量
+
+        float m_NowOccurCount_Max;              //現在の出現までのカウント
         float m_OccurCount;                     //出現までのカウント
 
         //現在のアイテムデータ保管用

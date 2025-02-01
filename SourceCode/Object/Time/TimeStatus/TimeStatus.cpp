@@ -32,5 +32,4 @@ namespace object
         //‰Šú‰»
         timestatus->m_IsTimeOver = false;
     }
-
 }

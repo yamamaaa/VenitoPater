@@ -2,7 +2,7 @@
 #include"../../ObjectTag/Story_ObjectTag.h"
 #include "../../ObjectManager/ObjectManager.h"
 #include"../LineStatus/LineStatus.h"
-#include"../../NumDays/NumDays.h"
+#include"../../../NumDays/NumDays.h"
 
 namespace object
 {
@@ -16,6 +16,15 @@ namespace object
     StoryItem::~StoryItem()
     {
         m_TxtFile.close();
+        m_ImgPos.clear();
+
+        for (std::string& tag : CharaItem_TagAll)
+        {
+            DeleteGraph(m_ObjImg[tag]);
+        }
+
+        m_ObjImg.clear();
+        DeleteGraph(m_ObjHandle);
     }
 
     void StoryItem::LoadObject()
@@ -110,7 +119,7 @@ namespace object
         {
             m_IsFade = false;	//èàóùÇÃäÆóπ
             m_Calculation = 0;
-            m_Color = m_COLORCODE;
+            m_Color = static_cast<float>(m_COLORCODE);
         }
     }
 
@@ -121,7 +130,7 @@ namespace object
             DrawGraph(0, 0, m_BackFade, TRUE);
             if (m_IsFade)
             {
-                SetDrawBlendMode(DX_BLENDMODE_ALPHA, m_Color);
+                SetDrawBlendMode(DX_BLENDMODE_ALPHA, static_cast<int>(m_Color));
                 DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
                 SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
             }

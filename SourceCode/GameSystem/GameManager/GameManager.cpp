@@ -2,6 +2,7 @@
 #include "../Window/Window.h"
 #include "../GameSetting/GameSetting.h"
 #include "../../JsonMaster/JsonManager/JsonManager.h"
+#include"../../MouseStatus/MouseStatus.h"
 
 namespace GameSystem
 {
@@ -18,6 +19,7 @@ namespace GameSystem
         gamesetting->Init();
 
         jsonmaster::JsonManager::InitJsonManager();
+        mousestatus::MouseStatus::Initialize();
 
         //SceneManagerのインスタンス化
         sceneManager.reset(new scene::SceneManager);

@@ -1,5 +1,6 @@
 #include "SelectMode.h"
 #include "../../ObjectTag/TitleObjectTag.h"
+#include "../../../SoundController/SoundController.h"
 
 namespace object
 {
@@ -12,7 +13,11 @@ namespace object
 
 	SelectMode::~SelectMode()
 	{
-		//処理なし
+		DeleteGraph(m_ObjHandle);
+		DeleteGraph(m_MenuHandol);
+
+		m_HitPos.clear();
+		m_SelectMenuPos.clear();
 	}
 
 	void SelectMode::LoadObject()
@@ -27,14 +32,26 @@ namespace object
 		//クリック可能状態
 		m_CanClick = true;
 
+
 		m_ObjHandle = LoadGraph(JsonManager::ImgData_Instance()->Get_TitleData_Instance()->GetSelectData().c_str());
 		m_MenuHandol= LoadGraph(JsonManager::ImgData_Instance()->Get_TitleData_Instance()->GetMenuData().c_str());
+
+		auto json = JsonManager::SoundData_Instance()->Get_Title_SoundData_Instance();
+		m_JsonTag[0] = json->GetBgmNameData();
+		m_JsonTag[1] = json->GetSelect_NameData();
+		m_JsonTag[2] = json->GetButton_NameData();
+		m_JsonTag[3] = json->GetTransition_NameData();
+		sound_controller::SoundController::AddSoundData(json->GetBgmPathData(), m_JsonTag[0], json->GetBgmVolumeData(), json->GetBgmTypeData());
+		sound_controller::SoundController::AddSoundData(json->GetSelect_PathData(), m_JsonTag[1], json->GetSelect_VolumeData(), json->GetSelect_TypeData());
+		sound_controller::SoundController::AddSoundData(json->GetButton_PathData(), m_JsonTag[2], json->GetButton_VolumeData(), json->GetButton_TypeData());
+		sound_controller::SoundController::AddSoundData(json->GetTransition_PathData(), m_JsonTag[3], json->GetTransition_VolumeData(), json->GetTransition_TypeData());
 	}
 
 	void SelectMode::UpdateObj(const float deltatime)
 	{
-		m_SelectIndex = 0;
+		sound_controller::SoundController::StartSound(m_JsonTag[0]);
 
+		m_SelectIndex = 0;
 		for (int i = 0; i < 3; i++)
 		{
 			//マウスがエリア移動の位置にあるか
@@ -50,6 +67,11 @@ namespace object
 				CanClick();
 				m_SelectPos.x = m_SelectMenuPos[i].x;
 				m_SelectPos.y = m_SelectMenuPos[i].y;
+				if (index != m_SelectIndex)
+				{
+					index = m_SelectIndex;
+					sound_controller::SoundController::StartSound(m_JsonTag[1]);
+				}
 			}
 			//アイテムをクリックしたら
 			if (GetStateClick() && GetCursorHit())
@@ -65,18 +87,27 @@ namespace object
 					break;
 				case PlayMenu::PlayNewGame:
 					menu = PlayMenu::PlayNewGame;
-					status = GameStatus::GamePlay;
+					status = GameStatus::Still;
 					break;
 				case PlayMenu::PlayRankingMode:
 					menu = PlayMenu::PlayRankingMode;
-					status = GameStatus::RankingMode;
+					status = GameStatus::GamePlay;
 					break;
 				}
 
+				if (menu == PlayMenu::PlayNewGame)
+				{
+					sound_controller::SoundController::StartSound(m_JsonTag[3]);
+				}
+				else
+				{
+					sound_controller::SoundController::StartSound(m_JsonTag[2]);
+				}
+
+				WaitTimer(240);
+
 				ObjectManager::SetPlayMode(menu);
 				ObjectManager::SetNextGameState(status);
-
-				return;
 			}
 			else
 			{

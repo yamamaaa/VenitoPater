@@ -1,5 +1,7 @@
 #include <Dxlib.h>
 #include "FadeTransitor.h"
+#include "../../MouseStatus/MouseStatus.h"
+#include "../../SoundController/SoundController.h"
 
 namespace transitor
 {
@@ -43,6 +45,7 @@ namespace transitor
 		{
 			fadetransitor->m_Color = 0;	//カラーコード初期値
 			fadetransitor->m_CanFade = true;
+			mousestatus::MouseStatus::SetIsFadeDone(false);		//入力の受付を停止
 		}
 
 		if (fadetransitor->m_CanFade)
@@ -51,6 +54,7 @@ namespace transitor
 			{
 				fadetransitor->m_IsFadeDone = true;			//処理の完了
 				fadetransitor->m_Color = m_COLORCODE;		//誤差の修正
+				mousestatus::MouseStatus::SetIsFadeDone(true);		//入力の受付を開始
 			}
 			else
 			{
@@ -72,14 +76,22 @@ namespace transitor
 		{
 			fadetransitor->m_Color = m_COLORCODE;	//カラーコード初期値
 			fadetransitor->m_CanFade = true;
+			mousestatus::MouseStatus::SetIsFadeDone(false);		//入力の受付を停止
 		}
 
 		if (fadetransitor->m_IsWait)
 		{
+			sound_controller::SoundController::BGMSoundFadeOut(deltatime);
+
 			if (fadetransitor->m_Color <= 0)
 			{
+				if (!sound_controller::SoundController::IsDoneSoundFade())
+					return;
+
 				fadetransitor->m_IsFadeDone = true;	//処理の完了
 				fadetransitor->m_Color = 0;			//誤差の修正
+				sound_controller::SoundController::FadeSoundProcessing();
+				mousestatus::MouseStatus::SetIsFadeDone(true);		//入力の受付を開始
 			}
 			else
 			{
@@ -106,7 +118,7 @@ namespace transitor
 		}
 	}
 
-	const void FadeTransitor::FadeProcessing()
+	void FadeTransitor::FadeProcessing()
 	{
 		//読み込み関連
 		LoadObject();

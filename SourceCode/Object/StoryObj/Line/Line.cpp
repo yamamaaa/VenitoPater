@@ -2,7 +2,9 @@
 #include"../../ObjectTag/Story_ObjectTag.h"
 #include"../LineStatus/LineStatus.h"
 #include"../../ObjectManager/ObjectManager.h"
-#include"../../NumDays/NumDays.h"
+#include"../../../MouseStatus/MouseStatus.h"
+#include"../../../NumDays/NumDays.h"
+#include"../../../SoundController/SoundController.h"
 
 namespace object
 {
@@ -16,7 +18,6 @@ namespace object
 	Line::~Line()
 	{
 		m_TxtFile.close();
-
 		//フォントのアンロード
 		DeleteFontToHandle(m_FontHandle);
 	}
@@ -30,6 +31,7 @@ namespace object
 		m_IsClickUi = false;
 		m_IsLineDone = false;
 		m_IsMove_Up = false;
+		m_IsSound_Start = false;
 		m_IsFirst = true;
 
 		LineStatus::SetIsDoneAnim(false);
@@ -42,10 +44,10 @@ namespace object
 		m_NowColor = m_COLOR_DEFAULT;
 		m_AnimSpeed = m_SPEED_DEFAULT;
 
-		m_StartCount = m_WAITCOU_MAX;
-
 		//現在のゲームステータスを取得
-		GameStatus status=ObjectManager::GetNextGameState();
+		GameStatus status=ObjectManager::GetNowGameState();
+
+		auto json = JsonManager::SoundData_Instance()->Get_Story_SoundData_Instance();
 
 		//日数別に読み込むファイルを変更
 		int dey = NumDays::GetNumDays();
@@ -64,33 +66,49 @@ namespace object
 				text = JsonManager::TextData_Instance()->Get_CharacterData_Instance()->GetLineData_Day_4();
 				break;
 			}
+
+			m_JsonTag[0] = json->GetStory_NameData();
+			sound_controller::SoundController::AddSoundData(json->GetStory_PathData(), m_JsonTag[0], json->GetStory_VolumeData(), json->GetStory_TypeData());
 		}
 		if (status == Still)
 		{
 			switch (dey)
 			{
 			case 0:
+				m_JsonTag[0] = json->GetStill_Day_0_NameData();
+				sound_controller::SoundController::AddSoundData(json->GetStill_Day_0_PathData(), m_JsonTag[0], json->GetStill_Day_0_VolumeData(), json->GetStill_Day_0_TypeData());
 				text = JsonManager::TextData_Instance()->Get_StillData_Instance()->GetLineData_Day_0();
 				break;
 			case 1:
+				m_JsonTag[0] = json->GetStill_Day_1_NameData();
+				sound_controller::SoundController::AddSoundData(json->GetStill_Day_1_PathData(), m_JsonTag[0], json->GetStill_Day_1_VolumeData(), json->GetStill_Day_1_TypeData());
 				text = JsonManager::TextData_Instance()->Get_StillData_Instance()->GetLineData_Day_1();
 				break;
 			case 2:
+				m_JsonTag[0] = json->GetStill_Day_2_NameData();
+				sound_controller::SoundController::AddSoundData(json->GetStill_Day_2_PathData(), m_JsonTag[0], json->GetStill_Day_2_VolumeData(), json->GetStill_Day_2_TypeData());
 				text = JsonManager::TextData_Instance()->Get_StillData_Instance()->GetLineData_Day_2();
 				break;
 			case 3:
+				m_JsonTag[0] = json->GetStill_Day_3_NameData();
+				sound_controller::SoundController::AddSoundData(json->GetStill_Day_3_PathData(), m_JsonTag[0], json->GetStill_Day_3_VolumeData(), json->GetStill_Day_3_TypeData());
 				text = JsonManager::TextData_Instance()->Get_StillData_Instance()->GetLineData_Day_3();
 				break;
 			case 4:
+				m_JsonTag[0] = json->GetStill_Day_4_NameData();
+				sound_controller::SoundController::AddSoundData(json->GetStill_Day_4_PathData(), m_JsonTag[0], json->GetStill_Day_4_VolumeData(), json->GetStill_Day_4_TypeData());
 				text = JsonManager::TextData_Instance()->Get_StillData_Instance()->GetLineData_Day_4();
 				break;
 			}
 		}
 
-		m_FontHandle = CreateFontToHandle("メイリオ", 30, 5, DX_FONTTYPE_ANTIALIASING);
-
 		//ファイルの読み込み
 		m_TxtFile.open(text.c_str());
+
+		m_JsonTag[1] = json->GetButtonNameData();
+		sound_controller::SoundController::AddSoundData(json->GetButtonPathData(), m_JsonTag[1], json->GetButtonVolumeData(), json->GetButtonTypeData());
+
+		m_FontHandle = CreateFontToHandle("メイリオ", 30, 5, DX_FONTTYPE_ANTIALIASING);
 
 		if (m_FontHandle == -1)
 		{
@@ -103,16 +121,18 @@ namespace object
 	{
 		LineStatus::SetIsDoneAnim(false);
 
-		//スタートから表示までずらす
-		if (!m_WaitDone)
+		if (m_IsSound_Start)
 		{
-			m_StartCount -= m_COUNT_DECREMENT* deltatime;
-			if (m_StartCount <= 0.0f)
-			{
-				m_WaitDone = true;
-			}
-			return;
+			sound_controller::SoundController::StartSound(m_JsonTag[0]);
 		}
+		else
+		{
+			sound_controller::SoundController::StopSound(m_JsonTag[0]);
+		}
+
+		//入力状態が不可の時は処理なし
+		if (!mousestatus::MouseStatus::GetIsFadeDone())
+			return;
 
 		//画像のセットが終わっていなかったら処理なし
 		if (!LineStatus::GetIsDoneImgDraw())
@@ -193,13 +213,14 @@ namespace object
 				if (m_IslineAnim)
 				{
 					//文字をすべて表示する
-					m_TxtNum = m_Line.size();
+					m_TxtNum = static_cast<int>(m_Line.size());
 					m_IslineAnim = false;
 				}
 				else
 				{
 					//文字のセットを行う
 					m_IsLineSet = false;
+					sound_controller::SoundController::StartSound(m_JsonTag[1]);
 				}
 				m_IsClick = false;
 				m_ClickCount = m_CLICKCOU_MAX;
@@ -248,6 +269,14 @@ namespace object
 			else if (line == m_SLOW)
 			{
 				m_AnimSpeed = m_SPEED_SLOW;
+			}
+			else if (line == "soundstop")
+			{
+				m_IsSound_Start = false;
+			}
+			else if (line == "soundstart")
+			{
+				m_IsSound_Start = true;
 			}
 		}
 
@@ -299,7 +328,7 @@ namespace object
 		}
 		if (line == m_STORY)
 		{
-			ObjectManager::SetNextGameState(Story);
+      		ObjectManager::SetNextGameState(Story);
 		}
 		if (line == m_STILL)
 		{
@@ -313,12 +342,14 @@ namespace object
 
 	void Line::TextAnim(const float deltatime)
 	{
-		m_AnimCount += m_AnimSpeed* deltatime;
+		m_AnimCount += m_AnimSpeed;
+
 		if (m_AnimCount >= m_ANIMFPS)
 		{
 			if (m_TxtNum == m_Line.size())
 			{
 				m_IslineAnim = false;
+				m_AnimCount = 0.0f;
 			}
 			else
 			{
@@ -375,7 +406,6 @@ namespace object
 
 #ifdef DEBUG
 		DrawFormatString(0, 20, GetColor(255, 255, 255), "m_ClickCount:%f", m_ClickCount);
-		DrawFormatString(0, 40, GetColor(255, 255, 255), "m_StartCount:%f", m_StartCount);
 		DrawString(0, 100, "スペースでスキップ",GetColor(255, 255, 255));
 #endif // DEBUG
 	}

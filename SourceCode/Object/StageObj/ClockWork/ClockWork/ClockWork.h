@@ -48,9 +48,11 @@ namespace object
         /// </summary>
         void DrawObj() override;
 
-        const float m_RPMHP_COUNTSPEED = 24.0f;      //Hp増量スピード
+        std::string m_JsonTag[3];	//サウンド用Jsonタグ
+
+        const float m_RPMHP_COUNTSPEED = 30.0f;     //Hp増量スピード
         static const int m_AnimPattern = 4;         // アニメーションのパターン数
-        const int m_AnimType = 1;            // アニメーションの種類
+        const int m_AnimType = 1;                   // アニメーションの種類
 
         int m_Handle[m_AnimPattern];                //画像ハンドル
 
@@ -59,8 +61,8 @@ namespace object
         int m_AnimNowPattern;                          // 現在のアニメパターン
         int m_AnimNowIndex;                            // アニメーション画像配列の添え字
 
-        const float m_CLICK_FPS = 8.0;              // クリック状態時FPS
-        const float m_DEFAULT_FPS = 6.0f;           // デフォルトFPS
+        const float m_CLICK_FPS = 4.2f;              // クリック状態時FPS
+        const float m_DEFAULT_FPS = 3.0f;           // デフォルトFPS
         float m_AnimationFPS;                       // アニメーションFPS
 
         static const int m_colwidth = 160;        //横サイズ

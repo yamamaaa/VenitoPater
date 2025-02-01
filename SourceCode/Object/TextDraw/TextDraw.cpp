@@ -1,12 +1,14 @@
+#include <ctime>
+
 #include "TextDraw.h"
-#include "../ObjectTag/ThreeDays_ObjectTag.h"
+#include "../ObjectTag/Play_ObjectTag.h"
 #include "../../GameSystem/Window/Window.h"
-#include "../NumDays/NumDays.h"
+#include "../../NumDays/NumDays.h"
 
 namespace object
 {
     TextDraw::TextDraw()
-        :ObjectBase(threedays_objtag.TEXTDRAW)
+        :ObjectBase(play_ObjectTag.TEXTDRAW)
     {
         //読み込み関連
         LoadObject();
@@ -14,7 +16,7 @@ namespace object
 
     TextDraw::~TextDraw()
     {
-        if (m_Status == TimeOver)
+        if (m_Status != GamePlay)
         {
             m_TxtFile.close();
         }
@@ -25,6 +27,7 @@ namespace object
 
     void TextDraw::LoadObject()
     {
+        m_IsReleaseObj = false;
         m_WaitDone = false;
         m_IsLineSet = false;
         m_IslineAnim = false;
@@ -43,15 +46,22 @@ namespace object
 
         std::string text;
 
-        if (m_Status == TimeOver)
+        if (m_Status == TimeOver|| m_Status == GameOver)
         {
+            if (m_Status == GameOver)
+            {
+                RandomLineSet();
+            }
+            else
+            {
+                text = JsonManager::TextData_Instance()->Get_GameOverData_Instance()->GetGameOverData_TimeOver();
+                m_TxtFile.open(text.c_str());
+            }
+
             //フォントハンドルの生成
             m_FontHandle = CreateFontToHandle("メイリオ", m_FONTSIZE_Line.x, m_FONTSIZE_Line.y, DX_FONTTYPE_ANTIALIASING);
 
-            text = JsonManager::TextData_Instance()->Get_CharacterData_Instance()->GetLineData_GameOver();
             m_ObjPos = { 0,600 };
-            //ファイルの読み込み
-            m_TxtFile.open(text.c_str());
         }
         if (m_Status == GamePlay)
         {
@@ -68,8 +78,56 @@ namespace object
         }
     }
 
+    void TextDraw::RandomLineSet()
+    {
+        //ランダム生成の初期化
+        srand(static_cast<unsigned int>(time(0)));
+
+        //アイテムの出現設定
+        int range = 100;
+        int drawnum = rand() % range;
+
+        //セリフの表示を行うなら表示セリフの選出
+        if (drawnum <= 100)
+        {
+            range = 7;
+            int linenum = rand() % range;
+            std::string text;
+            auto jsondata = JsonManager::TextData_Instance()->Get_GameOverData_Instance();
+
+            if (linenum <= 2)
+            {
+                text = jsondata->GetGameOverData_line_0();
+            }
+            else if (linenum <= 4)
+            {
+                text = jsondata->GetGameOverData_line_1();
+            }
+            else if (linenum<= 6)
+            {
+                text = jsondata->GetGameOverData_line_2();
+            }
+            else if (linenum <= 7)
+            {
+                text = jsondata->GetGameOverData_line_3();
+            }
+
+            m_TxtFile.open(text.c_str());
+        }
+        else
+        {
+            m_IsReleaseObj = true;
+        }
+
+    }
+
     void TextDraw::UpdateObj(const float deltatime)
     {
+        if (m_IsReleaseObj)
+        {
+            ObjectManager::ReleaseObj(play_ObjectTag.TEXTDRAW);
+        }
+
         //スタートしてから少し待つ
         if (!m_WaitDone)
         {
@@ -104,8 +162,8 @@ namespace object
             m_DrawCount += m_RISESPEED* deltatime;
             if (m_DrawCount >= m_DRAW_COUNTMAX)
             {
-                m_DrawCount = 0.0f;
                 m_IsLineSet = false;
+                m_DrawCount = 0.0f;
             }
         }
 
@@ -131,7 +189,7 @@ namespace object
 
         if (line == m_END)//ファイル末端ならオブジェクトの削除
         {
-            ObjectManager::ReleaseObj(threedays_objtag.TEXTDRAW);
+            m_IsReleaseObj = true;
         }
         else
         {
@@ -170,7 +228,7 @@ namespace object
             //処理が完了したらオブジェクトの削除
             if (m_NowColor.x <= 0.0f)
             {
-                ObjectManager::ReleaseObj(threedays_objtag.TEXTDRAW);
+                ObjectManager::ReleaseObj(play_ObjectTag.TEXTDRAW);
             }
         }
     }
@@ -211,7 +269,7 @@ namespace object
         {
             NumDayDraw();
         }
-        if (m_Status == TimeOver)   //タイムオーバー中はセリフの表示
+        if (m_Status == TimeOver|| m_Status == GameOver)   //セリフの表示
         {
             LineDraw();
         }

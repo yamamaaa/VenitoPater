@@ -53,6 +53,12 @@ namespace object
 		void AvoidAction(const float deltatime);
 
 		/// <summary>
+		/// 回避行動キャンセルをしたら
+		/// </summary>
+		/// <param name="deltatime">デルタタイム</param>
+		void AvoidReset();
+
+		/// <summary>
 		/// EmyLineに当たったらObjステータスの更新
 		/// </summary>
 		void ObjStatusUp();
@@ -92,7 +98,9 @@ namespace object
 		const POINTFLOAT m_EMYBOX_RESETPOS = { 900.0f,0.0f };	//EmyBoxの初期位置
 		POINTFLOAT m_EnemyBoxPos = m_EMYBOX_RESETPOS;			//EmyBoxの座標
 
-		int m_ObjImg[4];	//obj画像
+		int m_ObjImg[4];				//obj画像
+		float m_MoveSpeed[3];			//レベル別移動スピード
+		float m_NowMoveSpeed;			//現在の移動スピード
 
 		EnemyID m_IDnumber;	//敵識別番号
 
@@ -130,17 +138,19 @@ namespace object
 		/// <param name="deltatime">デルタタイム</param>
 		void MoveObj(const float deltatime)override {};
 
-		const float m_COUNTSPPED_RESET = 0.1f;	//敵のリセットを行うまで(カウントスピード)
-		const float m_COUNTRESET_MAX = 100.0f;	//敵のリセットを行うまで(カウント最大値)
+		const float m_COUNTSPPED_RESET = 6.0f;	//敵のリセットを行うまで(カウントスピード)
+		const float m_COUNTRESET_MAX = 18.0f;	//敵のリセットを行うまで(カウント最大値)
 
-		const float m_COUSPPED_BLINKING = 0.1f;	//画面の点滅時間(カウントスピード)
-		const float m_BLINKING_COUMAX = 20.0f;	//画面の点滅時間(カウント最大値)
+		const float m_COUSPPED_BLINKING = 12.0f;	//画面の点滅時間(カウントスピード)
+		const float m_BLINKING_COUMAX = 6.0f;	//画面の点滅時間(カウント最大値)
 
 		int m_HitLineIndex;		//当たったenemylineのindex
 		float m_BlinkingCount;	//画面を点滅させる時間
 		float m_ResetCount;		//リセットするまでのカウント
 
 		GameSystem::Window* window;	//windowインスタンス
+
+		std::string m_JsonTag;	//サウンド用Jsonタグ
 
 		//enemylinePos
 		std::unordered_map<std::string, POINTS> m_EmyLine_Pos{

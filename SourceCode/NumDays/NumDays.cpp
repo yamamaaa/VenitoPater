@@ -1,5 +1,5 @@
 #include "NumDays.h"
-#include "../../GameSystem/Window/Window.h"
+#include "../GameSystem/Window/Window.h"
 
 namespace object
 {

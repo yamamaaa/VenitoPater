@@ -61,7 +61,7 @@ namespace object
 		itemans = itemgetnum->m_NowGet_RItem + itemgetnum->m_NowGet_NItem;
 
 		//もしノルマ達成したら
-		if (itemans >= itemgetnum->m_MAXNOLM)
+		if (itemans == itemgetnum->m_MAXNOLM)
 		{
 			//ゲームクリア
 			itemgetnum->m_IsNolmClear = true;

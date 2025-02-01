@@ -2,7 +2,7 @@
 #include"../../ObjectTag/Story_ObjectTag.h"
 #include"../LineStatus/LineStatus.h"
 #include"../../ObjectManager/ObjectManager.h"
-#include"../../NumDays/NumDays.h"
+#include"../../../NumDays/NumDays.h"
 
 namespace object
 {
@@ -16,6 +16,15 @@ namespace object
 	Character::~Character()
 	{
 		m_TxtFile.close();
+		m_ImgPos.clear();
+
+		for (int i = 0; i < 10; i++)
+		{
+			DeleteGraph(m_Objimg[JsonManager::ImgData_Instance()->Get_StoryImgData_Instance()->GetFamiliaData_Name(i)]);
+		}
+  		m_Objimg.clear();
+
+		DeleteGraph(m_ObjHandle);
 	}
 
 	void Character::LoadObject()
@@ -67,25 +76,13 @@ namespace object
 		m_ObjHandle = m_Objimg[m_Status.c_str()];
 
 		//データ別に座標をセット
-		if (m_Status.substr(0, charaStatus.NORMAL.size()) == charaStatus.NORMAL)
+		for (std::string& status : charaStatus_All)
 		{
-			m_ObjPos = m_ImgPos[charaStatus.NORMAL];
-		}
-		if (m_Status.substr(0, charaStatus.WORRY.size()) == charaStatus.WORRY)
-		{
-			m_ObjPos = m_ImgPos[charaStatus.WORRY];
-		}
-		if (m_Status.substr(0, charaStatus.DISMAYER.size()) == charaStatus.DISMAYER)
-		{
-			m_ObjPos = m_ImgPos[charaStatus.DISMAYER];
-		}
-		if (m_Status.substr(0, charaStatus.HAPPY.size()) == charaStatus.HAPPY)
-		{
-			m_ObjPos = m_ImgPos[charaStatus.HAPPY];
-		}
-		if (m_Status.substr(0, charaStatus.SURPRISE.size()) == charaStatus.SURPRISE)
-		{
-			m_ObjPos = m_ImgPos[charaStatus.SURPRISE];
+			if (m_Status.substr(0, status.size()) == status)
+			{
+				m_ObjPos = m_ImgPos[status];
+				return;
+			}
 		}
 	}
 
