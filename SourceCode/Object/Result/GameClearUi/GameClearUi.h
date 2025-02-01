@@ -53,6 +53,8 @@ namespace object
 
         GameSystem::Window* window;
 
+        std::string m_JsonTag[2];	//サウンド用Jsonタグ
+
         int m_FontHandle;                       //フォントハンドル
         const POINTS m_FONTSIZE = { 200,60 };   //フォントサイズ
 

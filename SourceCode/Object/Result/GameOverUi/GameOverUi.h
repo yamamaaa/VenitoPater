@@ -46,6 +46,8 @@ namespace object
         /// </summary>
         void DrawObj() override;
 
+        std::string m_JsonTag[3];   	//サウンド用Jsonタグ
+
         GameSystem::Window* window;
 
         POINTFLOAT m_ResultLogo_Pos;    //リザルトロゴ表示座標

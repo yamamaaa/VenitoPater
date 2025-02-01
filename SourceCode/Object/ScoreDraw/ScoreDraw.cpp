@@ -74,17 +74,24 @@ namespace object
         float ans_x = static_cast<float>((m_WindowSize.x - x) / 2);
         m_ObjPos = { ans_x,700.0f };
 
-        sound_controller::SoundController::AddSoundData("../Asset/sound/score/bgm.mp3", "bgm", 200, true);
-        sound_controller::SoundController::AddSoundData("../Asset/sound/score/fanfare.mp3", "fanfare", 250, false);
-        sound_controller::SoundController::AddSoundData("../Asset/sound/score/item.mp3", "item", 250, false);
-        sound_controller::SoundController::AddSoundData("../Asset/sound/score/roll.mp3", "roll", 230, true);
-        sound_controller::SoundController::AddSoundData("../Asset/sound/score/score.mp3", "score", 250, false);
-        sound_controller::SoundController::AddSoundData("../Asset/sound/score/button.mp3", "button", 250, false);
+        auto json = JsonManager::SoundData_Instance()->Get_Score_SoundData_Instance();
+        m_JsonTag[0] = json->GetBgmNameData();
+        m_JsonTag[1] = json->GetFanfare_NameData();
+        m_JsonTag[2] = json->GetItem_NameData();
+        m_JsonTag[3] = json->GetRoll_NameData();
+        m_JsonTag[4] = json->GetScore_NameData();
+        m_JsonTag[5] = json->GetButtonNameData();
+        sound_controller::SoundController::AddSoundData(json->GetBgmPathData(), m_JsonTag[0], json->GetBgmVolumeData(), json->GetBgmTypeData());
+        sound_controller::SoundController::AddSoundData(json->GetFanfare_PathData(), m_JsonTag[1], json->GetFanfare_VolumeData(), json->GetFanfare_TypeData());
+        sound_controller::SoundController::AddSoundData(json->GetItem_PathData(), m_JsonTag[2], json->GetItem_VolumeData(), json->GetItem_TypeData());
+        sound_controller::SoundController::AddSoundData(json->GetRoll_PathData(), m_JsonTag[3], json->GetRoll_VolumeData(), json->GetRoll_TypeData());
+        sound_controller::SoundController::AddSoundData(json->GetScore_PathData(), m_JsonTag[4], json->GetScore_VolumeData(), json->GetScore_TypeData());
+        sound_controller::SoundController::AddSoundData(json->GetButtonPathData(), m_JsonTag[5], json->GetButtonVolumeData(), json->GetButtonTypeData());
     }
 
     void ScoreDraw::UpdateObj(const float deltatime)
     {
-        sound_controller::SoundController::StartSound("bgm");
+        sound_controller::SoundController::StartSound(m_JsonTag[0]);
 
         //ì¸óÕéÛïtëOÇÕèàóùÇ»Çµ
         if (!mousestatus::MouseStatus::GetIsFadeDone())
@@ -110,7 +117,7 @@ namespace object
                 if (!m_IsNItemSet)
                 {
                     m_IsRItemSet = true;
-                    sound_controller::SoundController::StartSound("item");
+                    sound_controller::SoundController::StartSound(m_JsonTag[2]);
                 }
             }
 
@@ -121,7 +128,7 @@ namespace object
                 {
                     m_IsScoreSet = true;
                     m_Compute_Spped = m_COMPUTE_SPEED_SCORE;
-                    sound_controller::SoundController::StartSound("item");
+                    sound_controller::SoundController::StartSound(m_JsonTag[2]);
                 }
             }
 
@@ -134,8 +141,8 @@ namespace object
                 if (!m_IsScoreSet)
                 {
                     m_CanClick = true;
-                    sound_controller::SoundController::StartSound("fanfare");
-                    sound_controller::SoundController::StartSound("score");
+                    sound_controller::SoundController::StartSound(m_JsonTag[1]);
+                    sound_controller::SoundController::StartSound(m_JsonTag[4]);
                 }
             }
         }
@@ -145,7 +152,7 @@ namespace object
             ClickUiMoveAnim(deltatime);
             if (GetMouseInput() & MOUSE_INPUT_LEFT)
             {
-                sound_controller::SoundController::StartSound("button");
+                sound_controller::SoundController::StartSound(m_JsonTag[5]);
                 ObjectManager::SetNextGameState(GameStatus::PlayEnd);
             }
         }
@@ -156,7 +163,7 @@ namespace object
         if (m_IsWait)
             return;
 
-        sound_controller::SoundController::StartSound("roll");
+        sound_controller::SoundController::StartSound(m_JsonTag[3]);
 
         if (drawobj <= ans)
         {
@@ -168,7 +175,7 @@ namespace object
             drawobj = ans;
             isset = false;
             m_IsWait = true;
-            sound_controller::SoundController::StopSound("roll");
+            sound_controller::SoundController::StopSound(m_JsonTag[3]);
         }
     }
 

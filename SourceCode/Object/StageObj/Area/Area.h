@@ -39,5 +39,6 @@ namespace object
 		void DrawObj() override;
 
 		int m_AreaImg[4];       //各エリアの画像
+		std::string m_JsonTag;	//サウンド用Jsonタグ
 	};
 }

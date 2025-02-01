@@ -40,13 +40,13 @@ namespace json_sounddata
 		/// Tutorial_SoundDataインスタンス
 		/// </summary>
 		/// <returns>Tutorialデータ</returns>
-		class Tutorial_SoundData* Get_Tutorial_SoundData_Instance() { return tutorial_soundData.get(); }
+		class Tutorial_SoundData* Get_Tutorial_SoundData_Instance() { return tutorial_sounddata.get(); }
 
 		/// <summary>
 		/// Title_SoundDataインスタンス
 		/// </summary>
 		/// <returns>Titleデータ</returns>
-		class Title_SoundData* Get_Title_SoundData_Instance() { return title_soundData.get(); }
+		class Title_SoundData* Get_Title_SoundData_Instance() { return title_sounddata.get(); }
 
 		/// <summary>
 		/// Result_SoundDataインスタンス
@@ -82,8 +82,8 @@ namespace json_sounddata
 
 		jsonmaster::IOUtility* ioutility;							//IOUtilityインスタンス
 
-		std::unique_ptr<class Tutorial_SoundData> tutorial_soundData;
-		std::unique_ptr<class Title_SoundData> title_soundData;
+		std::unique_ptr<class Tutorial_SoundData> tutorial_sounddata;
+		std::unique_ptr<class Title_SoundData> title_sounddata;
 		std::unique_ptr<class Result_SoundData> result_sounddata;
 		std::unique_ptr<class Clear_SoundData> clear_sounddata;
 		std::unique_ptr<class Story_SoundData> story_sounddata;

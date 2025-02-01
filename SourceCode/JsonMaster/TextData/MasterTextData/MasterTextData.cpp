@@ -8,13 +8,13 @@ namespace json_textdata
 		:ioutility(new jsonmaster::IOUtility)
 	{
 		//ファイルを読み込みインスタンス生成
-		Json characterjson = ioutility->Analysis("../SourceCode/JsonMaster/JsonFile/Text/character.json");
+		Json characterjson = ioutility->Analysis("../Asset/jsonfile/text/character.json");
 		characterdata.reset(new CharacterData(characterjson["character"]));
 
-		Json stilljson = ioutility->Analysis("../SourceCode/JsonMaster/JsonFile/Text/still.json");
+		Json stilljson = ioutility->Analysis("../Asset/jsonfile/text/still.json");
 		stilldata.reset(new StillData(stilljson["still"]));
 
-		Json gameoverjson = ioutility->Analysis("../SourceCode/JsonMaster/JsonFile/Text/gameover.json");
+		Json gameoverjson = ioutility->Analysis("../Asset/jsonfile/text/gameover.json");
 		gameoverdata.reset(new GameOverData(gameoverjson["gameover"]));
 	}
 

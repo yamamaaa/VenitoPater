@@ -48,9 +48,13 @@ namespace object
 			m_ItemImg_area2[i] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->Get_ItemData_Area_2(i).c_str());
 		}
 
-		sound_controller::SoundController::AddSoundData("../Asset/sound/play/duck_0.mp3", "duck_0", 200, false);
-		sound_controller::SoundController::AddSoundData("../Asset/sound/play/duck_1.mp3", "duck_1", 200, false);
-		sound_controller::SoundController::AddSoundData("../Asset/sound/play/duck_2.mp3", "duck_2", 200, false);
+		auto json = JsonManager::SoundData_Instance()->Get_Play_SoundData_Instance();
+		m_JsonTag[0] = json->GetDuck_0_NameData();
+		m_JsonTag[1] = json->GetDuck_1_NameData();
+		m_JsonTag[2] = json->GetDuck_2_NameData();
+		sound_controller::SoundController::AddSoundData(json->GetDuck_0_PathData(), m_JsonTag[0], json->GetDuck_0_VolumeData(), json->GetDuck_0_TypeData());
+		sound_controller::SoundController::AddSoundData(json->GetDuck_1_PathData(), m_JsonTag[1], json->GetDuck_1_VolumeData(), json->GetDuck_1_TypeData());
+		sound_controller::SoundController::AddSoundData(json->GetDuck_2_PathData(), m_JsonTag[2], json->GetDuck_2_VolumeData(), json->GetDuck_2_TypeData());
 	}
 
 	void Item::UpdateObj(const float deltatime)
@@ -106,13 +110,13 @@ namespace object
 				switch (getse)
 				{
 				case 0:
-					sound_controller::SoundController::StartSound("duck_0");
+					sound_controller::SoundController::StartSound(m_JsonTag[0]);
 					break;
 				case 1:
-					sound_controller::SoundController::StartSound("duck_1");
+					sound_controller::SoundController::StartSound(m_JsonTag[1]);
 					break;
 				case 2:
-					sound_controller::SoundController::StartSound("duck_2");
+					sound_controller::SoundController::StartSound(m_JsonTag[2]);
 					break;
 				}
 

@@ -32,9 +32,13 @@ namespace object
 
 		m_ObjHandle = LoadGraph(JsonManager::ImgData_Instance()->Get_ResultData_Instance()->GetOverData_Select().c_str());
 
-		sound_controller::SoundController::AddSoundData("../Asset/sound/gameover/bgm.mp3", "bgm", 230, true);
-		sound_controller::SoundController::AddSoundData("../Asset/sound/gameover/back.mp3", "back", 250, false);
-		sound_controller::SoundController::AddSoundData("../Asset/sound/gameover/button.mp3", "button", 250, false);
+		auto json = JsonManager::SoundData_Instance()->Get_Result_SoundData_Instance();
+		m_JsonTag[0] = json->GetBgmNameData();
+		m_JsonTag[1] = json->GetBackNameData();
+		m_JsonTag[2] = json->GetButtonNameData();
+		sound_controller::SoundController::AddSoundData(json->GetBgmPathData(), m_JsonTag[0],json->GetBgmVolumeData(), json->GetBgmTypeData());
+		sound_controller::SoundController::AddSoundData(json->GetBackPathData(), m_JsonTag[1], json->GetBackVolumeData(), json->GetBackTypeData());
+		sound_controller::SoundController::AddSoundData(json->GetButtonPathData(), m_JsonTag[2], json->GetButtonVolumeData(), json->GetButtonTypeData());
 
 		m_Uipos.x = m_SelectUi_Pos[0].x;
 		m_Uipos.y = m_SelectUi_Pos[0].y;
@@ -56,7 +60,7 @@ namespace object
 	{
 		//マウスがエリア移動の位置にあるか
 
-		sound_controller::SoundController::StartSound("bgm");
+		sound_controller::SoundController::StartSound(m_JsonTag[0]);
 
 		for (int i = 0; i < 2; i++)
 		{
@@ -94,12 +98,12 @@ namespace object
 				{
 					if (i == 0)	//コンテニューなら
 					{
-						sound_controller::SoundController::StartSound("button");
+						sound_controller::SoundController::StartSound(m_JsonTag[2]);
 						ObjectManager::SetNextGameState(GamePlay);
 					}
 					else		//タイトルに戻るなら
 					{
-						sound_controller::SoundController::StartSound("back");
+						sound_controller::SoundController::StartSound(m_JsonTag[1]);
 						ObjectManager::SetNextGameState(Title);
 					}
 				}

@@ -34,15 +34,16 @@ namespace object
 
 		//表示エリアの初期値セット
 		m_ObjHandle = m_AreaImg[AreaNumController::GetAreaNum()];
-
-		sound_controller::SoundController::AddSoundData("../Asset/sound/play/bgm.mp3","bgm", 150, true);
+		auto json = JsonManager::SoundData_Instance()->Get_Play_SoundData_Instance();
+		m_JsonTag = json->GetBgmNameData();
+		sound_controller::SoundController::AddSoundData(json->GetBgmPathData(), m_JsonTag, json->GetBgmVolumeData(), json->GetBgmTypeData());
 	}
 
 	void Area::UpdateObj(const float deltatime)
 	{
 		//表示エリアの更新
 		m_ObjHandle = m_AreaImg[AreaNumController::GetAreaNum()];
-		sound_controller::SoundController::StartSound("bgm");
+		sound_controller::SoundController::StartSound(m_JsonTag);
 	}
 
 	void Area::DrawObj()

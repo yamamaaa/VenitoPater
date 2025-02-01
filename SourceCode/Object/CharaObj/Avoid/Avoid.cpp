@@ -3,6 +3,7 @@
 #include"../../ObjectTag/Play_ObjectTag.h"
 #include"../AvoidStatus/AvoidStatus.h"
 #include"../HatUi/HatUi.h"
+
 #include"../../StageObj/AreaNumController/AreaNumController.h"
 #include"../../../SoundController/SoundController.h"
 
@@ -35,8 +36,9 @@ namespace object
 
 		//HatUi‚Ì‰Šú‰»
 		HatUi::Initialize();
-
-		sound_controller::SoundController::AddSoundData("../Asset/sound/play/hat.mp3", "hat", 255, false);
+		auto json = JsonManager::SoundData_Instance()->Get_Play_SoundData_Instance();
+		m_JsonTag = json->GetHat_NameData();
+		sound_controller::SoundController::AddSoundData(json->GetHat_PathData(), m_JsonTag, json->GetHat_VolumeData(), json->GetHat_TypeData());
 	}
 
 	void Avoid::UpdateObj(const float deltatime)
@@ -54,7 +56,7 @@ namespace object
 			//ƒNƒŠƒbƒNó‘Ô‚Ì
 			if (GetStateClick()&& m_IsClick)
 			{
-				sound_controller::SoundController::StartSound("hat");
+				sound_controller::SoundController::StartSound(m_JsonTag);
 
 				if (!AvoidStatus::GetIsAvoid())
 				{

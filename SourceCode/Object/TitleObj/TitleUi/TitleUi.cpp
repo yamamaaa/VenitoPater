@@ -12,7 +12,8 @@ namespace object
 
 	TitleUi::~TitleUi()
 	{
-		//ˆ—‚È‚µ
+		DeleteGraph(m_ObjHandle);
+		DeleteGraph(m_TVScreen_Handle);
 	}
 
 	void TitleUi::LoadObject()

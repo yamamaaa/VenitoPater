@@ -55,6 +55,8 @@ namespace object
         /// </summary>
         void DrawItemSet();
 
+        std::string m_JsonTag[3];	//サウンド用Jsonタグ
+
         const int m_TOTAlITEM_NUM = 5;    //エリア内のアイテム総数
         const int m_ITEMOCCUR_AREA = 3;   //アイテムを表示するエリアの数
         const int m_RARECHANCA = 3;       //レアアイテム出現確率

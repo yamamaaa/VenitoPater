@@ -42,9 +42,11 @@ namespace object
 
 		//画像の読み込み
 		LoadDivGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetClockWork().c_str(), m_AnimPattern * m_AnimType, m_AnimPattern, m_AnimType, m_colwidth, m_colheight, m_Handle);
-
-		sound_controller::SoundController::AddSoundData("../Asset/sound/play/musicbox.mp3","musicbox", 250, true);
-		sound_controller::SoundController::AddSoundData("../Asset/sound/play/clockwork.mp3", "clockwork", 160, true);
+		auto json = JsonManager::SoundData_Instance()->Get_Play_SoundData_Instance();
+		m_JsonTag[0] = json->GetMusicbox_NameData();
+		m_JsonTag[1] = json->GetClockwork_NameData();
+		sound_controller::SoundController::AddSoundData(json->GetMusicbox_PathData(), m_JsonTag[0], json->GetMusicbox_VolumeData(), json->GetMusicbox_TypeData());
+		sound_controller::SoundController::AddSoundData(json->GetClockwork_PathData(), m_JsonTag[1], json->GetClockwork_VolumeData(), json->GetClockwork_TypeData());
 	}
 
 	void ClockWork::UpdateObj(const float deltatime)
@@ -58,7 +60,7 @@ namespace object
 
 			if (m_IsClickNow)
 			{
-				sound_controller::SoundController::StartSound("clockwork");
+				sound_controller::SoundController::StartSound(m_JsonTag[1]);
 				rpmhp+= m_RPMHP_COUNTSPEED *deltatime;		//回転量Hpを増やす
 				m_AnimationFPS = m_CLICK_FPS;				//アニメーション設定
 				MoveObj(deltatime);
@@ -78,7 +80,7 @@ namespace object
 		else
 		{
 			m_CanDraw = false;
-			sound_controller::SoundController::StopSound("musicbox");
+			sound_controller::SoundController::StopSound(m_JsonTag[0]);
 		}
 
 		//回転量が0以下の場合処理なし
@@ -107,7 +109,7 @@ namespace object
 		}
 		else
 		{
-			sound_controller::SoundController::StopSound("musicbox");
+			sound_controller::SoundController::StopSound(m_JsonTag[0]);
 			RPMController::SetIsRPMLost(true);
 		}
 
@@ -120,7 +122,7 @@ namespace object
 		if (!m_CanDraw)
 			return;
 
-		sound_controller::SoundController::StartSound("musicbox");
+		sound_controller::SoundController::StartSound(m_JsonTag[0]);
 		m_AnimTimer += deltatime;
 
 		//アニメーションの計算

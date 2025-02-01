@@ -15,6 +15,7 @@ namespace object
     StillDraw::~StillDraw()
     {
         m_TxtFile.close();
+        m_ObjImg.clear();
     }
 
     void StillDraw::LoadObject()

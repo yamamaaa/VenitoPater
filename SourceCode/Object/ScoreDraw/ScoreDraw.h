@@ -63,6 +63,8 @@ namespace object
 		/// </summary>
 		void DrawObj()override;
 
+		std::string m_JsonTag[6];	//サウンド用Jsonタグ
+
 		GameSystem::Window* window;
 		POINTS m_WindowSize;
 

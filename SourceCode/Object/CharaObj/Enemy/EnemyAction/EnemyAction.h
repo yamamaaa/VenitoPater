@@ -36,5 +36,7 @@ namespace object
         void DrawObj()override;
 
         int m_EmyActionImg[4];
+
+        std::string m_JsonTag[2];	//サウンド用Jsonタグ
 	};
 }
