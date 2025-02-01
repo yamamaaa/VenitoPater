@@ -87,4 +87,10 @@ namespace object
 		//‰æ‘œ‚Ì•\Ž¦
 		DrawGraph(static_cast<int>(hatui->m_UiPos.x), static_cast<int>(hatui->m_UiPos.y), hatui->m_UiHandle, TRUE);
 	}
+
+	void HatUi::Processing()
+	{
+		DeleteGraph(hatui->m_UiHandle);
+		hatui.reset();
+	}
 }

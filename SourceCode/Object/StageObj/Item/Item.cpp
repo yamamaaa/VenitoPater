@@ -2,6 +2,7 @@
 
 #include "Item.h"
 #include "../../ObjectTag/Play_ObjectTag.h"
+#include"../../ObjectManager/ObjectManager.h"
 #include "../AreaNumController/AreaNumController.h"
 #include "../ItemGetNum/ItemGetNum.h"
 #include "../../Time/TimeStatus/TimeStatus.h"
@@ -19,7 +20,23 @@ namespace object
 
 	Item::~Item()
 	{
-		//処理なし
+		DeleteGraph(m_ObjHandle);
+
+		for (int i = 0; i < 6; i++)
+		{
+			DeleteGraph(m_ItemImg_area0[i]);
+			DeleteGraph(m_ItemImg_area1[i]);
+			DeleteGraph(m_ItemImg_area2[i]);
+		}
+
+		m_NowDrawItem_Data.clear();
+		m_HitSize_area0.clear();
+		m_HitSize_area1.clear();
+		m_HitSize_area2.clear();
+
+		m_ItemPos_area0.clear();
+		m_ItemPos_area1.clear();
+		m_ItemPos_area2.clear();
 	}
 
 	void Item::LoadObject()
@@ -36,6 +53,19 @@ namespace object
 
 		//クリック可能状態
 		m_CanClick = true;
+
+		PlayMenu menu=ObjectManager::GetPlayMode();
+
+		if (menu == PlayMenu::PlayNewGame)
+		{
+			m_NowOccurCount_Max = m_OCCURCOUNT_MAX;
+			m_RItem_Reset = true;
+		}
+		else
+		{
+			m_NowOccurCount_Max = m_OCCURCOUNT_MAX_R;
+			m_RItem_Reset = false;
+		}
 
 		//ランダム生成の初期化
 		srand(static_cast<unsigned int>(time(0)));
@@ -84,13 +114,16 @@ namespace object
 			//状態リセットまでカウント
 			CountTime(deltatime);
 
-			//emyが出現中でレアアイテムがあればアイテム削除
-			int emy = EnemyManager::GetAppearNumNow();
-			if (emy > 0 && m_IsRareItem)
+			if (m_RItem_Reset)
 			{
-				m_IsOccur = false;
-				m_IsSet = false;
-				m_IsRareItem = false;
+				//emyが出現中でレアアイテムがあればアイテム削除
+				int emy = EnemyManager::GetAppearNumNow();
+				if (emy > 0 && m_IsRareItem)
+				{
+					m_IsOccur = false;
+					m_IsSet = false;
+					m_IsRareItem = false;
+				}
 			}
 		}
 
@@ -121,7 +154,7 @@ namespace object
 				}
 
 				//再出現カウントをセット
-				m_OccurCount = m_OCCURCOUNT_MAX;
+				m_OccurCount = m_NowOccurCount_Max;
 
 				m_IsGet = true;
 				m_IsOccur = false;
@@ -143,7 +176,7 @@ namespace object
 		}
 
 		//アイテムをゲットしたら
-		if (m_IsGet)
+		if (m_IsGet||m_IsSet)
 		{
 			//再出現までカウント
 			CountTime(deltatime);
@@ -204,13 +237,22 @@ namespace object
 		//レアアイテムだったら
 		if (itemnum <= m_RARECHANCA)
 		{
-			//敵が出現していないならレアアイテムセット
-			int emy = EnemyManager::GetAppearNumNow();
-			if (emy > 0)
+			if (m_RItem_Reset)
 			{
-				//出現するアイテムの番号をセット
-				int range = m_TOTAlITEM_NUM;
-				m_NowItemNumber = rand() % range;	//ランダム生成
+				//敵が出現していないならレアアイテムセット
+				int emy = EnemyManager::GetAppearNumNow();
+				if (emy > 0)
+				{
+					//出現するアイテムの番号をセット
+					int range = m_TOTAlITEM_NUM;
+					m_NowItemNumber = rand() % range;	//ランダム生成
+				}
+				else
+				{
+					//現在のアイテム番号をレアアイテムに
+					m_NowItemNumber = m_RAREITEM_INDEX;
+					m_IsRareItem = true;
+				}
 			}
 			else
 			{

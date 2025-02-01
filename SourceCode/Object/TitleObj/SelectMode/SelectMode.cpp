@@ -15,6 +15,9 @@ namespace object
 	{
 		DeleteGraph(m_ObjHandle);
 		DeleteGraph(m_MenuHandol);
+
+		m_HitPos.clear();
+		m_SelectMenuPos.clear();
 	}
 
 	void SelectMode::LoadObject()

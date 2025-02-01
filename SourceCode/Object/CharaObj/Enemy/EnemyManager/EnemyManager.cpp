@@ -16,7 +16,7 @@ namespace object
 
 	EnemyManager::~EnemyManager()
 	{
-		//処理なし
+		m_IsAppear.clear();
 	}
 
 	void EnemyManager::Initialize()
@@ -146,6 +146,11 @@ namespace object
 		enemymanager->m_CanAppear = true;								//敵の出現を再び開始
 		enemymanager->m_AppearNumNow++;									//出現中の敵総数計算
 		enemymanager->m_AppearCount = enemymanager->m_AppearCount_Max;	//カウントを初期化
+	}
+
+	void EnemyManager::Processing()
+	{
+		enemymanager->m_IsAppear.clear();
 	}
 
 	void EnemyManager::D_DrawStatus()

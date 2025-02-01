@@ -43,6 +43,8 @@ namespace object
                 objectmanager->m_Objects[tag].clear();
             }
         }
+
+        objectmanager->m_Objects.clear();
     }
 
     void ObjectManager::UpdateAllObj(const float deltatime)

@@ -47,17 +47,6 @@ namespace scene
 
     SceneBase* Title::UpdateScene(float deltaTime)
     {
-        //object::ObjectManager::ReleaseAllObj();
-        //object::ObjectManager::SetNowGameState(object::Score);
-        //object::ObjectManager::SetPlayMode(object::PlayMenu::PlayRankingMode);
-        //return new PlayEnd();
-         //F1‚ª‰Ÿ‚³‚ê‚½‚çŽžŠÔŒo‰ß
-        if (CheckHitKey(KEY_INPUT_F1))
-        {
-            object::ObjectManager::ReleaseAllObj();
-            return new a;
-        }
-
         if (!m_FadeInSet)
         {
             transitor::FadeTransitor::FadeInStart(deltaTime);

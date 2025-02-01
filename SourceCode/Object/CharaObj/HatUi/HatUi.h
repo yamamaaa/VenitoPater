@@ -37,6 +37,11 @@ namespace object
 		static const bool GetIsMoveDone() { return hatui->m_IsMoveDone; }
 
 		/// <summary>
+		/// 後処理
+		/// </summary>
+		static void Processing();
+
+		/// <summary>
 		/// デストラクタ
 		/// </summary>
 		~HatUi();

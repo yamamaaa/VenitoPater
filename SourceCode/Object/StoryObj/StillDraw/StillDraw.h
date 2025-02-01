@@ -70,5 +70,6 @@ namespace object
 
         std::vector<int> m_ObjImg;  //スチル画像
         int m_Index;                //スチル画像インデックス
+        int m_ImgTotal;             //画像総数
     };
 }

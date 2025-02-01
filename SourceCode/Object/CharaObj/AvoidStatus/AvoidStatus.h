@@ -32,6 +32,12 @@ namespace object
 		/// <param name="status">true:‰ñ”ğ’†|false:‰ñ”ğ‚µ‚Ä‚¢‚È‚¢</param>
 		static void SetIsAvoid(const bool status) { avoidstatus->m_IsAvoid= status; }
 
+		/// <summary>
+		/// Œãˆ—
+		/// </summary>
+		/// <returns></returns>
+		static void Processing();
+
 	private:
 
 		/// <summary>

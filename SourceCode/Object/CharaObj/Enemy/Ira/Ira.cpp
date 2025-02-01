@@ -17,7 +17,12 @@ namespace object
 
 	Ira::~Ira()
 	{
-		//ˆ—‚È‚µ
+		DeleteGraph(m_ObjHandle);
+
+		for (int i = 0; i < 4; i++)
+		{
+			DeleteGraph(m_ObjImg[i]);
+		}
 	}
 
 	void Ira::LoadObject()

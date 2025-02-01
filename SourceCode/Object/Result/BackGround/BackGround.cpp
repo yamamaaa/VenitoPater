@@ -14,7 +14,7 @@ namespace object
 
     BackGround::~BackGround()
     {
-        //ˆ—‚È‚µ
+        DeleteGraph(m_ObjHandle);
     }
 
     void BackGround::LoadObject()

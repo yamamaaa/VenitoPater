@@ -28,6 +28,11 @@ namespace object
 		static void SetIsBlinking(const bool status) { light_controller->m_IsBlinking = status; }
 
 		/// <summary>
+		/// 後処理
+		/// </summary>
+		static void Processing();
+
+		/// <summary>
 		/// デストラクタ
 		/// </summary>
 		~LightController();

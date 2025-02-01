@@ -16,6 +16,8 @@
 
 #include"../../Object/StoryObj/StillDraw/StillDraw.h"
 
+#include"../a/a.h"
+
 namespace scene
 {
 	Story::Story()

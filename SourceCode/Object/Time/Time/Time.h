@@ -39,10 +39,10 @@ namespace object
         void DrawObj()override;
 
         const float m_TIMEMAX = 300.0f;
-        const float m_RISETIME = 0.6f;    //増化分
+        const float m_RISETIME = 1.0f;    //増化分
 
-        const float m_TIMER_MAX = 1.0f;    // タイマー最大値
-        const float m_TIMERFPS = 0.1f;     // タイマーFPS
+        const float m_TIMER_MAX = 6.0f;    // タイマー最大値
+        const float m_TIMERFPS = 0.6f;     // タイマーFPS
 
         const int m_MINUTES_RISETIME =10;    //表示用分増化分
         const int m_MINUTES_MAX = 60;    //表示用分増化最大値

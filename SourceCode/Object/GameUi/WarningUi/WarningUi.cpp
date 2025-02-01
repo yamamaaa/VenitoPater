@@ -14,7 +14,7 @@ namespace object
 
 	WarningUi::~WarningUi()
 	{
-		//ˆ—‚È‚µ
+		DeleteGraph(m_ObjHandle);
 	}
 
 	void WarningUi::LoadObject()

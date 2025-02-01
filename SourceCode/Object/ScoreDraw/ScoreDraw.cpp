@@ -25,6 +25,7 @@ namespace object
         //フォントハンドルの削除
         DeleteFontToHandle(m_FontHandle_Item);
         DeleteFontToHandle(m_FontHandle_Score);
+        //DeleteGraph(m_ObjHandle);
     }
 
     void ScoreDraw::LoadObject()

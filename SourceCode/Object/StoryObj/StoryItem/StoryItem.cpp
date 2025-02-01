@@ -16,6 +16,15 @@ namespace object
     StoryItem::~StoryItem()
     {
         m_TxtFile.close();
+        m_ImgPos.clear();
+
+        for (std::string& tag : CharaItem_TagAll)
+        {
+            DeleteGraph(m_ObjImg[tag]);
+        }
+
+        m_ObjImg.clear();
+        DeleteGraph(m_ObjHandle);
     }
 
     void StoryItem::LoadObject()

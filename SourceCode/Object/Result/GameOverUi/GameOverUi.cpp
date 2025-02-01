@@ -15,6 +15,8 @@ namespace object
 
 	GameOverUi::~GameOverUi()
 	{
+		delete window;
+		DeleteGraph(m_ObjHandle);
 		//フォントハンドルの解放
 		DeleteFontToHandle(m_FontHandle);
 		DeleteFontToHandle(m_FontHandle_Ui);

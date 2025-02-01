@@ -1,5 +1,6 @@
 #pragma once
-#include<string>
+#include <vector>
+#include <string>
 
 namespace object
 {
@@ -14,4 +15,16 @@ namespace object
         std::string HAPPY = "happy";
         std::string SURPRISE = "surprise";
     } charaStatus;
+
+    /// <summary>
+    /// ÉãÅ[Évêßå‰óp
+    /// </summary>
+    static std::vector<std::string>charaStatus_All
+    {
+        charaStatus.NORMAL,
+        charaStatus.WORRY,
+        charaStatus.DISMAYER,
+        charaStatus.HAPPY,
+        charaStatus.SURPRISE,
+    };
 }

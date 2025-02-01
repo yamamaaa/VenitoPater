@@ -16,6 +16,7 @@ namespace object
 
 	GameClearUi::~GameClearUi()
 	{
+		delete window;
 		//フォントハンドルの解放
 		DeleteFontToHandle(m_FontHandle);
 	}
