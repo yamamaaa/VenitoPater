@@ -18,7 +18,6 @@ namespace object
 	Line::~Line()
 	{
 		m_TxtFile.close();
-
 		//フォントのアンロード
 		DeleteFontToHandle(m_FontHandle);
 	}

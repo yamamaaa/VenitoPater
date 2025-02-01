@@ -18,7 +18,8 @@ namespace object
 
 	Avoid::~Avoid()
 	{
-		//ˆ—‚È‚µ
+		HatUi::Processing();
+		AvoidStatus::Processing();
 	}
 
 	void Avoid::LoadObject()

@@ -59,10 +59,10 @@
       <Filter>ソースコード\Object\CharaObj\HatUi</Filter>
     </ClCompile>
     <ClCompile Include="..\SourceCode\Object\StageObj\ClockWork\ClockWork\ClockWork.cpp">
-      <Filter>ソースコード\Object\StageObj\Item\ClockWork\ClockWork</Filter>
+      <Filter>ソースコード\Object\StageObj\ClockWork\ClockWork</Filter>
     </ClCompile>
     <ClCompile Include="..\SourceCode\Object\StageObj\ClockWork\RPMController\RPMController.cpp">
-      <Filter>ソースコード\Object\StageObj\Item\ClockWork\RPMController</Filter>
+      <Filter>ソースコード\Object\StageObj\ClockWork\RPMController</Filter>
     </ClCompile>
     <ClCompile Include="..\SourceCode\Object\CharaObj\LightController\LightController.cpp">
       <Filter>ソースコード\Object\CharaObj\LightController</Filter>
@@ -313,10 +313,10 @@
       <Filter>ソースコード\Object\CharaObj\HatUi</Filter>
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\StageObj\ClockWork\ClockWork\ClockWork.h">
-      <Filter>ソースコード\Object\StageObj\Item\ClockWork\ClockWork</Filter>
+      <Filter>ソースコード\Object\StageObj\ClockWork\ClockWork</Filter>
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\StageObj\ClockWork\RPMController\RPMController.h">
-      <Filter>ソースコード\Object\StageObj\Item\ClockWork\RPMController</Filter>
+      <Filter>ソースコード\Object\StageObj\ClockWork\RPMController</Filter>
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\CharaObj\LightController\LightController.h">
       <Filter>ソースコード\Object\CharaObj\LightController</Filter>
@@ -785,15 +785,6 @@
     <Filter Include="ソースコード\Object\ScoreDraw">
       <UniqueIdentifier>{0e723264-a393-47bb-917d-e2d03b64a81a}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースコード\Object\StageObj\Item\ClockWork">
-      <UniqueIdentifier>{84af56d7-23b1-426e-b531-779f78a1feec}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースコード\Object\StageObj\Item\ClockWork\ClockWork">
-      <UniqueIdentifier>{85db2f17-b60d-4625-b713-e56f1448bf6e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースコード\Object\StageObj\Item\ClockWork\RPMController">
-      <UniqueIdentifier>{5650a5ef-843d-4de9-8bc2-1f54085b9839}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソースコード\Scene\Clear">
       <UniqueIdentifier>{f32f800d-912f-45b0-86db-3b4a83f016dc}</UniqueIdentifier>
     </Filter>
@@ -829,6 +820,15 @@
     </Filter>
     <Filter Include="ソースコード\Scene\a">
       <UniqueIdentifier>{f4e5fd70-ed0a-4667-8b31-5a311641d33a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StageObj\ClockWork">
+      <UniqueIdentifier>{84af56d7-23b1-426e-b531-779f78a1feec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StageObj\ClockWork\ClockWork">
+      <UniqueIdentifier>{85db2f17-b60d-4625-b713-e56f1448bf6e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\StageObj\ClockWork\RPMController">
+      <UniqueIdentifier>{5650a5ef-843d-4de9-8bc2-1f54085b9839}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

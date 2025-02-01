@@ -35,6 +35,8 @@
 
 #include"../../Object/CharaObj/Enemy/EnemyAction/EnemyAction.h"
 
+#include"../a/a.h"
+
 namespace scene
 {
 	Play::Play()
@@ -125,6 +127,7 @@ namespace scene
 		if (object::GameClear == status)
 		{
 			return new Clear;
+			//return new a;
 		}
 
 		//ゲームオーバー

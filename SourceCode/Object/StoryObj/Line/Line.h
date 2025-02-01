@@ -91,7 +91,6 @@ namespace object
         std::string m_Line;     //ファイルから取得した文字
         std::string m_DrawText; //表示する文字
 
-        std::string m_FontTag;  //フォント名
         int m_FontHandle;       //フォントハンドル
 
         int m_TxtNum;           //表示中の文字数

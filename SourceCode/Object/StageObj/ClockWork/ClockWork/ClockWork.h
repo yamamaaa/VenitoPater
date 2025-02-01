@@ -50,7 +50,7 @@ namespace object
 
         std::string m_JsonTag[3];	//サウンド用Jsonタグ
 
-        const float m_RPMHP_COUNTSPEED = 24.0f;     //Hp増量スピード
+        const float m_RPMHP_COUNTSPEED = 30.0f;     //Hp増量スピード
         static const int m_AnimPattern = 4;         // アニメーションのパターン数
         const int m_AnimType = 1;                   // アニメーションの種類
 

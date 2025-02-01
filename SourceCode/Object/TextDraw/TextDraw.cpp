@@ -16,7 +16,7 @@ namespace object
 
     TextDraw::~TextDraw()
     {
-        if (m_Status == TimeOver)
+        if (m_Status != GamePlay)
         {
             m_TxtFile.close();
         }

@@ -15,7 +15,12 @@ namespace object
 
 	EnemyAction::~EnemyAction()
 	{
-		//ˆ—–³‚µ
+		DeleteGraph(m_ObjHandle);
+
+		for (int i = 0; i < 4; i++)
+		{
+			DeleteGraph(m_EmyActionImg[i]);
+		}
 	}
 
 	void EnemyAction::LoadObject()

@@ -14,7 +14,11 @@ namespace object
 
 	Area::~Area()
 	{
-		//ˆ—‚È‚µ
+		for (int i = 0; i < 4; i++)
+		{
+			DeleteGraph(m_AreaImg[i]);
+		}
+		DeleteGraph(m_ObjHandle);
 	}
 
 	void Area::LoadObject()

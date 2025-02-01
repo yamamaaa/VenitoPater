@@ -15,6 +15,7 @@ namespace object
 
     Player::~Player()
     {
+        LightController::Processing();
     }
 
     void Player::LoadObject()

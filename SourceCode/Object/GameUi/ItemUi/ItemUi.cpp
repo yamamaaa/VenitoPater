@@ -16,6 +16,8 @@ namespace object
     {
         //フォントハンドルの解放
         DeleteFontToHandle(m_FontHandle);
+        DeleteGraph(m_ObjHandle);
+        DeleteGraph(m_RItem_Handole);
     }
 
     void ItemUi::LoadObject()

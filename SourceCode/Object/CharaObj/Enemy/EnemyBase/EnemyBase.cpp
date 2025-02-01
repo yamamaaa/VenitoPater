@@ -28,6 +28,12 @@ namespace object
 	{
 		//ƒƒ‚ƒŠ‚Ì‰ğ•ú
 		delete window;
+		EnemyManager::Processing();
+		m_DrawObjPos.clear();
+		m_EmyLine_Pos.clear();
+#ifdef DEBUG
+		m_collarcode.clear();
+#endif // DEBUG
 	}
 
 	void EnemyBase::LoadObject()

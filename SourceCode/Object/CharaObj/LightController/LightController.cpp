@@ -56,4 +56,13 @@ namespace object
 			}
 		}
 	}
+
+	void LightController::Processing()
+	{
+		DeleteGraph(light_controller->m_ShadowHandol);
+		DeleteGraph(light_controller->m_LightHandol);
+		DeleteGraph(light_controller->m_BlackImgHandol);
+
+		light_controller.reset();
+	}
 }

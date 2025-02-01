@@ -13,13 +13,17 @@ namespace object
 
 	Familia::~Familia()
 	{
-		//ˆ—‚È‚µ
+		DeleteGraph(m_ObjHandle);
+
+		for (int i = 0; i < 4; i++)
+		{
+			DeleteGraph(m_ObjImg[i]);
+		}
 	}
 
 	void Familia::LoadObject()
 	{
 		m_NowMoveSpeed = 18.0f;
-		m_NowMoveSpeed = 600.0f;
 
 		m_ObjDrawArea = 3;
 

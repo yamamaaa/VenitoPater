@@ -18,6 +18,7 @@ namespace object
         //フォントハンドルの解放
         DeleteFontToHandle(m_FontHandle_Am);
         DeleteFontToHandle(m_FontHandle_Time);
+
     }
 
     void Time::LoadObject()

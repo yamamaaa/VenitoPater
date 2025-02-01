@@ -15,7 +15,13 @@ namespace object
 
     MoveArea::~MoveArea()
     {
-        //èàóùÇ»Çµ
+        m_HitSize.clear();
+        m_MovePos.clear();
+        m_AreaNumber.clear();
+#ifdef DEBUG
+        d_ColorCode.clear();
+        d_CursorHit.clear();
+#endif // DEBUG
     }
 
     void MoveArea::LoadObject()

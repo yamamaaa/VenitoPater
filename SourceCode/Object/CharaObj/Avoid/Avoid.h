@@ -46,8 +46,6 @@ namespace object
 
 		std::string m_JsonTag;	//サウンド用Jsonタグ
 
-		POINTFLOAT m_DrawPos;	//画像表示座標
-
 		const int m_AVOID_NOTNUM = 3;		//回避行動不可エリア
 
 		const float m_CLICKCOUNT_MAX = 5.0f;	//再びクリックできるまで

@@ -18,7 +18,10 @@ namespace object
 
 	ClockWork::~ClockWork()
 	{
-		//èàóùÇ»Çµ
+		for(int i= 0; i < m_AnimPattern; i++)
+		{
+			DeleteGraph(m_Handle[i]);
+		}
 	}
 
 	void ClockWork::LoadObject()
@@ -162,9 +165,6 @@ namespace object
 		if (m_CanDraw)
 		{
 			DrawGraph(static_cast<int>(m_ObjPos.x) + m_DrawOffset.x, static_cast<int>(m_ObjPos.y) + m_DrawOffset.y, m_Handle[m_AnimNowIndex], TRUE);
-#ifdef DEBUG
-			DrawBox(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), static_cast<int>(m_ObjPos.x) + m_ObjSize.x, static_cast<int>(m_ObjPos.y) + m_ObjSize.y, GetColor(255, 40, 0), FALSE);
-#endif
 		}
 #ifdef DEBUG
 		DrawFormatString(0, 360, GetColor(255, 255, 255), "m_AnimNowIndex:%d", m_AnimNowIndex);

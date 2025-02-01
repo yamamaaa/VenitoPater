@@ -13,7 +13,7 @@ namespace object
 
 	AvoidUi::~AvoidUi()
 	{
-		//ˆ—‚È‚µ
+		DeleteGraph(m_ObjHandle);
 	}
 
 	void AvoidUi::LoadObject()
