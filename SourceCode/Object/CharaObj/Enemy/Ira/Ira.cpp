@@ -48,7 +48,9 @@ namespace object
 			m_NowMoveSpeed = m_MoveSpeed[2];
 		}
 
-		sound_controller::SoundController::AddSoundData("../Asset/sound/play/ira.mp3", "ira", 200, true);
+		auto json = JsonManager::SoundData_Instance()->Get_Play_SoundData_Instance();
+		m_JsonTag = json->GetIra_NameData();
+		sound_controller::SoundController::AddSoundData(json->GetIra_PathData(), m_JsonTag, json->GetIra_VolumeData(), json->GetIra_TypeData());
 
 		m_ObjDrawArea = 0;
 
@@ -93,9 +95,9 @@ namespace object
 
 			//action’†‚Å•\Ž¦‚Å‚«‚é‚Æ‚«BGM‚ð—¬‚·
 			if (IsObjDraw()&& !EnemyManager::GetEmyIsAction())
-				sound_controller::SoundController::StartSound("ira");
+				sound_controller::SoundController::StartSound(m_JsonTag);
 			else
-				sound_controller::SoundController::StopSound("ira");
+				sound_controller::SoundController::StopSound(m_JsonTag);
 		}
 		else
 		{

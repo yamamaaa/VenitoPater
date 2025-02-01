@@ -29,8 +29,11 @@ namespace object
 		window = nullptr;	//windowのインスタンス生成
 		POINTS windowsize = window->GetWindowSize();
 
-		sound_controller::SoundController::AddSoundData("../Asset/sound/gameclear/bgm.mp3", "bgm", 200, false);
-		sound_controller::SoundController::AddSoundData("../Asset/sound/gameclear/applause.mp3", "applause", 200, false);
+		auto json = JsonManager::SoundData_Instance()->Get_Clear_SoundData_Instance();
+		m_JsonTag[0] = json->GetBgmNameData();
+		m_JsonTag[1] = json->GetApplauseNameData();
+		sound_controller::SoundController::AddSoundData(json->GetBgmPathData(), m_JsonTag[0],json->GetBgmVolumeData(), json->GetBgmTypeData());
+		sound_controller::SoundController::AddSoundData(json->GetApplausePathData(), m_JsonTag[1], json->GetApplauseVolumeData(), json->GetApplauseTypeData());
 
 		m_FontHandle = CreateFontToHandle("メイリオ", m_FONTSIZE.x, m_FONTSIZE.y, DX_FONTTYPE_ANTIALIASING);
 
@@ -45,8 +48,8 @@ namespace object
 	{
 		if (!m_IsSound)
 		{
-			sound_controller::SoundController::StartSound("bgm");
-			sound_controller::SoundController::StartSound("applause");
+			sound_controller::SoundController::StartSound(m_JsonTag[0]);
+			sound_controller::SoundController::StartSound(m_JsonTag[1]);
 			m_IsSound = true;
 		}
 

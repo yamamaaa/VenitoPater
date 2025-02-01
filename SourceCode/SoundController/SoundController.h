@@ -28,8 +28,8 @@ namespace sound_controller
 		/// <param name="filename">ファイル名</param>
 		/// <param name="soundname">サウンド名</param>
 		/// <param name="volume">音量</param>
-		/// <param name="isbgm">BGMか？</param>
-		static void AddSoundData(std::string filename, std::string soundname, int volume, bool isbgm);
+		/// <param name="type">サウンドタイプ|true:ループ|false:ループしない</param>
+		static void AddSoundData(std::string filename, std::string soundname, int volume, bool type);
 
 		/// <summary>
 		/// サウンドの再生
@@ -48,12 +48,6 @@ namespace sound_controller
 		/// </summary>
 		/// <param name="deltatime">デルタタイム</param>
 		static void BGMSoundFadeOut(const float deltatime);
-
-		/// <summary>
-		/// 全てのサウンドのフェードイン
-		/// </summary>
-		/// <param name="deltatime">デルタタイム</param>
-		static void AllSoundFadeIn(const float deltatime);
 
 		/// <summary>
 		/// フェード処理が終了したか？
@@ -93,7 +87,7 @@ namespace sound_controller
 
 			int m_Handle;             //サウンドハンドル
 			int m_Volume;             //音量
-			bool m_IsBgm;			  //音のタイプがBgmか？
+			bool m_IsType;			  //音のタイプがBgmか？
 		};
 
 		bool m_IsDone_Fade;		//フェード処理が終わったか？

@@ -27,8 +27,11 @@ namespace object
 		m_EmyActionImg[2] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetSperoData(3).c_str());
 		m_EmyActionImg[3] = LoadGraph(JsonManager::ImgData_Instance()->Get_PlayData_Instance()->GetFamiliaData(2).c_str());
 
-		sound_controller::SoundController::AddSoundData("../Asset/sound/play/enemy.mp3", "enemy", 250, false);
-		sound_controller::SoundController::AddSoundData("../Asset/sound/play/emyaction.mp3", "emyaction", 180, false);
+		auto json = JsonManager::SoundData_Instance()->Get_Play_SoundData_Instance();
+		m_JsonTag[0] = json->GeyEnemy_NameData();
+		m_JsonTag[1] = json->GetEmyAction_NameData();
+		sound_controller::SoundController::AddSoundData(json->GetEnemy_PathData(), m_JsonTag[0], json->GeyEnemy_VolumeData(), json->GeyEnemy_TypeData());
+		sound_controller::SoundController::AddSoundData(json->GetEmyAction_PathData(), m_JsonTag[1], json->GetEmyAction_VolumeData(), json->GetEmyAction_TypeData());
 	}
 
 	void EnemyAction::UpdateObj(const float deltatime)
@@ -61,8 +64,8 @@ namespace object
 			ObjectManager::SetNextGameState(TimeOver);
 		}
 
-		sound_controller::SoundController::StartSound("enemy");
-		sound_controller::SoundController::StartSound("emyaction");
+		sound_controller::SoundController::StartSound(m_JsonTag[0]);
+		sound_controller::SoundController::StartSound(m_JsonTag[1]);
 	}
 
 	void EnemyAction::DrawObj()

@@ -220,26 +220,29 @@
     <ClCompile Include="..\SourceCode\JsonMaster\SoundData\MasterSoundData\MasterSoundData.cpp">
       <Filter>ソースコード\JsonMaster\SoundData\MasterSoundData</Filter>
     </ClCompile>
-    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Result＿SoundData\Result_SoundData.cpp">
-      <Filter>ソースコード\JsonMaster\SoundData\Result_SoundData</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Clear＿SoundData\Clear_SoundData.cpp">
+    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Clear_SoundData\Clear_SoundData.cpp">
       <Filter>ソースコード\JsonMaster\SoundData\Clear_SoundData</Filter>
     </ClCompile>
-    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Story＿SoundData\Story_SoundData.cpp">
-      <Filter>ソースコード\JsonMaster\SoundData\Story_SoundData</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Score＿SoundData\Score_SoundData.cpp">
-      <Filter>ソースコード\JsonMaster\SoundData\Score_SoundData</Filter>
-    </ClCompile>
-    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Play＿SoundData\Play_SoundData.cpp">
+    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Play_SoundData\Play_SoundData.cpp">
       <Filter>ソースコード\JsonMaster\SoundData\Play_SoundData</Filter>
     </ClCompile>
-    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Title＿SoundData\Title_SoundData.cpp">
+    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Result_SoundData\Result_SoundData.cpp">
+      <Filter>ソースコード\JsonMaster\SoundData\Result_SoundData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Score_SoundData\Score_SoundData.cpp">
+      <Filter>ソースコード\JsonMaster\SoundData\Score_SoundData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Story_SoundData\Story_SoundData.cpp">
+      <Filter>ソースコード\JsonMaster\SoundData\Story_SoundData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Title_SoundData\Title_SoundData.cpp">
       <Filter>ソースコード\JsonMaster\SoundData\Title_SoundData</Filter>
     </ClCompile>
-    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Tutorial＿SoundData\Tutorial_SoundData.cpp">
+    <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Tutorial_SoundData\Tutorial_SoundData.cpp">
       <Filter>ソースコード\JsonMaster\SoundData\Tutorial_SoundData</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Scene\a\a.cpp">
+      <Filter>ソースコード\Scene\a</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -477,9 +480,6 @@
     <ClInclude Include="..\SourceCode\MouseStatus\MouseStatus.h">
       <Filter>ソースコード\MouseStatus</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\JsonMaster\JsonFile\Text\gameover.json">
-      <Filter>ソースコード\JsonMaster\JsonFile\Text</Filter>
-    </ClInclude>
     <ClInclude Include="..\SourceCode\JsonMaster\TextData\GameOverData\GameOverData.h">
       <Filter>ソースコード\JsonMaster\TextData\GameOberData</Filter>
     </ClInclude>
@@ -504,32 +504,32 @@
     <ClInclude Include="..\SourceCode\Scene\Play\Play.h">
       <Filter>ソースコード\Scene\Play</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\JsonMaster\JsonFile\Sound\title.json">
-      <Filter>ソースコード\JsonMaster\JsonFile\Sound</Filter>
-    </ClInclude>
     <ClInclude Include="..\SourceCode\JsonMaster\SoundData\MasterSoundData\MasterSoundData.h">
       <Filter>ソースコード\JsonMaster\SoundData\MasterSoundData</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Result＿SoundData\Result_SoundData.h">
-      <Filter>ソースコード\JsonMaster\SoundData\Result_SoundData</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Clear＿SoundData\Clear_SoundData.h">
+    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Clear_SoundData\Clear_SoundData.h">
       <Filter>ソースコード\JsonMaster\SoundData\Clear_SoundData</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Story＿SoundData\Story_SoundData.h">
-      <Filter>ソースコード\JsonMaster\SoundData\Story_SoundData</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Score＿SoundData\Score_SoundData.h">
-      <Filter>ソースコード\JsonMaster\SoundData\Score_SoundData</Filter>
-    </ClInclude>
-    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Play＿SoundData\Play_SoundData.h">
+    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Play_SoundData\Play_SoundData.h">
       <Filter>ソースコード\JsonMaster\SoundData\Play_SoundData</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Title＿SoundData\Title_SoundData.h">
+    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Result_SoundData\Result_SoundData.h">
+      <Filter>ソースコード\JsonMaster\SoundData\Result_SoundData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Score_SoundData\Score_SoundData.h">
+      <Filter>ソースコード\JsonMaster\SoundData\Score_SoundData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Story_SoundData\Story_SoundData.h">
+      <Filter>ソースコード\JsonMaster\SoundData\Story_SoundData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Title_SoundData\Title_SoundData.h">
       <Filter>ソースコード\JsonMaster\SoundData\Title_SoundData</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Tutorial＿SoundData\Tutorial_SoundData.h">
+    <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Tutorial_SoundData\Tutorial_SoundData.h">
       <Filter>ソースコード\JsonMaster\SoundData\Tutorial_SoundData</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Scene\a\a.h">
+      <Filter>ソースコード\Scene\a</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -713,12 +713,6 @@
     <Filter Include="ソースコード\Scene\Story">
       <UniqueIdentifier>{962b8690-339f-437d-9046-592028dab4cd}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースコード\JsonMaster\JsonFile">
-      <UniqueIdentifier>{b04abbf7-6fd0-4555-827a-c0ec5ae576c4}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースコード\JsonMaster\JsonFile\Image">
-      <UniqueIdentifier>{8dc2485d-0633-429b-bfc5-898cf0c11f37}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソースコード\JsonMaster\ImageData">
       <UniqueIdentifier>{cc33ed31-8ab2-42a2-9423-79be27275162}</UniqueIdentifier>
     </Filter>
@@ -733,9 +727,6 @@
     </Filter>
     <Filter Include="ソースコード\JsonMaster\ImageData\TitleData">
       <UniqueIdentifier>{2daaefe0-3721-4d06-a788-2dc74f22fdf6}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースコード\JsonMaster\JsonFile\Text">
-      <UniqueIdentifier>{4db04759-8486-4344-a282-3f0f4a7f764d}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースコード\JsonMaster\TextData">
       <UniqueIdentifier>{abbbb85a-b106-4f89-ac8b-0dfed57d3eba}</UniqueIdentifier>
@@ -809,9 +800,6 @@
     <Filter Include="ソースコード\Scene\Play">
       <UniqueIdentifier>{8a1a8d4c-36b8-4b6e-be93-a1dab95ad257}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースコード\JsonMaster\JsonFile\Sound">
-      <UniqueIdentifier>{7b466419-ee88-43d6-99de-f1c34d76c6e4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソースコード\JsonMaster\SoundData">
       <UniqueIdentifier>{391e948a-0f04-437d-b025-e73ed22dec61}</UniqueIdentifier>
     </Filter>
@@ -839,43 +827,8 @@
     <Filter Include="ソースコード\JsonMaster\SoundData\Tutorial_SoundData">
       <UniqueIdentifier>{e543531d-3746-4fc9-81de-a3ea16c88901}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\SourceCode\JsonMaster\JsonFile\Image\play.json">
-      <Filter>ソースコード\JsonMaster\JsonFile\Image</Filter>
-    </None>
-    <None Include="..\SourceCode\JsonMaster\JsonFile\Image\result.json">
-      <Filter>ソースコード\JsonMaster\JsonFile\Image</Filter>
-    </None>
-    <None Include="..\SourceCode\JsonMaster\JsonFile\Image\story.json">
-      <Filter>ソースコード\JsonMaster\JsonFile\Image</Filter>
-    </None>
-    <None Include="..\SourceCode\JsonMaster\JsonFile\Image\title.json">
-      <Filter>ソースコード\JsonMaster\JsonFile\Image</Filter>
-    </None>
-    <None Include="..\SourceCode\JsonMaster\JsonFile\Text\character.json">
-      <Filter>ソースコード\JsonMaster\JsonFile\Text</Filter>
-    </None>
-    <None Include="..\SourceCode\JsonMaster\JsonFile\Text\still.json">
-      <Filter>ソースコード\JsonMaster\JsonFile\Text</Filter>
-    </None>
-    <None Include="..\SourceCode\JsonMaster\JsonFile\Sound\play.json">
-      <Filter>ソースコード\JsonMaster\JsonFile\Sound</Filter>
-    </None>
-    <None Include="..\SourceCode\JsonMaster\JsonFile\Sound\story.json">
-      <Filter>ソースコード\JsonMaster\JsonFile\Sound</Filter>
-    </None>
-    <None Include="..\SourceCode\JsonMaster\JsonFile\Sound\tutorial.json">
-      <Filter>ソースコード\JsonMaster\JsonFile\Sound</Filter>
-    </None>
-    <None Include="..\SourceCode\JsonMaster\JsonFile\Sound\score.json">
-      <Filter>ソースコード\JsonMaster\JsonFile\Sound</Filter>
-    </None>
-    <None Include="..\SourceCode\JsonMaster\JsonFile\Sound\gameover.json">
-      <Filter>ソースコード\JsonMaster\JsonFile\Sound</Filter>
-    </None>
-    <None Include="..\SourceCode\JsonMaster\JsonFile\Sound\gameclear.json">
-      <Filter>ソースコード\JsonMaster\JsonFile\Sound</Filter>
-    </None>
+    <Filter Include="ソースコード\Scene\a">
+      <UniqueIdentifier>{f4e5fd70-ed0a-4667-8b31-5a311641d33a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
 </Project>

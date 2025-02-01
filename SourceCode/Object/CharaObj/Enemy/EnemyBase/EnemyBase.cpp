@@ -37,7 +37,9 @@ namespace object
 		m_ObjSize = window->GetWindowSize();	//windowサイズの取得
 		m_ObjSize.y = 0;
 
-		sound_controller::SoundController::AddSoundData("../Asset/sound/play/light.mp3","light", 250, true);
+		auto json = JsonManager::SoundData_Instance()->Get_Play_SoundData_Instance();
+		m_JsonTag = json->GetLight_NameData();
+		sound_controller::SoundController::AddSoundData(json->GetLight_PathData(), m_JsonTag, json->GetLight_VolumeData(), json->GetLight_TypeData());
 	}
 
 	void EnemyBase::IsHitEnemyLine()
@@ -140,7 +142,7 @@ namespace object
 	{
 		//敵の退出時画面を点滅させる
 		LightController::SetIsBlinking(true);
-		sound_controller::SoundController::StartSound("light");
+		sound_controller::SoundController::StartSound(m_JsonTag);
 		m_BlinkingCount+= m_COUSPPED_BLINKING*deltatime;
 		if (m_BlinkingCount >= m_BLINKING_COUMAX)
 		{

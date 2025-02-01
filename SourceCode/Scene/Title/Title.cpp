@@ -11,6 +11,7 @@
 
 #include "../../Object/TitleObj/TitleUi/TitleUi.h"
 #include "../../Object/TitleObj/SelectMode/SelectMode.h"
+#include"../a/a.h"
 
 using namespace level_controller;
 
@@ -50,6 +51,12 @@ namespace scene
         //object::ObjectManager::SetNowGameState(object::Score);
         //object::ObjectManager::SetPlayMode(object::PlayMenu::PlayRankingMode);
         //return new PlayEnd();
+         //F1‚ª‰Ÿ‚³‚ê‚½‚çŽžŠÔŒo‰ß
+        if (CheckHitKey(KEY_INPUT_F1))
+        {
+            object::ObjectManager::ReleaseAllObj();
+            return new a;
+        }
 
         if (!m_FadeInSet)
         {

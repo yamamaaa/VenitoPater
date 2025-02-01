@@ -26,14 +26,14 @@ namespace sound_controller
 		soundcontroller->m_IsDone_Fade = false;
 	}
 
-	void SoundController::AddSoundData(std::string filename, std::string soundname, int volume, bool isbgm)
+	void SoundController::AddSoundData(std::string filename, std::string soundname, int volume, bool type)
 	{	
 		soundcontroller->m_SoundName.push_back(soundname);
 		soundcontroller->m_Soundlist[soundname].m_Handle= LoadSoundMem(filename.c_str());
 		soundcontroller->m_Soundlist[soundname].m_Volume = volume;
-		soundcontroller->m_Soundlist[soundname].m_IsBgm = isbgm;
+		soundcontroller->m_Soundlist[soundname].m_IsType = type;
 
-		if (isbgm)
+		if (type)
 		{
 			soundcontroller->m_BGMAns++;
 		}
@@ -48,7 +48,7 @@ namespace sound_controller
 		ChangeVolumeSoundMem(sound.m_Volume, sound.m_Handle);
 
 		//再生されてなかったらサウンド再生
-		if (sound.m_IsBgm)
+		if (sound.m_IsType)
 		{
 			//BGMならループ再生
 			if (!CheckSoundMem(sound.m_Handle))
@@ -82,7 +82,7 @@ namespace sound_controller
 		for (std::string name_se : soundcontroller->m_SoundName)
 		{
 			auto& sound_se = soundcontroller->m_Soundlist[name_se];
-			if (CheckSoundMem(sound_se.m_Handle) && !sound_se.m_IsBgm)
+			if (CheckSoundMem(sound_se.m_Handle) && !sound_se.m_IsType)
 				return;
 		}
 
@@ -90,7 +90,7 @@ namespace sound_controller
 		{
 			auto &sound = soundcontroller->m_Soundlist[name];
 
-			if (sound.m_IsBgm)
+			if (sound.m_IsType)
 			{
 				sound.m_Volume -= volume;
 				volume += static_cast <int>(110.0f * deltatime);
@@ -107,32 +107,6 @@ namespace sound_controller
 		{
 			soundcontroller->m_IsDone_Fade = true;
 		}
-	}
-
-	void SoundController::AllSoundFadeIn(const float deltatime)
-	{
-		//static int volume;
-		//for (std::string name : soundcontroller->m_SoundName)
-		//{
-		//	auto& sound = soundcontroller->m_Soundlist[name];
-		//	if (sound.m_IsBgm)
-		//	{
-		//		sound.m_Volume += volume;
-		//		volume += static_cast <int>(110.0f * deltatime);
-
-		//		if (sound.m_Volume <= 0)
-		//		{
-		//			
-		//		}
-
-		//		ChangeVolumeSoundMem(sound.m_Volume, sound.m_Handle);
-		//	}
-		//}
-
-		//if (soundcontroller->m_BGMAns == 0)
-		//{
-		//	soundcontroller->m_IsDone_Fade = true;
-		//}
 	}
 
 	void SoundController::FadeSoundProcessing()
@@ -160,7 +134,7 @@ namespace sound_controller
 	SoundController::SoundData::SoundData()
 		:m_Handle(-1),
 		m_Volume(200),
-		m_IsBgm(false)
+		m_IsType(false)
 	{
 	}
 }

@@ -25,12 +25,18 @@ namespace json_sounddata
 		~Tutorial_SoundData();
 
 		const std::string GetBgmNameData()const { return  bgm.name; }
+		const int GetBgmVolumeData()const { return  bgm.volume; }
+		const bool GetBgmTypeData()const { return  bgm.type; }
 		const std::string GetBgmPathData()const { return  bgm.path; }
 
 		const std::string GetBack_NameData()const { return back.name; }
+		const int GetBack_VolumeData()const { return back.volume; }
+		const bool GetBack_TypeData()const { return back.type; }
 		const std::string GetBack_PathData()const { return back.path; }
 
 		const std::string GetButton_NameData()const { return button.name; }
+		const int GetButton_VolumeData()const { return button.volume; }
+		const bool GetButton_TypeData()const { return button.type; }
 		const std::string GetButton_PathData()const { return button.path; }
 
 	private:
@@ -38,8 +44,12 @@ namespace json_sounddata
 		struct SoundData
 		{
 			std::string name;
+			int volume;
+			bool type;
 			std::string path;
 		};
+
+		void JsonSet(Json json, SoundData& data);
 
 		SoundData back;
 		SoundData bgm;

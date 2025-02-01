@@ -42,6 +42,9 @@ namespace object
 		/// 移動処理
 		/// </summary>
 		void MoveObj(const float deltatime)override;
+
+		std::string m_JsonTag;	//サウンド用Jsonタグ
+
 	};
 
 }

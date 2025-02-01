@@ -40,6 +40,8 @@ namespace object
         /// </summary>
         void DrawObj() override;
 
+        std::string m_JsonTag[4];  //サウンド用Jsonタグ
+
         int index;
         int m_SelectIndex;        //インデックス
         int m_MenuHandol;         //メニュー画像ハンドル

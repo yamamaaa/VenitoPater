@@ -73,6 +73,8 @@ namespace object
         /// </summary>
         void DrawObj()override;
 
+        std::string m_JsonTag[2];	//サウンド用Jsonタグ
+
         //ゲームステータス変更コード
         const std::string m_GAMEPLAY = "gameplay";
         const std::string m_STORY = "story";

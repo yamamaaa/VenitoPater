@@ -13,7 +13,8 @@ namespace object
 
 	SelectMode::~SelectMode()
 	{
-		//処理なし
+		DeleteGraph(m_ObjHandle);
+		DeleteGraph(m_MenuHandol);
 	}
 
 	void SelectMode::LoadObject()
@@ -31,15 +32,21 @@ namespace object
 
 		m_ObjHandle = LoadGraph(JsonManager::ImgData_Instance()->Get_TitleData_Instance()->GetSelectData().c_str());
 		m_MenuHandol= LoadGraph(JsonManager::ImgData_Instance()->Get_TitleData_Instance()->GetMenuData().c_str());
-		sound_controller::SoundController::AddSoundData("../Asset/sound/title/bgm.mp3", "bgm", 150, true);
-		sound_controller::SoundController::AddSoundData("../Asset/sound/title/select.mp3", "select", 100, false);
-		sound_controller::SoundController::AddSoundData("../Asset/sound/title/button.mp3", "button", 150, false);
-		sound_controller::SoundController::AddSoundData("../Asset/sound/title/transition.mp3", "transition", 230, false);
+
+		auto json = JsonManager::SoundData_Instance()->Get_Title_SoundData_Instance();
+		m_JsonTag[0] = json->GetBgmNameData();
+		m_JsonTag[1] = json->GetSelect_NameData();
+		m_JsonTag[2] = json->GetButton_NameData();
+		m_JsonTag[3] = json->GetTransition_NameData();
+		sound_controller::SoundController::AddSoundData(json->GetBgmPathData(), m_JsonTag[0], json->GetBgmVolumeData(), json->GetBgmTypeData());
+		sound_controller::SoundController::AddSoundData(json->GetSelect_PathData(), m_JsonTag[1], json->GetSelect_VolumeData(), json->GetSelect_TypeData());
+		sound_controller::SoundController::AddSoundData(json->GetButton_PathData(), m_JsonTag[2], json->GetButton_VolumeData(), json->GetButton_TypeData());
+		sound_controller::SoundController::AddSoundData(json->GetTransition_PathData(), m_JsonTag[3], json->GetTransition_VolumeData(), json->GetTransition_TypeData());
 	}
 
 	void SelectMode::UpdateObj(const float deltatime)
 	{
-		sound_controller::SoundController::StartSound("bgm");
+		sound_controller::SoundController::StartSound(m_JsonTag[0]);
 
 		m_SelectIndex = 0;
 		for (int i = 0; i < 3; i++)
@@ -60,7 +67,7 @@ namespace object
 				if (index != m_SelectIndex)
 				{
 					index = m_SelectIndex;
-					sound_controller::SoundController::StartSound("select");
+					sound_controller::SoundController::StartSound(m_JsonTag[1]);
 				}
 			}
 			//アイテムをクリックしたら
@@ -87,11 +94,11 @@ namespace object
 
 				if (menu == PlayMenu::PlayNewGame)
 				{
-					sound_controller::SoundController::StartSound("transition");
+					sound_controller::SoundController::StartSound(m_JsonTag[3]);
 				}
 				else
 				{
-					sound_controller::SoundController::StartSound("button");
+					sound_controller::SoundController::StartSound(m_JsonTag[2]);
 				}
 
 				WaitTimer(240);

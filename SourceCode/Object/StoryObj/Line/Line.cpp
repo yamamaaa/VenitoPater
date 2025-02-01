@@ -48,6 +48,8 @@ namespace object
 		//現在のゲームステータスを取得
 		GameStatus status=ObjectManager::GetNowGameState();
 
+		auto json = JsonManager::SoundData_Instance()->Get_Story_SoundData_Instance();
+
 		//日数別に読み込むファイルを変更
 		int dey = NumDays::GetNumDays();
 		std::string text;
@@ -65,30 +67,37 @@ namespace object
 				text = JsonManager::TextData_Instance()->Get_CharacterData_Instance()->GetLineData_Day_4();
 				break;
 			}
-			sound_controller::SoundController::AddSoundData("../Asset/sound/story/story_bgm.mp3", "bgm", 200, true);
+
+			m_JsonTag[0] = json->GetStory_NameData();
+			sound_controller::SoundController::AddSoundData(json->GetStory_PathData(), m_JsonTag[0], json->GetStory_VolumeData(), json->GetStory_TypeData());
 		}
 		if (status == Still)
 		{
 			switch (dey)
 			{
 			case 0:
-				sound_controller::SoundController::AddSoundData("../Asset/sound/story/still_day_0_bgm.mp3", "bgm", 200, true);
+				m_JsonTag[0] = json->GetStill_Day_0_NameData();
+				sound_controller::SoundController::AddSoundData(json->GetStill_Day_0_PathData(), m_JsonTag[0], json->GetStill_Day_0_VolumeData(), json->GetStill_Day_0_TypeData());
 				text = JsonManager::TextData_Instance()->Get_StillData_Instance()->GetLineData_Day_0();
 				break;
 			case 1:
-				sound_controller::SoundController::AddSoundData("../Asset/sound/story/still_day_1_bgm.mp3", "bgm", 200, true);
+				m_JsonTag[0] = json->GetStill_Day_1_NameData();
+				sound_controller::SoundController::AddSoundData(json->GetStill_Day_1_PathData(), m_JsonTag[0], json->GetStill_Day_1_VolumeData(), json->GetStill_Day_1_TypeData());
 				text = JsonManager::TextData_Instance()->Get_StillData_Instance()->GetLineData_Day_1();
 				break;
 			case 2:
-				sound_controller::SoundController::AddSoundData("../Asset/sound/story/still_day_2_bgm.mp3", "bgm", 200, true);
+				m_JsonTag[0] = json->GetStill_Day_2_NameData();
+				sound_controller::SoundController::AddSoundData(json->GetStill_Day_2_PathData(), m_JsonTag[0], json->GetStill_Day_2_VolumeData(), json->GetStill_Day_2_TypeData());
 				text = JsonManager::TextData_Instance()->Get_StillData_Instance()->GetLineData_Day_2();
 				break;
 			case 3:
-				sound_controller::SoundController::AddSoundData("../Asset/sound/story/still_day_3_bgm.mp3", "bgm", 160, true);
+				m_JsonTag[0] = json->GetStill_Day_3_NameData();
+				sound_controller::SoundController::AddSoundData(json->GetStill_Day_3_PathData(), m_JsonTag[0], json->GetStill_Day_3_VolumeData(), json->GetStill_Day_3_TypeData());
 				text = JsonManager::TextData_Instance()->Get_StillData_Instance()->GetLineData_Day_3();
 				break;
 			case 4:
-				sound_controller::SoundController::AddSoundData("../Asset/sound/story/still_day_4_bgm.mp3", "bgm", 250, true);
+				m_JsonTag[0] = json->GetStill_Day_4_NameData();
+				sound_controller::SoundController::AddSoundData(json->GetStill_Day_4_PathData(), m_JsonTag[0], json->GetStill_Day_4_VolumeData(), json->GetStill_Day_4_TypeData());
 				text = JsonManager::TextData_Instance()->Get_StillData_Instance()->GetLineData_Day_4();
 				break;
 			}
@@ -97,7 +106,8 @@ namespace object
 		//ファイルの読み込み
 		m_TxtFile.open(text.c_str());
 
-		sound_controller::SoundController::AddSoundData("../Asset/sound/story/button.mp3", "button", 220, false);
+		m_JsonTag[1] = json->GetButtonNameData();
+		sound_controller::SoundController::AddSoundData(json->GetButtonPathData(), m_JsonTag[1], json->GetButtonVolumeData(), json->GetButtonTypeData());
 
 		m_FontHandle = CreateFontToHandle("メイリオ", 30, 5, DX_FONTTYPE_ANTIALIASING);
 
@@ -114,11 +124,11 @@ namespace object
 
 		if (m_IsSound_Start)
 		{
-			sound_controller::SoundController::StartSound("bgm");
+			sound_controller::SoundController::StartSound(m_JsonTag[0]);
 		}
 		else
 		{
-			sound_controller::SoundController::StopSound("bgm");
+			sound_controller::SoundController::StopSound(m_JsonTag[0]);
 		}
 
 		//入力状態が不可の時は処理なし
@@ -211,7 +221,7 @@ namespace object
 				{
 					//文字のセットを行う
 					m_IsLineSet = false;
-					sound_controller::SoundController::StartSound("button");
+					sound_controller::SoundController::StartSound(m_JsonTag[1]);
 				}
 				m_IsClick = false;
 				m_ClickCount = m_CLICKCOU_MAX;

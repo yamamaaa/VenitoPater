@@ -150,6 +150,8 @@ namespace object
 
 		GameSystem::Window* window;	//windowインスタンス
 
+		std::string m_JsonTag;	//サウンド用Jsonタグ
+
 		//enemylinePos
 		std::unordered_map<std::string, POINTS> m_EmyLine_Pos{
 			{enemyline_tag.APPEAR,{0,50}},

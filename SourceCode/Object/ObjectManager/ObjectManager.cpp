@@ -59,7 +59,6 @@ namespace object
                 }
             }
         }
-
     }
 
     void ObjectManager::DrawAllObj()
