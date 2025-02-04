@@ -11,7 +11,7 @@
 
 #include "../../Object/TitleObj/TitleUi/TitleUi.h"
 #include "../../Object/TitleObj/SelectMode/SelectMode.h"
-#include"../a/a.h"
+#include"../Clear/Clear.h"
 
 using namespace level_controller;
 
@@ -47,6 +47,12 @@ namespace scene
 
     SceneBase* Title::UpdateScene(float deltaTime)
     {
+        //object::ObjectManager::SetNextGameState(object::Score);
+        //object::ObjectManager::SetPlayMode(object::PlayRankingMode);
+        //object::ObjectManager::ReleaseAllObj();
+        //transitor::FadeTransitor::FadeProcessing();
+        //return new Clear();
+
         if (!m_FadeInSet)
         {
             transitor::FadeTransitor::FadeInStart(deltaTime);

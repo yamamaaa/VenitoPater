@@ -743,18 +743,6 @@
     <Filter Include="ソースコード\JsonMaster\ImageData\StoryImgData">
       <UniqueIdentifier>{c29cbcd5-9b01-4d9f-ab05-84b943535f52}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースコード\Object\Result">
-      <UniqueIdentifier>{63b8c6d3-74ab-42d0-9e4e-be1a8da159cb}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースコード\Object\Result\GameOverUi">
-      <UniqueIdentifier>{38e5d6ed-eb1e-4536-b56a-1ac73379cf54}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースコード\Object\Result\BackGround">
-      <UniqueIdentifier>{75c808eb-45ce-4912-973e-0a29c745cf08}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースコード\Object\Result\GameClearUi">
-      <UniqueIdentifier>{dad16d75-e43e-48a5-8aaa-bf384e0050b6}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソースコード\Object\StoryObj\StoryItem">
       <UniqueIdentifier>{9d8ef316-c524-489b-9342-d3ec3c60b160}</UniqueIdentifier>
     </Filter>
@@ -829,6 +817,18 @@
     </Filter>
     <Filter Include="ソースコード\Object\StageObj\ClockWork\RPMController">
       <UniqueIdentifier>{5650a5ef-843d-4de9-8bc2-1f54085b9839}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\Result">
+      <UniqueIdentifier>{63b8c6d3-74ab-42d0-9e4e-be1a8da159cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\Result\GameOverUi">
+      <UniqueIdentifier>{38e5d6ed-eb1e-4536-b56a-1ac73379cf54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\Result\BackGround">
+      <UniqueIdentifier>{75c808eb-45ce-4912-973e-0a29c745cf08}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\Result\GameClearUi">
+      <UniqueIdentifier>{dad16d75-e43e-48a5-8aaa-bf384e0050b6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

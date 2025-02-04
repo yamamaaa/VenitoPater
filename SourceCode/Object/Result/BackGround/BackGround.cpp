@@ -21,15 +21,17 @@ namespace object
     {
         m_ObjPos = { 0,0 };
 
-        if (GameOver == ObjectManager::GetNowGameState()|| TimeOver == ObjectManager::GetNowGameState())
+        GameStatus status = ObjectManager::GetNowGameState();
+
+        if (GameOver == status || TimeOver == status)
         {
             m_ObjHandle = LoadGraph(JsonManager::ImgData_Instance()->Get_ResultData_Instance()->GetOverData_BackGround().c_str());
         }
-        if (GameClear == ObjectManager::GetNowGameState())
+        if (GameClear == status)
         {
             m_ObjHandle = LoadGraph(JsonManager::ImgData_Instance()->Get_ResultData_Instance()->GetClearData_BackGround().c_str());
         }
-        if (Story == ObjectManager::GetNowGameState())
+        if (Story == status)
         {
             int day=NumDays::GetNumDays();
             std::string imgdata;
@@ -44,6 +46,11 @@ namespace object
             }
             m_ObjPos = { 0,184 };
             m_ObjHandle = LoadGraph(imgdata.c_str());
+        }
+        if (Score == status)
+        {
+            m_ObjHandle = LoadGraph("../Asset/image/score/score.png");
+            m_ObjPos = { 0,0 };
         }
     }
 
