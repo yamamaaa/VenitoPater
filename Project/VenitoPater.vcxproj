@@ -89,6 +89,7 @@
     <ClCompile Include="..\SourceCode\Object\Time\Time\Time.cpp" />
     <ClCompile Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.cpp" />
     <ClCompile Include="..\SourceCode\Object\TitleObj\TitleUi\TitleUi.cpp" />
+    <ClCompile Include="..\SourceCode\Object\TutorialUi\TutorialUi.cpp" />
     <ClCompile Include="..\SourceCode\Scene\a\a.cpp" />
     <ClCompile Include="..\SourceCode\Scene\Clear\Clear.cpp" />
     <ClCompile Include="..\SourceCode\Scene\PlayEnd\PlayEnd.cpp" />
@@ -162,6 +163,7 @@
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Story_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Play_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\TitleObjectTag.h" />
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\Tutorial_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\Result\BackGround\BackGround.h" />
     <ClInclude Include="..\SourceCode\Object\Result\GameClearUi\GameClearUi.h" />
     <ClInclude Include="..\SourceCode\Object\Result\GameOverUi\GameOverUi.h" />
@@ -186,6 +188,7 @@
     <ClInclude Include="..\SourceCode\Object\Time\Time\Time.h" />
     <ClInclude Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.h" />
     <ClInclude Include="..\SourceCode\Object\TitleObj\TitleUi\TitleUi.h" />
+    <ClInclude Include="..\SourceCode\Object\TutorialUi\TutorialUi.h" />
     <ClInclude Include="..\SourceCode\Scene\a\a.h" />
     <ClInclude Include="..\SourceCode\Scene\Clear\Clear.h" />
     <ClInclude Include="..\SourceCode\Scene\PlayEnd\PlayEnd.h" />

@@ -244,6 +244,9 @@
     <ClCompile Include="..\SourceCode\Scene\a\a.cpp">
       <Filter>ソースコード\Scene\a</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\TutorialUi\TutorialUi.cpp">
+      <Filter>ソースコード\Object\Tutorial</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -530,6 +533,12 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Scene\a\a.h">
       <Filter>ソースコード\Scene\a</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\Tutorial_ObjectTag.h">
+      <Filter>ソースコード\Object\ObjectTag</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\TutorialUi\TutorialUi.h">
+      <Filter>ソースコード\Object\Tutorial</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -829,6 +838,9 @@
     </Filter>
     <Filter Include="ソースコード\Object\Result\GameClearUi">
       <UniqueIdentifier>{dad16d75-e43e-48a5-8aaa-bf384e0050b6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\Tutorial">
+      <UniqueIdentifier>{b13a15d7-1548-4189-81d3-5c86744ed2ea}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
