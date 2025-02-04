@@ -19,6 +19,9 @@ namespace scene
 
         //現在のシーンをタイトルに設定
         m_NowScene.emplace(new Title);
+        //Game状態をセット
+        object::ObjectManager::SetNowGameState(object::Title);
+        object::ObjectManager::SetNextGameState(object::Title);
 
         //マウスの表示設定
         SetMouseDispFlag(TRUE);

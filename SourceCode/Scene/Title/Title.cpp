@@ -1,6 +1,7 @@
 #include "Title.h"
 
 #include "../../Object/ObjectTag/TitleObjectTag.h"
+#include "../../Object/ObjectTag/Tutorial_ObjectTag.h"
 
 #include"../../LevelController/LevelController.h"
 #include"../../LevelController/LevelStatus.h"
@@ -11,7 +12,8 @@
 
 #include "../../Object/TitleObj/TitleUi/TitleUi.h"
 #include "../../Object/TitleObj/SelectMode/SelectMode.h"
-#include"../Clear/Clear.h"
+
+#include"../../Object/TutorialUi/TutorialUi.h"
 
 using namespace level_controller;
 
@@ -31,18 +33,35 @@ namespace scene
 
     void Title::LoadObject()
     {
-        //オブジェクトタグをセット
-        object::ObjectManager::NowSceneSet(objecttag::TitleObjectTagAll);
-        //Game状態をセット
-        object::ObjectManager::SetNowGameState(object::Title);
-        object::ObjectManager::SetNextGameState(object::Title);
 
-        LevelController::Initialize();
-        object::NumDays::Initialize();
+        if (object::Title == object::ObjectManager::GetNowGameState())
+        {
+            //オブジェクトタグをセット
+            object::ObjectManager::NowSceneSet(objecttag::TitleObjectTagAll);
+            //Game状態をセット
+            object::ObjectManager::SetNowGameState(object::Title);
+            object::ObjectManager::SetNextGameState(object::Title);
 
-        ////Title画面の全Ui生成
-        object::ObjectManager::Entry(new object::TitleUi);
-        object::ObjectManager::Entry(new object::SelectMode);
+            LevelController::Initialize();
+            object::NumDays::Initialize();
+
+            ////Title画面の全Ui生成
+            object::ObjectManager::Entry(new object::TitleUi);
+            object::ObjectManager::Entry(new object::SelectMode);
+        }
+        else
+        {
+            //オブジェクトタグをセット
+            object::ObjectManager::NowSceneSet(objecttag::Tutorial_ObjectTagAll);
+            //Game状態をセット
+            object::ObjectManager::SetNowGameState(object::Tutorial);
+            object::ObjectManager::SetNextGameState(object::Tutorial);
+
+            object::ObjectManager::Entry(new object::TutorialUi);
+        }
+
+        //初期化
+        m_IsNextSame = false;
     }
 
     SceneBase* Title::UpdateScene(float deltaTime)
@@ -67,7 +86,7 @@ namespace scene
         {
             m_IsChangeScene = true;
             transitor::FadeTransitor::FadeOutStart(deltaTime);
-            TransitorScene(deltaTime);
+            TransitorScene(deltaTime, object::GameStatus::Title, object::GameStatus::Tutorial, m_IsNextSame);
         }
         else
         {
@@ -86,6 +105,12 @@ namespace scene
         {
             LevelController::SetLevel(levelStatus.NOMAL);
             return new Play();
+        }
+
+        //チュートリアル、タイトル
+        if (m_IsNextSame)
+        {
+            return new Title();
         }
 
         return this;
