@@ -38,6 +38,16 @@ namespace object
 		void LoadObject() override;
 
 		/// <summary>
+		/// ハイスコアの取得
+		/// </summary>
+		void HighScoreGet();
+
+		/// <summary>
+		/// ハイスコアのセット
+		/// </summary>
+		void HighScoreSet();
+
+		/// <summary>
 		/// 更新
 		/// </summary>
 		/// <param name="deltatime">デルタタイム</param>
@@ -59,6 +69,11 @@ namespace object
 		void ClickUiMoveAnim(const float deltatime);
 
 		/// <summary>
+		/// ハイスコアの表示
+		/// </summary>
+		void HighScoreDraw();
+
+		/// <summary>
 		/// 描画
 		/// </summary>
 		void DrawObj()override;
@@ -72,9 +87,9 @@ namespace object
 		int m_FontHandle_Score;		//フォントハンドル_スコア
 		int m_FontHandle_Item;		//フォントハンドル_アイテム数
 
-		const POINTS m_FONTSIZE_TEXT = { 60,15 };	 //フォントサイズ_テキスト
-		const POINTS m_FONTSIZE_SCORE = { 100,15 };  //フォントサイズ_スコア
-		const POINTS m_FONTSIZE_ITEM = { 30,5 };     //フォントサイズ_アイテム数
+		const POINTS m_FONTSIZE_TEXT = { 30,10 };	 //フォントサイズ_テキスト
+		const POINTS m_FONTSIZE_SCORE = { 150,60 };  //フォントサイズ_スコア
+		const POINTS m_FONTSIZE_ITEM = { 100,20 };     //フォントサイズ_アイテム数
 
 		POINTFLOAT m_UiPos;		//クリックUi座標
 		POINTFLOAT m_NItem_Pos; //アイテム数座標_ノーマル
@@ -100,8 +115,12 @@ namespace object
 
 		float m_WaitCount;	//待ち時間カウント
 
-		int m_Socore;		//スコア
-		int m_Socore_Draw;	//スコア_表示用
+		int m_Score;		//スコア
+		int m_Score_Draw;	//スコア_表示用
+		int m_HighScore;	//ハイスコア
+		int m_HighScore_Draw;	//ハイスコア_表示用
+
+		bool m_IsHighScore_Up;		//ハイスコアを更新したか
 
 		int m_NItemNum;		//アイテム総数_ノーマル
 		int m_NItem_Draw;	//アイテム_表示用_ノーマル
@@ -113,7 +132,7 @@ namespace object
 
 		const float m_MOVESPEED = 30.0f;						//移動スピード
 		const float m_MOVEPOS_MAX = 3.0f;						//クリックUi移動量最大値
-		const POINTFLOAT m_UIPOS_RESET = { 930,980 };		    //クリックUi初期位置
+		const POINTFLOAT m_UIPOS_RESET = { 910,1015 };		    //クリックUi初期位置
 
 		VECTOR m_NowColor;                             //現在の文字色
 		const VECTOR m_COLOR_DEFAULT = VGet(255, 255, 255);  //白色

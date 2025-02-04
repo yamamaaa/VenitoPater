@@ -4,7 +4,7 @@
 namespace object
 {
 	/// <summary>
-	/// ノルマ関連
+	/// アイテムノルマ関連
 	/// </summary>
 	class ItemGetNum final
 	{
