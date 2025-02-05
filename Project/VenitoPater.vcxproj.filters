@@ -247,6 +247,9 @@
     <ClCompile Include="..\SourceCode\Object\TutorialUi\TutorialUi.cpp">
       <Filter>ソースコード\Object\Tutorial</Filter>
     </ClCompile>
+    <ClCompile Include="..\SourceCode\Object\Menu\Menu.cpp">
+      <Filter>ソースコード\Object\Menu</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\SourceCode\Fps\Fps.h">
@@ -539,6 +542,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\TutorialUi\TutorialUi.h">
       <Filter>ソースコード\Object\Tutorial</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Object\Menu\Menu.h">
+      <Filter>ソースコード\Object\Menu</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -841,6 +847,9 @@
     </Filter>
     <Filter Include="ソースコード\Object\Tutorial">
       <UniqueIdentifier>{b13a15d7-1548-4189-81d3-5c86744ed2ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Object\Menu">
+      <UniqueIdentifier>{016b7cf9-8fef-4a13-9450-3c8302e539fd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

@@ -37,6 +37,8 @@ namespace scene
         // エスケープキーが押されるかウインドウが閉じられるまでループ
         while (ProcessMessage() == 0 && CheckHitKey(KEY_INPUT_ESCAPE) == 0)
         {
+            if (object::GameStatus::GameEnd == object::ObjectManager::GetNextGameState())
+                break;
             //シーンのフロー
             UpdateScene();    //更新処理
             ChangeScene();    //切り替え処理

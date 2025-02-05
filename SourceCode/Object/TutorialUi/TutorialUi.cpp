@@ -15,6 +15,17 @@ namespace object
 
 	TutorialUi::~TutorialUi()
 	{
+		for (int i = 0; i < 6; i++)
+		{
+			DeleteGraph(m_Tutorial_Img[i]);
+		}
+
+		m_Tutorial_Img.clear();
+		m_MenuHit_Pos.clear();
+
+		DeleteGraph(m_MenuImg);
+		DeleteGraph(m_SelectImg);
+		DeleteGraph(m_BackImg);
 	}
 
 	void TutorialUi::LoadObject()

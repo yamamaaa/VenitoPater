@@ -209,6 +209,9 @@ namespace object
 			}
 			else if (GetMouseInput() & MOUSE_INPUT_LEFT)
 			{
+				if (mousestatus::MouseStatus::GetIsMenuMode())
+					return;
+
 				//文字がアニメ中なら
 				if (m_IslineAnim)
 				{

@@ -33,7 +33,6 @@ namespace scene
 
     void Title::LoadObject()
     {
-
         if (object::Title == object::ObjectManager::GetNowGameState())
         {
             //オブジェクトタグをセット
@@ -66,11 +65,11 @@ namespace scene
 
     SceneBase* Title::UpdateScene(float deltaTime)
     {
-        //object::ObjectManager::SetNextGameState(object::Score);
-        //object::ObjectManager::SetPlayMode(object::PlayRankingMode);
+        //object::ObjectManager::SetNextGameState(object::GamePlay);
+        //object::ObjectManager::SetPlayMode(object::PlayNewGame);
         //object::ObjectManager::ReleaseAllObj();
         //transitor::FadeTransitor::FadeProcessing();
-        //return new Clear();
+        //return new Play();
 
         if (!m_FadeInSet)
         {

@@ -11,6 +11,7 @@
 #include"../../Object/StoryObj/Character/Character.h"
 #include"../../Object/StoryObj/StoryItem/StoryItem.h"
 #include"../../Object/StoryObj/Line/Line.h"
+#include"../../Object/Menu/Menu.h"
 
 #include"../../Object/ObjectTag/Still_ObjectTag.h"
 
@@ -58,6 +59,8 @@ namespace scene
 			object::ObjectManager::Entry(new object::StillDraw);
 			object::ObjectManager::Entry(new object::Line);
 		}
+
+		object::ObjectManager::Entry(new object::Menu);
 
 		//èâä˙âª
 		m_IsNextSame = false;

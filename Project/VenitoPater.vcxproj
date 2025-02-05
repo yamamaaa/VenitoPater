@@ -65,6 +65,7 @@
     <ClCompile Include="..\SourceCode\Object\GameUi\ItemUi\ItemUi.cpp" />
     <ClCompile Include="..\SourceCode\Object\GameUi\RPMHPUi\RPMHPUi.cpp" />
     <ClCompile Include="..\SourceCode\Object\GameUi\WarningUi\WarningUi.cpp" />
+    <ClCompile Include="..\SourceCode\Object\Menu\Menu.cpp" />
     <ClCompile Include="..\SourceCode\Object\MouseBase\MouseBase.cpp" />
     <ClCompile Include="..\SourceCode\Object\ObjectBase\ObjectBase.cpp" />
     <ClCompile Include="..\SourceCode\Object\ObjectManager\ObjectManager.cpp" />
@@ -151,6 +152,7 @@
     <ClInclude Include="..\SourceCode\Object\GameUi\ItemUi\ItemUi.h" />
     <ClInclude Include="..\SourceCode\Object\GameUi\RPMHPUi\RPMHPUi.h" />
     <ClInclude Include="..\SourceCode\Object\GameUi\WarningUi\WarningUi.h" />
+    <ClInclude Include="..\SourceCode\Object\Menu\Menu.h" />
     <ClInclude Include="..\SourceCode\Object\MouseBase\MouseBase.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectBase\ObjectBase.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectManager\GameStatus.h" />

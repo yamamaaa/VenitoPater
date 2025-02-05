@@ -38,6 +38,7 @@ namespace object
 
 		//表示エリアの初期値セット
 		m_ObjHandle = m_AreaImg[AreaNumController::GetAreaNum()];
+
 		auto json = JsonManager::SoundData_Instance()->Get_Play_SoundData_Instance();
 		m_JsonTag = json->GetBgmNameData();
 		sound_controller::SoundController::AddSoundData(json->GetBgmPathData(), m_JsonTag, json->GetBgmVolumeData(), json->GetBgmTypeData());

@@ -111,6 +111,8 @@ namespace object
         }
 
         m_HighScore_Draw = m_HighScore;
+
+        file.close();
     }
 
     void ScoreDraw::HighScoreSet()
@@ -119,6 +121,7 @@ namespace object
         std::ofstream file("../Asset/text/score/high_score.txt");
         std::string score = std::to_string(m_HighScore);
         file << score << std::endl;;
+        file.close();
     }
 
     void ScoreDraw::UpdateObj(const float deltatime)

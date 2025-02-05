@@ -15,5 +15,6 @@ namespace object
 		TimeOver,
 		GameOver,
 		PlayEnd,
+		GameEnd,
 	};
 }
