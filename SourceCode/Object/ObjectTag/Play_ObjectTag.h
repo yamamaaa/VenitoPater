@@ -27,6 +27,7 @@ namespace objecttag
         std::string TIME = "time";
         std::string ENEMYACTION = "enemyaction";
         std::string TEXTDRAW = "textdraw";
+        std::string MENU = "menu";
     } play_ObjectTag;
 
 
@@ -52,6 +53,6 @@ namespace objecttag
         play_ObjectTag.WARNINGUI,
         play_ObjectTag.TIME,
         play_ObjectTag.ENEMYACTION,
-        play_ObjectTag.TEXTDRAW,
+        play_ObjectTag.MENU,
     };
 }

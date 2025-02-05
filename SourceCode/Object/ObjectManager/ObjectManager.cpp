@@ -1,4 +1,5 @@
 #include "ObjectManager.h"
+#include "../../MouseStatus/MouseStatus.h"
 
 namespace object
 {
@@ -35,13 +36,10 @@ namespace object
 
     void ObjectManager::ReleaseAllObj()
     {
-        //空じゃなかったらオブジェクト削除
+        //オブジェクト削除
         for (std::string& tag : objectmanager->m_SceneTag)
         {
-            if (!objectmanager->m_Objects[tag].empty())
-            {
-                objectmanager->m_Objects[tag].clear();
-            }
+            objectmanager->m_Objects[tag].clear();
         }
 
         objectmanager->m_Objects.clear();
@@ -49,6 +47,17 @@ namespace object
 
     void ObjectManager::UpdateAllObj(const float deltatime)
     {
+        //メニューモードならメニューのみ更新
+        if (mousestatus::MouseStatus::GetIsMenuMode())
+        {
+            for (auto& obj : objectmanager->m_Objects[objectmanager->MENU])
+            {
+                //更新
+                obj->UpdateObj(deltatime);
+            }
+            return;
+        }
+
         for (std::string& tag : objectmanager->m_SceneTag)
         {
             if (!objectmanager->m_Objects[tag].empty())
@@ -79,11 +88,7 @@ namespace object
 
     void ObjectManager::ReleaseObj(std::string tagname)
     {
-        //オブジェクトが空じゃないなら削除
-        if (!objectmanager->m_Objects[tagname].empty())
-        {
-            objectmanager->m_Objects[tagname].clear();
-        }
+        objectmanager->m_Objects[tagname].clear();
     }
 
     ObjectBase* ObjectManager::GetFirstGameObj(std::string tagname)

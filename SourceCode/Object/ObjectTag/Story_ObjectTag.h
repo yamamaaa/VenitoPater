@@ -13,6 +13,7 @@ namespace objecttag
         std::string CHARACTER = "character";
         std::string STORYITEM = "storyitem";
         std::string LINE = "line";
+        std::string MENU = "menu";
     } story_ObjectTag;
 
     /// <summary>
@@ -24,5 +25,6 @@ namespace objecttag
         story_ObjectTag.CHARACTER,
         story_ObjectTag.STORYITEM,
         story_ObjectTag.LINE,
+        story_ObjectTag.MENU,
     };
 }

@@ -5,6 +5,7 @@
 
 #include"../Clear/Clear.h"
 #include"../Result/Result.h"
+#include"../Title/Title.h"
 
 #include"../../Object/CharaObj/AvoidStatus/AvoidStatus.h"
 
@@ -32,10 +33,11 @@
 #include"../../Object/Time/Time/Time.h"
 #include"../../Object/Time/TimeStatus/TimeStatus.h"
 #include"../../Object/TextDraw/TextDraw.h"
+#include"../../Object/Menu/Menu.h"
 
 #include"../../Object/CharaObj/Enemy/EnemyAction/EnemyAction.h"
 
-#include"../a/a.h"
+#include"../../MouseStatus/MouseStatus.h"
 
 namespace scene
 {
@@ -96,6 +98,9 @@ namespace scene
 			object::ObjectManager::Entry(new object::TextDraw);
 		}
 
+		//メニュー関連
+		object::ObjectManager::Entry(new object::Menu);
+
 		//敵のアクション生成
 		object::ObjectManager::Entry(new object::EnemyAction);
 	}
@@ -134,6 +139,12 @@ namespace scene
 		if (object::GameOver == status || object::TimeOver == status)
 		{
 			return new Result;
+		}
+
+		//タイトル
+		if (object::Title == status)
+		{
+			return new Title;
 		}
 
 		return this;
