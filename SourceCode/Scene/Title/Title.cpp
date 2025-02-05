@@ -35,18 +35,18 @@ namespace scene
     {
         if (object::Title == object::ObjectManager::GetNowGameState())
         {
-            //オブジェクトタグをセット
-            object::ObjectManager::NowSceneSet(objecttag::TitleObjectTagAll);
-            //Game状態をセット
-            object::ObjectManager::SetNowGameState(object::Title);
-            object::ObjectManager::SetNextGameState(object::Title);
+            ////オブジェクトタグをセット
+            //object::ObjectManager::NowSceneSet(objecttag::TitleObjectTagAll);
+            ////Game状態をセット
+            //object::ObjectManager::SetNowGameState(object::Title);
+            //object::ObjectManager::SetNextGameState(object::Title);
 
             LevelController::Initialize();
             object::NumDays::Initialize();
 
-            ////Title画面の全Ui生成
-            object::ObjectManager::Entry(new object::TitleUi);
-            object::ObjectManager::Entry(new object::SelectMode);
+            //////Title画面の全Ui生成
+            //object::ObjectManager::Entry(new object::TitleUi);
+            //object::ObjectManager::Entry(new object::SelectMode);
         }
         else
         {
@@ -65,11 +65,11 @@ namespace scene
 
     SceneBase* Title::UpdateScene(float deltaTime)
     {
-        //object::ObjectManager::SetNextGameState(object::GamePlay);
-        //object::ObjectManager::SetPlayMode(object::PlayNewGame);
-        //object::ObjectManager::ReleaseAllObj();
-        //transitor::FadeTransitor::FadeProcessing();
-        //return new Play();
+        object::ObjectManager::SetNextGameState(object::GamePlay);
+        object::ObjectManager::SetPlayMode(object::PlayNewGame);
+        object::ObjectManager::ReleaseAllObj();
+        transitor::FadeTransitor::FadeProcessing();
+        return new Play();
 
         if (!m_FadeInSet)
         {
