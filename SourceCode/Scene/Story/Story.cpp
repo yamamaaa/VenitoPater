@@ -3,7 +3,7 @@
 #include"../../Object/ObjectTag/Story_ObjectTag.h"
 
 #include"../Play/Play.h"
-#include"../PlayEnd/PlayEnd.h"
+#include"../Movie/Movie.h"
 
 #include"../../Object/StoryObj/LineStatus/LineStatus.h"
 
@@ -97,7 +97,7 @@ namespace scene
 
 		if (object::PlayEnd == status)
 		{
-			return new PlayEnd;
+			return new Movie;
 		}
 
 		if (m_IsNextSame)

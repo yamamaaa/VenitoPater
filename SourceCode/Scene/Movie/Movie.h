@@ -6,19 +6,19 @@ namespace scene
     /// <summary>
      /// ゲーム終了画面関連
      /// </summary>
-    class PlayEnd :public SceneBase
+    class Movie :public SceneBase
     {
     public:
 
         /// <summary>
         /// コンストラクタ
         /// </summary>
-        PlayEnd();
+        Movie();
 
         /// <summary>
         /// デストラクタ
         /// </summary>
-        ~PlayEnd();
+        ~Movie();
 
     private:
 
@@ -39,7 +39,6 @@ namespace scene
         /// </summary>
         void DrawScene()override;
 
-        bool m_IsNextSame;      //次も同じシーンか
-
+        std::string m_MovieFile;  //再生する動画のファイルパス
     };
 }

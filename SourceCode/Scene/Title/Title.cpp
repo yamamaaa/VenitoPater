@@ -9,6 +9,7 @@
 
 #include"../Play/Play.h"
 #include"../Story/Story.h"
+#include"../Movie/Movie.h"
 
 #include "../../Object/TitleObj/TitleUi/TitleUi.h"
 #include "../../Object/TitleObj/SelectMode/SelectMode.h"
@@ -35,18 +36,18 @@ namespace scene
     {
         if (object::Title == object::ObjectManager::GetNowGameState())
         {
-            ////オブジェクトタグをセット
-            //object::ObjectManager::NowSceneSet(objecttag::TitleObjectTagAll);
-            ////Game状態をセット
-            //object::ObjectManager::SetNowGameState(object::Title);
-            //object::ObjectManager::SetNextGameState(object::Title);
+            //オブジェクトタグをセット
+            object::ObjectManager::NowSceneSet(objecttag::TitleObjectTagAll);
+            //Game状態をセット
+            object::ObjectManager::SetNowGameState(object::Title);
+            object::ObjectManager::SetNextGameState(object::Title);
 
             LevelController::Initialize();
             object::NumDays::Initialize();
 
-            //////Title画面の全Ui生成
-            //object::ObjectManager::Entry(new object::TitleUi);
-            //object::ObjectManager::Entry(new object::SelectMode);
+            ////Title画面の全Ui生成
+            object::ObjectManager::Entry(new object::TitleUi);
+            object::ObjectManager::Entry(new object::SelectMode);
         }
         else
         {
@@ -58,18 +59,17 @@ namespace scene
 
             object::ObjectManager::Entry(new object::TutorialUi);
         }
-
         //初期化
         m_IsNextSame = false;
+        m_Change_Count = m_COUNT_MAX;
     }
 
     SceneBase* Title::UpdateScene(float deltaTime)
     {
-        object::ObjectManager::SetNextGameState(object::GamePlay);
-        object::ObjectManager::SetPlayMode(object::PlayNewGame);
-        object::ObjectManager::ReleaseAllObj();
-        transitor::FadeTransitor::FadeProcessing();
-        return new Play();
+        //object::ObjectManager::SetNextGameState(object::PlayEnd);
+        //object::ObjectManager::SetPlayMode(object::PlayNewGame);
+        //object::ObjectManager::ReleaseAllObj();
+        //transitor::FadeTransitor::FadeProcessing();
 
         if (!m_FadeInSet)
         {
@@ -89,7 +89,20 @@ namespace scene
         }
         else
         {
+            m_Change_Count -= m_COUNT_DECREMENT* deltaTime;
+
+            if (m_Change_Count <= 0.0f)
+            {
+                object::ObjectManager::SetNextGameState(object::GameStatus::Standby);
+            }
+
             object::ObjectManager::UpdateAllObj(deltaTime);
+        }
+
+        //待機モードかプレイ終了
+        if (object::Standby == status || object::GameStatus::PlayEnd == status)
+        {
+            return new Movie();
         }
 
         //ニューゲーム
@@ -103,7 +116,8 @@ namespace scene
         if (object::GamePlay == status)
         {
             LevelController::SetLevel(levelStatus.NOMAL);
-            return new Play();
+            /*return new Play();*/
+            return new Movie();
         }
 
         //チュートリアル、タイトル
@@ -117,13 +131,14 @@ namespace scene
 
     void Title::DrawScene()
     {
-        DrawFormatString(0, 0, GetColor(255, 255, 255), "title");
-
         if (m_IsChangeScene || !m_FadeInSet)
         {
             transitor::FadeTransitor::DrawFade();
         }
 
         object::ObjectManager::DrawAllObj();
+
+        DrawString(0, 0, "title", GetColor(255, 255, 255));
+        DrawFormatString(0, 0, GetColor(255, 255, 255), "切り替わりまで:%f", m_Change_Count);
     }
 }
