@@ -40,5 +40,9 @@ namespace scene
         void DrawScene()override;
 
         bool m_IsNextSame;      //次も同じシーンか
+        float m_Change_Count;   //ムービーモードに変わるまでのカウント
+
+        const float m_COUNT_DECREMENT = 1.0f;     //カウント減らし量
+        const float m_COUNT_MAX = 200.0f;         //ムービーモードに変わるまで
     };
 }

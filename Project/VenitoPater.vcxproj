@@ -93,7 +93,7 @@
     <ClCompile Include="..\SourceCode\Object\TutorialUi\TutorialUi.cpp" />
     <ClCompile Include="..\SourceCode\Scene\a\a.cpp" />
     <ClCompile Include="..\SourceCode\Scene\Clear\Clear.cpp" />
-    <ClCompile Include="..\SourceCode\Scene\PlayEnd\PlayEnd.cpp" />
+    <ClCompile Include="..\SourceCode\Scene\Movie\Movie.cpp" />
     <ClCompile Include="..\SourceCode\Scene\Play\Play.cpp" />
     <ClCompile Include="..\SourceCode\Scene\Result\Result.cpp" />
     <ClCompile Include="..\SourceCode\Scene\SceneBase\SceneBase.cpp" />
@@ -193,7 +193,7 @@
     <ClInclude Include="..\SourceCode\Object\TutorialUi\TutorialUi.h" />
     <ClInclude Include="..\SourceCode\Scene\a\a.h" />
     <ClInclude Include="..\SourceCode\Scene\Clear\Clear.h" />
-    <ClInclude Include="..\SourceCode\Scene\PlayEnd\PlayEnd.h" />
+    <ClInclude Include="..\SourceCode\Scene\Movie\Movie.h" />
     <ClInclude Include="..\SourceCode\Scene\Play\Play.h" />
     <ClInclude Include="..\SourceCode\Scene\Result\Result.h" />
     <ClInclude Include="..\SourceCode\Scene\SceneBase\SceneBase.h" />

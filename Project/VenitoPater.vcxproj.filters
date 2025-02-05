@@ -202,9 +202,6 @@
     <ClCompile Include="..\SourceCode\SoundController\SoundController.cpp">
       <Filter>ソースコード\SoundController</Filter>
     </ClCompile>
-    <ClCompile Include="..\SourceCode\Scene\PlayEnd\PlayEnd.cpp">
-      <Filter>ソースコード\Scene\PlayEnd</Filter>
-    </ClCompile>
     <ClCompile Include="..\SourceCode\NumDays\NumDays.cpp">
       <Filter>ソースコード\NumDays</Filter>
     </ClCompile>
@@ -249,6 +246,9 @@
     </ClCompile>
     <ClCompile Include="..\SourceCode\Object\Menu\Menu.cpp">
       <Filter>ソースコード\Object\Menu</Filter>
+    </ClCompile>
+    <ClCompile Include="..\SourceCode\Scene\Movie\Movie.cpp">
+      <Filter>ソースコード\Scene\Movie</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -492,9 +492,6 @@
     <ClInclude Include="..\SourceCode\SoundController\SoundController.h">
       <Filter>ソースコード\SoundController</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\Scene\PlayEnd\PlayEnd.h">
-      <Filter>ソースコード\Scene\PlayEnd</Filter>
-    </ClInclude>
     <ClInclude Include="..\SourceCode\NumDays\NumDays.h">
       <Filter>ソースコード\NumDays</Filter>
     </ClInclude>
@@ -545,6 +542,9 @@
     </ClInclude>
     <ClInclude Include="..\SourceCode\Object\Menu\Menu.h">
       <Filter>ソースコード\Object\Menu</Filter>
+    </ClInclude>
+    <ClInclude Include="..\SourceCode\Scene\Movie\Movie.h">
+      <Filter>ソースコード\Scene\Movie</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -779,9 +779,6 @@
     <Filter Include="ソースコード\SoundController">
       <UniqueIdentifier>{cb191739-a926-4a79-8218-4fa0cc58210f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ソースコード\Scene\PlayEnd">
-      <UniqueIdentifier>{ade1abe0-4219-4b35-ba54-b64203fbbbad}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソースコード\NumDays">
       <UniqueIdentifier>{f7418988-b22b-48cd-a368-ae45319bfc91}</UniqueIdentifier>
     </Filter>
@@ -850,6 +847,9 @@
     </Filter>
     <Filter Include="ソースコード\Object\Menu">
       <UniqueIdentifier>{016b7cf9-8fef-4a13-9450-3c8302e539fd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソースコード\Scene\Movie">
+      <UniqueIdentifier>{ade1abe0-4219-4b35-ba54-b64203fbbbad}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
