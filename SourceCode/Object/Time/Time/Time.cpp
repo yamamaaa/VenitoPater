@@ -66,7 +66,7 @@ namespace object
             }
         }
 
-#ifdef DEBUG
+#if DEBUG
         //F1が押されたら時間経過
         if (CheckHitKey(KEY_INPUT_F1))
         {
@@ -115,7 +115,7 @@ namespace object
             DrawFormatStringFToHandle(m_TimePos.x, m_TimePos.y, cr, m_FontHandle_Time, m_TimeText.c_str(), m_DrawTime, m_DrawMinutes);
         }
 
-#ifdef DEBUG
+#if DEBUG
         DrawFormatString(0, 1060, GetColor(255, 255, 255), "実際経過時間:%f", m_NowTime);
         DrawString(0, 1040, "F1でタイムオーバー",GetColor(255, 0, 0));
 #endif // DEBUG

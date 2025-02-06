@@ -29,6 +29,7 @@ namespace mousestatus
 	void MouseStatus::LoadObject()
 	{
 		//‰Šú‰»
-		mousestatus->m_IsInput = false;
+		mousestatus->m_IsInput_Fade = false;
+		mousestatus->m_IsInput_Menu = false;
 	}
 }

@@ -113,6 +113,7 @@ namespace object
 		GameStatus m_NextGameStatus;	//次のゲーム状態
 
 		PlayMenu m_PlayMode;			//現在のプレイモード
+		const std::string MENU = "menu";	//メニュータグ
 
 		static std::unique_ptr<ObjectManager> objectmanager;									// ObjectManagerの実体
 		std::vector<std::string> m_SceneTag;													// 現在のシーンのオブジェクトタグ

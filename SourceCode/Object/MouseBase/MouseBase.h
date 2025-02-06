@@ -50,7 +50,7 @@ namespace object
         /// </summary>
         void CursorHit();
 
-#ifdef DEBUG
+#if DEBUG
         /// <summary>
         /// デバック用座標状態表示 削除予定
         /// </summary>

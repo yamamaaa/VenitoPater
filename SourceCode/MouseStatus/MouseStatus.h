@@ -21,16 +21,28 @@ namespace mousestatus
 		~MouseStatus();
 
 		/// <summary>
-		/// 入力を受け付ける状態か取得
+		/// フェード処理が終わって入力を受け付けるか取得
 		/// </summary>
 		/// <returns>true:入力可|false:入力不可</returns>
-		static const bool GetIsFadeDone() { return mousestatus->m_IsInput; }
+		static const bool GetIsFadeDone() { return mousestatus->m_IsInput_Fade; }
 
 		/// <summary>
-		/// 入力を受け付ける状態かセット
+		/// フェード処理語入力を受け付ける状態かセット
 		/// </summary>
 		/// <param name="status">true:入力可|false:入力不可</param>
-		static void SetIsFadeDone(const bool status) { mousestatus->m_IsInput = status; }
+		static void SetIsFadeDone(const bool status) { mousestatus->m_IsInput_Fade = status; }
+
+		/// <summary>
+		/// メニュー画面中か？
+		/// </summary>
+		/// <returns>true:メニュー画面|false:通常画面</returns>
+		static bool GetIsMenuMode() { return mousestatus->m_IsInput_Menu; }
+
+		/// <summary>
+		/// メニュー画面中かセット
+		/// </summary>
+		/// <param name="status">true:メニュー画面|false:通常画面</param>
+		static void SetIsMenuMode(const bool status) { mousestatus->m_IsInput_Menu = status; }
 
 	private:
 
@@ -44,7 +56,8 @@ namespace mousestatus
 		/// </summary>
 		static void LoadObject();
 
-		bool m_IsInput;		//入力受け付けできるか
+		bool m_IsInput_Fade;		//入力受け付けできるか_フェード状態
+		bool m_IsInput_Menu;		//入力受け付けできるか_メニュー状態
 
 		static std::unique_ptr<class MouseStatus> mousestatus;//自身の実態
 	};

@@ -65,6 +65,7 @@
     <ClCompile Include="..\SourceCode\Object\GameUi\ItemUi\ItemUi.cpp" />
     <ClCompile Include="..\SourceCode\Object\GameUi\RPMHPUi\RPMHPUi.cpp" />
     <ClCompile Include="..\SourceCode\Object\GameUi\WarningUi\WarningUi.cpp" />
+    <ClCompile Include="..\SourceCode\Object\Menu\Menu.cpp" />
     <ClCompile Include="..\SourceCode\Object\MouseBase\MouseBase.cpp" />
     <ClCompile Include="..\SourceCode\Object\ObjectBase\ObjectBase.cpp" />
     <ClCompile Include="..\SourceCode\Object\ObjectManager\ObjectManager.cpp" />
@@ -89,9 +90,10 @@
     <ClCompile Include="..\SourceCode\Object\Time\Time\Time.cpp" />
     <ClCompile Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.cpp" />
     <ClCompile Include="..\SourceCode\Object\TitleObj\TitleUi\TitleUi.cpp" />
+    <ClCompile Include="..\SourceCode\Object\TutorialUi\TutorialUi.cpp" />
     <ClCompile Include="..\SourceCode\Scene\a\a.cpp" />
     <ClCompile Include="..\SourceCode\Scene\Clear\Clear.cpp" />
-    <ClCompile Include="..\SourceCode\Scene\PlayEnd\PlayEnd.cpp" />
+    <ClCompile Include="..\SourceCode\Scene\Movie\Movie.cpp" />
     <ClCompile Include="..\SourceCode\Scene\Play\Play.cpp" />
     <ClCompile Include="..\SourceCode\Scene\Result\Result.cpp" />
     <ClCompile Include="..\SourceCode\Scene\SceneBase\SceneBase.cpp" />
@@ -150,6 +152,7 @@
     <ClInclude Include="..\SourceCode\Object\GameUi\ItemUi\ItemUi.h" />
     <ClInclude Include="..\SourceCode\Object\GameUi\RPMHPUi\RPMHPUi.h" />
     <ClInclude Include="..\SourceCode\Object\GameUi\WarningUi\WarningUi.h" />
+    <ClInclude Include="..\SourceCode\Object\Menu\Menu.h" />
     <ClInclude Include="..\SourceCode\Object\MouseBase\MouseBase.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectBase\ObjectBase.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectManager\GameStatus.h" />
@@ -162,6 +165,7 @@
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Story_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Play_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\ObjectTag\TitleObjectTag.h" />
+    <ClInclude Include="..\SourceCode\Object\ObjectTag\Tutorial_ObjectTag.h" />
     <ClInclude Include="..\SourceCode\Object\Result\BackGround\BackGround.h" />
     <ClInclude Include="..\SourceCode\Object\Result\GameClearUi\GameClearUi.h" />
     <ClInclude Include="..\SourceCode\Object\Result\GameOverUi\GameOverUi.h" />
@@ -186,9 +190,10 @@
     <ClInclude Include="..\SourceCode\Object\Time\Time\Time.h" />
     <ClInclude Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.h" />
     <ClInclude Include="..\SourceCode\Object\TitleObj\TitleUi\TitleUi.h" />
+    <ClInclude Include="..\SourceCode\Object\TutorialUi\TutorialUi.h" />
     <ClInclude Include="..\SourceCode\Scene\a\a.h" />
     <ClInclude Include="..\SourceCode\Scene\Clear\Clear.h" />
-    <ClInclude Include="..\SourceCode\Scene\PlayEnd\PlayEnd.h" />
+    <ClInclude Include="..\SourceCode\Scene\Movie\Movie.h" />
     <ClInclude Include="..\SourceCode\Scene\Play\Play.h" />
     <ClInclude Include="..\SourceCode\Scene\Result\Result.h" />
     <ClInclude Include="..\SourceCode\Scene\SceneBase\SceneBase.h" />
@@ -254,7 +259,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DEBUG</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>../IncludeFile/Dxlib.h;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -288,7 +293,7 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_WINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>DEBUG</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>../IncludeFile/Dxlib.h;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>

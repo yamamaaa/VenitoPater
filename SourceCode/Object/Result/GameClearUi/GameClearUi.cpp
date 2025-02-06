@@ -97,7 +97,7 @@ namespace object
 	void GameClearUi::DrawObj()
 	{
 		DrawStringFToHandle(m_ObjPos.x, m_ObjPos.y, m_TimeText.c_str(), GetColor(m_COLOR, m_COLOR, m_COLOR), m_FontHandle);
-#ifdef DEBUG
+#if DEBUG
 		DrawFormatString(0, 0, GetColor(255, 255, 255), "•\Ž¦ŽžŠÔ : %f", m_DrawCount);
 #endif // DEBUG
 	}

@@ -1,5 +1,6 @@
 #pragma once
 #include <unordered_map>
+#include<vector>
 #include"../../MouseBase/MouseBase.h"
 #include"../../StageObj/Area/AreaMove_PosTag.h"
 
@@ -61,6 +62,9 @@ namespace object
         bool m_CanMove;       //エリア移動できるか
         float m_MoveCount;   //エリア移動した際のカウント
 
+        std::unordered_map<std::string, int> m_MoveUiImg{};         //エリア移動のUi画像
+        std::unordered_map<std::string, POINTFLOAT> m_MoveUiPos{};  //エリア移動のUi画像位置
+
         //上左右下のHitPos
         std::unordered_map<std::string, POINTS> m_HitSize{
             {areaMove_PosTag.UP,{900,150}},
@@ -85,7 +89,7 @@ namespace object
             {areaMove_PosTag.DOWN,{false}},
         };
 
-#ifdef DEBUG
+#if DEBUG
 
         //上左右下のHitlineのカラーコード
         std::unordered_map<std::string, VECTOR> d_ColorCode{

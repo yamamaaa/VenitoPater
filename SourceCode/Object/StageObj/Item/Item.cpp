@@ -89,7 +89,7 @@ namespace object
 
 	void Item::UpdateObj(const float deltatime)
 	{
-#ifdef DEBUG
+#if DEBUG
 		//スペースキーでノルマ達成
 		if (CheckHitKey(KEY_INPUT_SPACE))
 		{
@@ -216,11 +216,11 @@ namespace object
 		if (m_IsOccur && m_CanDraw)
 		{
 			DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
-#ifdef DEBUG
+#if DEBUG
 			DrawBox(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), static_cast<int>(m_ObjPos.x) + m_ObjSize.x, static_cast<int>(m_ObjPos.y) + m_ObjSize.y, GetColor(255, 40, 0), FALSE);
 #endif
 		}
-#ifdef DEBUG
+#if DEBUG
 		DrawFormatString(0, 260, GetColor(255, 255, 255), "アイテム表示エリア:%d", m_DrawItemArea);
 		DrawFormatString(0, 280, GetColor(255, 255, 255), "アイテム番号:%d", m_NowItemNumber);
 		DrawFormatString(0, 300, GetColor(255, 255, 255), "アイテム再表示,出現リセットまで:%f", m_OccurCount);

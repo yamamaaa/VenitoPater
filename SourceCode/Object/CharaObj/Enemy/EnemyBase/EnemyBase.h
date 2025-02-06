@@ -84,7 +84,7 @@ namespace object
 		/// </summary>
 		/// <returns>当たったemylineのインデックス</returns>
 		const int GetHitLineIndex() const { return m_HitLineIndex; }
-#ifdef DEBUG
+#if DEBUG
 		/// <summary>
 		/// EnemyLineの画面内表示
 		/// </summary>
@@ -92,7 +92,7 @@ namespace object
 #endif
 
 		const POINTS m_EMYBOX_SIZE = { 100,50 };		//EmyBoxのサイズ
-#ifdef DEBUG
+#if DEBUG
 		const VECTOR m_emybox_collar = VGet(0, 0, 255);	//EmyBoxのカラーコード
 #endif
 		const POINTFLOAT m_EMYBOX_RESETPOS = { 900.0f,0.0f };	//EmyBoxの初期位置
@@ -154,13 +154,13 @@ namespace object
 
 		//enemylinePos
 		std::unordered_map<std::string, POINTS> m_EmyLine_Pos{
-			{enemyline_tag.APPEAR,{0,50}},
-			{enemyline_tag.REPLACE,{0,500}},
-			{enemyline_tag.REPLACE_2,{0,800}},
-			{enemyline_tag.ACTION,{0,1070}},
+			{enemyline_tag.APPEAR,{0,100}},
+			{enemyline_tag.REPLACE,{0,650}},
+			{enemyline_tag.REPLACE_2,{0,860}},
+			{enemyline_tag.ACTION,{0,1080}},
 		};
 
-#ifdef DEBUG
+#if DEBUG
 		//enemylineのカラーコード
 		std::unordered_map<std::string, VECTOR> m_collarcode{
 			{enemyline_tag.APPEAR,{255,140,0}},		//オレンジ

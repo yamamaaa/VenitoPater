@@ -5,6 +5,7 @@ namespace object
 	enum GameStatus
 	{
 		Title,
+		Standby,
 		Tutorial,
 		GamePlay,
 		Story,
@@ -15,5 +16,6 @@ namespace object
 		TimeOver,
 		GameOver,
 		PlayEnd,
+		GameEnd,
 	};
 }

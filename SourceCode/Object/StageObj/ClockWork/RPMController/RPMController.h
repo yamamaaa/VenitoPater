@@ -68,7 +68,7 @@ namespace object
 		/// </summary>
 		static void LoadObjec();
 
-		const float m_RPM_DECREMENT = 6.0f;		//‰ñ“]Œ¸•ª—Ê
+		const float m_RPM_DECREMENT = 8.0f;		//‰ñ“]Œ¸•ª—Ê
 		const float m_RPMHPMAX = 500.0f;		//‰ñ“]—ÊHPÅ‘å’l
 
 		float m_RPMHp;						   //ƒ[ƒ“ƒ}ƒC‰ñ“]—ÊHP

@@ -11,6 +11,7 @@ namespace objecttag
     {
         std::string STILL = "still";
         std::string LINE = "line";
+        std::string MENU = "menu";
     }still_ObjectTag;
 
     /// <summary>
@@ -20,5 +21,6 @@ namespace objecttag
     {
         still_ObjectTag.STILL,
         still_ObjectTag.LINE,
+        still_ObjectTag.MENU,
     };
 }

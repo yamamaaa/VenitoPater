@@ -21,7 +21,7 @@ namespace object
     void Player::LoadObject()
     {
         LightController::Initialize();
-#ifdef DEBUG
+#if DEBUG
         select_level =LevelController::GetLevel();
 #endif
     }
@@ -32,7 +32,7 @@ namespace object
     void Player::DrawObj()
     {
         LightController::DrawLight();
-#ifdef DEBUG
+#if DEBUG
         DrawFormatString(0, 20, GetColor(255, 255, 255), "難易度:%s", select_level.c_str());
         Debug_DrawObj();
         DrawFormatString(0, 80, GetColor(255, 255, 255), "マウス左ボタン:%s", mouse_click.c_str());
@@ -40,7 +40,7 @@ namespace object
     }
     void Player::MoveObj(const float deltatime)
     {
-#ifdef DEBUG
+#if DEBUG
         m_CanClick = true;
         MouseClick();
 

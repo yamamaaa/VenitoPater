@@ -163,7 +163,7 @@ namespace object
 
 	void Line::UpdateDrawStatus(const float deltatime)
 	{
-#ifdef DEBUG
+#if DEBUG
 		//スペースキーでスキップ
 		if (CheckHitKey(KEY_INPUT_SPACE))
 		{
@@ -209,6 +209,9 @@ namespace object
 			}
 			else if (GetMouseInput() & MOUSE_INPUT_LEFT)
 			{
+				if (mousestatus::MouseStatus::GetIsMenuMode())
+					return;
+
 				//文字がアニメ中なら
 				if (m_IslineAnim)
 				{
@@ -404,7 +407,7 @@ namespace object
 		int x = GetDrawFormatStringWidthToHandle(m_FontHandle,m_Line.c_str(), -1);
 		DrawStringToHandle((1920 - x) / 2, static_cast<int>(m_ObjPos.y), (m_Line.substr(0, m_TxtNum) + " ").c_str(), GetColor(static_cast<int>(m_NowColor.x), static_cast<int>(m_NowColor.y), static_cast<int>(m_NowColor.z)), m_FontHandle);
 
-#ifdef DEBUG
+#if DEBUG
 		DrawFormatString(0, 20, GetColor(255, 255, 255), "m_ClickCount:%f", m_ClickCount);
 		DrawString(0, 100, "スペースでスキップ",GetColor(255, 255, 255));
 #endif // DEBUG

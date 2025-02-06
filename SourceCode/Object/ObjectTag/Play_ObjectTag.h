@@ -10,7 +10,6 @@ namespace objecttag
     static struct Play_ObjectTag
     {
         std::string AREA = "area";
-        std::string MOVEAREA = "movearea";
         std::string ClOCKWORK = "clockwork";
         std::string ITEM = "item";
         std::string FAMILIA = "familia";
@@ -20,6 +19,7 @@ namespace objecttag
         std::string IRA = "ira";
         std::string AVOID = "avoid";
         std::string PLAYER = "player";
+        std::string MOVEAREA = "movearea";
         std::string ITEMUI = "itemui";
         std::string RPMHPUi = "rpmhpui";
         std::string AVOIDUI = "avoidui";
@@ -27,6 +27,7 @@ namespace objecttag
         std::string TIME = "time";
         std::string ENEMYACTION = "enemyaction";
         std::string TEXTDRAW = "textdraw";
+        std::string MENU = "menu";
     } play_ObjectTag;
 
 
@@ -36,7 +37,6 @@ namespace objecttag
     static std::vector<std::string>Play_ObjectTagAll
     {
         play_ObjectTag.AREA,
-        play_ObjectTag.MOVEAREA,
         play_ObjectTag.ClOCKWORK,
         play_ObjectTag.ITEM,
         play_ObjectTag.FAMILIA,
@@ -46,6 +46,7 @@ namespace objecttag
         play_ObjectTag.IRA,
         play_ObjectTag.AVOID,
         play_ObjectTag.PLAYER,
+        play_ObjectTag.MOVEAREA,
         play_ObjectTag.ITEMUI,
         play_ObjectTag.RPMHPUi,
         play_ObjectTag.AVOIDUI,
@@ -53,5 +54,6 @@ namespace objecttag
         play_ObjectTag.TIME,
         play_ObjectTag.ENEMYACTION,
         play_ObjectTag.TEXTDRAW,
+        play_ObjectTag.MENU,
     };
 }

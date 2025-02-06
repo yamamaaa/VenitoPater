@@ -122,7 +122,7 @@ namespace object
 		DrawGraph(static_cast<int>(m_SelectPos.x), static_cast<int>(m_SelectPos.y), m_ObjHandle, TRUE);
 		DrawGraph(static_cast<int>(m_MenuPos.x), static_cast<int>(m_MenuPos.y), m_MenuHandol, TRUE);
 
-#ifdef DEBUG
+#if DEBUG
 		for (int i = 0; i < 3; i++)
 		{
 			DrawBox(static_cast<int>(m_HitPos[i].x), static_cast<int>(m_HitPos[i].y), static_cast<int>(m_HitPos[i].x) + m_ObjSize.x, static_cast<int>(m_HitPos[i].y) + m_ObjSize.y, GetColor(255, 40, 0), FALSE);

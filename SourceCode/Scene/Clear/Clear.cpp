@@ -1,7 +1,7 @@
 #include"Clear.h"
 
 #include"../Story/Story.h"
-#include"../PlayEnd/PlayEnd.h"
+#include"../Movie/Movie.h"
 
 #include"../../Object/ObjectTag/GameClear_ObjectTag.h"
 
@@ -83,7 +83,7 @@ namespace scene
 
         if (object::GameStatus::PlayEnd == status)
         {
-            return new PlayEnd;
+            return new Movie;
         }
 
         return this;
@@ -98,6 +98,8 @@ namespace scene
 
         object::ObjectManager::DrawAllObj();
 
-        DrawFormatString(0, 0, GetColor(255, 255, 255), "Clear");
+#if DEBUG
+        DrawString(0, 0, "Clear", GetColor(255, 255, 255));
+#endif // DEBUG
     }
 }

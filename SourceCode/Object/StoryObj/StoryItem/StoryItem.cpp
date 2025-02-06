@@ -137,7 +137,7 @@ namespace object
             else
             {
                 DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
-#ifdef DEBUG
+#if DEBUG
                 DrawFormatString(0, 80, GetColor(255, 255, 255), "表示アイテム:%s", m_Line.c_str());
 #endif // DEBUG
             }

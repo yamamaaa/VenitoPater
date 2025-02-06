@@ -39,7 +39,7 @@ namespace object
 		void DrawObj()override;
 
 		const int m_Hide_DrawArea = 3;			 //Uiを表示できないエリア
-		const float m_WARNING_VALUE = 200.0f;    //警告を出すHPの残量値
+		const float m_WARNING_VALUE = 100.0f;    //警告を出すHPの残量値
 
 		const int m_PWRIOD = 20;	//表示周期
 		const int m_NUMTIMES = 10;	//表示回数

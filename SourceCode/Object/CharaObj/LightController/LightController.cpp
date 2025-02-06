@@ -41,10 +41,13 @@ namespace object
 
 	void LightController::DrawLight()
 	{
-		/*DrawGraph(0, 0, light_controller->m_ShadowHandol, TRUE);
+#if DEBUG
+#else
+		DrawGraph(0, 0, light_controller->m_ShadowHandol, TRUE);
 		SetDrawBlendMode(DX_BLENDMODE_ADD, 225);
 		DrawGraph(light_controller->m_LightPos.x, light_controller->m_LightPos.y, light_controller->m_LightHandol, TRUE);
-		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);*/
+		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
+#endif // DEBUG
 
 		if (light_controller->m_IsBlinking)
 		{

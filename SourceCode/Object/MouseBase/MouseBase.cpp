@@ -81,7 +81,7 @@ namespace object
         }
     }
 
-#ifdef DEBUG
+#if DEBUG
     void MouseBase::Debug_DrawObj()
     {
         //íœ—\’è

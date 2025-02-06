@@ -18,7 +18,7 @@ namespace object
         m_HitSize.clear();
         m_MovePos.clear();
         m_AreaNumber.clear();
-#ifdef DEBUG
+#if DEBUG
         d_ColorCode.clear();
         d_CursorHit.clear();
 #endif // DEBUG
@@ -29,6 +29,16 @@ namespace object
         m_IsMove = false;
         m_CanMove = true;
         m_MoveCount = m_MOVECOUNT_MAX;
+
+        m_MoveUiImg[areaMove_PosTag.UP] = LoadGraph("../Asset/image/gameobj/ui/up.png");
+        m_MoveUiImg[areaMove_PosTag.RIGHT] = LoadGraph("../Asset/image/gameobj/ui/right.png");
+        m_MoveUiImg[areaMove_PosTag.LEFT] = LoadGraph("../Asset/image/gameobj/ui/left.png");
+        m_MoveUiImg[areaMove_PosTag.DOWN] = LoadGraph("../Asset/image/gameobj/ui/down.png");
+
+        m_MoveUiPos[areaMove_PosTag.UP] = { 670.0f,0.0f };
+        m_MoveUiPos[areaMove_PosTag.RIGHT] = { 0.0f,300.0f };
+        m_MoveUiPos[areaMove_PosTag.LEFT] = { 1770.0f,300.0f };
+        m_MoveUiPos[areaMove_PosTag.DOWN] = { 310.0f,920.0f };
     }
 
     void MoveArea::UpdateObj(const float deltatime)
@@ -71,7 +81,7 @@ namespace object
                 //もし移動出来たら
                 if (GetCursorHit())
                 {
-#ifdef DEBUG
+#if DEBUG
                     d_CursorHit[tag] = "Hit";
 #endif
                     Update_AreaNumber(tag);
@@ -79,7 +89,7 @@ namespace object
                     m_IsMove = true;
                     m_CanMove = false;
                 }
-#ifdef DEBUG
+#if DEBUG
                 else
                 {
                     d_CursorHit[tag] = "NoHit";
@@ -123,12 +133,14 @@ namespace object
 
     void MoveArea::DrawObj()
     {
-#ifdef DEBUG
-        //HitBoxの表示
         for (std::string& tag : AreaMove_PosTagAll)
         {
             if (m_AreaNumber[tag] == true)
             {
+                //Uiの表示
+                DrawGraphF(m_MoveUiPos[tag].x, m_MoveUiPos[tag].y, m_MoveUiImg[tag], TRUE);
+#if DEBUG
+                //HitBoxの表示
                 m_ObjPos.x = m_MovePos[tag].x;
                 m_ObjPos.y = m_MovePos[tag].y;
 
@@ -136,9 +148,10 @@ namespace object
                 m_ObjSize.y = static_cast<int>(m_HitSize[tag].y);
 
                 DrawBox(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), static_cast<int>(m_ObjPos.x) + m_ObjSize.x, static_cast<int>(m_ObjPos.y) + m_ObjSize.y, GetColor(static_cast<int>(d_ColorCode[tag].x), static_cast<int>(d_ColorCode[tag].y), static_cast<int>(d_ColorCode[tag].z)), FALSE);
+#endif
             }
         }
-
+#if DEBUG
         DrawFormatString(0, 180, GetColor(255, 255, 255), "上:%s", d_CursorHit[areaMove_PosTag.UP].c_str());
         DrawFormatString(0, 200, GetColor(255, 255, 255), "左:%s", d_CursorHit[areaMove_PosTag.RIGHT].c_str());
         DrawFormatString(0, 220, GetColor(255, 255, 255), "右:%s", d_CursorHit[areaMove_PosTag.LEFT].c_str());

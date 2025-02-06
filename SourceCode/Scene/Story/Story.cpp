@@ -3,7 +3,8 @@
 #include"../../Object/ObjectTag/Story_ObjectTag.h"
 
 #include"../Play/Play.h"
-#include"../PlayEnd/PlayEnd.h"
+#include"../Movie/Movie.h"
+#include"../Title/Title.h"
 
 #include"../../Object/StoryObj/LineStatus/LineStatus.h"
 
@@ -11,6 +12,7 @@
 #include"../../Object/StoryObj/Character/Character.h"
 #include"../../Object/StoryObj/StoryItem/StoryItem.h"
 #include"../../Object/StoryObj/Line/Line.h"
+#include"../../Object/Menu/Menu.h"
 
 #include"../../Object/ObjectTag/Still_ObjectTag.h"
 
@@ -59,6 +61,8 @@ namespace scene
 			object::ObjectManager::Entry(new object::Line);
 		}
 
+		object::ObjectManager::Entry(new object::Menu);
+
 		//èâä˙âª
 		m_IsNextSame = false;
 	}
@@ -92,9 +96,15 @@ namespace scene
 			return new Play;
 		}
 
+		if (object::Title == status)
+		{
+			object::ObjectManager::ReleaseAllObj();
+			return new Title;
+		}
+
 		if (object::PlayEnd == status)
 		{
-			return new PlayEnd;
+			return new Movie;
 		}
 
 		if (m_IsNextSame)
@@ -107,13 +117,15 @@ namespace scene
 
 	void Story::DrawScene()
 	{
-		DrawFormatString(0, 0, GetColor(255, 255, 255), "Story");
-
 		if (m_IsChangeScene || !m_FadeInSet)
 		{
 			transitor::FadeTransitor::DrawFade();
 		}
 
 		object::ObjectManager::DrawAllObj();
+
+#if DEBUG
+		DrawString(0, 0, "Story", GetColor(255, 255, 255));
+#endif // DEBUG
 	}
 }

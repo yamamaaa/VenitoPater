@@ -76,7 +76,7 @@ namespace object
 		}
 
 
-#ifdef DEBUG
+#if DEBUG
 		//emyline,box–¼,enemybox•\Ž¦
 		EnemyLineDraw();
 		DrawFormatString(static_cast<int>(m_EnemyBoxPos.x), static_cast<int>(m_EnemyBoxPos.y), GetColor(255, 255, 255), "Familia");

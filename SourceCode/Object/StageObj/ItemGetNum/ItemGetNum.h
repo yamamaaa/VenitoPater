@@ -4,7 +4,7 @@
 namespace object
 {
 	/// <summary>
-	/// ノルマ関連
+	/// アイテムノルマ関連
 	/// </summary>
 	class ItemGetNum final
 	{
@@ -59,7 +59,7 @@ namespace object
 		int m_NowGet_NItem;			//現在のノーマルアイテム獲得数
 		int m_NowGet_RItem;			//現在のレアアイテム獲得数
 
-		const int m_MAXNOLM = 20;	//ノルマ達成値
+		const int m_MAXNOLM = 12;	//ノルマ達成値
 		bool m_IsNolmClear;			//ノルマを達成したか？
 
 		static std::unique_ptr<ItemGetNum> itemgetnum;	//自身の実態

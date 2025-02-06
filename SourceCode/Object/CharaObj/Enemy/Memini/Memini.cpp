@@ -117,7 +117,7 @@ namespace object
 			DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
 		}
 
-#ifdef DEBUG
+#if DEBUG
 		//emyline,box–¼,enemybox•\Ž¦
 		EnemyManager::D_DrawStatus();
 		EnemyLineDraw();

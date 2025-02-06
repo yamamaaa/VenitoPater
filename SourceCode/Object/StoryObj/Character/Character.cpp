@@ -90,7 +90,7 @@ namespace object
 	{
 		DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
 
-#ifdef DEBUG
+#if DEBUG
 		DrawFormatString(0, 40, GetColor(255, 255, 255), "Х\По:%s", m_Status.c_str());
 #endif // DEBUG
 	}

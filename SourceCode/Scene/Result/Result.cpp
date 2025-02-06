@@ -83,13 +83,15 @@ namespace scene
 
     void Result::DrawScene()
     {
-        DrawFormatString(0, 0, GetColor(255, 255, 255), "Result");
-
         if (m_IsChangeScene || !m_FadeInSet)
         {
             transitor::FadeTransitor::DrawFade();
         }
 
         object::ObjectManager::DrawAllObj();
+
+#if DEBUG
+        DrawString(0, 0, "Result", GetColor(255, 255, 255));
+#endif // DEBUG
     }
 }

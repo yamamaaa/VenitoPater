@@ -70,7 +70,7 @@ namespace object
 			DrawFillBox(static_cast<int>(m_HPDrawPos.x), static_cast<int>(m_HPDrawPos.y), static_cast<int>(m_HPDrawPos.x) + static_cast<int>(m_DrawValue), static_cast<int>(m_HPDrawPos.y) + m_FillBoxSize.y, GetColor(static_cast<int>(m_FillBox_Color.x), static_cast<int>(m_FillBox_Color.y), static_cast<int>(m_FillBox_Color.z)));
 			DrawLineBox(static_cast<int>(m_HPDrawPos.x), static_cast<int>(m_HPDrawPos.y), static_cast<int>(m_HPDrawPos.x) + m_LineBoxSize.x, static_cast<int>(m_HPDrawPos.y) + m_LineBoxSize.y, GetColor(static_cast<int>(m_LineBox_Color.x), static_cast<int>(m_LineBox_Color.y), static_cast<int>(m_LineBox_Color.z)));
 
-#ifdef DEBUG
+#if DEBUG
 			DrawBox(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), static_cast<int>(m_ObjPos.x) + m_ObjSize.x, static_cast<int>(m_ObjPos.y) + m_ObjSize.y, GetColor(255, 40, 0), FALSE);
 #endif
 		}

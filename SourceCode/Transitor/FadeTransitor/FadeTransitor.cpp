@@ -105,7 +105,10 @@ namespace transitor
 	void FadeTransitor::DrawFade()
 	{
 		SetDrawBright(fadetransitor->m_Color, fadetransitor->m_Color, fadetransitor->m_Color);
+
+#if DEBUG
 		DrawFormatString(700, 300, GetColor(255, 255, 255), "カラーコード:%d", fadetransitor->m_Color);
+#endif // DEBUG
 	}
 
 	void FadeTransitor::WaitTime(const float deltatime)
