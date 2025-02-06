@@ -23,7 +23,7 @@ namespace scene
         //現在のステータスを取得
         object::GameStatus status = object::ObjectManager::GetNowGameState();
 
-        if (object::GameStatus::GameEnd == object::ObjectManager::GetNowGameState())
+        if (object::GameStatus::PlayEnd == object::ObjectManager::GetNowGameState())
         {
             object::PlayMenu menu = object::ObjectManager::GetPlayMode();
             if (object::PlayMenu::PlayNewGame == menu)
@@ -32,13 +32,14 @@ namespace scene
             }
             else
             {
-
+                m_MovieFile = "../Asset/movie/r_ending.mp4";
             }
         }
         else
         {
-            m_MovieFile = "../Asset/movie/ending.mp4";
+            m_MovieFile = "../Asset/movie/standby.mp4";
         }
+
     }
 
     SceneBase* Movie::UpdateScene(const float deltaTime)
@@ -79,7 +80,7 @@ namespace scene
         {
             //現在のステータスを取得
             object::GameStatus status = object::ObjectManager::GetNowGameState();
-            if (object::GameStatus::Standby)
+            if (object::GameStatus::Standby== status)
             {
                 PlayMovie(m_MovieFile.c_str(), 1, DX_MOVIEPLAYTYPE_BCANCEL);
 
@@ -95,7 +96,9 @@ namespace scene
                 object::ObjectManager::SetNextGameState(object::GameStatus::Title);
             }
         }
-   
-        DrawFormatString(0, 0, GetColor(255, 255, 255), "Movie");
+
+#if DEBUG
+        DrawString(0, 0, "Movie", GetColor(255, 255, 255));
+#endif // DEBUG
     }
 }

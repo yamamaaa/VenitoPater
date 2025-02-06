@@ -31,7 +31,7 @@ namespace object
 
 		m_DrawObjPos[replace] = { 1000.0f,630.0f };
 		m_DrawObjPos[replace_2] = { 632.0f,525.0f };
-		m_DrawObjPos[action] = { 0.0f,665.0f };
+		m_DrawObjPos[action] = { 0.0f,700.0f };
 
 		m_MoveSpeed[0] = 18.0f;
 		m_MoveSpeed[1] = 24.0f;
@@ -130,7 +130,7 @@ namespace object
 			DrawGraph(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), m_ObjHandle, TRUE);
 		}
 
-#ifdef DEBUG
+#if DEBUG
 		//emyline,box–¼,enemybox•\Ž¦
 		EnemyManager::D_DrawStatus();
 		EnemyLineDraw();

@@ -123,7 +123,7 @@ namespace object
 		DrawGraphF(m_MenuHit_Pos[m_HitIndex].x, m_MenuHit_Pos[m_HitIndex].y, m_SelectImg, TRUE);
 		SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
 
-#ifdef DEBUG
+#if DEBUG
 		for (int i = 0; i < 6; i++)
 		{
 			DrawBox(static_cast<int>(m_MenuHit_Pos[i].x), static_cast<int>(m_MenuHit_Pos[i].y), static_cast<int>(m_MenuHit_Pos[i].x) + m_MenuHit_Size.x, static_cast<int>(m_MenuHit_Pos[i].y) + m_MenuHit_Size.y, GetColor(255, 40, 0), FALSE);

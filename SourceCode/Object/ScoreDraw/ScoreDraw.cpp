@@ -283,7 +283,7 @@ namespace object
         DrawFormatStringFToHandle(1470, 580, GetColor(collar, collar, collar), m_FontHandle_Item, m_ItemText.c_str(), m_RItem_Draw);
         DrawFormatStringFToHandle(m_ObjPos.x, m_ObjPos.y, GetColor(collar, collar, collar), m_FontHandle_Score, m_ScoreText.c_str(), m_Score_Draw);
 
-#ifdef DEBUG
+#if DEBUG
         DrawFormatString(0, 14, GetColor(collar, collar, collar),"‘Ò‚¿ŽžŠÔ:%f", m_WaitCount);
 #endif // DEBUG
     }

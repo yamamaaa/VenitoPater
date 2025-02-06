@@ -80,7 +80,7 @@ namespace object
 			{
 				if (i == 0)	//コンテニューなら
 				{
-#ifdef DEBUG
+#if DEBUG
 					m_selectstatus = "コンテニュー";
 #endif // DEBUG
 					m_Uipos.x = m_SelectUi_Pos[0].x;
@@ -88,7 +88,7 @@ namespace object
 				}
 				else if (i == 1)//タイトルに戻るなら
 				{
-#ifdef DEBUG
+#if DEBUG
 					m_selectstatus = "タイトル";
 #endif // DEBUG
 					m_Uipos.x = m_SelectUi_Pos[1].x;
@@ -129,7 +129,7 @@ namespace object
 
 		DrawStringFToHandle(ui_x1, ui_y1, m_SelectText[1].c_str(),GetColor(m_COLOR, m_COLOR, m_COLOR), m_FontHandle_Ui);
 
-#ifdef DEBUG
+#if DEBUG
 		DrawBox(static_cast<int>(m_SelectUi_Pos[0].x), static_cast<int>(m_SelectUi_Pos[0].y), static_cast<int>(m_SelectUi_Pos[0].x + m_ObjSize.x), static_cast<int>(m_SelectUi_Pos[0].y + m_ObjSize.y), GetColor(255,0,0),FALSE);
 		DrawBox(static_cast<int>(m_SelectUi_Pos[1].x), static_cast<int>(m_SelectUi_Pos[1].y), static_cast<int>(m_SelectUi_Pos[1].x + m_ObjSize.x), static_cast<int>(m_SelectUi_Pos[1].y + m_ObjSize.y), GetColor(0, 255, 0),FALSE);
 		DrawFormatString(0, 20, GetColor(255, 255, 255), "セレクト状態:%s", m_selectstatus.c_str());

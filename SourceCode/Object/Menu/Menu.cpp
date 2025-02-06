@@ -27,7 +27,7 @@ namespace object
 
 		m_SelectPos_Offset = { -20.0f,50.0f };
 
-		m_IconHitPos = { 1850.0f, 5.0f, };
+		m_IconHitPos = { 1875.0f, 5.0f, };
 		m_IconHit_Size = { 50,50 };
 
 		m_BackHit_Pos = { 1410.0f,30.0f };
@@ -41,8 +41,8 @@ namespace object
 		m_MenuBack_Img= LoadGraph("../Asset/image/menu/menuback.png");
 		m_SelectImg= LoadGraph("../Asset/image/menu/select.png");
 
-		m_JsonTag[0] = "select";
-		m_JsonTag[1] = "button";
+		m_JsonTag[0] = "selectmenu";
+		m_JsonTag[1] = "buttonmenu";
 
 		sound_controller::SoundController::AddSoundData("../Asset/sound/menu/selsect.mp3", m_JsonTag[0], 130, false);
 		sound_controller::SoundController::AddSoundData("../Asset/sound/menu/button.mp3", m_JsonTag[1], 130, false);
@@ -146,7 +146,7 @@ namespace object
 
 			POINTFLOAT selectpos = m_MenuHit_Pos[m_HitIndex] + m_SelectPos_Offset;
 			DrawGraphF(selectpos.x , selectpos.y, m_SelectImg, TRUE);
-#ifdef DEBUG
+#if DEBUG
 
 			for (POINTFLOAT pos : m_MenuHit_Pos)
 			{
@@ -155,7 +155,7 @@ namespace object
 			DrawBox(static_cast<int>(m_BackHit_Pos.x), static_cast<int>(m_BackHit_Pos.y), static_cast<int>(m_BackHit_Pos.x) + m_BackHit_Size.x, static_cast<int>(m_BackHit_Pos.y) + m_BackHit_Size.y, GetColor(255, 40, 0), FALSE);
 #endif
 		}
-#ifdef DEBUG
+#if DEBUG
 		DrawBox(static_cast<int>(m_IconHitPos.x), static_cast<int>(m_IconHitPos.y), static_cast<int>(m_IconHitPos.x) + m_IconHit_Size.x, static_cast<int>(m_IconHitPos.y) + m_IconHit_Size.y, GetColor(255, 40, 0), FALSE);
 #endif
 	}

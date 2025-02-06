@@ -98,7 +98,7 @@ namespace object
         std::string m_DrawText; //表示する文字
 
         const POINTS m_FONTSIZE_Line = { 30,5 };      //フォントサイズ_セリフ
-        const POINTS m_FONTSIZE_Day = { 200,15 };     //フォントサイズ_日数
+        const POINTS m_FONTSIZE_Day = { 90,20 };     //フォントサイズ_日数
 
         bool m_IsReleaseObj;        //処理を終わるか
 

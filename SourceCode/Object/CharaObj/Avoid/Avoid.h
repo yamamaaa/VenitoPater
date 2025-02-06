@@ -54,7 +54,7 @@ namespace object
 		float m_ClickCount ;		//クリックできるまでのカウント
 		bool m_IsClick = true;		//クリックができるか
 
-#ifdef DEBUG
+#if DEBUG
 		std::string m_avoid_status = "";			//回避状態の表示
 		const VECTOR m_collarcode = {255,20,147};	//カラーコード
 #endif

@@ -132,7 +132,6 @@ namespace scene
 		if (object::GameClear == status)
 		{
 			return new Clear;
-			//return new a;
 		}
 
 		//ゲームオーバー
@@ -158,5 +157,9 @@ namespace scene
 		}
 
 		object::ObjectManager::DrawAllObj();
+
+#if DEBUG
+		DrawString(0, 0, "Play", GetColor(255, 255, 255));
+#endif // DEBUG
 	}
 }

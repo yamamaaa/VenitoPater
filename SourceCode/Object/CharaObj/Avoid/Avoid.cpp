@@ -64,14 +64,14 @@ namespace object
 					HatUi::SetMove();
 					//回避行動フラグをtrueに
 					AvoidStatus::SetIsAvoid(true);
-#ifdef DEBUG
+#if DEBUG
 					m_avoid_status = "回避行動中";
 #endif
 				}
 				else
 				{
 					HatUi::SetMove();
-#ifdef DEBUG
+#if DEBUG
 					m_avoid_status = "通常状態";
 #endif
 				}
@@ -105,7 +105,7 @@ namespace object
 		{
 			HatUi::DrawUi();
 		}
-#ifdef DEBUG
+#if DEBUG
 		DrawBox(static_cast<int>(m_ObjPos.x), static_cast<int>(m_ObjPos.y), static_cast<int>(m_ObjPos.x) + m_ObjSize.x, static_cast<int>(m_ObjPos.y) + m_ObjSize.y, GetColor(static_cast<int>(m_collarcode.x), static_cast<int>(m_collarcode.y), static_cast<int>(m_collarcode.z)), FALSE);
 		DrawFormatString(0, 400, GetColor(255, 255, 255), "回避状態:%s", m_avoid_status.c_str());
 		DrawFormatString(0, 420, GetColor(255, 255, 255), "再び回避できるまで:%f", m_ClickCount);

@@ -4,6 +4,7 @@
 
 #include"../Play/Play.h"
 #include"../Movie/Movie.h"
+#include"../Title/Title.h"
 
 #include"../../Object/StoryObj/LineStatus/LineStatus.h"
 
@@ -95,6 +96,12 @@ namespace scene
 			return new Play;
 		}
 
+		if (object::Title == status)
+		{
+			object::ObjectManager::ReleaseAllObj();
+			return new Title;
+		}
+
 		if (object::PlayEnd == status)
 		{
 			return new Movie;
@@ -110,13 +117,15 @@ namespace scene
 
 	void Story::DrawScene()
 	{
-		DrawFormatString(0, 0, GetColor(255, 255, 255), "Story");
-
 		if (m_IsChangeScene || !m_FadeInSet)
 		{
 			transitor::FadeTransitor::DrawFade();
 		}
 
 		object::ObjectManager::DrawAllObj();
+
+#if DEBUG
+		DrawString(0, 0, "Story", GetColor(255, 255, 255));
+#endif // DEBUG
 	}
 }

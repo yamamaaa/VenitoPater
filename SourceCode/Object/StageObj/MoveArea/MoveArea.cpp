@@ -18,7 +18,7 @@ namespace object
         m_HitSize.clear();
         m_MovePos.clear();
         m_AreaNumber.clear();
-#ifdef DEBUG
+#if DEBUG
         d_ColorCode.clear();
         d_CursorHit.clear();
 #endif // DEBUG
@@ -81,7 +81,7 @@ namespace object
                 //もし移動出来たら
                 if (GetCursorHit())
                 {
-#ifdef DEBUG
+#if DEBUG
                     d_CursorHit[tag] = "Hit";
 #endif
                     Update_AreaNumber(tag);
@@ -89,7 +89,7 @@ namespace object
                     m_IsMove = true;
                     m_CanMove = false;
                 }
-#ifdef DEBUG
+#if DEBUG
                 else
                 {
                     d_CursorHit[tag] = "NoHit";
@@ -139,7 +139,7 @@ namespace object
             {
                 //Uiの表示
                 DrawGraphF(m_MoveUiPos[tag].x, m_MoveUiPos[tag].y, m_MoveUiImg[tag], TRUE);
-#ifdef DEBUG
+#if DEBUG
                 //HitBoxの表示
                 m_ObjPos.x = m_MovePos[tag].x;
                 m_ObjPos.y = m_MovePos[tag].y;
@@ -151,7 +151,7 @@ namespace object
 #endif
             }
         }
-#ifdef DEBUG
+#if DEBUG
         DrawFormatString(0, 180, GetColor(255, 255, 255), "上:%s", d_CursorHit[areaMove_PosTag.UP].c_str());
         DrawFormatString(0, 200, GetColor(255, 255, 255), "左:%s", d_CursorHit[areaMove_PosTag.RIGHT].c_str());
         DrawFormatString(0, 220, GetColor(255, 255, 255), "右:%s", d_CursorHit[areaMove_PosTag.LEFT].c_str());

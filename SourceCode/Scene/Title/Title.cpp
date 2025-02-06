@@ -13,6 +13,7 @@
 
 #include "../../Object/TitleObj/TitleUi/TitleUi.h"
 #include "../../Object/TitleObj/SelectMode/SelectMode.h"
+#include"../../Object/Menu/Menu.h"
 
 #include"../../Object/TutorialUi/TutorialUi.h"
 
@@ -45,9 +46,10 @@ namespace scene
             LevelController::Initialize();
             object::NumDays::Initialize();
 
-            ////Title画面の全Ui生成
+            //Title画面の全Ui生成
             object::ObjectManager::Entry(new object::TitleUi);
             object::ObjectManager::Entry(new object::SelectMode);
+            object::ObjectManager::Entry(new object::Menu);
         }
         else
         {
@@ -110,14 +112,14 @@ namespace scene
         {
             LevelController::SetLevel(levelStatus.NOMAL);
             return new Story();
+            /*return new Movie();*/
         }
 
         //ランキングモード
         if (object::GamePlay == status)
         {
             LevelController::SetLevel(levelStatus.NOMAL);
-            /*return new Play();*/
-            return new Movie();
+            return new Play();
         }
 
         //チュートリアル、タイトル
@@ -138,7 +140,9 @@ namespace scene
 
         object::ObjectManager::DrawAllObj();
 
+#if DEBUG
         DrawString(0, 0, "title", GetColor(255, 255, 255));
         DrawFormatString(0, 0, GetColor(255, 255, 255), "切り替わりまで:%f", m_Change_Count);
+#endif
     }
 }

@@ -98,6 +98,8 @@ namespace scene
 
         object::ObjectManager::DrawAllObj();
 
-        DrawFormatString(0, 0, GetColor(255, 255, 255), "Clear");
+#if DEBUG
+        DrawString(0, 0, "Clear", GetColor(255, 255, 255));
+#endif // DEBUG
     }
 }

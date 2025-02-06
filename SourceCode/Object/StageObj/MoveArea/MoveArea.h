@@ -89,7 +89,7 @@ namespace object
             {areaMove_PosTag.DOWN,{false}},
         };
 
-#ifdef DEBUG
+#if DEBUG
 
         //上左右下のHitlineのカラーコード
         std::unordered_map<std::string, VECTOR> d_ColorCode{

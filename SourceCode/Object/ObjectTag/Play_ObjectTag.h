@@ -53,6 +53,7 @@ namespace objecttag
         play_ObjectTag.WARNINGUI,
         play_ObjectTag.TIME,
         play_ObjectTag.ENEMYACTION,
+        play_ObjectTag.TEXTDRAW,
         play_ObjectTag.MENU,
     };
 }

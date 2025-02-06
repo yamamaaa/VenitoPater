@@ -11,6 +11,7 @@ namespace objecttag
     {
         std::string TITLEUI = "titleui";
         std::string SELECTMODE = "selectmode";
+        std::string MENU = "menu";
     } titleObjectTag;
 
     /// <summary>
@@ -20,5 +21,6 @@ namespace objecttag
     {
         titleObjectTag.TITLEUI,
         titleObjectTag.SELECTMODE,
+        titleObjectTag.MENU,
     };
 }

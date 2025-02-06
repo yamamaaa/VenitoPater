@@ -67,7 +67,7 @@ namespace object
         const std::string m_Title = "GameOver";
         const std::string m_SelectText[2] = { "コンテニュー" ,"タイトルへ" };
 
-#ifdef DEBUG
+#if DEBUG
         std::string m_selectstatus = "";
 #endif // DEBUG
     };

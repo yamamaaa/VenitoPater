@@ -67,14 +67,7 @@ namespace object
         {
             //フォントハンドルの生成
             m_FontHandle = CreateFontToHandle("メイリオ", m_FONTSIZE_Day.x, m_FONTSIZE_Day.y, DX_FONTTYPE_ANTIALIASING);
-
-            //文字の長さを取得して画面中央に座標を設定
-            int x = GetDrawFormatStringWidthToHandle(m_FontHandle, "%d日目", NumDays::GetNumDays());
-
-            float ans_x = static_cast<float>((m_WindowSize.x - x) / 2);
-            float ans_y = static_cast<float>((m_WindowSize.y - m_FONTSIZE_Day.x) / 2);
-
-            m_ObjPos = { ans_x,ans_y };
+            m_ObjPos = { 1670,1000 };
         }
     }
 
@@ -243,7 +236,7 @@ namespace object
 
         //セリフの表示
         DrawStringFToHandle(m_ObjPos.x, m_ObjPos.y,text.c_str(), GetColor(static_cast<int>(m_NowColor.x), static_cast<int>(m_NowColor.y), static_cast<int>(m_NowColor.z)), m_FontHandle);
-#ifdef DEBUG
+#if DEBUG
         DrawFormatString(0, 40, GetColor(255, 255, 255), "文字再読み込みまで:%f", m_DrawCount);
         DrawFormatString(0, 60, GetColor(255, 255, 255), "文字スタートまで:%f", m_StartCount);
 #endif // DEBUG
@@ -258,7 +251,7 @@ namespace object
         SetDrawBlendMode(DX_BLENDMODE_ALPHA, collar);
         DrawFormatStringFToHandle(m_ObjPos.x, m_ObjPos.y, GetColor(collar, collar, collar), m_FontHandle, "%d日目", day);
         SetDrawBlendMode(DX_BLENDMODE_NOBLEND, 0);
-#ifdef DEBUG
+#if DEBUG
         DrawFormatString(750, 350, GetColor(255, 255, 255), "日数表示カウント:%f", m_DrawCount);
 #endif // DEBUG
     }

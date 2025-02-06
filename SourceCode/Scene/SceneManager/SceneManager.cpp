@@ -57,10 +57,10 @@ namespace scene
     {
         ClearDrawScreen();					// 画面をクリア
         m_NowScene.top()->DrawScene();		// 次のシーンを表示
-
+#if DEBUG
         DrawLine(960, 0, 960, 1080, GetColor(255, 0, 255), FALSE);  //中央線
         DrawLine(0, 540, 1920, 540, GetColor(0, 255, 255), FALSE);
-
+#endif // DEBUG
         ScreenFlip();						// 裏画面の内容を表画面に反映
     }
 

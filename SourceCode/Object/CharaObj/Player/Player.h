@@ -33,7 +33,7 @@ namespace object
 
     private:
 
-#ifdef DEBUG
+#if DEBUG
         std::string select_level = "";  //難易度表示
         std::string mouse_click = "";   //マウスクリック状態
 #endif

@@ -31,7 +31,7 @@ namespace object
 		EnemyManager::Processing();
 		m_DrawObjPos.clear();
 		m_EmyLine_Pos.clear();
-#ifdef DEBUG
+#if DEBUG
 		m_collarcode.clear();
 #endif // DEBUG
 	}
@@ -181,7 +181,7 @@ namespace object
 		ObjectManager::SetNextGameState(GameOver);
 	}
 
-#ifdef DEBUG
+#if DEBUG
 	void EnemyBase::EnemyLineDraw()
 	{
 		//enemyline‚Ì•\Ž¦

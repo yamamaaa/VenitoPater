@@ -1,5 +1,6 @@
 #include <Dxlib.h>
 #include "SoundController.h"
+#include "../Object/ObjectManager/ObjectManager.h"
 
 namespace sound_controller
 {
@@ -77,8 +78,6 @@ namespace sound_controller
 
 	void SoundController::BGMSoundFadeOut(const float deltatime)
 	{
-		static int volume;
-
 		for (std::string name_se : soundcontroller->m_SoundName)
 		{
 			auto& sound_se = soundcontroller->m_Soundlist[name_se];
@@ -92,18 +91,17 @@ namespace sound_controller
 
 			if (sound.m_IsType)
 			{
-				sound.m_Volume -= volume;
-				volume += static_cast <int>(110.0f * deltatime);
+				sound.m_Volume -= static_cast <int>(110.0f * deltatime);
 				ChangeVolumeSoundMem(sound.m_Volume, sound.m_Handle);
 
-				if (sound.m_Volume <= 0&& soundcontroller->m_BGMAns>0)
+				if (sound.m_Volume < 0&& soundcontroller->m_BGMAns>=0)
 				{
 					soundcontroller->m_BGMAns--;
 				}
 			}
 		}
 
-		if (soundcontroller->m_BGMAns==0)
+		if (soundcontroller->m_BGMAns<=0)
 		{
 			soundcontroller->m_IsDone_Fade = true;
 		}
@@ -111,9 +109,9 @@ namespace sound_controller
 
 	void SoundController::FadeSoundProcessing()
 	{
+		Release_AllSound();
 		soundcontroller->m_BGMAns = 0;
 		soundcontroller->m_IsDone_Fade = false;
-		Release_AllSound();
 	}
 
 	void SoundController::Release_AllSound()
@@ -121,10 +119,7 @@ namespace sound_controller
 		//ƒTƒEƒ“ƒh‚Ìíœ
 		for (std::string name : soundcontroller->m_SoundName)
 		{
-			if (soundcontroller->m_Soundlist.empty())
-			{
-				DeleteSoundMem(soundcontroller->m_Soundlist[name].m_Handle);
-			}
+			DeleteSoundMem(soundcontroller->m_Soundlist[name].m_Handle);
 		}
 
 		soundcontroller->m_SoundName.clear();
