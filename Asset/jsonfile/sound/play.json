@@ -1,0 +1,70 @@
+{
+    "play": {
+        "bgm": {
+            "name": "bgm",
+            "volume": 200,
+            "type": true,
+            "path": "../Asset/sound/play/bgm.mp3"
+        },
+        "clockwork": {
+            "name": "clockwork",
+            "volume": 210,
+            "type": true,
+            "path": "../Asset/sound/play/clockwork.mp3"
+        },
+        "duck_0": {
+            "name": "duck_0",
+            "volume": 200,
+            "type": false,
+            "path": "../Asset/sound/play/duck_0.mp3"
+        },
+        "duck_1": {
+            "name": "duck_1",
+            "volume": 200,
+            "type": false,
+            "path": "../Asset/sound/play/duck_1.mp3"
+        },
+        "duck_2": {
+            "name": "duck_2",
+            "volume": 200,
+            "type": false,
+            "path": "../Asset/sound/play/duck_2.mp3"
+        },
+        "emyaction": {
+            "name": "emyaction",
+            "volume": 150,
+            "type": false,
+            "path": "../Asset/sound/play/emyaction.mp3"
+        },
+        "enemy": {
+            "name": "enemy",
+            "volume": 250,
+            "type": false,
+            "path": "../Asset/sound/play/enemy.mp3"
+        },
+        "hat": {
+            "name": "hat",
+            "volume": 200,
+            "type": false,
+            "path": "../Asset/sound/play/hat.mp3"
+        },
+        "ira": {
+            "name": "ira",
+            "volume": 200,
+            "type": true,
+            "path": "../Asset/sound/play/ira.mp3"
+        },
+        "light": {
+            "name": "light",
+            "volume": 250,
+            "type": true,
+            "path": "../Asset/sound/play/light.mp3"
+        },
+        "musicbox": {
+            "name": "musicbox",
+            "volume": 160,
+            "type": true,
+            "path": "../Asset/sound/play/musicbox.mp3"
+        }
+    }
+}

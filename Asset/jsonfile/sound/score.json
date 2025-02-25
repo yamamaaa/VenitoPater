@@ -1,0 +1,41 @@
+{
+    "score": {
+        "bgm": {
+            "name": "bgm",
+            "volume": 180,
+            "type": true,
+            "path": "../Asset/sound/score/bgm.mp3"
+        },
+        "button": {
+            "name": "button",
+            "volume": 230,
+            "type":false,
+            "path": "../Asset/sound/score/button.mp3"
+        },
+        "fanfare": {
+            "name": "fanfare",
+            "volume": 200,
+            "type":false,
+            "path": "../Asset/sound/score/fanfare.mp3"
+        },
+        "item": {
+            "name": "item",
+            "volume": 250,
+            "type":false,
+            "path": "../Asset/sound/score/item.mp3"
+        },
+        "roll": {
+            "name": "roll",
+            "volume": 220,
+            "type":true,
+            "path": "../Asset/sound/score/roll.mp3"
+        },
+        "score": {
+            "name": "score",
+            "volume": 200,
+            "type":false,
+            "path": "../Asset/sound/score/score.mp3"
+        }
+    }
+
+}
