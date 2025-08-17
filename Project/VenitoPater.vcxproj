@@ -91,7 +91,6 @@
     <ClCompile Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.cpp" />
     <ClCompile Include="..\SourceCode\Object\TitleObj\TitleUi\TitleUi.cpp" />
     <ClCompile Include="..\SourceCode\Object\TutorialUi\TutorialUi.cpp" />
-    <ClCompile Include="..\SourceCode\Scene\a\a.cpp" />
     <ClCompile Include="..\SourceCode\Scene\Clear\Clear.cpp" />
     <ClCompile Include="..\SourceCode\Scene\Movie\Movie.cpp" />
     <ClCompile Include="..\SourceCode\Scene\Play\Play.cpp" />
@@ -191,7 +190,6 @@
     <ClInclude Include="..\SourceCode\Object\TitleObj\SelectMode\SelectMode.h" />
     <ClInclude Include="..\SourceCode\Object\TitleObj\TitleUi\TitleUi.h" />
     <ClInclude Include="..\SourceCode\Object\TutorialUi\TutorialUi.h" />
-    <ClInclude Include="..\SourceCode\Scene\a\a.h" />
     <ClInclude Include="..\SourceCode\Scene\Clear\Clear.h" />
     <ClInclude Include="..\SourceCode\Scene\Movie\Movie.h" />
     <ClInclude Include="..\SourceCode\Scene\Play\Play.h" />

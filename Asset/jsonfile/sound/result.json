@@ -1,0 +1,22 @@
+{
+    "result": {
+        "back": {
+            "name": "back",
+            "volume": 250,
+            "type": true,
+            "path": "../Asset/sound/result/back.mp3"
+        },
+        "bgm": {
+            "name": "bgm",
+            "volume": 230,
+            "type": true,
+            "path": "../Asset/sound/result/bgm.mp3"
+        },
+        "button": {
+            "name": "button",
+            "volume": 250,
+            "type": true,
+            "path": "../Asset/sound/result/button.mp3"
+        }
+    }
+}

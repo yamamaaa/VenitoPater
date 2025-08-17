@@ -1,0 +1,16 @@
+{
+    "clear": {
+        "applause": {
+            "name": "applause",
+            "volume": 180,
+            "type":false, 
+            "path": "../Asset/sound/clear/applause.mp3"
+        },
+        "bgm": {
+            "name": "bgm",
+            "volume": 180,
+            "type": false,
+            "path": "../Asset/sound/clear/bgm.mp3"
+        }
+    }
+}

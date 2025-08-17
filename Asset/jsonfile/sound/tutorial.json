@@ -1,0 +1,22 @@
+{
+    "tutorial": {
+        "back": {
+            "name": "back",
+            "volume": 250,
+            "type": false,
+            "path": "../Asset/sound/tutorial/back.mp3"
+        },
+        "bgm": {
+            "name": "bgm",
+            "volume": 250,
+            "type": true,
+            "path": "../Asset/sound/tutorial/bgm.mp3"
+        },
+        "button": {
+            "name": "button",
+            "volume": 220,
+            "type": false,
+            "path": "../Asset/sound/tutorial/button.mp3"
+        }
+    }
+}
