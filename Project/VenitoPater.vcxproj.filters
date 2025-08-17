@@ -238,9 +238,6 @@
     <ClCompile Include="..\SourceCode\JsonMaster\SoundData\Tutorial_SoundData\Tutorial_SoundData.cpp">
       <Filter>ソースコード\JsonMaster\SoundData\Tutorial_SoundData</Filter>
     </ClCompile>
-    <ClCompile Include="..\SourceCode\Scene\a\a.cpp">
-      <Filter>ソースコード\Scene\a</Filter>
-    </ClCompile>
     <ClCompile Include="..\SourceCode\Object\TutorialUi\TutorialUi.cpp">
       <Filter>ソースコード\Object\Tutorial</Filter>
     </ClCompile>
@@ -531,9 +528,6 @@
     <ClInclude Include="..\SourceCode\JsonMaster\SoundData\Tutorial_SoundData\Tutorial_SoundData.h">
       <Filter>ソースコード\JsonMaster\SoundData\Tutorial_SoundData</Filter>
     </ClInclude>
-    <ClInclude Include="..\SourceCode\Scene\a\a.h">
-      <Filter>ソースコード\Scene\a</Filter>
-    </ClInclude>
     <ClInclude Include="..\SourceCode\Object\ObjectTag\Tutorial_ObjectTag.h">
       <Filter>ソースコード\Object\ObjectTag</Filter>
     </ClInclude>
@@ -817,9 +811,6 @@
     </Filter>
     <Filter Include="ソースコード\JsonMaster\SoundData\Tutorial_SoundData">
       <UniqueIdentifier>{e543531d-3746-4fc9-81de-a3ea16c88901}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソースコード\Scene\a">
-      <UniqueIdentifier>{f4e5fd70-ed0a-4667-8b31-5a311641d33a}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソースコード\Object\StageObj\ClockWork">
       <UniqueIdentifier>{84af56d7-23b1-426e-b531-779f78a1feec}</UniqueIdentifier>
